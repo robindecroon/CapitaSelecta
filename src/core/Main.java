@@ -21,6 +21,10 @@ import java.awt.event.WindowEvent;
 
 import layout.VerticalFlowLayout;
 import processing.core.PApplet;
+import threads.KeywordRunnable;
+import util.KeywordColor;
+import data.Database;
+import data.Paper;
 
 /**
  * @author Robin
@@ -34,6 +38,24 @@ public class Main {
 	private static Label conference = new Label();
 	private static Label fullText = new Label();
 
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		initLabels();
+
+		Frame frame = initFrame();
+		Panel toolbar = initToolbar();
+		Panel sidebar = initSidebar();
+		final PApplet mainApplet = new MainApplet();
+		mainApplet.init();
+		frame.add(toolbar, BorderLayout.NORTH);
+		frame.add(mainApplet, BorderLayout.CENTER);
+		frame.add(sidebar, BorderLayout.EAST);
+		frame.pack();
+		frame.setVisible(true);
+	}
+	
 	public void setAuthors(String authors) {
 		Main.authors.setText(authors);
 	}
@@ -52,24 +74,6 @@ public class Main {
 
 	public void setFullText(String fullText) {
 		Main.fullText.setText(fullText);
-	}
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		initLabels();
-
-		Frame frame = initFrame();
-		Panel toolbar = initToolbar();
-		Panel sidebar = initSidebar();
-		final PApplet mainApplet = new MainApplet();
-		mainApplet.init();
-		frame.add(toolbar, BorderLayout.NORTH);
-		frame.add(mainApplet, BorderLayout.CENTER);
-		frame.add(sidebar, BorderLayout.EAST);
-		frame.pack();
-		frame.setVisible(true);
 	}
 
 	private static void initLabels() {
@@ -169,17 +173,42 @@ public class Main {
 		toolbar.add(tf2);
 		toolbar.setBackground(new Color(240, 240, 240));
 
-		Button searchButton = new Button("Draw");
+		Button searchButton = new Button(Constants.GO_BUTTON_TEXT);
 		searchButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO
-				// tf1.getText());
-				// tf2.getText());
+				String text1 = tf1.getText();
+				String text2 = tf2.getText();
+				if(text1.equals(Constants.TEXTBOX1) || text1.equals("")) {
+					Thread searchThread = new Thread(new KeywordRunnable(text1, KeywordColor.RED));
+					searchThread.start();					
+				}
+				if(text2.equals(Constants.TEXTBOX2) || text2.equals("")) {
+					Thread searchThread = new Thread(new KeywordRunnable(text2, KeywordColor.GREEN));
+					searchThread.start();					
+				}
 			}
 		});
 		toolbar.add(searchButton);
+		
+		Button clearButton = new Button(Constants.CLEAR_BUTTON_TEXT);
+		clearButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new Thread(new Runnable() {
+					
+					@Override
+					public void run() {
+						for(Paper paper : Database.getInstance().getPapers()) {
+							paper.setColor(KeywordColor.BLUE);
+						}
+					}
+				});
+			}
+		});
+		toolbar.add(clearButton);
 		return toolbar;
 	}
 

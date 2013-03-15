@@ -123,7 +123,7 @@ public class Database {
 	}
 
 	public List<Paper> getPapers() {
-		return new ArrayList<Paper>(papers);
+		return papers;
 	}
 
 	public boolean isInitialized() {

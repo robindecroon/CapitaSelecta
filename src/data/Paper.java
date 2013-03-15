@@ -3,12 +3,15 @@ package data;
 import java.util.ArrayList;
 import java.util.List;
 
+import util.KeywordColor;
+
 public class Paper {
 	private String name;
 	private String fullText;
 	private int year;
 	private Conference conference;
 	private List<Author> authors = new ArrayList<Author>();
+	private KeywordColor color = KeywordColor.BLUE;
 
 	public Paper(String name, String fullText, int year, Conference conference) {
 		setName(name);
@@ -107,5 +110,18 @@ public class Paper {
 		if (year != other.year)
 			return false;
 		return true;
+	}
+
+	/**
+	 * @return the color
+	 */
+	public KeywordColor getColor() {
+		return color;
+	}
+
+	public void setColor(KeywordColor color) {
+		if (color == null)
+			throw new NullPointerException("The given color is null!");
+		this.color = color;
 	}
 }

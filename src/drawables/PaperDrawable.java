@@ -125,6 +125,9 @@ public class PaperDrawable extends PositionedDrawable {
 		}
 		else
 			a.image(image, 0, 0);
+//		if(paper.getColor() == KeywordColor.RED) {
+//			a.image(image, 255, 255);
+//		}
 		a.popMatrix();
 	}
 }
