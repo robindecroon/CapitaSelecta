@@ -36,10 +36,12 @@ public class KeywordRunnable implements Runnable {
 		List<Paper> papers = db.getPapers();
 
 		for (Paper paper : papers) {
-			if (keyword1!=null&&!keyword1.equals("") && paper.containsWord(keyword1))
-				paper.setColor(KeywordColor.GREEN);
-			else if (keyword2!=null&&!keyword2.equals("") && paper.containsWord(keyword2))
+			if (keyword1 != null && !keyword1.equals("")
+					&& paper.containsWord(keyword1))
 				paper.setColor(KeywordColor.RED);
+			else if (keyword2 != null && !keyword2.equals("")
+					&& paper.containsWord(keyword2))
+				paper.setColor(KeywordColor.GREEN);
 			else
 				paper.setColor(KeywordColor.BLUE);
 		}
