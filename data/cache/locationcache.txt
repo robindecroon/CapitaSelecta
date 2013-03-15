@@ -7,7 +7,7 @@ Republika ng Pilipinas	PHL	14.5833	121.0
 Portugal	PRT	38.7	-9.18333
 Canada	CAN	45.4	-75.6667
 Austria	AUT	48.2	16.35
-Egypt	EGY	26.0	30.0
+Egypt	EGY	30.0333	31.2167
 South Korea	KOR	37.5833	127.0
 Slovenia	SVN	46.05	14.5
 Chile	CHL	-33.4333	-70.6667

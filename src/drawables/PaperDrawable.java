@@ -27,7 +27,7 @@ public class PaperDrawable extends PositionedDrawable {
 	 * @param applet
 	 */
 	public PaperDrawable(PApplet applet, Paper paper, UnfoldingMap map,
-			PImage image, PImage red, PImage green, PImage highlight, float zoom) {
+			PImage image, PImage highlight, PImage red, PImage green, float zoom) {
 		super(applet, zoom);
 
 		float xx = 0;

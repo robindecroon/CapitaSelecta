@@ -1,7 +1,9 @@
 package data;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import util.KeywordColor;
 
@@ -12,6 +14,7 @@ public class Paper {
 	private Conference conference;
 	private List<Author> authors = new ArrayList<Author>();
 	private KeywordColor color = KeywordColor.BLUE;
+	private Set<String> seperateWords = new HashSet<String>();
 
 	public Paper(String name, String fullText, int year, Conference conference) {
 		setName(name);
@@ -48,6 +51,22 @@ public class Paper {
 		if (fullText == null)
 			throw new NullPointerException("The given fulltext is null!");
 		this.fullText = fullText;
+
+		String[] split = fullText.split(" ");
+		for (String string : split) {
+			String word = string.trim().toLowerCase();
+
+			if (seperateWords.add(word) && word.equals("and")) {
+				System.out.println("\"and\" found in paper " + getName());
+			}
+		}
+	}
+
+	public boolean containsWord(String word) {
+		if (seperateWords.contains(word.trim().toLowerCase()))
+			return true;
+		else
+			return false;
 	}
 
 	public int getYear() {
