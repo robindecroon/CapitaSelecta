@@ -198,9 +198,15 @@ public class Main {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				for(Paper paper : Database.getInstance().getPapers()) {
-					paper.setColor(KeywordColor.BLUE);
-				}
+				new Thread(new Runnable() {
+					
+					@Override
+					public void run() {
+						for(Paper paper : Database.getInstance().getPapers()) {
+							paper.setColor(KeywordColor.BLUE);
+						}
+					}
+				});
 			}
 		});
 		toolbar.add(clearButton);
