@@ -36,10 +36,10 @@ public class AuthorMap extends Drawable {
 
 		applet.smooth();
 
-		author = applet.loadImage("image/author.png");
-		authorHighLight = applet.loadImage("image/authorHighLight.png");
-		paper = applet.loadImage("image/paper.png");
-		paperHighLight = applet.loadImage("image/paperHighLight.png");
+		author = applet.loadImage("data/image/author.png");
+		authorHighLight = applet.loadImage("data/image/authorHighLight.png");
+		paper = applet.loadImage("data/image/paper.png");
+		paperHighLight = applet.loadImage("data/image/paperHighLight.png");
 
 		map = new UnfoldingMap(applet);
 		MapUtils.createDefaultEventDispatcher(applet, map);
