@@ -8,7 +8,7 @@ import drawables.AuthorMap;
 /**
  * Download the distribution with examples for many more examples and features.
  */
-public class Main extends PApplet {
+public class MainApplet extends PApplet {
 	// Serialization id for applets
 	private static final long serialVersionUID = 1L;
 	private AuthorMap map;
