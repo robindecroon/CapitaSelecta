@@ -208,7 +208,7 @@ public class Main {
 							paper.setColor(KeywordColor.BLUE);
 						}
 					}
-				});
+				}).start();
 			}
 		});
 		toolbar.add(clearButton);
