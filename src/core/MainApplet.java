@@ -12,7 +12,7 @@ public class MainApplet extends PApplet {
 	// Serialization id for applets
 	private static final long serialVersionUID = 1L;
 	private AuthorMap map;
-	private final int APPLET_WIDTH = 1200;
+	private final int APPLET_WIDTH = 1000;
 	private final int APPLET_HEIGHT = 800;
 	private final FrameRateManager manager = new FrameRateManager(60);
 
