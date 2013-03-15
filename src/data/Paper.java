@@ -6,17 +6,6 @@ import java.util.List;
 public class Paper {
 	private String name;
 	private String fullText;
-
-	public String getFullText() {
-		return fullText;
-	}
-
-	public void setFullText(String fullText) {
-		if (fullText == null)
-			throw new NullPointerException("The given fulltext is null!");
-		this.fullText = fullText;
-	}
-
 	private List<Author> authors = new ArrayList<Author>();
 
 	public Paper(String name, String fullText) {
@@ -41,5 +30,15 @@ public class Paper {
 		if (author == null)
 			throw new NullPointerException("The given author is null!");
 		authors.add(author);
+	}
+	
+	public String getFullText() {
+		return fullText;
+	}
+
+	public void setFullText(String fullText) {
+		if (fullText == null)
+			throw new NullPointerException("The given fulltext is null!");
+		this.fullText = fullText;
 	}
 }
