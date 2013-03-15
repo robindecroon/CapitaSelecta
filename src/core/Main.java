@@ -183,11 +183,11 @@ public class Main {
 				if(text1.equals(text2)) {
 					return;
 				}
-				if(!text1.equals(Constants.TEXTBOX1) || !text1.equals("")) {
+				if(!text1.equals(Constants.TEXTBOX1) && !text1.equals("")) {
 					Thread searchThread = new Thread(new KeywordRunnable(text1, KeywordColor.RED));
 					searchThread.start();					
 				}
-				if(!text2.equals(Constants.TEXTBOX2) || !text2.equals("")) {
+				if(!text2.equals(Constants.TEXTBOX2) && !text2.equals("")) {
 					Thread searchThread = new Thread(new KeywordRunnable(text2, KeywordColor.GREEN));
 					searchThread.start();					
 				}
