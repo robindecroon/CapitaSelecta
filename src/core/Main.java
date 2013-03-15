@@ -134,6 +134,9 @@ public class Main {
 	private static Panel initToolbar() {
 		Panel toolbar = new Panel();
 		toolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
+		
+		Label label = new Label(Constants.TOOLBAR_TEXT);
+		toolbar.add(label);
 
 		final TextField tf1 = new TextField(Constants.TEXTBOX1, 30);
 		tf1.setBackground(Color.RED);
