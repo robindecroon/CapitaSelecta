@@ -26,7 +26,7 @@ public class Database {
 
 	// List with all the authors
 	private final List<Author> authors = new ArrayList<Author>();
-	
+
 	// Map which links countries to authors
 	private final Map<Location, List<Author>> countryAuthorMap = new HashMap<Location, List<Author>>();
 	private final Map<Location, List<Author>> affiliationAuthorMap = new HashMap<Location, List<Author>>();
@@ -60,10 +60,11 @@ public class Database {
 	}
 
 	public void initialize() {
-		 reader = new OfflineRdfReader("rdf/edm2008.rdf", "rdf/edm2009.rdf",
-		 "rdf/edm2010.rdf", "rdf/edm2011.rdf", "rdf/edm2012.rdf",
-		 "rdf/2011_fulltext_.rdf", "rdf/2012_fulltext_.rdf",
-		 "rdf/jets12_fulltext_.rdf");
+		// reader = new OfflineRdfReader("rdf/edm2008.rdf", "rdf/edm2009.rdf",
+		// "rdf/edm2010.rdf", "rdf/edm2011.rdf", "rdf/edm2012.rdf",
+		// "rdf/2011_fulltext_.rdf", "rdf/2012_fulltext_.rdf",
+		// "rdf/jets12_fulltext_.rdf");
+		reader = new OfflineRdfReader("rdf/edm2008.rdf");
 		// reader = new OfflineRdfReader("rdf/2011_fulltext_.rdf",
 		// "rdf/2012_fulltext_.rdf", "rdf/jets12_fulltext_.rdf");
 		readAffiliations();
@@ -180,7 +181,7 @@ public class Database {
 		query.add("SELECT ?person ?firstName ?lastName ?location ?affiliation ?af WHERE {");
 		query.add("?person foaf:firstName ?firstName .");
 		query.add("?person foaf:lastName ?lastName .");
-		query.add("?person foaf:based_near ?location .");
+		 query.add("?person foaf:based_near ?location .");
 		query.add("?person swrc:affiliation ?af .");
 		query.add("?af rdfs:label ?affiliation .");
 		query.add("}");
@@ -206,6 +207,8 @@ public class Database {
 				try {
 					BaseLocation countryLocation = LocationCache.getInstance()
 							.getBaseLocationFromUrl(location);
+					// BaseLocation countryLocation = new BaseLocation(0, 0,
+					// "bla");
 					Location affiliationLocation = affiliationLocations
 							.get(affiliation);
 
