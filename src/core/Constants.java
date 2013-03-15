@@ -16,5 +16,6 @@ public class Constants {
 	public final static int SIDEBAR_WIDTH = 300;
 	public final static int SIDEBAR_HEIGHT = 0;
 	public final static int SIDEBAR_LABEL_HEIGHT = 20;
+	public final static int FULLTEXT_HEIGHT = 500;
 
 }

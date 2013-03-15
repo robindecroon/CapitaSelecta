@@ -28,7 +28,7 @@ import processing.core.PApplet;
  * 
  */
 public class Main {
-	
+
 	private static Label authors = new Label();
 	private static Label affiliations = new Label();
 	private static Label year = new Label();
@@ -59,9 +59,9 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
+
 		initLabels();
-		
+
 		Frame frame = initFrame();
 		Panel toolbar = initToolbar();
 		Panel sidebar = initSidebar();
@@ -76,16 +76,20 @@ public class Main {
 
 	private static void initLabels() {
 		authors.setBackground(Color.WHITE);
-//		authors.setSize(Constants.SIDEBAR_WIDTH, Constants.SIDEBAR_LABEL_HEIGHT);
-		authors.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH, Constants.SIDEBAR_LABEL_HEIGHT));
+		authors.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH,
+				Constants.SIDEBAR_LABEL_HEIGHT));
 		affiliations.setBackground(Color.WHITE);
-		affiliations.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH, Constants.SIDEBAR_LABEL_HEIGHT));
+		affiliations.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH,
+				Constants.SIDEBAR_LABEL_HEIGHT));
 		year.setBackground(Color.WHITE);
-		year.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH, Constants.SIDEBAR_LABEL_HEIGHT));
+		year.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH,
+				Constants.SIDEBAR_LABEL_HEIGHT));
 		conference.setBackground(Color.WHITE);
-		conference.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH, Constants.SIDEBAR_LABEL_HEIGHT));
+		conference.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH,
+				Constants.SIDEBAR_LABEL_HEIGHT));
 		fullText.setBackground(Color.WHITE);
-		fullText.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH,500));
+		fullText.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH,
+				Constants.FULLTEXT_HEIGHT));
 	}
 
 	private static Panel initSidebar() {
@@ -99,7 +103,7 @@ public class Main {
 		Label yearLabel = new Label(Constants.YEAR_LABEL);
 		Label conferenceLabel = new Label(Constants.CONFERENCE_LABEL);
 		Label textLabel = new Label(Constants.TEXT_LABEL);
-		
+
 		sidebar.add(authorLabel);
 		sidebar.add(authors);
 		sidebar.add(affiliationLabel);
@@ -137,8 +141,6 @@ public class Main {
 
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// if(tf1.getText() != null)
-				// tf1.setText(text1);
 			}
 
 			@Override
@@ -155,8 +157,6 @@ public class Main {
 
 			@Override
 			public void focusLost(FocusEvent arg0) {
-				// if(tf2.getText() != null)
-				// tf2.setText(text2);
 			}
 
 			@Override
@@ -174,20 +174,8 @@ public class Main {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO
-				// List<Location> searchResults = searchKeyword(model,
 				// tf1.getText());
-				// if(showCountries) {
-				// ((MainApplet)
-				// unfoldingApplet).initCountries(searchCountry(model,
-				// tf1.getText()));
-				// } else {
-				// ((MainApplet) unfoldingApplet).clearCountries();
-				// }
-				// ((MainApplet) unfoldingApplet).initLocations(searchResults);
-				// List<Location> searchResults2 = searchKeyword(model,
 				// tf2.getText());
-				// ((MainApplet)
-				// unfoldingApplet).initLocations2(searchResults2);
 			}
 		});
 		toolbar.add(searchButton);
