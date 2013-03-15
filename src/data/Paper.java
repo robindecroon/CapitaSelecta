@@ -108,6 +108,4 @@ public class Paper {
 			return false;
 		return true;
 	}
-
-	
 }

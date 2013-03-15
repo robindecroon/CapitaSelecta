@@ -11,7 +11,6 @@ import org.openrdf.sail.nativerdf.NativeStore;
 
 public class OfflineRdfReader extends RdfReader {
 	public static final File REPOSITORY = new File("repository");
-
 	public OfflineRdfReader(String... filenames) {
 		File[] files = new File[filenames.length];
 		for (int i = 0; i < filenames.length; i++)
@@ -25,6 +24,7 @@ public class OfflineRdfReader extends RdfReader {
 
 	private void initialize(File... rdfFiles) {
 		repository = new SailRepository(new NativeStore(REPOSITORY));
+		
 	
 		
 		try {

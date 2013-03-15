@@ -14,6 +14,7 @@ import org.openrdf.query.TupleQueryResult;
 
 import rdf.OfflineRdfReader;
 import rdf.QueryFailedException;
+import util.Logger;
 import de.fhpotsdam.unfolding.geo.Location;
 
 public class Database {
@@ -63,6 +64,7 @@ public class Database {
 		readAllAuthors();
 		readAllPapers();
 		linkAuthorsToPapers();
+		LocationCache.getInstance().save();
 		initialized = true;
 	}
 
@@ -164,7 +166,7 @@ public class Database {
 		query.add("SELECT ?person ?firstName ?lastName ?location ?affiliation WHERE {");
 		query.add("?person foaf:firstName ?firstName .");
 		query.add("?person foaf:lastName ?lastName .");
-		// query.add("?person foaf:based_near ?location .");
+		query.add("?person foaf:based_near ?location .");
 		query.add("?person swrc:affiliation ?af .");
 		query.add("?af rdfs:label ?affiliation .");
 		query.add("}");
@@ -182,8 +184,8 @@ public class Database {
 						.stringValue();
 				String lastName = set.getBinding("lastName").getValue()
 						.stringValue();
-				// String location = set.getBinding("location").getValue()
-				// .stringValue();
+				String location = set.getBinding("location").getValue()
+						.stringValue();
 				String resource = set.getBinding("person").getValue()
 						.stringValue();
 				String affiliation = set.getBinding("affiliation").getValue()
@@ -194,16 +196,16 @@ public class Database {
 							.get(affiliation);
 
 					if (universityLocation == null) {
-						System.err
-								.println("Could not find location for university: "
-										+ universityLocation);
+						Logger.Warning("Could not find the university for "
+								+ firstName + " " + lastName
+								+ " with affiliation name: \"" + affiliation
+								+ "\". Add location for \"" + affiliation
+								+ "\" to location.txt");
 						continue;
 					}
 
-					// Country country = LocationCache.getInstance()
-					// .getCountryFromURL(location);
-					Country country = new Country("x", "USA",
-							new Location(0, 0));
+					Country country = LocationCache.getInstance()
+							.getCountryFromURL(location);
 
 					University university = new University(affiliation,
 							country, universityLocation);
@@ -212,25 +214,31 @@ public class Database {
 							university, country);
 					addAuthor(author);
 				} catch (QueryFailedException e) {
-					System.err
-							.println("Could not retrieve the country for author "
-									+ firstName + " " + lastName);
+					Logger.Warning("Could not retrieve the country for author "
+							+ firstName + " " + lastName + "! "
+							+ e.getMessage());
 				}
 			}
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			Logger.Severe("An exception has prevented from reading all the authors!");
+			e.printStackTrace();
 		}
 	}
 
 	private void readAllPapers() {
-		System.err.println("Reading papers");
 		List<String> query = new ArrayList<String>();
 		query.add("PREFIX foaf:<http://xmlns.com/foaf/0.1/>");
 		query.add("PREFIX dc:<http://purl.org/dc/elements/1.1/>");
 		query.add("PREFIX led:<http://data.linkededucation.org/ns/linked-education.rdf#>");
-		query.add("SELECT ?title ?text WHERE {");
+		query.add("PREFIX swrc:<http://swrc.ontoware.org/ontology#>");
+		query.add("PREFIX swc:<http://data.semanticweb.org/ns/swc/ontology#>");
+		query.add("SELECT ?title ?text ?year ?acro WHERE {");
 		query.add("?paper dc:title ?title .");
 		query.add("?paper led:body ?text .");
+		query.add("?conference swc:hasPart ?paper .");
+		query.add("?conference swrc:year ?year .");
+		query.add("?event swc:hasRelatedDocument ?conference .");
+		query.add("?event swc:hasAcronym ?acro .");
 		query.add("}");
 
 		TupleQueryResult result = reader.executeQuery(query);
@@ -241,13 +249,19 @@ public class Database {
 
 				String title = set.getBinding("title").getValue().stringValue();
 				String text = set.getBinding("text").getValue().stringValue();
+				String yearString = set.getBinding("year").getValue()
+						.stringValue();
+				int year = Integer.parseInt(yearString);
+				String acro = set.getBinding("acro").getValue().stringValue();
 
-				Paper paper = new Paper(title, text, 2008, Conference.LAK);
+				Conference c = Conference.getConferenceFromAcro(acro);
+
+				Paper paper = new Paper(title, text, year, c);
 				addPaper(paper);
-				System.out.println(title);
 			}
 		} catch (Exception e) {
-			System.err.println(e);
+			Logger.Severe("An error has prevented all papers from being read");
+			e.printStackTrace();
 		}
 	}
 

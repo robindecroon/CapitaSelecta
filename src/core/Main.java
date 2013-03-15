@@ -20,7 +20,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import layout.VerticalFlowLayout;
-
 import processing.core.PApplet;
 
 /**
@@ -59,7 +58,6 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-
 		initLabels();
 
 		Frame frame = initFrame();
@@ -134,7 +132,7 @@ public class Main {
 	private static Panel initToolbar() {
 		Panel toolbar = new Panel();
 		toolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
-		
+
 		Label label = new Label(Constants.TOOLBAR_TEXT);
 		toolbar.add(label);
 
