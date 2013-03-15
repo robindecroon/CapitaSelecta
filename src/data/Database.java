@@ -26,7 +26,7 @@ public class Database {
 
 	// List with all the authors
 	private final List<Author> authors = new ArrayList<Author>();
-	
+
 	// Map which links countries to authors
 	private final Map<Location, List<Author>> countryAuthorMap = new HashMap<Location, List<Author>>();
 	private final Map<Location, List<Author>> affiliationAuthorMap = new HashMap<Location, List<Author>>();
@@ -147,7 +147,7 @@ public class Database {
 
 	private void readAffiliations() {
 		try {
-			File file = new File("data/location/location.txt");
+			File file = new File("location/location.txt");
 			FileReader reader = new FileReader(file);
 			BufferedReader r = new BufferedReader(reader);
 
@@ -180,7 +180,7 @@ public class Database {
 		query.add("SELECT ?person ?firstName ?lastName ?location ?affiliation ?af WHERE {");
 		query.add("?person foaf:firstName ?firstName .");
 		query.add("?person foaf:lastName ?lastName .");
-		query.add("?person foaf:based_near ?location .");
+		 query.add("?person foaf:based_near ?location .");
 		query.add("?person swrc:affiliation ?af .");
 		query.add("?af rdfs:label ?affiliation .");
 		query.add("}");
@@ -206,6 +206,8 @@ public class Database {
 				try {
 					BaseLocation countryLocation = LocationCache.getInstance()
 							.getBaseLocationFromUrl(location);
+					// BaseLocation countryLocation = new BaseLocation(0, 0,
+					// "bla");
 					Location affiliationLocation = affiliationLocations
 							.get(affiliation);
 

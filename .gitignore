@@ -4,6 +4,9 @@
 *.war
 *.ear
 
+# resources
+repository/**
+
 *.pydevproject
 .project
 .metadata
