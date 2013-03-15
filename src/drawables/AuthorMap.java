@@ -22,6 +22,8 @@ public class AuthorMap extends Drawable {
 	private PImage authorHighLight;
 	private PImage paper;
 	private PImage paperHighLight;
+	private PImage paperRed;
+	private PImage paperGreen;
 	private UnfoldingMap map;
 
 	private Map<Author, AuthorDrawable> authorDrawables = new HashMap<Author, AuthorDrawable>();
@@ -40,6 +42,8 @@ public class AuthorMap extends Drawable {
 		authorHighLight = applet.loadImage("data/image/authorHighLight.png");
 		paper = applet.loadImage("data/image/paper.png");
 		paperHighLight = applet.loadImage("data/image/paperHighLight.png");
+		paperRed = applet.loadImage("data/image/paper_red.png");
+		paperGreen = applet.loadImage("data/image/paper_green.png");
 
 		map = new UnfoldingMap(applet);
 		MapUtils.createDefaultEventDispatcher(applet, map);
@@ -85,7 +89,8 @@ public class AuthorMap extends Drawable {
 
 		for (Paper paper : d.getPapers()) {
 			PaperDrawable drawable = new PaperDrawable(getApplet(), paper, map,
-					this.paper, this.paperHighLight, map.getZoom());
+					this.paper, this.paperHighLight, paperRed, paperGreen,
+					map.getZoom());
 			paperDrawables.put(paper, drawable);
 		}
 	}

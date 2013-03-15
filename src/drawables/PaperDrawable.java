@@ -4,6 +4,7 @@ import java.util.List;
 
 import processing.core.PApplet;
 import processing.core.PImage;
+import util.KeywordColor;
 import util.RandomGenerator;
 import data.Author;
 import data.Paper;
@@ -15,6 +16,8 @@ public class PaperDrawable extends PositionedDrawable {
 	private UnfoldingMap map;
 	private Location location;
 	private Paper paper;
+	private PImage red;
+	private PImage green;
 	private PImage image;
 	private PImage highlight;
 	private float drawSize;
@@ -24,7 +27,7 @@ public class PaperDrawable extends PositionedDrawable {
 	 * @param applet
 	 */
 	public PaperDrawable(PApplet applet, Paper paper, UnfoldingMap map,
-			PImage image, PImage highlight, float zoom) {
+			PImage image, PImage red, PImage green, PImage highlight, float zoom) {
 		super(applet, zoom);
 
 		float xx = 0;
@@ -50,6 +53,8 @@ public class PaperDrawable extends PositionedDrawable {
 		this.paper = paper;
 		this.image = image;
 		this.highlight = highlight;
+		this.red = red;
+		this.green = green;
 		this.map = map;
 	}
 
@@ -83,7 +88,7 @@ public class PaperDrawable extends PositionedDrawable {
 	@Override
 	public void setZoom(float zoom) {
 		super.setZoom(zoom);
-		this.drawSize = Math.min(zoom/1.5f, 40);
+		this.drawSize = Math.min(zoom / 1.5f, 40);
 	}
 
 	/**
@@ -120,14 +125,14 @@ public class PaperDrawable extends PositionedDrawable {
 		a.translate(b.x, b.y);
 		a.scale(scale);
 
-		if (getHighLight()) {
+		if (getHighLight())
 			a.image(highlight, 0, 0);
-		}
-		else
+		else if (paper.getColor().equals(KeywordColor.BLUE))
 			a.image(image, 0, 0);
-//		if(paper.getColor() == KeywordColor.RED) {
-//			a.image(image, 255, 255);
-//		}
+		else if (paper.getColor().equals(KeywordColor.RED))
+			a.image(red, 0, 0);
+		else if (paper.getColor().equals(KeywordColor.GREEN))
+			a.image(green, 0, 0);
 		a.popMatrix();
 	}
 }
