@@ -55,7 +55,7 @@ public class Main {
 		frame.pack();
 		frame.setVisible(true);
 	}
-	
+
 	public void setAuthors(String authors) {
 		Main.authors.setText(authors);
 	}
@@ -180,39 +180,47 @@ public class Main {
 			public void actionPerformed(ActionEvent e) {
 				String text1 = tf1.getText();
 				String text2 = tf2.getText();
-				if(text1.equals(text2)) {
+				if (text1.equals(text2)) {
 					return;
 				}
-				if(!text1.equals(Constants.TEXTBOX1) && !text1.equals("")) {
-					Thread searchThread = new Thread(new KeywordRunnable(text1, KeywordColor.RED));
-					searchThread.start();					
-				}
-				if(!text2.equals(Constants.TEXTBOX2) && !text2.equals("")) {
-					Thread searchThread = new Thread(new KeywordRunnable(text2, KeywordColor.GREEN));
-					searchThread.start();					
+				if (!text1.equals(Constants.TEXTBOX1)
+						&& !text2.equals(Constants.TEXTBOX2)) {
+					Thread searchThread = new Thread(new KeywordRunnable(text1, text2));
+					searchThread.start();
+				} else if (text1.equals(Constants.TEXTBOX1)) {
+					Thread searchThread = new Thread(new KeywordRunnable(null, text2));
+					searchThread.start();
+				} else if (text1.equals(Constants.TEXTBOX2)) {
+					Thread searchThread = new Thread(new KeywordRunnable(text1, null));
+					searchThread.start();
 				}
 			}
 		});
 		toolbar.add(searchButton);
-		
+
 		Button clearButton = new Button(Constants.CLEAR_BUTTON_TEXT);
 		clearButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				new Thread(new Runnable() {
-					
-					@Override
-					public void run() {
-						for(Paper paper : Database.getInstance().getPapers()) {
-							paper.setColor(KeywordColor.BLUE);
-						}
-					}
-				}).start();
+				clearPaperColors();
 			}
+
 		});
 		toolbar.add(clearButton);
 		return toolbar;
+	}
+
+	private static void clearPaperColors() {
+		new Thread(new Runnable() {
+
+			@Override
+			public void run() {
+				for (Paper paper : Database.getInstance().getPapers()) {
+					paper.setColor(KeywordColor.BLUE);
+				}
+			}
+		}).start();
 	}
 
 }
