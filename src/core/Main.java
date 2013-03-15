@@ -6,8 +6,10 @@ package core;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Frame;
+import java.awt.Label;
 import java.awt.Panel;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
@@ -17,6 +19,8 @@ import java.awt.event.FocusListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import layout.VerticalFlowLayout;
+
 import processing.core.PApplet;
 
 /**
@@ -24,21 +28,106 @@ import processing.core.PApplet;
  * 
  */
 public class Main {
+	
+	private static Label authors = new Label();
+	private static Label affiliations = new Label();
+	private static Label year = new Label();
+	private static Label conference = new Label();
+	private static Label fullText = new Label();
+
+	public void setAuthors(String authors) {
+		Main.authors.setText(authors);
+	}
+
+	public void setAffiliations(String affiliations) {
+		Main.affiliations.setText(affiliations);
+	}
+
+	public void setYear(String year) {
+		Main.year.setText(year);
+	}
+
+	public void setConference(String conference) {
+		Main.conference.setText(conference);
+	}
+
+	public void setFullText(String fullText) {
+		Main.fullText.setText(fullText);
+	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		initLabels();
+		
+		Frame frame = initFrame();
+		Panel toolbar = initToolbar();
+		Panel sidebar = initSidebar();
 		final PApplet mainApplet = new MainApplet();
+		mainApplet.init();
+		frame.add(toolbar, BorderLayout.NORTH);
+		frame.add(mainApplet, BorderLayout.CENTER);
+		frame.add(sidebar, BorderLayout.EAST);
+		frame.pack();
+		frame.setVisible(true);
+	}
+
+	private static void initLabels() {
+		authors.setBackground(Color.WHITE);
+//		authors.setSize(Constants.SIDEBAR_WIDTH, Constants.SIDEBAR_LABEL_HEIGHT);
+		authors.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH, Constants.SIDEBAR_LABEL_HEIGHT));
+		affiliations.setBackground(Color.WHITE);
+		affiliations.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH, Constants.SIDEBAR_LABEL_HEIGHT));
+		year.setBackground(Color.WHITE);
+		year.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH, Constants.SIDEBAR_LABEL_HEIGHT));
+		conference.setBackground(Color.WHITE);
+		conference.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH, Constants.SIDEBAR_LABEL_HEIGHT));
+		fullText.setBackground(Color.WHITE);
+		fullText.setPreferredSize(new Dimension(Constants.SIDEBAR_WIDTH,500));
+	}
+
+	private static Panel initSidebar() {
+		Panel sidebar = new Panel();
+		sidebar.setPreferredSize(new Dimension(300, 0));
+		sidebar.setLayout(new VerticalFlowLayout());
+		sidebar.setBackground(new Color(240, 240, 240));
+
+		Label authorLabel = new Label(Constants.AUTHOR_LABEL);
+		Label affiliationLabel = new Label(Constants.AFFILATION_LABEL);
+		Label yearLabel = new Label(Constants.YEAR_LABEL);
+		Label conferenceLabel = new Label(Constants.CONFERENCE_LABEL);
+		Label textLabel = new Label(Constants.TEXT_LABEL);
+		
+		sidebar.add(authorLabel);
+		sidebar.add(authors);
+		sidebar.add(affiliationLabel);
+		sidebar.add(affiliations);
+		sidebar.add(yearLabel);
+		sidebar.add(year);
+		sidebar.add(conferenceLabel);
+		sidebar.add(conference);
+		sidebar.add(textLabel);
+		sidebar.add(fullText);
+
+		return sidebar;
+	}
+
+	private static Frame initFrame() {
 		Frame frame = new Frame(Constants.APP_NAME);
 		frame.setLayout(new BorderLayout());
 
 		frame.addWindowListener(new WindowAdapter() {
+			@Override
 			public void windowClosing(WindowEvent we) {
 				System.exit(0);
 			}
 		});
+		return frame;
+	}
 
+	private static Panel initToolbar() {
 		Panel toolbar = new Panel();
 		toolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
 
@@ -102,13 +191,7 @@ public class Main {
 			}
 		});
 		toolbar.add(searchButton);
-
-		mainApplet.init();
-		frame.add(toolbar, BorderLayout.NORTH);
-		frame.add(mainApplet, BorderLayout.CENTER);
-
-		frame.pack();
-		frame.setVisible(true);
+		return toolbar;
 	}
 
 }
