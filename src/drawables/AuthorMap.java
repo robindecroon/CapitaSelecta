@@ -12,7 +12,10 @@ import data.Author;
 import data.Database;
 import data.Paper;
 import de.fhpotsdam.unfolding.UnfoldingMap;
+import de.fhpotsdam.unfolding.data.Feature;
+import de.fhpotsdam.unfolding.data.GeoJSONReader;
 import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
 
@@ -26,6 +29,8 @@ public class AuthorMap extends Drawable {
 
 	private Map<Author, AuthorDrawable> authorDrawables = new HashMap<Author, AuthorDrawable>();
 	private Map<Paper, PaperDrawable> paperDrawables = new HashMap<Paper, PaperDrawable>();
+
+	private List<Marker> countryMarkers;
 
 	/**
 	 * 
@@ -43,6 +48,13 @@ public class AuthorMap extends Drawable {
 
 		map = new UnfoldingMap(applet);
 		MapUtils.createDefaultEventDispatcher(applet, map);
+
+		// Load country polygons and adds them as markers
+		List<Feature> countries = GeoJSONReader.loadData(applet,
+				"countries.geo.json");
+		countryMarkers = MapUtils.createSimpleMarkers(countries);
+		map.addMarkers(countryMarkers);
+		
 
 		initializeAuthors();
 		initializePapers();
@@ -208,41 +220,41 @@ public class AuthorMap extends Drawable {
 				highPapers.add(drawable);
 			}
 		}
-//		for (AuthorDrawable drawable : authorDrawables.values()) {
-//			BoundingBox bbox = drawable.getBoundingBox();
-//			if (bbox.mouseIn(a.mouseX, a.mouseY)) {
-//				/*
-//				 * Draw the lines
-//				 */
-//				Author author = drawable.getAuthor();
-//				List<Paper> papers = author.getPapers();
-//				for (Paper paper : papers) {
-//					PaperDrawable pDraw = paperDrawables.get(paper);
-//					if (highPapers.contains(pDraw))
-//						continue;
-//					highPapers.add(pDraw);
-//				}
-//				highAuthors.add(drawable);
-//			}
-//		}
-//
-//		for (PaperDrawable drawable : paperDrawables.values()) {
-//			BoundingBox bbox = drawable.getBoundingBox();
-//			if (bbox.mouseIn(a.mouseX, a.mouseY)) {
-//				/*
-//				 * Draw the lines
-//				 */
-//				Paper paper = drawable.getPaper();
-//				List<Author> authors = paper.getAuthors();
-//				for (Author author : authors) {
-//					AuthorDrawable aDraw = authorDrawables.get(author);
-//					if (highAuthors.contains(aDraw))
-//						continue;
-//					highAuthors.add(aDraw);
-//				}
-//				highPapers.add(drawable);
-//			}
-//		}
+		// for (AuthorDrawable drawable : authorDrawables.values()) {
+		// BoundingBox bbox = drawable.getBoundingBox();
+		// if (bbox.mouseIn(a.mouseX, a.mouseY)) {
+		// /*
+		// * Draw the lines
+		// */
+		// Author author = drawable.getAuthor();
+		// List<Paper> papers = author.getPapers();
+		// for (Paper paper : papers) {
+		// PaperDrawable pDraw = paperDrawables.get(paper);
+		// if (highPapers.contains(pDraw))
+		// continue;
+		// highPapers.add(pDraw);
+		// }
+		// highAuthors.add(drawable);
+		// }
+		// }
+		//
+		// for (PaperDrawable drawable : paperDrawables.values()) {
+		// BoundingBox bbox = drawable.getBoundingBox();
+		// if (bbox.mouseIn(a.mouseX, a.mouseY)) {
+		// /*
+		// * Draw the lines
+		// */
+		// Paper paper = drawable.getPaper();
+		// List<Author> authors = paper.getAuthors();
+		// for (Author author : authors) {
+		// AuthorDrawable aDraw = authorDrawables.get(author);
+		// if (highAuthors.contains(aDraw))
+		// continue;
+		// highAuthors.add(aDraw);
+		// }
+		// highPapers.add(drawable);
+		// }
+		// }
 
 		a.stroke(0, 0, 0, 50);
 		a.strokeWeight(1);

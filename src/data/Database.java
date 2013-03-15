@@ -26,6 +26,7 @@ public class Database {
 
 	// List with all the authors
 	private final List<Author> authors = new ArrayList<Author>();
+	
 	// Map which links countries to authors
 	private final Map<Location, List<Author>> countryAuthorMap = new HashMap<Location, List<Author>>();
 	private final Map<Location, List<Author>> affiliationAuthorMap = new HashMap<Location, List<Author>>();
