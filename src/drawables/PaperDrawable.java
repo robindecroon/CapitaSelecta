@@ -4,6 +4,7 @@ import java.util.List;
 
 import processing.core.PApplet;
 import processing.core.PImage;
+import util.KeywordColor;
 import util.RandomGenerator;
 import data.Author;
 import data.Paper;
@@ -32,7 +33,7 @@ public class PaperDrawable extends PositionedDrawable {
 
 		List<Author> authors = paper.getAuthors();
 		for (Author author : authors) {
-			Location l = author.getAffiliationLocation();
+			Location l = author.getUniversity().getLocation();
 			xx += l.getLat();
 			yy += l.getLon();
 		}
@@ -125,6 +126,9 @@ public class PaperDrawable extends PositionedDrawable {
 		}
 		else
 			a.image(image, 0, 0);
+//		if(paper.getColor() == KeywordColor.RED) {
+//			a.image(image, 255, 255);
+//		}
 		a.popMatrix();
 	}
 }

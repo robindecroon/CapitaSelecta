@@ -3,7 +3,6 @@ package rdf;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.log4j.Logger;
 import org.openrdf.repository.RepositoryException;
 import org.openrdf.repository.sail.SailRepository;
 import org.openrdf.rio.RDFFormat;
@@ -26,10 +25,10 @@ public class OfflineRdfReader extends RdfReader {
 
 	private void initialize(File... rdfFiles) {
 		repository = new SailRepository(new NativeStore(REPOSITORY));
-		Logger.getRootLogger().removeAllAppenders();
+	
+		
 		try {
 			repository.initialize();
-
 			connection = repository.getConnection();
 
 			for (File file : rdfFiles)
