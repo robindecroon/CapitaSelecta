@@ -22,6 +22,8 @@ import java.awt.event.WindowEvent;
 import layout.VerticalFlowLayout;
 
 import processing.core.PApplet;
+import threads.KeywordRunnable;
+import util.KeywordColor;
 
 /**
  * @author Robin
@@ -34,26 +36,6 @@ public class Main {
 	private static Label year = new Label();
 	private static Label conference = new Label();
 	private static Label fullText = new Label();
-
-	public void setAuthors(String authors) {
-		Main.authors.setText(authors);
-	}
-
-	public void setAffiliations(String affiliations) {
-		Main.affiliations.setText(affiliations);
-	}
-
-	public void setYear(String year) {
-		Main.year.setText(year);
-	}
-
-	public void setConference(String conference) {
-		Main.conference.setText(conference);
-	}
-
-	public void setFullText(String fullText) {
-		Main.fullText.setText(fullText);
-	}
 
 	/**
 	 * @param args
@@ -72,6 +54,26 @@ public class Main {
 		frame.add(sidebar, BorderLayout.EAST);
 		frame.pack();
 		frame.setVisible(true);
+	}
+	
+	public void setAuthors(String authors) {
+		Main.authors.setText(authors);
+	}
+
+	public void setAffiliations(String affiliations) {
+		Main.affiliations.setText(affiliations);
+	}
+
+	public void setYear(String year) {
+		Main.year.setText(year);
+	}
+
+	public void setConference(String conference) {
+		Main.conference.setText(conference);
+	}
+
+	public void setFullText(String fullText) {
+		Main.fullText.setText(fullText);
 	}
 
 	private static void initLabels() {
@@ -176,9 +178,8 @@ public class Main {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO
-				// tf1.getText());
-				// tf2.getText());
+				Thread searchThread = new Thread(new KeywordRunnable(tf1.getText(), KeywordColor.RED));
+				searchThread.start();
 			}
 		});
 		toolbar.add(searchButton);
