@@ -20,10 +20,11 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import layout.VerticalFlowLayout;
-
 import processing.core.PApplet;
 import threads.KeywordRunnable;
 import util.KeywordColor;
+import data.Database;
+import data.Paper;
 
 /**
  * @author Robin
@@ -173,16 +174,36 @@ public class Main {
 		toolbar.add(tf2);
 		toolbar.setBackground(new Color(240, 240, 240));
 
-		Button searchButton = new Button("Draw");
+		Button searchButton = new Button(Constants.GO_BUTTON_TEXT);
 		searchButton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Thread searchThread = new Thread(new KeywordRunnable(tf1.getText(), KeywordColor.RED));
-				searchThread.start();
+				String text1 = tf1.getText();
+				String text2 = tf2.getText();
+				if(text1.equals(Constants.TEXTBOX1) || text1.equals("")) {
+					Thread searchThread = new Thread(new KeywordRunnable(text1, KeywordColor.RED));
+					searchThread.start();					
+				}
+				if(text2.equals(Constants.TEXTBOX2) || text2.equals("")) {
+					Thread searchThread = new Thread(new KeywordRunnable(text2, KeywordColor.GREEN));
+					searchThread.start();					
+				}
 			}
 		});
 		toolbar.add(searchButton);
+		
+		Button clearButton = new Button(Constants.CLEAR_BUTTON_TEXT);
+		clearButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				for(Paper paper : Database.getInstance().getPapers()) {
+					paper.setColor(KeywordColor.BLUE);
+				}
+			}
+		});
+		toolbar.add(clearButton);
 		return toolbar;
 	}
 
