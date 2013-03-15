@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.TupleQueryResult;
@@ -28,23 +27,19 @@ public class Database {
 	private final List<Author> authors = new ArrayList<Author>();
 
 	// Map which links countries to authors
-	private final Map<Location, List<Author>> countryAuthorMap = new HashMap<Location, List<Author>>();
-	private final Map<Location, List<Author>> affiliationAuthorMap = new HashMap<Location, List<Author>>();
+	private final Map<Country, List<Author>> countryAuthorMap = new HashMap<Country, List<Author>>();
+	private final Map<University, List<Author>> affiliationAuthorMap = new HashMap<University, List<Author>>();
 
 	// List with all the papers
 	private final List<Paper> papers = new ArrayList<Paper>();
-	// Map which links titles to papers.
 	private final Map<String, Paper> titlePaperMap = new HashMap<String, Paper>();
 
 	// List with all the countries and their locations
-	private final List<BaseLocation> locations = new ArrayList<BaseLocation>();
-	private final Map<String, Location> affiliationLocations = new HashMap<String, Location>();
+	private final List<Country> locations = new ArrayList<Country>();
+	private final Map<String, University> affiliationLocations = new HashMap<String, University>();
 
 	// Whether the database has been initialized
 	private boolean initialized = false;
-
-	private int minimumAuthorsPerCountry = Integer.MAX_VALUE;
-	private int maximumAuthorsPerCountry = Integer.MIN_VALUE;
 
 	/**
 	 * 
@@ -60,17 +55,14 @@ public class Database {
 	}
 
 	public void initialize() {
-		 reader = new OfflineRdfReader("data/rdf/edm2008.rdf", "data/rdf/edm2009.rdf",
-		 "data/rdf/edm2010.rdf", "data/rdf/edm2011.rdf", "data/rdf/edm2012.rdf",
-		 "data/rdf/2011_fulltext_.rdf", "data/rdf/2012_fulltext_.rdf",
-		 "data/rdf/jets12_fulltext_.rdf");
-		// reader = new OfflineRdfReader("rdf/2011_fulltext_.rdf",
-		// "rdf/2012_fulltext_.rdf", "rdf/jets12_fulltext_.rdf");
-		readAffiliations();
+		reader = new OfflineRdfReader("data/rdf/edm2008.rdf",
+				"data/rdf/edm2009.rdf", "data/rdf/edm2010.rdf",
+				"data/rdf/edm2011.rdf", "data/rdf/edm2012.rdf",
+				"data/rdf/2011_fulltext_.rdf", "data/rdf/2012_fulltext_.rdf",
+				"data/rdf/jets12_fulltext_.rdf");
 		readAllAuthors();
 		readAllPapers();
 		linkAuthorsToPapers();
-		updateStats();
 		initialized = true;
 	}
 
@@ -81,17 +73,16 @@ public class Database {
 			return;
 		authors.add(author);
 
-		Location countryLocation = author.getCountryLocation();
-		Location affiliationLocation = author.getAffiliationLocation();
+		Country country = author.getCountry();
+		University university = author.getUniversity();
 
-		if (!countryAuthorMap.containsKey(countryLocation))
-			countryAuthorMap.put(countryLocation, new ArrayList<Author>());
-		countryAuthorMap.get(countryLocation).add(author);
+		if (!countryAuthorMap.containsKey(country))
+			countryAuthorMap.put(country, new ArrayList<Author>());
+		countryAuthorMap.get(country).add(author);
 
-		if (!affiliationAuthorMap.containsKey(affiliationLocation))
-			affiliationAuthorMap.put(affiliationLocation,
-					new ArrayList<Author>());
-		affiliationAuthorMap.get(affiliationLocation).add(author);
+		if (!affiliationAuthorMap.containsKey(university))
+			affiliationAuthorMap.put(university, new ArrayList<Author>());
+		affiliationAuthorMap.get(university).add(author);
 	}
 
 	public List<Author> getAuthors() {
@@ -104,20 +95,20 @@ public class Database {
 		return 0;
 	}
 
-	public List<BaseLocation> getCountries() {
+	public List<Country> getCountries() {
 		return locations;
 	}
 
-	public Map<String, Location> getAffiliationLocation() {
+	public Map<String, University> getAffiliationLocation() {
 		return affiliationLocations;
 	}
 
-	// public Map<Location, List<Author>> getCountryAuthorMap() {
-	// return new HashMap<Location, List<Author>>(countryAuthorMap);
-	// }
+	public Map<Country, List<Author>> getCountryAuthorMap() {
+		return new HashMap<Country, List<Author>>(countryAuthorMap);
+	}
 
-	public Map<Location, List<Author>> getAffiliationAuthorMap() {
-		return new HashMap<Location, List<Author>>(affiliationAuthorMap);
+	public Map<University, List<Author>> getAffiliationAuthorMap() {
+		return new HashMap<University, List<Author>>(affiliationAuthorMap);
 	}
 
 	public void addPaper(Paper paper) {
@@ -133,43 +124,36 @@ public class Database {
 		return new ArrayList<Paper>(papers);
 	}
 
-	public int getMinimumAuthorsPerCountry() {
-		return minimumAuthorsPerCountry;
-	}
-
-	public int getMaximumAuthorsPerCountry() {
-		return maximumAuthorsPerCountry;
-	}
-
 	public boolean isInitialized() {
 		return initialized;
 	}
 
-	private void readAffiliations() {
-		try {
-			File file = new File("location/location.txt");
-			FileReader reader = new FileReader(file);
-			BufferedReader r = new BufferedReader(reader);
+	private HashMap<String, Location> readAffiliations()
+			throws NumberFormatException, IOException {
+		HashMap<String, Location> result = new HashMap<String, Location>();
+		File file = new File("data/location/location.txt");
+		FileReader reader = new FileReader(file);
+		BufferedReader r = new BufferedReader(reader);
 
-			String line;
-			int index = 0;
+		String line;
+		int index = 0;
 
-			while ((line = r.readLine()) != null) {
-				if (index > 0) {
-					String[] split = line.split(";");
-					float xx = Float.parseFloat(split[0]);
-					float yy = Float.parseFloat(split[1]);
-					String affiliation = split[2];
-					Location l = new Location(xx, yy);
+		while ((line = r.readLine()) != null) {
+			if (index > 0) {
+				String[] split = line.split(";");
+				float xx = Float.parseFloat(split[0]);
+				float yy = Float.parseFloat(split[1]);
+				String affiliation = split[2];
+				Location l = new Location(xx, yy);
 
-					affiliationLocations.put(affiliation, l);
-				}
-				index++;
+				result.put(affiliation, l);
 			}
-
-			r.close();
-		} catch (IOException e) {
+			index++;
 		}
+
+		r.close();
+
+		return result;
 	}
 
 	private void readAllAuthors() {
@@ -177,10 +161,10 @@ public class Database {
 		query.add("PREFIX foaf:<http://xmlns.com/foaf/0.1/>");
 		query.add("PREFIX swrc:<http://swrc.ontoware.org/ontology#>");
 		query.add("PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>");
-		query.add("SELECT ?person ?firstName ?lastName ?location ?affiliation ?af WHERE {");
+		query.add("SELECT ?person ?firstName ?lastName ?location ?affiliation WHERE {");
 		query.add("?person foaf:firstName ?firstName .");
 		query.add("?person foaf:lastName ?lastName .");
-		 query.add("?person foaf:based_near ?location .");
+		// query.add("?person foaf:based_near ?location .");
 		query.add("?person swrc:affiliation ?af .");
 		query.add("?af rdfs:label ?affiliation .");
 		query.add("}");
@@ -188,41 +172,48 @@ public class Database {
 		TupleQueryResult result = reader.executeQuery(query);
 
 		try {
+			HashMap<String, Location> affiliationLocations = readAffiliations();
+
 			while (result.hasNext()) {
+
 				BindingSet set = result.next();
 
 				String firstName = set.getBinding("firstName").getValue()
 						.stringValue();
 				String lastName = set.getBinding("lastName").getValue()
 						.stringValue();
-				String location = set.getBinding("location").getValue()
-						.stringValue();
+				// String location = set.getBinding("location").getValue()
+				// .stringValue();
 				String resource = set.getBinding("person").getValue()
 						.stringValue();
 				String affiliation = set.getBinding("affiliation").getValue()
 						.stringValue();
-				String af = set.getBinding("af").getValue().stringValue();
 
 				try {
-					BaseLocation countryLocation = LocationCache.getInstance()
-							.getBaseLocationFromUrl(location);
-					// BaseLocation countryLocation = new BaseLocation(0, 0,
-					// "bla");
-					Location affiliationLocation = affiliationLocations
+					Location universityLocation = affiliationLocations
 							.get(affiliation);
 
-					if (affiliationLocation == null)
-						throw new IllegalStateException(
-								"Could not find affiliation \"" + affiliation
-										+ "\" - \"" + af + "\"");
+					if (universityLocation == null) {
+						System.err
+								.println("Could not find location for university: "
+										+ universityLocation);
+						continue;
+					}
+
+					// Country country = LocationCache.getInstance()
+					// .getCountryFromURL(location);
+					Country country = new Country("x", "USA",
+							new Location(0, 0));
+
+					University university = new University(affiliation,
+							country, universityLocation);
 
 					Author author = new Author(resource, firstName, lastName,
-							affiliation, countryLocation, affiliationLocation);
-					System.err.println(author);
+							university, country);
 					addAuthor(author);
 				} catch (QueryFailedException e) {
 					System.err
-							.println("Could not retrieve the location for author "
+							.println("Could not retrieve the country for author "
 									+ firstName + " " + lastName);
 				}
 			}
@@ -232,6 +223,7 @@ public class Database {
 	}
 
 	private void readAllPapers() {
+		System.err.println("Reading papers");
 		List<String> query = new ArrayList<String>();
 		query.add("PREFIX foaf:<http://xmlns.com/foaf/0.1/>");
 		query.add("PREFIX dc:<http://purl.org/dc/elements/1.1/>");
@@ -250,10 +242,12 @@ public class Database {
 				String title = set.getBinding("title").getValue().stringValue();
 				String text = set.getBinding("text").getValue().stringValue();
 
-				Paper paper = new Paper(title, text);
+				Paper paper = new Paper(title, text, 2008, Conference.LAK);
 				addPaper(paper);
+				System.out.println(title);
 			}
 		} catch (Exception e) {
+			System.err.println(e);
 		}
 	}
 
@@ -288,15 +282,6 @@ public class Database {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-	}
-
-	private void updateStats() {
-		for (Entry<Location, List<Author>> e : countryAuthorMap.entrySet()) {
-			minimumAuthorsPerCountry = Math.min(minimumAuthorsPerCountry, e
-					.getValue().size());
-			maximumAuthorsPerCountry = Math.max(maximumAuthorsPerCountry, e
-					.getValue().size());
 		}
 	}
 }

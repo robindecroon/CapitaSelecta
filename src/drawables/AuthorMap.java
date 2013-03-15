@@ -11,9 +11,8 @@ import processing.core.PImage;
 import data.Author;
 import data.Database;
 import data.Paper;
+import data.University;
 import de.fhpotsdam.unfolding.UnfoldingMap;
-import de.fhpotsdam.unfolding.geo.Location;
-import de.fhpotsdam.unfolding.marker.Marker;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
 
@@ -27,8 +26,6 @@ public class AuthorMap extends Drawable {
 
 	private Map<Author, AuthorDrawable> authorDrawables = new HashMap<Author, AuthorDrawable>();
 	private Map<Paper, PaperDrawable> paperDrawables = new HashMap<Paper, PaperDrawable>();
-
-	private List<Marker> countryMarkers;
 
 	/**
 	 * 
@@ -47,13 +44,6 @@ public class AuthorMap extends Drawable {
 		map = new UnfoldingMap(applet);
 		MapUtils.createDefaultEventDispatcher(applet, map);
 
-//		// Load country polygons and adds them as markers
-//		List<Feature> countries = GeoJSONReader.loadData(applet,
-//				"countries.geo.json");
-//		countryMarkers = MapUtils.createSimpleMarkers(countries);
-//		map.addMarkers(countryMarkers);
-		
-
 		initializeAuthors();
 		initializePapers();
 	}
@@ -61,7 +51,7 @@ public class AuthorMap extends Drawable {
 	private void initializeAuthors() {
 		Database d = Database.getInstance();
 
-		for (Entry<Location, List<Author>> e : d.getAffiliationAuthorMap()
+		for (Entry<University, List<Author>> e : d.getAffiliationAuthorMap()
 				.entrySet()) {
 			List<Author> authors = e.getValue();
 
@@ -73,8 +63,9 @@ public class AuthorMap extends Drawable {
 				for (int i = 0; i < authors.size() - currentIndex; i++) {
 					Author a = authors.get(i + currentIndex);
 					AuthorDrawable draw = new AuthorDrawable(getApplet(), a,
-							map, author, authorHighLight, e.getKey(), angle, i,
-							circle, map.getZoom());
+							map, author, authorHighLight, e.getKey()
+									.getLocation(), angle, i, circle,
+							map.getZoom());
 					authorDrawables.put(a, draw);
 				}
 

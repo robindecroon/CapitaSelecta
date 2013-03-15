@@ -32,7 +32,7 @@ public class PaperDrawable extends PositionedDrawable {
 
 		List<Author> authors = paper.getAuthors();
 		for (Author author : authors) {
-			Location l = author.getAffiliationLocation();
+			Location l = author.getUniversity().getLocation();
 			xx += l.getLat();
 			yy += l.getLon();
 		}

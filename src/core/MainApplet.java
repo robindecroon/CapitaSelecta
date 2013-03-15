@@ -22,7 +22,7 @@ public class MainApplet extends PApplet {
 	 * @see processing.core.PApplet#setup()
 	 */
 	@Override
-	public void setup() {		
+	public void setup() {	
 		size(APPLET_WIDTH, APPLET_HEIGHT, GLConstants.GLGRAPHICS);
 		frameRate(60);
 		map = new AuthorMap(this);

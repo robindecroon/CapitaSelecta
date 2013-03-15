@@ -17,11 +17,13 @@ import java.util.Map.Entry;
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.TupleQueryResult;
 
+import de.fhpotsdam.unfolding.geo.Location;
+
 import rdf.OnlineRdfReader;
 import rdf.QueryFailedException;
 
 public class LocationCache {
-	private final HashMap<String, BaseLocation> map = new HashMap<String, BaseLocation>();
+	private final HashMap<String, Country> map = new HashMap<String, Country>();
 	private final HashSet<String> failures = new HashSet<String>();
 	private static LocationCache instance;
 
@@ -31,7 +33,7 @@ public class LocationCache {
 
 	private void load() {
 		try {
-			File file = new File("cache/locationcache.txt");
+			File file = new File("data/cache/locationcache.txt");
 
 			FileReader reader = new FileReader(file);
 			BufferedReader r = new BufferedReader(reader);
@@ -43,12 +45,15 @@ public class LocationCache {
 
 				String[] split = line.split("\t");
 
-				if (split.length == 4) {
-					float latitude = Float.parseFloat(split[1]);
-					float longitude = Float.parseFloat(split[2]);
-					BaseLocation location = new BaseLocation(latitude,
-							longitude, split[3]);
-					map.put(split[0], location);
+				if (split.length == 5) {
+					String name = split[0];
+					String abbrevition = split[1];
+					float latitude = Float.parseFloat(split[2]);
+					float longitude = Float.parseFloat(split[3]);
+
+					Country country = new Country(name, abbrevition,
+							new Location(latitude, longitude));
+					map.put(split[0], country);
 				} else if (split.length == 1) {
 					failures.add(split[0]);
 				}
@@ -70,10 +75,11 @@ public class LocationCache {
 
 			w.write("#\turl\tlattitude\tlongtitude");
 			w.newLine();
-			for (Entry<String, BaseLocation> e : map.entrySet()) {
-				String line = e.getKey() + "\t" + e.getValue().getLat()
-						+ "\t" + e.getValue().getLon() + "\t"
-						+ e.getValue().getCountryName();
+			for (Entry<String, Country> e : map.entrySet()) {
+				Country c = e.getValue();
+				String line = c.getName() + "\t" + c.getAbbreviation() + "\t"
+						+ c.getLocation().getLat() + "\t"
+						+ c.getLocation().getLon();
 				w.write(line);
 				w.newLine();
 				System.out.println(line);
@@ -99,7 +105,7 @@ public class LocationCache {
 		return failures.contains(code);
 	}
 
-	public void addToCache(String code, BaseLocation location) {
+	public void addToCache(String code, Country location) {
 		if (code == null)
 			throw new NullPointerException("The given code is null!");
 		if (location == null)
@@ -111,7 +117,7 @@ public class LocationCache {
 		failures.add(code);
 	}
 
-	public BaseLocation getFromCache(String code) {
+	public Country getFromCache(String code) {
 		return map.get(code);
 	}
 
@@ -121,19 +127,17 @@ public class LocationCache {
 		return instance;
 	}
 
-	public BaseLocation getBaseLocationFromUrl(String url)
-			throws QueryFailedException {
+	public Country getCountryFromURL(String url) throws QueryFailedException {
 		if (LocationCache.getInstance().hasFailure(url))
 			throw new QueryFailedException("Could not locate the location!");
 
 		if (LocationCache.getInstance().hasLocation(url))
-			return new BaseLocation(getFromCache(url));
+			return new Country(getFromCache(url));
 		else
 			return getOnlineFromURL(url);
 	}
 
-	private BaseLocation getOnlineFromURL(String url)
-			throws QueryFailedException {
+	private Country getOnlineFromURL(String url) throws QueryFailedException {
 		OnlineRdfReader r = new OnlineRdfReader("http://dbpedia.org/sparql");
 		List<String> q = new ArrayList<String>();
 
@@ -144,10 +148,13 @@ public class LocationCache {
 		q.add("PREFIX geo:<http://www.w3.org/2003/01/geo/wgs84_pos#>");
 		q.add("PREFIX rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>");
 		q.add("PREFIX dbo: <http://dbpedia.org/ontology/>");
-		q.add("SELECT ?name ?lat ?long WHERE {");
+		q.add("PREFIX dbprop: <http://dbpedia.org/property/>");
+
+		q.add("SELECT ?name ?code ?lat ?long WHERE {");
 		q.add("<" + adress + "> foaf:name ?name .");
 		q.add("<" + adress + "> geo:lat ?lat .");
 		q.add("<" + adress + "> geo:long ?long .");
+		q.add("<" + adress + "> dbpprop:countryCode ?code.");
 		q.add("}");
 
 		TupleQueryResult result = r.executeQuery(q);
@@ -160,16 +167,18 @@ public class LocationCache {
 						.getValue().stringValue());
 				float longtitude = Float.parseFloat(set.getBinding("long")
 						.getValue().stringValue());
+				String countryCode = set.getBinding("countryCode").getValue()
+						.stringValue();
 				String countryName = set.getBinding("name").getValue()
 						.stringValue();
 
-				BaseLocation location = new BaseLocation(latitude, longtitude,
-						countryName);
+				Country country = new Country(countryName, countryCode,
+						new Location(latitude, longtitude));
 
-				addToCache(url, location);
-				addToCache(adress, location);
+				addToCache(url, country);
+				addToCache(adress, country);
 
-				return location;
+				return country;
 			} else
 				throw new QueryFailedException(
 						"No bindings were found for the following url: <"

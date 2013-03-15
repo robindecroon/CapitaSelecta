@@ -3,36 +3,21 @@ package data;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.fhpotsdam.unfolding.geo.Location;
-
 public class Author {
+	private String authorResource;
 	private String firstName;
 	private String lastName;
-	private String authorResource;
-	private String affiliation;
-	private Location affiliationLocation;
-	private Location countryLocation;
+	private University university;
+	private Country country;
 	private List<Paper> papers = new ArrayList<Paper>();
 
 	public Author(String authorResource, String firstName, String lastName,
-			String affiliation, Location countryLocation,
-			Location affiliationLocation) {
+			University university, Country country) {
 		setFirstName(firstName);
 		setLastName(lastName);
 		setAuthorResource(authorResource);
-		setAffiliation(affiliation);
-		setCountryLocation(countryLocation);
-		setAffiliationLocation(affiliationLocation);
-	}
-
-	public String getAffiliation() {
-		return affiliation;
-	}
-
-	public void setAffiliation(String affiliation) {
-		if (affiliation == null)
-			throw new NullPointerException("The given affiliation is null!");
-		this.affiliation = affiliation;
+		setUniversity(university);
+		setCountry(country);
 	}
 
 	public String getFirstName() {
@@ -59,10 +44,6 @@ public class Author {
 		return getFirstName() + " " + getLastName();
 	}
 
-	public Location getLocation() {
-		return affiliationLocation;
-	}
-
 	public String getAuthorResource() {
 		return authorResource;
 	}
@@ -71,6 +52,30 @@ public class Author {
 		if (authorResource == null)
 			throw new NullPointerException("The given author resource is null!");
 		this.authorResource = authorResource;
+	}
+
+	public University getUniversity() {
+		return university;
+	}
+
+	public void setUniversity(University university) {
+		if (university == null)
+			throw new NullPointerException("The given university is null!");
+		this.university = university;
+	}
+
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		if (country == null)
+			throw new NullPointerException("The given country is null!");
+		this.country = country;
+	}
+
+	public void setPapers(List<Paper> papers) {
+		this.papers = papers;
 	}
 
 	public void addPaper(Paper paper) {
@@ -85,59 +90,61 @@ public class Author {
 		return new ArrayList<Paper>(papers);
 	}
 
-	public Location getAffiliationLocation() {
-		return affiliationLocation;
-	}
-
-	public void setAffiliationLocation(Location affiliationLocation) {
-		this.affiliationLocation = affiliationLocation;
-	}
-
-	public Location getCountryLocation() {
-		return countryLocation;
-	}
-
-	public void setCountryLocation(Location countryLocation) {
-		this.countryLocation = countryLocation;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
 	@Override
 	public int hashCode() {
-		return getFirstName().hashCode() + getLastName().hashCode()
-				+ getCountryLocation().hashCode()
-				+ getAffiliationLocation().hashCode()
-				+ getAffiliation().hashCode();
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((authorResource == null) ? 0 : authorResource.hashCode());
+		result = prime * result + ((country == null) ? 0 : country.hashCode());
+		result = prime * result
+				+ ((firstName == null) ? 0 : firstName.hashCode());
+		result = prime * result
+				+ ((lastName == null) ? 0 : lastName.hashCode());
+		result = prime * result + ((papers == null) ? 0 : papers.hashCode());
+		result = prime * result
+				+ ((university == null) ? 0 : university.hashCode());
+		return result;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
-	public boolean equals(Object object) {
-		if (object == null)
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
 			return false;
-		if (!(object instanceof Author))
+		if (getClass() != obj.getClass())
 			return false;
-		Author a = (Author) object;
-
-		if (!a.getFirstName().equals(getFirstName()))
+		Author other = (Author) obj;
+		if (authorResource == null) {
+			if (other.authorResource != null)
+				return false;
+		} else if (!authorResource.equals(other.authorResource))
 			return false;
-		if (!a.getLastName().equals(getLastName()))
+		if (country == null) {
+			if (other.country != null)
+				return false;
+		} else if (!country.equals(other.country))
 			return false;
-		if (!a.getCountryLocation().equals(getCountryLocation()))
+		if (firstName == null) {
+			if (other.firstName != null)
+				return false;
+		} else if (!firstName.equals(other.firstName))
 			return false;
-		if (!a.getPapers().equals(getPapers()))
+		if (lastName == null) {
+			if (other.lastName != null)
+				return false;
+		} else if (!lastName.equals(other.lastName))
 			return false;
-		if (!a.getAffiliationLocation().equals(getAffiliationLocation()))
+		if (papers == null) {
+			if (other.papers != null)
+				return false;
+		} else if (!papers.equals(other.papers))
 			return false;
-		if (!a.getAffiliation().equals(getAffiliation()))
+		if (university == null) {
+			if (other.university != null)
+				return false;
+		} else if (!university.equals(other.university))
 			return false;
 		return true;
 	}
@@ -149,8 +156,6 @@ public class Author {
 	 */
 	@Override
 	public String toString() {
-		return "Author: " + getFirstName() + " " + getLastName() + " at "
-				+ getAffiliationLocation() + " from " + getAffiliation();
+		return "Author: " + getFirstName() + " " + getLastName();
 	}
-
 }
