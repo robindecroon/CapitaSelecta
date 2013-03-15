@@ -112,6 +112,13 @@ public class Paper {
 		return true;
 	}
 
+	/**
+	 * @return the color
+	 */
+	public KeywordColor getColor() {
+		return color;
+	}
+
 	public void setColor(KeywordColor color) {
 		this.color = color;
 	}
