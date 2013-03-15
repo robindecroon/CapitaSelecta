@@ -60,11 +60,10 @@ public class Database {
 	}
 
 	public void initialize() {
-		// reader = new OfflineRdfReader("rdf/edm2008.rdf", "rdf/edm2009.rdf",
-		// "rdf/edm2010.rdf", "rdf/edm2011.rdf", "rdf/edm2012.rdf",
-		// "rdf/2011_fulltext_.rdf", "rdf/2012_fulltext_.rdf",
-		// "rdf/jets12_fulltext_.rdf");
-		reader = new OfflineRdfReader("rdf/edm2008.rdf");
+		 reader = new OfflineRdfReader("data/rdf/edm2008.rdf", "data/rdf/edm2009.rdf",
+		 "data/rdf/edm2010.rdf", "data/rdf/edm2011.rdf", "data/rdf/edm2012.rdf",
+		 "data/rdf/2011_fulltext_.rdf", "data/rdf/2012_fulltext_.rdf",
+		 "data/rdf/jets12_fulltext_.rdf");
 		// reader = new OfflineRdfReader("rdf/2011_fulltext_.rdf",
 		// "rdf/2012_fulltext_.rdf", "rdf/jets12_fulltext_.rdf");
 		readAffiliations();
