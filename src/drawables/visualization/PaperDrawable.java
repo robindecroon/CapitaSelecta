@@ -1,4 +1,4 @@
-package drawables;
+package drawables.visualization;
 
 import java.util.List;
 
@@ -11,6 +11,8 @@ import data.Paper;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
+import drawables.BoundingBox;
+import drawables.PositionedDrawable;
 
 public class PaperDrawable extends PositionedDrawable {
 	private UnfoldingMap map;
@@ -28,7 +30,7 @@ public class PaperDrawable extends PositionedDrawable {
 	 */
 	public PaperDrawable(PApplet applet, Paper paper, UnfoldingMap map,
 			PImage image, PImage highlight, PImage red, PImage green, float zoom) {
-		super(applet, zoom);
+		super(applet, map);
 
 		float xx = 0;
 		float yy = 0;
@@ -64,7 +66,7 @@ public class PaperDrawable extends PositionedDrawable {
 	 * @see drawables.PositionedDrawable#calculateBoundingBox()
 	 */
 	@Override
-	protected BoundingBox calculateBoundingBox() {
+	protected BoundingBox calculateScreenBox() {
 		ScreenPosition p = getScreenPosition();
 
 		float scale = drawSize / Math.max(image.width, image.height);
@@ -88,7 +90,7 @@ public class PaperDrawable extends PositionedDrawable {
 	@Override
 	public void setZoom(float zoom) {
 		super.setZoom(zoom);
-		this.drawSize = Math.min(zoom / 1.5f, 40);
+		this.drawSize = Math.min(zoom * 0.3f, 24);
 	}
 
 	/**
@@ -105,8 +107,11 @@ public class PaperDrawable extends PositionedDrawable {
 	 * @see drawables.Drawable#update(float)
 	 */
 	@Override
-	public void update(float scale) {
-		super.update(scale);
+	public void update(float scale, boolean moved, boolean zoomed) {
+		if (moved || zoomed) {
+			markScreenBoxDirty();
+			markScreenPositionDirty();
+		}
 	}
 
 	/*
@@ -117,7 +122,7 @@ public class PaperDrawable extends PositionedDrawable {
 	@Override
 	public void draw() {
 		PApplet a = getApplet();
-		BoundingBox b = getBoundingBox();
+		BoundingBox b = getScreenBox();
 
 		float scale = drawSize / Math.max(image.width, image.height);
 
@@ -134,5 +139,30 @@ public class PaperDrawable extends PositionedDrawable {
 		else if (paper.getColor().equals(KeywordColor.GREEN))
 			a.image(green, 0, 0);
 		a.popMatrix();
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((paper == null) ? 0 : paper.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PaperDrawable other = (PaperDrawable) obj;
+		if (paper == null) {
+			if (other.paper != null)
+				return false;
+		} else if (!paper.equals(other.paper))
+			return false;
+		return true;
 	}
 }

@@ -55,10 +55,7 @@ public class Paper {
 		String[] split = fullText.split(" ");
 		for (String string : split) {
 			String word = string.trim().toLowerCase();
-
-			if (seperateWords.add(word) && word.equals("and")) {
-				System.out.println("\"and\" found in paper " + getName());
-			}
+			seperateWords.add(word);
 		}
 	}
 
@@ -142,5 +139,9 @@ public class Paper {
 		if (color == null)
 			throw new NullPointerException("The given color is null!");
 		this.color = color;
+	}
+	
+	public String toString() {
+		return getName()+" with "+getAuthors().size()+" authors";
 	}
 }

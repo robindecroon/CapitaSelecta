@@ -9,8 +9,6 @@ import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
 
-import util.Logger;
-
 public abstract class RdfReader {
 	protected Repository repository;
 	protected boolean open = false;
@@ -30,7 +28,6 @@ public abstract class RdfReader {
 		StringBuilder q = new StringBuilder();
 		for (String string : query)
 			q.append(string + "\n");
-		Logger.Debug("Executing query:\n" + q.toString());
 
 		try {
 			TupleQuery tq = connection.prepareTupleQuery(QueryLanguage.SPARQL,

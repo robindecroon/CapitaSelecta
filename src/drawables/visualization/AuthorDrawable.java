@@ -1,4 +1,4 @@
-package drawables;
+package drawables.visualization;
 
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -6,6 +6,8 @@ import data.Author;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
+import drawables.BoundingBox;
+import drawables.PositionedDrawable;
 
 public class AuthorDrawable extends PositionedDrawable {
 	private Location centerLocation;
@@ -23,7 +25,7 @@ public class AuthorDrawable extends PositionedDrawable {
 	public AuthorDrawable(PApplet applet, Author author, UnfoldingMap map,
 			PImage image, PImage highlight, Location center, float angle,
 			int circleId, int circle, float zoom) {
-		super(applet, zoom);
+		super(applet, map);
 
 		this.author = author;
 		this.map = map;
@@ -40,13 +42,24 @@ public class AuthorDrawable extends PositionedDrawable {
 	/*
 	 * (non-Javadoc)
 	 * 
+	 * @see drawables.PositionedDrawable#setZoom(float)
+	 */
+	@Override
+	public void setZoom(float zoom) {
+		super.setZoom(zoom);
+		this.drawSize = Math.min(zoom *0.3f, 24);
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see drawables.PositionedDrawable#calculateScreenPosition()
 	 */
 	@Override
 	protected ScreenPosition calculateScreenPosition() {
 		ScreenPosition p = map.getScreenPosition(centerLocation);
 		float theta = frames * 0.015f + angle * circleId;
-		float seperation = zoom  + (circle + 2.f) * 1.5f*drawSize;
+		float seperation = zoom + (circle + 2.f) * 1.5f * drawSize;
 		float xx = p.x + seperation * (float) Math.cos(theta);
 		float yy = p.y + seperation * (float) Math.sin(theta);
 
@@ -59,7 +72,7 @@ public class AuthorDrawable extends PositionedDrawable {
 	 * @see drawables.PositionedDrawable#calculateBoundingBox()
 	 */
 	@Override
-	protected BoundingBox calculateBoundingBox() {
+	protected BoundingBox calculateScreenBox() {
 		ScreenPosition p = getScreenPosition();
 
 		float scale = drawSize / Math.max(image.width, image.height);
@@ -70,17 +83,10 @@ public class AuthorDrawable extends PositionedDrawable {
 				* scale);
 	}
 
-	/*
-	 * (non-Javadoc)
+	/**
 	 * 
-	 * @see drawables.PositionedDrawable#setZoom(float)
+	 * @return
 	 */
-	@Override
-	public void setZoom(float zoom) {
-		super.setZoom(zoom);
-		this.drawSize = Math.min(zoom / 1.5f, 40);
-	}
-
 	public Author getAuthor() {
 		return author;
 	}
@@ -88,12 +94,15 @@ public class AuthorDrawable extends PositionedDrawable {
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see drawables.Drawable#update(float)
+	 * @see drawables.Drawable#update(float, boolean, boolean)
 	 */
 	@Override
-	public void update(float scale) {
-		super.update(scale);
-		frames += scale;
+	public void update(float scale, boolean moved, boolean zoomed) {
+		if (scale > 0 || moved || zoomed) {
+			frames += scale;
+			markScreenBoxDirty();
+			markScreenPositionDirty();
+		}
 	}
 
 	/*
@@ -104,7 +113,7 @@ public class AuthorDrawable extends PositionedDrawable {
 	@Override
 	public void draw() {
 		PApplet a = getApplet();
-		BoundingBox b = getBoundingBox();
+		BoundingBox b = getScreenBox();
 		float scale = drawSize / Math.max(image.width, image.height);
 
 		a.pushMatrix();

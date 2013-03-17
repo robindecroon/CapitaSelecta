@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -65,6 +66,16 @@ public class Database {
 		readAllPapers();
 		linkAuthorsToPapers();
 		LocationCache.getInstance().save();
+
+		Paper paper;
+		Iterator<Paper> it = papers.iterator();
+		while (it.hasNext() && (paper = it.next()) != null) {
+			if (paper.getAuthors().size() == 0) {
+				Logger.Severe("Paper \"" + paper.getName()
+						+ " has no authors! It has been removed!");
+				it.remove();
+			}
+		}
 		initialized = true;
 	}
 

@@ -3,7 +3,7 @@ package core;
 import processing.core.PApplet;
 import util.FrameRateManager;
 import codeanticode.glgraphics.GLConstants;
-import drawables.AuthorMap;
+import drawables.visualization.AuthorMap;
 
 /**
  * Download the distribution with examples for many more examples and features.
@@ -12,9 +12,9 @@ public class MainApplet extends PApplet {
 	// Serialization id for applets
 	private static final long serialVersionUID = 1L;
 	private AuthorMap map;
-	private final int APPLET_WIDTH = 1000;
+	private final int APPLET_WIDTH = 800;
 	private final int APPLET_HEIGHT = 800;
-	private final FrameRateManager manager = new FrameRateManager(60);
+	private final FrameRateManager manager = new FrameRateManager(30);
 
 	/*
 	 * (non-Javadoc)
@@ -24,7 +24,7 @@ public class MainApplet extends PApplet {
 	@Override
 	public void setup() {	
 		size(APPLET_WIDTH, APPLET_HEIGHT, GLConstants.GLGRAPHICS);
-		frameRate(60);
+		frameRate(30);
 		map = new AuthorMap(this);
 	}
 
@@ -39,5 +39,8 @@ public class MainApplet extends PApplet {
 		float scale = manager.getFrameRateDeviation();
 		map.update(scale);
 		map.draw();
+		
+		fill(0,0,0);
+		text("framerate: "+manager.getFrameRate(),16,16);
 	}
 }

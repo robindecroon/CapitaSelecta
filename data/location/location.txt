@@ -1,4 +1,5 @@
 latitude,longitude,name,desc,color
+30.04442;31.23571;Cairo Microsoft Innovation Lab;-;
 52.0225372;-0.7057470;The Open University;-;
 55.6816216;12.5308037;Copenhagen Business School;-;
 50.8436241;4.3756871;European Schoolnet (EUN);-;

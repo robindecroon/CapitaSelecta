@@ -17,12 +17,11 @@ import java.util.Map.Entry;
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.TupleQueryResult;
 
-import de.fhpotsdam.unfolding.geo.Location;
-
 import rdf.OnlineRdfReader;
 import rdf.QueryFailedException;
 import util.Logger;
 import util.Prompter;
+import de.fhpotsdam.unfolding.geo.Location;
 
 public class LocationCache {
 	private final HashMap<String, Country> map = new HashMap<String, Country>();
@@ -86,7 +85,7 @@ public class LocationCache {
 
 					Country country = new Country(name, abbrevition,
 							new Location(latitude, longitude));
-					map.put(split[0], country);
+					map.put(split[4], country);
 				} else if (split.length == 1) {
 					failures.add(split[0]);
 				}
@@ -131,7 +130,7 @@ public class LocationCache {
 				Country c = e.getValue();
 				String line = c.getName() + "\t" + c.getAbbreviation() + "\t"
 						+ c.getLocation().getLat() + "\t"
-						+ c.getLocation().getLon();
+						+ c.getLocation().getLon() + "\t" + e.getKey();
 				w.write(line);
 				w.newLine();
 			}
@@ -181,13 +180,17 @@ public class LocationCache {
 	public Country getCountryFromURL(String url) throws QueryFailedException {
 		url = redirection.containsKey(url) ? redirection.get(url) : url;
 
-		if (LocationCache.getInstance().hasFailure(url))
+		if (LocationCache.getInstance().hasFailure(url)) {
+			Logger.Debug("Location cache hit!");
 			throw new QueryFailedException(
 					"Could not get the location from the url: <" + url + ">");
+		}
 
-		if (LocationCache.getInstance().hasLocation(url))
+		if (LocationCache.getInstance().hasLocation(url)) {
+			Logger.Debug("Location cache hit!");
 			return new Country(getFromCache(url));
-		else
+
+		} else
 			return getOnlineFromURL(url);
 	}
 
