@@ -16,7 +16,11 @@ import data.Database;
 import data.Paper;
 import data.University;
 import de.fhpotsdam.unfolding.UnfoldingMap;
+import de.fhpotsdam.unfolding.data.Feature;
+import de.fhpotsdam.unfolding.data.GeoJSONReader;
 import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.marker.Marker;
+import de.fhpotsdam.unfolding.marker.MarkerManager;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
 import drawables.BoundingBox;
@@ -51,6 +55,9 @@ public class AuthorMap {
 	private AuthorDrawable highAuthor;
 	private PaperDrawable highPaper;
 
+	private MarkerManager<Marker> manager;
+	private List<Marker> countryMarkers;
+
 	/**
 	 * 
 	 * @param applet
@@ -67,6 +74,18 @@ public class AuthorMap {
 
 		map = new UnfoldingMap(applet);
 		MapUtils.createDefaultEventDispatcher(applet, map);
+
+		List<Feature> countries = GeoJSONReader.loadData(getApplet(),
+				"countries.geo.json");
+		manager = new MarkerManager<Marker>();
+		manager.setMap(map);
+		countryMarkers = MapUtils.createSimpleMarkers(countries);
+		for (Marker marker : countryMarkers) {
+			marker.setColor(applet.color(240, 240, 240));
+			marker.setStrokeWeight(3);
+			marker.setStrokeColor(applet.color(0, 0, 0));
+			manager.addMarker(marker);
+		}
 
 		initializeAuthors();
 		initializePapers();
@@ -244,9 +263,31 @@ public class AuthorMap {
 	}
 
 	public void draw() {
-		map.draw();
-
 		PApplet a = getApplet();
+//		a.background(135, 206, 250);
+
+		map.draw();
+		// manager.draw();
+		// a.stroke(0, 0, 0);
+		// a.fill(230);
+		// a.strokeWeight(3);
+		// for (Marker marker : countryMarkers) {
+		// try {
+		// SimplePolygonMarker shape = (SimplePolygonMarker) marker;
+		//
+		// List<Location> locations = shape.getLocations();
+		//
+		// for (int i = 0; i < locations.size(); i++) {
+		// ScreenPosition p1 = map.getScreenPosition(locations.get(i));
+		// ScreenPosition p2 = map.getScreenPosition(locations
+		// .get((i + 1) % locations.size()));
+		// a.line(p1.x, p1.y, p2.x, p2.y);
+		//
+		// }
+		// } catch (ClassCastException e) {
+		//
+		// }
+		// }
 		Collections.sort(visibleAuthors);
 		Collections.sort(visiblePapers);
 		/**
@@ -282,7 +323,7 @@ public class AuthorMap {
 			for (Paper paper : highAuthor.getAuthor().getPapers()) {
 				PaperDrawable pp = paperDrawablesMap.get(paper);
 				pp.draw();
-				bb= pp.getScreenBox();
+				bb = pp.getScreenBox();
 				a.text(pp.getPaper().getName(), bb.x + bb.width, bb.y);
 
 			}
@@ -297,7 +338,7 @@ public class AuthorMap {
 			for (Author author : highPaper.getPaper().getAuthors()) {
 				AuthorDrawable aa = authorDrawablesMap.get(author);
 				aa.draw();
-				bb=aa.getScreenBox();
+				bb = aa.getScreenBox();
 				a.text(aa.getAuthor().getFullName(), bb.x + bb.width, bb.y);
 
 			}
