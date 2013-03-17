@@ -237,7 +237,6 @@ public class AuthorMap {
 					AuthorDrawable aa = authorDrawablesMap.get(author);
 					aa.setHighLight(true);
 				}
-				System.out.println(highPaper.getPaper());
 				highAuthor = null;
 				return;
 			}

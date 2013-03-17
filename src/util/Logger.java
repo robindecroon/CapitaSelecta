@@ -1,7 +1,7 @@
 package util;
 
 public class Logger {
-	private static final boolean DEBUG = true;
+	private static final boolean DEBUG = false;
 
 	public static void Debug(String message) {
 		if (DEBUG)
