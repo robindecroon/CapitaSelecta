@@ -75,8 +75,10 @@ public class AuthorMap {
 		map = new UnfoldingMap(applet);
 		MapUtils.createDefaultEventDispatcher(applet, map);
 		map.setTweening(true);
-		map.zoomLevel(1);
-		map.setZoomRange(1.f, 256.f);
+//		map.zoomLevel(1);
+		map.setZoomRange(4.f, 256.f);
+		
+		map.zoomAndPanTo(new Location(50.85,4.35), 8);
 
 		List<Feature> countries = GeoJSONReader.loadData(getApplet(),
 				"countries.geo.json");
