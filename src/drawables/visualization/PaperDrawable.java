@@ -24,6 +24,9 @@ public class PaperDrawable extends PositionedDrawable {
 	private PImage highlight;
 	private float drawSize;
 
+	private float highLightScale = 1.f;
+	private KeywordColor prevColor = KeywordColor.BLUE;
+
 	/**
 	 * 
 	 * @param applet
@@ -90,7 +93,7 @@ public class PaperDrawable extends PositionedDrawable {
 	@Override
 	public void setZoom(float zoom) {
 		super.setZoom(zoom);
-		this.drawSize = Math.min(zoom * 0.3f, 24);
+		this.drawSize = highLightScale * Math.min(zoom * 0.3f, 24);
 	}
 
 	/**
@@ -108,6 +111,14 @@ public class PaperDrawable extends PositionedDrawable {
 	 */
 	@Override
 	public void update(float scale, boolean moved, boolean zoomed) {
+		if (!paper.getColor().equals(prevColor)) {
+			prevColor = paper.getColor();
+			if (paper.getColor().equals(KeywordColor.BLUE))
+				highLightScale = 1.f;
+			else
+				highLightScale = 3.f;
+			this.drawSize = highLightScale * Math.min(getZoom() * 0.3f, 24);
+		}
 		if (moved || zoomed) {
 			markScreenBoxDirty();
 			markScreenPositionDirty();
@@ -141,6 +152,11 @@ public class PaperDrawable extends PositionedDrawable {
 		a.popMatrix();
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -149,6 +165,11 @@ public class PaperDrawable extends PositionedDrawable {
 		return result;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)

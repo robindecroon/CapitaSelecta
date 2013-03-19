@@ -64,7 +64,7 @@ public class AuthorMap {
 	 */
 	public AuthorMap(PApplet applet) {
 		this.applet = applet;
-
+		applet.smooth();
 		author = applet.loadImage("data/image/author.png");
 		authorHighLight = applet.loadImage("data/image/authorHighLight.png");
 		paper = applet.loadImage("data/image/paper.png");
@@ -74,6 +74,9 @@ public class AuthorMap {
 
 		map = new UnfoldingMap(applet);
 		MapUtils.createDefaultEventDispatcher(applet, map);
+		map.setTweening(true);
+		map.zoomLevel(1);
+		map.setZoomRange(1.f, 256.f);
 
 		List<Feature> countries = GeoJSONReader.loadData(getApplet(),
 				"countries.geo.json");
@@ -264,30 +267,30 @@ public class AuthorMap {
 
 	public void draw() {
 		PApplet a = getApplet();
-//		a.background(135, 206, 250);
+		a.background(135, 206, 250);
 
 		map.draw();
 		// manager.draw();
-		// a.stroke(0, 0, 0);
-		// a.fill(230);
-		// a.strokeWeight(3);
-		// for (Marker marker : countryMarkers) {
-		// try {
-		// SimplePolygonMarker shape = (SimplePolygonMarker) marker;
-		//
-		// List<Location> locations = shape.getLocations();
-		//
-		// for (int i = 0; i < locations.size(); i++) {
-		// ScreenPosition p1 = map.getScreenPosition(locations.get(i));
-		// ScreenPosition p2 = map.getScreenPosition(locations
-		// .get((i + 1) % locations.size()));
-		// a.line(p1.x, p1.y, p2.x, p2.y);
-		//
-		// }
-		// } catch (ClassCastException e) {
-		//
-		// }
-		// }
+//		a.stroke(0, 0, 0);
+//		a.fill(230);
+//		a.strokeWeight(3);
+//		for (Marker marker : countryMarkers) {
+//			try {
+//				SimplePolygonMarker shape = (SimplePolygonMarker) marker;
+//
+//				List<Location> locations = shape.getLocations();
+//
+//				for (int i = 0; i < locations.size(); i++) {
+//					ScreenPosition p1 = map.getScreenPosition(locations.get(i));
+//					ScreenPosition p2 = map.getScreenPosition(locations
+//							.get((i + 1) % locations.size()));
+//					a.line(p1.x, p1.y, p2.x, p2.y);
+//
+//				}
+//			} catch (ClassCastException e) {
+//
+//			}
+//		}
 		Collections.sort(visibleAuthors);
 		Collections.sort(visiblePapers);
 		/**
