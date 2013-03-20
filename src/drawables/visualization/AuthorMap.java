@@ -76,7 +76,7 @@ public class AuthorMap {
 		MapUtils.createDefaultEventDispatcher(applet, map);
 		map.setTweening(true);
 //		map.zoomLevel(1);
-		map.setZoomRange(4.f, 256.f);
+		map.setZoomRange(2.f, 256.f);
 		
 		map.zoomAndPanTo(new Location(50.85,4.35), 8);
 
