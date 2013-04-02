@@ -4,24 +4,23 @@
 package core;
 
 import java.awt.BorderLayout;
-import java.awt.Button;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Frame;
 import java.awt.Label;
 import java.awt.Panel;
-import java.awt.TextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.BorderFactory;
+import javax.swing.JSlider;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
 import layout.VerticalFlowLayout;
 import processing.core.PApplet;
-import threads.KeywordRunnable;
 import util.KeywordColor;
 import data.Database;
 import data.Paper;
@@ -42,6 +41,11 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		
+		  try {
+              UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+          } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+          }
 		initLabels();
 
 		Frame frame = initFrame();
@@ -135,79 +139,100 @@ public class Main {
 
 	private static Panel initToolbar() {
 		Panel toolbar = new Panel();
-		toolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
-
-		Label label = new Label(Constants.TOOLBAR_TEXT);
-		toolbar.add(label);
-
-		final TextField tf1 = new TextField(Constants.TEXTBOX1, 30);
-		tf1.setBackground(Color.RED);
-		tf1.addFocusListener(new FocusListener() {
-
+		// toolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
+		toolbar.setLayout(new BorderLayout());
+		
+		JSlider slider = new JSlider();
+		slider.setSize(1000, 200);
+		slider.setBorder(BorderFactory.createTitledBorder("Timeline"));
+		slider.setMajorTickSpacing(1);
+		slider.setMaximum(2012);
+		slider.setOpaque(false);
+		slider.setMinimum(2008);
+		slider.addChangeListener(new ChangeListener() {
+			
 			@Override
-			public void focusLost(FocusEvent arg0) {
-			}
-
-			@Override
-			public void focusGained(FocusEvent arg0) {
-				tf1.setText("");
-
-			}
-		});
-		toolbar.add(tf1);
-
-		final TextField tf2 = new TextField(Constants.TEXTBOX2, 30);
-		tf2.setBackground(Color.GREEN);
-		tf2.addFocusListener(new FocusListener() {
-
-			@Override
-			public void focusLost(FocusEvent arg0) {
-			}
-
-			@Override
-			public void focusGained(FocusEvent arg0) {
-				tf2.setText("");
-
+			public void stateChanged(ChangeEvent arg0) {
+//				arg0.
+				
 			}
 		});
-		toolbar.add(tf2);
+		slider.setPaintLabels(true);
+		slider.setPaintTicks(true);
+		
+		toolbar.add(slider);
+
+		// Label label = new Label(Constants.TOOLBAR_TEXT);
+		// toolbar.add(label);
+
+		// final TextField tf1 = new TextField(Constants.TEXTBOX1, 30);
+		// tf1.setBackground(Color.RED);
+		// tf1.addFocusListener(new FocusListener() {
+		//
+		// @Override
+		// public void focusLost(FocusEvent arg0) {
+		// }
+		//
+		// @Override
+		// public void focusGained(FocusEvent arg0) {
+		// tf1.setText("");
+		//
+		// }
+		// });
+		// toolbar.add(tf1);
+		//
+		// final TextField tf2 = new TextField(Constants.TEXTBOX2, 30);
+		// tf2.setBackground(Color.GREEN);
+		// tf2.addFocusListener(new FocusListener() {
+		//
+		// @Override
+		// public void focusLost(FocusEvent arg0) {
+		// }
+		//
+		// @Override
+		// public void focusGained(FocusEvent arg0) {
+		// tf2.setText("");
+		//
+		// }
+		// });
+		// toolbar.add(tf2);
 		toolbar.setBackground(new Color(240, 240, 240));
 
-		Button searchButton = new Button(Constants.GO_BUTTON_TEXT);
-		searchButton.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				String text1 = tf1.getText();
-				String text2 = tf2.getText();
-				if (text1.equals(text2)) {
-					return;
-				}
-				if (!text1.equals(Constants.TEXTBOX1)
-						&& !text2.equals(Constants.TEXTBOX2)) {
-					Thread searchThread = new Thread(new KeywordRunnable(text1, text2));
-					searchThread.start();
-				} else if (text1.equals(Constants.TEXTBOX1)) {
-					Thread searchThread = new Thread(new KeywordRunnable(null, text2));
-					searchThread.start();
-				} else if (text1.equals(Constants.TEXTBOX2)) {
-					Thread searchThread = new Thread(new KeywordRunnable(text1, null));
-					searchThread.start();
-				}
-			}
-		});
-		toolbar.add(searchButton);
-
-		Button clearButton = new Button(Constants.CLEAR_BUTTON_TEXT);
-		clearButton.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				clearPaperColors();
-			}
-
-		});
-		toolbar.add(clearButton);
+		// Button searchButton = new Button(Constants.GO_BUTTON_TEXT);
+		// searchButton.addActionListener(new ActionListener() {
+		//
+		// @Override
+		// public void actionPerformed(ActionEvent e) {
+		// String text1 = tf1.getText();
+		// String text2 = tf2.getText();
+		// if (text1.equals(text2)) {
+		// return;
+		// }
+		// if (!text1.equals(Constants.TEXTBOX1) &&
+		// !text2.equals(Constants.TEXTBOX2)) {
+		// Thread searchThread = new Thread(new KeywordRunnable(text1, text2));
+		// searchThread.start();
+		// } else if (text1.equals(Constants.TEXTBOX1)) {
+		// Thread searchThread = new Thread(new KeywordRunnable(null, text2));
+		// searchThread.start();
+		// } else if (text1.equals(Constants.TEXTBOX2)) {
+		// Thread searchThread = new Thread(new KeywordRunnable(text1, null));
+		// searchThread.start();
+		// }
+		// }
+		// });
+		// toolbar.add(searchButton);
+		//
+		// Button clearButton = new Button(Constants.CLEAR_BUTTON_TEXT);
+		// clearButton.addActionListener(new ActionListener() {
+		//
+		// @Override
+		// public void actionPerformed(ActionEvent e) {
+		// clearPaperColors();
+		// }
+		//
+		// });
+		// toolbar.add(clearButton);
 		return toolbar;
 	}
 
