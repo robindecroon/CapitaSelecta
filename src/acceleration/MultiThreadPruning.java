@@ -24,16 +24,6 @@ public class MultiThreadPruning<T extends MapDrawable> implements
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see acceleration.Acceleration#size()
-	 */
-	@Override
-	public int size() {
-		return visible.size();
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
 	 * @see acceleration.Acceleration#getBoundingBox()
 	 */
 	@Override
@@ -47,7 +37,7 @@ public class MultiThreadPruning<T extends MapDrawable> implements
 	 * @see acceleration.Acceleration#getDrawables(drawables.BoundingBox)
 	 */
 	@Override
-	public List<T> getDrawables(BoundingBox b) {
+	public List<T> getElements(BoundingBox b) {
 		ExecutorService s = Executors.newFixedThreadPool(8);
 
 		threads.clear();
@@ -74,16 +64,6 @@ public class MultiThreadPruning<T extends MapDrawable> implements
 			visible.addAll(t.getVisibles());
 		}
 		return visible;
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see acceleration.Acceleration#getAllDrawables()
-	 */
-	@Override
-	public Collection<T> getAllDrawables() {
-		return drawables;
 	}
 
 	/**

@@ -112,6 +112,8 @@ public class AuthorDrawable extends PositionedDrawable {
 	 */
 	@Override
 	public void draw() {
+		if (getZoom()<4)
+			return;
 		PApplet a = getApplet();
 		BoundingBox b = getScreenBox();
 		float scale = drawSize / Math.max(image.width, image.height);

@@ -268,7 +268,7 @@ public class LocationCache {
 			// Create the url
 			URL url = new URL(adress);
 			URLConnection c = url.openConnection();
-
+			c.setConnectTimeout(1000);
 			// Force redirection by accessing the input stream.
 			c.connect();
 			// c.getInputStream();
