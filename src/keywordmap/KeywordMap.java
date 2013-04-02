@@ -8,6 +8,7 @@ import wordcloud.CountedString;
 import wordcloud.WordCloud;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 
 public class KeywordMap {
@@ -21,11 +22,16 @@ public class KeywordMap {
 			throw new NullPointerException("The given map is null!");
 		this.applet = applet;
 
-		map = new UnfoldingMap(applet);
+		String connStr = "jdbc:sqlite:" + applet.sketchPath("data/edmlakmap.mbtiles");
+		map = new UnfoldingMap(applet, new MBTilesMapProvider(connStr));
 		MapUtils.createDefaultEventDispatcher(applet, map);
-		map.setTweening(true);
+//		map.setZoomRange(2, 4);
+
+//		map = new UnfoldingMap(applet);
+//		MapUtils.createDefaultEventDispatcher(applet, map);
+//		map.setTweening(true);
 		map.setZoomRange(2.f, 256.f);
-		map.zoomAndPanTo(new Location(50.85, 4.35), 8);
+//		map.zoomAndPanTo(new Location(50.85, 4.35), 8);
 
 		List<CountedString> test = new ArrayList<CountedString>();
 		test.add(new CountedString("hey", 10));
