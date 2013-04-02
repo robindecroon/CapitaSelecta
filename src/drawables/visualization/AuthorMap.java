@@ -102,6 +102,10 @@ public class AuthorMap {
 		initializePapers();
 		initializeConnection();
 	}
+	
+	public float getZoom() {
+		return map.getZoom();
+	}
 
 	public PApplet getApplet() {
 		return applet;

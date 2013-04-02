@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Random;
 
 import processing.core.PApplet;
+import de.fhpotsdam.unfolding.UnfoldingMap;
+import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.utils.ScreenPosition;
 import drawables.BoundingBox;
 
 public class WordCloud {
@@ -13,10 +16,14 @@ public class WordCloud {
 	private int maximumCount;
 	private int minimumFont = 16;
 	private int maximumFont = 64;
+	private Location location;
 	private List<WordCloudDrawable> drawables = new ArrayList<WordCloudDrawable>();
 
-	public WordCloud(PApplet p, List<CountedString> words, float width,
-			float height) {
+	public WordCloud(PApplet p, Location location, List<CountedString> words) {
+		this.location = location;
+
+		int width = 16;
+		int height = 16;
 
 		minimumCount = Integer.MAX_VALUE;
 		maximumCount = Integer.MIN_VALUE;
@@ -89,9 +96,11 @@ public class WordCloud {
 		}
 	}
 
-	public void draw(PApplet p, float x, float y) {
+	public void draw(PApplet p, UnfoldingMap map, float scale) {
+		ScreenPosition screen = map.getScreenPosition(location);
+
 		for (WordCloudDrawable d : drawables) {
-			d.draw(p, x, y);
+			d.draw(p, screen.x, screen.y, scale);
 		}
 	}
 
