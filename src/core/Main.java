@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Label;
 import java.awt.Panel;
+import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -17,7 +18,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JSlider;
 import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -46,10 +46,16 @@ public class Main {
 		
 		  try {
               UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-          } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+          } catch (Exception e) {
           }
 		initLabels();
 
+		
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		Dimension size = toolkit.getScreenSize();
+		
+		
+		
 		Frame frame = initFrame();
 		Panel toolbar = initToolbar();
 		Panel sidebar = initSidebar();
@@ -59,6 +65,9 @@ public class Main {
 		frame.add(mainApplet, BorderLayout.CENTER);
 		frame.add(sidebar, BorderLayout.EAST);
 		frame.pack();
+		
+		Dimension frameSize = frame.getSize();
+		frame.setLocation((size.width-frameSize.width)/2, (size.height-frameSize.height)/2);
 		frame.setVisible(true);
 	}
 
@@ -148,7 +157,7 @@ public class Main {
 //		toolbar.add(label);
 		// toolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
 		toolbar.setLayout(new BorderLayout());
-		
+
 		JSlider slider = new JSlider();
 		slider.setSize(1000, 200);
 		slider.setBorder(BorderFactory.createTitledBorder("Timeline"));
@@ -157,16 +166,16 @@ public class Main {
 		slider.setOpaque(false);
 		slider.setMinimum(2008);
 		slider.addChangeListener(new ChangeListener() {
-			
+
 			@Override
 			public void stateChanged(ChangeEvent arg0) {
-//				arg0.
-				
+				// arg0.
+
 			}
 		});
 		slider.setPaintLabels(true);
 		slider.setPaintTicks(true);
-		
+
 		toolbar.add(slider);
 
 		// Label label = new Label(Constants.TOOLBAR_TEXT);

@@ -101,29 +101,30 @@ public class ConnectionDrawable extends MapDrawable {
 	public void draw() {
 		PApplet a = getApplet();
 		if (highLight) {
-			a.stroke(0, 0, 0, 150);
+			a.stroke(0, 0, 0, 230);
 			a.strokeWeight(3);
 		} else {
-			a.stroke(0, 0, 0, 50);
-			a.strokeWeight(1);
+			a.stroke(0, 0, 0, 150);
+			a.strokeWeight(2);
 		}
 
 		ScreenPosition p1 = author.getScreenPosition();
 		ScreenPosition p2 = paper.getScreenPosition();
-		ScreenPosition temp;
-
-		if (p1.x > p2.x) {
-			temp = p1;
-			p1 = p2;
-			p2 = temp;
-		}
-
-		a.fill(0, 0);
-		float maxy = Math.min(p1.y, p2.y) - Math.abs(p1.y-p2.y)*0.1f;
-		float x2 = 0.75f*p1.x+0.25f*p2.x;
-		float x3 = 0.25f*p1.x+0.75f*p2.x;
-
-		a.bezier(p1.x, p1.y, x2, maxy, x3, maxy, p2.x, p2.y);
+		a.line(p1.x, p1.y, p2.x, p2.y);
+		// ScreenPosition temp;
+		//
+		// if (p1.x > p2.x) {
+		// temp = p1;
+		// p1 = p2;
+		// p2 = temp;
+		// }
+		//
+		// a.fill(0, 0);
+		// float maxy = Math.min(p1.y, p2.y) - Math.abs(p1.y-p2.y)*0.1f;
+		// float x2 = 0.75f*p1.x+0.25f*p2.x;
+		// float x3 = 0.25f*p1.x+0.75f*p2.x;
+		//
+		// a.bezier(p1.x, p1.y, x2, maxy, x3, maxy, p2.x, p2.y);
 	}
 
 	/*

@@ -34,7 +34,6 @@ public class BoundingBox {
 	}
 
 	public boolean intersect(BoundingBox box) {
-
 		if (x + width < box.x || x > box.x + box.width)
 			return false;
 		if (y + height < box.y || y > box.y + box.height)
@@ -56,13 +55,18 @@ public class BoundingBox {
 	public float getArea() {
 		return width * height;
 	}
-	
+
 	public void draw(PApplet a) {
-		a.stroke(255,255,255);
+		a.stroke(255, 255, 255);
 		a.fill(0, 0, 0, 0);
 		a.rect(x, y, width, height);
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		return "(" + x + "," + y + "," + width + "," + height + ")";

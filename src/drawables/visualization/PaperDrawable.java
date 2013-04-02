@@ -93,7 +93,7 @@ public class PaperDrawable extends PositionedDrawable {
 	@Override
 	public void setZoom(float zoom) {
 		super.setZoom(zoom);
-		this.drawSize = highLightScale * Math.min(zoom * 0.3f, 24);
+		this.drawSize = highLightScale * Math.min(zoom * 0.3f, highLightScale*24);
 	}
 
 	/**
@@ -117,7 +117,8 @@ public class PaperDrawable extends PositionedDrawable {
 				highLightScale = 1.f;
 			else
 				highLightScale = 3.f;
-			this.drawSize = highLightScale * Math.min(getZoom() * 0.3f, 24);
+			
+			this.drawSize = highLightScale * Math.min(getZoom() * 0.3f,highLightScale* 24);
 		}
 		if (moved || zoomed) {
 			markScreenBoxDirty();
@@ -132,6 +133,8 @@ public class PaperDrawable extends PositionedDrawable {
 	 */
 	@Override
 	public void draw() {
+		if (getZoom()<4)
+			return;
 		PApplet a = getApplet();
 		BoundingBox b = getScreenBox();
 

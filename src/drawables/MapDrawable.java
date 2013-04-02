@@ -1,9 +1,10 @@
 package drawables;
 
 import processing.core.PApplet;
+import acceleration.Bounded;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 
-public abstract class MapDrawable implements Comparable<MapDrawable> {
+public abstract class MapDrawable implements Comparable<MapDrawable>, Bounded {
 	private PApplet applet;
 	private UnfoldingMap map;
 	private boolean dirtyScreenBox = true;
@@ -11,7 +12,7 @@ public abstract class MapDrawable implements Comparable<MapDrawable> {
 	protected static int counter = 0;
 	public final int id = counter++;
 	private boolean highLight = false;
-	
+
 	public MapDrawable(PApplet applet, UnfoldingMap map) {
 		setApplet(applet);
 		setMap(map);
@@ -49,6 +50,10 @@ public abstract class MapDrawable implements Comparable<MapDrawable> {
 		return cachedScreenBox;
 	}
 
+	public BoundingBox getBoundingBox() {
+		return getScreenBox();
+	}
+
 	protected void markScreenBoxDirty() {
 		dirtyScreenBox = true;
 	}
@@ -62,8 +67,7 @@ public abstract class MapDrawable implements Comparable<MapDrawable> {
 	public boolean getHighLight() {
 		return highLight;
 	}
-	
-		
+
 	public int compareTo(MapDrawable m) {
 		int cc = MapDrawable.counter;
 

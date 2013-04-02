@@ -1,9 +1,9 @@
 package core;
 
+import keywordmap.KeywordMap;
 import processing.core.PApplet;
 import util.FrameRateManager;
 import codeanticode.glgraphics.GLConstants;
-import drawables.visualization.AuthorMap;
 
 /**
  * Download the distribution with examples for many more examples and features.
@@ -11,7 +11,7 @@ import drawables.visualization.AuthorMap;
 public class MainApplet extends PApplet {
 	// Serialization id for applets
 	private static final long serialVersionUID = 1L;
-	private AuthorMap map;
+	private KeywordMap map;
 	private final int APPLET_WIDTH = 1024;
 	private final int APPLET_HEIGHT = 800;
 	private final FrameRateManager manager = new FrameRateManager(30);
@@ -22,10 +22,10 @@ public class MainApplet extends PApplet {
 	 * @see processing.core.PApplet#setup()
 	 */
 	@Override
-	public void setup() {	
+	public void setup() {
 		size(APPLET_WIDTH, APPLET_HEIGHT, GLConstants.GLGRAPHICS);
 		frameRate(30);
-		map = new AuthorMap(this);
+		map = new KeywordMap(this);
 	}
 
 	/*
@@ -39,8 +39,10 @@ public class MainApplet extends PApplet {
 		float scale = manager.getFrameRateDeviation();
 		map.update(scale);
 		map.draw();
-		
-		fill(0,0,0);
-		text("framerate: "+manager.getFrameRate(),16,16);
+
+		fill(0, 0, 0);
+		textSize(8);
+		textAlign(PApplet.LEFT);
+		text("framerate: " + manager.getFrameRate(), 16, 16);
 	}
 }

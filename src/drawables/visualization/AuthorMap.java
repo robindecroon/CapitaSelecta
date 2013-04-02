@@ -58,6 +58,11 @@ public class AuthorMap {
 	private MarkerManager<Marker> manager;
 	private List<Marker> countryMarkers;
 
+	private float lastMouseX = 0;
+	private float lastMouseY = 0;
+	private long timeout = 5000;
+	private long timeSinceLastMovement = System.currentTimeMillis() - timeout;
+
 	/**
 	 * 
 	 * @param applet
@@ -75,10 +80,11 @@ public class AuthorMap {
 		map = new UnfoldingMap(applet);
 		MapUtils.createDefaultEventDispatcher(applet, map);
 		map.setTweening(true);
-//		map.zoomLevel(1);
 		map.setZoomRange(2.f, 256.f);
-		
-		map.zoomAndPanTo(new Location(50.85,4.35), 8);
+		map.zoomAndPanTo(new Location(50.85, 4.35), 8);
+
+		lastMouseX = applet.mouseX;
+		lastMouseY = applet.mouseY;
 
 		List<Feature> countries = GeoJSONReader.loadData(getApplet(),
 				"countries.geo.json");
@@ -95,6 +101,10 @@ public class AuthorMap {
 		initializeAuthors();
 		initializePapers();
 		initializeConnection();
+	}
+	
+	public float getZoom() {
+		return map.getZoom();
 	}
 
 	public PApplet getApplet() {
@@ -173,6 +183,20 @@ public class AuthorMap {
 	public void update(float scale) {
 		boolean zoomed = false;
 		boolean moved = false;
+		boolean animated = true;
+
+		PApplet a = getApplet();
+
+		if (a.mouseX != lastMouseX || a.mouseY != lastMouseY) {
+			animated = false;
+			lastMouseX = a.mouseX;
+			lastMouseY = a.mouseY;
+			timeSinceLastMovement = System.currentTimeMillis();
+		} else if (System.currentTimeMillis() < timeSinceLastMovement + timeout)
+			animated = false;
+		else if (highAuthor != null && highAuthor != null)
+			animated = false;
+
 		if (Math.abs(map.getZoom() - previousZoom) > 0.001) {
 			zoomed = true;
 			previousZoom = map.getZoom();
@@ -185,16 +209,16 @@ public class AuthorMap {
 		}
 
 		for (AuthorDrawable d : authorDrawables) {
-			if (getApplet().mousePressed == false) {
-				d.setZoom(map.getZoom());
+			d.setZoom(map.getZoom());
+			if (getApplet().mousePressed == false && animated) {
 				d.update(scale, moved, zoomed);
 			} else
 				d.update(0, moved, zoomed);
 		}
 
 		for (PaperDrawable d : paperDrawables) {
-			if (getApplet().mousePressed == false) {
-				d.setZoom(map.getZoom());
+			d.setZoom(map.getZoom());
+			if (getApplet().mousePressed == false && animated) {
 				d.update(scale, moved, zoomed);
 			} else
 				d.update(0, moved, zoomed);
@@ -202,15 +226,20 @@ public class AuthorMap {
 		for (ConnectionDrawable d : connections)
 			d.update(0, moved, zoomed);
 
+		// authorAccel = new BVH<AuthorDrawable>(authorDrawables,0);
+		// paperAccel = new BVH<PaperDrawable>(paperDrawables,0);
+		// connectionAccel = new BVH<ConnectionDrawable>(
+		// connections,0);
+
 		authorAccel = new MultiThreadPruning<AuthorDrawable>(authorDrawables);
 		paperAccel = new MultiThreadPruning<PaperDrawable>(paperDrawables);
 		connectionAccel = new MultiThreadPruning<ConnectionDrawable>(
 				connections);
 
 		BoundingBox view = getScreenBox();
-		visibleAuthors = authorAccel.getDrawables(view);
-		visiblePapers = paperAccel.getDrawables(view);
-		visibleConnections = connectionAccel.getDrawables(view);
+		visibleAuthors = authorAccel.getElements(view);
+		visiblePapers = paperAccel.getElements(view);
+		visibleConnections = connectionAccel.getElements(view);
 
 		updateHighlight();
 	}
@@ -273,26 +302,26 @@ public class AuthorMap {
 
 		map.draw();
 		// manager.draw();
-//		a.stroke(0, 0, 0);
-//		a.fill(230);
-//		a.strokeWeight(3);
-//		for (Marker marker : countryMarkers) {
-//			try {
-//				SimplePolygonMarker shape = (SimplePolygonMarker) marker;
-//
-//				List<Location> locations = shape.getLocations();
-//
-//				for (int i = 0; i < locations.size(); i++) {
-//					ScreenPosition p1 = map.getScreenPosition(locations.get(i));
-//					ScreenPosition p2 = map.getScreenPosition(locations
-//							.get((i + 1) % locations.size()));
-//					a.line(p1.x, p1.y, p2.x, p2.y);
-//
-//				}
-//			} catch (ClassCastException e) {
-//
-//			}
-//		}
+		// a.stroke(0, 0, 0);
+		// a.fill(230);
+		// a.strokeWeight(3);
+		// for (Marker marker : countryMarkers) {
+		// try {
+		// SimplePolygonMarker shape = (SimplePolygonMarker) marker;
+		//
+		// List<Location> locations = shape.getLocations();
+		//
+		// for (int i = 0; i < locations.size(); i++) {
+		// ScreenPosition p1 = map.getScreenPosition(locations.get(i));
+		// ScreenPosition p2 = map.getScreenPosition(locations
+		// .get((i + 1) % locations.size()));
+		// a.line(p1.x, p1.y, p2.x, p2.y);
+		//
+		// }
+		// } catch (ClassCastException e) {
+		//
+		// }
+		// }
 		Collections.sort(visibleAuthors);
 		Collections.sort(visiblePapers);
 		/**
@@ -308,19 +337,11 @@ public class AuthorMap {
 			if (pp.getHighLight())
 				continue;
 			pp.draw();
-			if (pp.getHighLight()) {
-				BoundingBox bb = pp.getScreenBox();
-				a.text(pp.getPaper().getName(), bb.x + bb.width, bb.y);
-			}
 		}
 		for (AuthorDrawable aa : visibleAuthors) {
 			if (aa.getHighLight())
 				continue;
 			aa.draw();
-			if (aa.getHighLight()) {
-				BoundingBox bb = aa.getScreenBox();
-				a.text(aa.getAuthor().getFullName(), bb.x + bb.width, bb.y);
-			}
 		}
 
 		if (highAuthor != null) {
@@ -329,21 +350,25 @@ public class AuthorMap {
 				PaperDrawable pp = paperDrawablesMap.get(paper);
 				pp.draw();
 				bb = pp.getScreenBox();
+				a.fill(0);
 				a.text(pp.getPaper().getName(), bb.x + bb.width, bb.y);
 
 			}
 			highAuthor.draw();
 			bb = highAuthor.getScreenBox();
+			a.fill(0);
 			a.text(highAuthor.getAuthor().getFullName(), bb.x + bb.width, bb.y);
 		}
 		if (highPaper != null) {
 			BoundingBox bb = highPaper.getScreenBox();
+			a.fill(0);
 			a.text(highPaper.getPaper().getName(), bb.x + bb.width, bb.y);
 			highPaper.draw();
 			for (Author author : highPaper.getPaper().getAuthors()) {
 				AuthorDrawable aa = authorDrawablesMap.get(author);
 				aa.draw();
 				bb = aa.getScreenBox();
+				a.fill(0);
 				a.text(aa.getAuthor().getFullName(), bb.x + bb.width, bb.y);
 
 			}
