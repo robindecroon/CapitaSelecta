@@ -4,12 +4,12 @@ import processing.core.PApplet;
 import drawables.BoundingBox;
 
 public class WordCloudDrawable {
-	private String string;
+	private String word;
 	private float size;
 	private BoundingBox bounds;
 
-	public WordCloudDrawable(String string, float size, BoundingBox bounds) {
-		this.string = string;
+	public WordCloudDrawable(String word, float size, BoundingBox bounds) {
+		this.word = word;
 		this.bounds = bounds;
 		this.size = size;
 	}
@@ -18,12 +18,13 @@ public class WordCloudDrawable {
 		return bounds;
 	}
 
-	public String getString() {
-		return string;
+	public String getPaperWord() {
+		return word;
 	}
 
 	public void draw(PApplet applet, float x, float y, float scale) {
-		applet.textSize(size*scale);
-		applet.text(string, bounds.x*scale+x, bounds.y*scale+y+scale*size/2);
+		applet.textSize(size * scale);
+		applet.text(word, bounds.x * scale + x, bounds.y * scale + y + scale
+				* size / 2);
 	}
 }

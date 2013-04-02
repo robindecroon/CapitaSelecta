@@ -1,9 +1,12 @@
 package data;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map.Entry;
+
+import de.fhpotsdam.unfolding.geo.Location;
 
 import util.KeywordColor;
 
@@ -14,7 +17,11 @@ public class Paper {
 	private Conference conference;
 	private List<Author> authors = new ArrayList<Author>();
 	private KeywordColor color = KeywordColor.BLUE;
-	private Set<String> seperateWords = new HashSet<String>();
+	private Location firstLocation;
+
+	// Paper content
+	private final ArrayList<PaperWord> mostOccuring = new ArrayList<PaperWord>();
+	private HashMap<String, Integer> seperateWords = new HashMap<String, Integer>();
 
 	public Paper(String name, String fullText, int year, Conference conference) {
 		setName(name);
@@ -41,6 +48,9 @@ public class Paper {
 		if (author == null)
 			throw new NullPointerException("The given author is null!");
 		authors.add(author);
+
+		if (authors.size() == 1)
+			firstLocation = author.getUniversity().getLocation();
 	}
 
 	public String getFullText() {
@@ -55,12 +65,36 @@ public class Paper {
 		String[] split = fullText.split(" ");
 		for (String string : split) {
 			String word = string.trim().toLowerCase();
-			seperateWords.add(word);
+
+			if (word.equals(""))
+				continue;
+
+			if (seperateWords.containsKey(word))
+				seperateWords.put(word, seperateWords.get(word) + 1);
+			else
+				seperateWords.put(word, 1);
+			WordDatabase.getInstance().addWord(word);
 		}
+
+		for (Entry<String, Integer> e : seperateWords.entrySet())
+			mostOccuring.add(new PaperWord(e.getKey(), e.getValue(), this));
+		Collections.sort(mostOccuring);
+	}
+
+	/**
+	 * Returns the location of the university of the first author.
+	 * 
+	 * @return
+	 */
+	public Location getFirstLocation() {
+		if (firstLocation == null)
+			throw new IllegalStateException(
+					"The location has not been initialized yet");
+		return firstLocation;
 	}
 
 	public boolean containsWord(String word) {
-		if (seperateWords.contains(word.trim().toLowerCase()))
+		if (seperateWords.keySet().contains(word.trim().toLowerCase()))
 			return true;
 		else
 			return false;
@@ -128,6 +162,19 @@ public class Paper {
 		return true;
 	}
 
+	public List<PaperWord> getAllWords() {
+		return getMostOccuringWords(mostOccuring.size());
+	}
+
+	public List<PaperWord> getMostOccuringWords(int n) {
+		List<PaperWord> result = new ArrayList<PaperWord>();
+
+		for (int i = 0; i < Math.min(mostOccuring.size(), n); i++)
+			result.add(mostOccuring.get(i));
+
+		return result;
+	}
+
 	/**
 	 * @return the color
 	 */
@@ -140,8 +187,8 @@ public class Paper {
 			throw new NullPointerException("The given color is null!");
 		this.color = color;
 	}
-	
+
 	public String toString() {
-		return getName()+" with "+getAuthors().size()+" authors";
+		return getName() + " with " + getAuthors().size() + " authors";
 	}
 }

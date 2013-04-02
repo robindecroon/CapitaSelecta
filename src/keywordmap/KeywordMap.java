@@ -1,50 +1,53 @@
 package keywordmap;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 
 import processing.core.PApplet;
-import wordcloud.CountedString;
+import util.Logger;
 import wordcloud.WordCloud;
+import data.Database;
+import data.PaperWordData;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
+import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 
 public class KeywordMap {
 	private UnfoldingMap map;
 	private PApplet applet;
-
-	private WordCloud cloud;
+	private final List<WordCloud> wordClouds = new ArrayList<WordCloud>();
 
 	public KeywordMap(PApplet applet) {
 		if (applet == null)
 			throw new NullPointerException("The given map is null!");
 		this.applet = applet;
 
-		map = new UnfoldingMap(applet);
+		Database.getInstance();
+
+		String connStr = "jdbc:sqlite:"
+				+ applet.sketchPath("data/edmlakmap.mbtiles");
+		map = new UnfoldingMap(applet, new MBTilesMapProvider(connStr));
 		MapUtils.createDefaultEventDispatcher(applet, map);
+
 		map.setTweening(true);
-		map.setZoomRange(2.f, 256.f);
+		map.setZoomRange(2.f, 8.f);
 		map.zoomAndPanTo(new Location(50.85, 4.35), 8);
 
-		List<CountedString> test = new ArrayList<CountedString>();
-		test.add(new CountedString("hey", 10));
-		test.add(new CountedString("what", 9));
-		test.add(new CountedString("up", 3));
-		test.add(new CountedString("hey", 2));
-		test.add(new CountedString("what", 3));
-		test.add(new CountedString("up", 20));
-		test.add(new CountedString("hey", 5));
-		test.add(new CountedString("what", 2));
-		test.add(new CountedString("up", 1));
-		test.add(new CountedString("hey", 5));
-		test.add(new CountedString("what", 14));
-		test.add(new CountedString("up", 12));
-		test.add(new CountedString("hey", 16));
-		test.add(new CountedString("what", 2));
-		test.add(new CountedString("up", 5));
+		Logger.Info("Accessing the words in the university");
+		HashMap<Location, PaperWordData> data = Database.getInstance()
+				.getWordsPerUniversity();
+		Logger.Info("Cached all the words from the database");
 
-		cloud = new WordCloud(applet, new Location(50, 30), test);
+		for (Entry<Location, PaperWordData> e : data.entrySet()) {
+			PaperWordData d = e.getValue();
+
+			WordCloud cloud = new WordCloud(applet, e.getKey(), d);
+			wordClouds.add(cloud);
+
+		}
 	}
 
 	public PApplet getApplet() {
@@ -62,7 +65,11 @@ public class KeywordMap {
 
 	public void draw() {
 		map.draw();
-		cloud.draw(getApplet(), map, 1.f);
+
+		PApplet a = getApplet();
+		for (WordCloud cloud : wordClouds)
+			cloud.draw(a, map, Math.min(1.f, (float) map.getZoom() / 36.f));
+
 	}
 
 }

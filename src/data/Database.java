@@ -77,6 +77,8 @@ public class Database {
 			}
 		}
 		initialized = true;
+
+		WordDatabase.getInstance().exportWordList();
 	}
 
 	public void addAuthor(Author author) {
@@ -308,5 +310,49 @@ public class Database {
 				e.printStackTrace();
 			}
 		}
+	}
+
+	public HashMap<Location, PaperWordData> getWordsPerUniversity() {
+		List<University> todo = new ArrayList<University>(
+				affiliationAuthorMap.keySet());
+		HashMap<Location, PaperWordData> result = new HashMap<Location, PaperWordData>();
+
+		for (int i = 0; i < todo.size(); i++) {
+			University u = todo.remove(0);
+			List<University> nearby = new ArrayList<University>();
+			nearby.add(u);
+			Location l = u.getLocation();
+
+			for (int k = todo.size() - 1; k >= 0; k--) {
+				Location ll = todo.get(k).getLocation();
+
+				float x2 = (float) Math.pow(l.getLat() - ll.getLat(), 2);
+				float y2 = (float) Math.pow(l.getLon() - ll.getLon(), 2);
+				float dist = (float) Math.sqrt(x2 + y2);
+
+				if (dist < 3)
+					nearby.add(todo.remove(k));
+			}
+
+			PaperWordData data = new PaperWordData();
+			
+			for (University university : nearby) {
+				Location location = university.getLocation();
+
+				for (Paper paper : this.papers) {
+					if (!paper.getFirstLocation().equals(location))
+						continue;
+					List<PaperWord> words = paper.getAllWords();
+
+					for (PaperWord word : words)
+						data.addWord(word.word, paper, word.occurences);
+
+				}
+			}
+
+			result.put(l, data);
+		}
+		return result;
+
 	}
 }

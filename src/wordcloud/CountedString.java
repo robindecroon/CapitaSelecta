@@ -1,5 +1,11 @@
 package wordcloud;
 
+/**
+ * Respresents a counted string.
+ * 
+ * @author niels
+ * 
+ */
 public class CountedString implements Comparable<CountedString> {
 	private final String string;
 	private final int count;

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 import processing.core.PApplet;
+import data.PaperWordData;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
@@ -14,21 +15,27 @@ import drawables.BoundingBox;
 public class WordCloud {
 	private int minimumCount;
 	private int maximumCount;
-	private int minimumFont = 16;
-	private int maximumFont = 64;
+	private int minimumFont = 12;
+	private int maximumFont = 24;
 	private Location location;
 	private List<WordCloudDrawable> drawables = new ArrayList<WordCloudDrawable>();
 
-	public WordCloud(PApplet p, Location location, List<CountedString> words) {
+	public WordCloud(PApplet p, Location location, PaperWordData data) {
 		this.location = location;
 
-		int width = 16;
-		int height = 16;
+		int width = 48;
+		int height = 48;
 
 		minimumCount = Integer.MAX_VALUE;
 		maximumCount = Integer.MIN_VALUE;
 
 		Random random = new Random(System.currentTimeMillis());
+
+		List<CountedString> allWords = data.getCountedWords();
+		List<CountedString> words =new ArrayList<CountedString>();
+		for(int i=0;i<Math.min(10, allWords.size());i++)
+			words.add(allWords.get(i));
+		
 
 		for (CountedString word : words) {
 			minimumCount = Math.min(minimumCount, word.getCount());
@@ -42,7 +49,7 @@ public class WordCloud {
 			p.textSize(fontSize);
 
 			float ww = p.textWidth(word.getString());
-			float hh = Math.abs(p.textAscent()) + Math.abs(p.textDescent());
+			float hh =2* Math.abs(p.textAscent()) + Math.abs(p.textDescent());
 
 			boolean finished = false;
 
@@ -52,7 +59,7 @@ public class WordCloud {
 				float bestdistance = Float.POSITIVE_INFINITY;
 				boolean found = false;
 
-				for (int i = 0; i < 200; i++) {
+				for (int i = 0; i < 800; i++) {
 					float xx = (random.nextFloat() - 0.5f) * width;
 					float yy = (random.nextFloat() - 0.5f) * height;
 
@@ -88,8 +95,8 @@ public class WordCloud {
 					break;
 
 				} else {
-					width += 16;
-					height += 16;
+					width += 8;
+					height += 8;
 				}
 			}
 
@@ -99,6 +106,7 @@ public class WordCloud {
 	public void draw(PApplet p, UnfoldingMap map, float scale) {
 		ScreenPosition screen = map.getScreenPosition(location);
 
+		p.smooth();
 		for (WordCloudDrawable d : drawables) {
 			d.draw(p, screen.x, screen.y, scale);
 		}
