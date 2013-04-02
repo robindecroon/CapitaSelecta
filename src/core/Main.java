@@ -13,6 +13,8 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JSlider;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -139,6 +141,11 @@ public class Main {
 
 	private static Panel initToolbar() {
 		Panel toolbar = new Panel();
+		
+//		JLabel label = new JLabel();
+//		ImageIcon icon = new ImageIcon("arrow.PNG");
+//		label.setIcon(icon);
+//		toolbar.add(label);
 		// toolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
 		toolbar.setLayout(new BorderLayout());
 		
