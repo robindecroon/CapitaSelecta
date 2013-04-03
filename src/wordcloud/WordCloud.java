@@ -2,7 +2,9 @@ package wordcloud;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Random;
 
 import processing.core.PApplet;
@@ -31,11 +33,14 @@ public class WordCloud {
 
 		Random random = new Random(System.currentTimeMillis());
 
-		List<CountedString> allWords = data.getCountedWords();
-		List<CountedString> words =new ArrayList<CountedString>();
-		for(int i=0;i<Math.min(10, allWords.size());i++)
-			words.add(allWords.get(i));
+		HashMap<String, Integer> map = data.getWordCount();
+		List<CountedString> allWords = new ArrayList<CountedString>();
+		for(Entry<String,Integer> e :  map.entrySet())
+			allWords.add(new CountedString(e.getKey(), e.getValue()));
 		
+		List<CountedString> words = new ArrayList<CountedString>();
+		for (int i = 0; i < Math.min(10, allWords.size()); i++)
+			words.add(allWords.get(i));
 
 		for (CountedString word : words) {
 			minimumCount = Math.min(minimumCount, word.getCount());
@@ -49,7 +54,7 @@ public class WordCloud {
 			p.textSize(fontSize);
 
 			float ww = p.textWidth(word.getString());
-			float hh =2* Math.abs(p.textAscent()) + Math.abs(p.textDescent());
+			float hh = 2 * Math.abs(p.textAscent()) + Math.abs(p.textDescent());
 
 			boolean finished = false;
 
@@ -121,6 +126,39 @@ public class WordCloud {
 			float scale = numerator / denominator;
 			return (float) minimumFont * (1.f - scale) + (float) maximumFont
 					* scale;
+		}
+	}
+
+	private class CountedString implements Comparable<CountedString> {
+		private final String string;
+		private final int count;
+
+		private CountedString(String string, int count) {
+			if (string == null)
+				throw new NullPointerException("The given string was null!");
+			if (count < 0)
+				throw new IllegalArgumentException(
+						"The given count was smaller than zero!");
+			this.string = string;
+			this.count = count;
+		}
+
+		public String getString() {
+			return string;
+		}
+
+		public int getCount() {
+			return count;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see java.lang.Comparable#compareTo(java.lang.Object)
+		 */
+		@Override
+		public int compareTo(CountedString o) {
+			return -count + o.count;
 		}
 	}
 }

@@ -14,8 +14,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JSlider;
 import javax.swing.UIManager;
 import javax.swing.event.ChangeEvent;
@@ -252,16 +250,16 @@ public class Main {
 		return toolbar;
 	}
 
-	private static void clearPaperColors() {
-		new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				for (Paper paper : Database.getInstance().getPapers()) {
-					paper.setColor(KeywordColor.BLUE);
-				}
-			}
-		}).start();
-	}
+//	private static void clearPaperColors() {
+//		new Thread(new Runnable() {
+//
+//			@Override
+//			public void run() {
+//				for (Paper paper : Database.getInstance().getPapers()) {
+//					paper.setColor(KeywordColor.BLUE);
+//				}
+//			}
+//		}).start();
+//	}
 
 }

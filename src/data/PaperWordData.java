@@ -1,15 +1,18 @@
 package data;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Map.Entry;
 import java.util.Set;
 
-import wordcloud.CountedString;
-
+/**
+ * This class encapsulates the word count over multiple papers.
+ * 
+ * It allows to retrieve for a word, in which papers it occured, and for each
+ * word what the total number of occurences was over all the papers.
+ * 
+ * @author niels
+ * 
+ */
 public class PaperWordData {
 	private HashMap<String, Set<Paper>> wordPaperMap = new HashMap<String, Set<Paper>>();
 	private HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
@@ -30,15 +33,5 @@ public class PaperWordData {
 
 	public HashMap<String, Integer> getWordCount() {
 		return new HashMap<String, Integer>(wordCount);
-	}
-
-	public List<CountedString> getCountedWords() {
-		List<CountedString> result = new ArrayList<CountedString>();
-
-		for (Entry<String, Integer> e : wordCount.entrySet())
-			result.add(new CountedString(e.getKey(), e.getValue()));
-		Collections.sort(result);
-		
-		return result;
 	}
 }

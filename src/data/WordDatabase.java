@@ -7,11 +7,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import util.Logger;
-import wordcloud.CountedString;
 
 public class WordDatabase {
 	private static WordDatabase singleton;
@@ -38,25 +39,36 @@ public class WordDatabase {
 	}
 
 	public void exportWordList() {
-		List<CountedString> list = new ArrayList<CountedString>();
+		HashMap<Integer, List<String>> output = new HashMap<Integer, List<String>>();
 
-		for (Entry<String, Integer> e : allWords.entrySet())
-			list.add(new CountedString(e.getKey(), e.getValue()));
+		for (Entry<String, Integer> e : allWords.entrySet()) {
+			if (!output.containsKey(e.getValue()))
+				output.put(e.getValue(), new ArrayList<String>());
+			output.get(e.getValue()).add(e.getKey());
+		}
 
-		Collections.sort(list);
-
+		Set<Integer> hashedCount = new HashSet<Integer>(allWords.values());
+		List<Integer> descendedCount = new ArrayList<Integer>(hashedCount);
+		Collections.sort(descendedCount);
+		List<Integer> count = new ArrayList<Integer>();
+		for(int i=descendedCount.size()-1;i>=0;i--)
+			count.add(descendedCount.get(i));
+				
 		try {
 			FileWriter writer = new FileWriter(new File("allwords.txt"));
 			BufferedWriter w = new BufferedWriter(writer);
 
-			for (CountedString string : list) {
-				w.write(string.getString());
-				w.newLine();
+			for (int i=0;i<count.size();i++) {
+				List<String> words = output.get(count.get(i));
+				for (String word : words) {
+					w.write(word);
+					w.newLine();
+				}
 			}
+
 			w.close();
 		} catch (IOException e) {
 			Logger.Warning("could not export the word frequency list");
 		}
 	}
-
 }
