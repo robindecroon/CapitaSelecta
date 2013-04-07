@@ -31,13 +31,16 @@ public class WordCloud {
 		minimumCount = Integer.MAX_VALUE;
 		maximumCount = Integer.MIN_VALUE;
 
-		Random random = new Random(System.currentTimeMillis());
+		Random random = new Random(System.currentTimeMillis()
+				+ location.hashCode());
 
 		HashMap<String, Integer> map = data.getWordCount();
 		List<CountedString> allWords = new ArrayList<CountedString>();
-		for(Entry<String,Integer> e :  map.entrySet())
+		for (Entry<String, Integer> e : map.entrySet())
 			allWords.add(new CountedString(e.getKey(), e.getValue()));
-		
+
+		Collections.sort(allWords);
+
 		List<CountedString> words = new ArrayList<CountedString>();
 		for (int i = 0; i < Math.min(10, allWords.size()); i++)
 			words.add(allWords.get(i));
@@ -47,14 +50,13 @@ public class WordCloud {
 			maximumCount = Math.max(maximumCount, word.getCount());
 		}
 
-		Collections.sort(words);
-
 		for (CountedString word : words) {
 			float fontSize = countToFontSize(word.getCount());
 			p.textSize(fontSize);
 
 			float ww = p.textWidth(word.getString());
-			float hh = 2 * Math.abs(p.textAscent()) + Math.abs(p.textDescent());
+			float hh = 2.f*(Math.abs(p.textAscent())
+					+ Math.abs(p.textDescent()));
 
 			boolean finished = false;
 
@@ -62,14 +64,20 @@ public class WordCloud {
 				float bestxx = 0;
 				float bestyy = 0;
 				float bestdistance = Float.POSITIVE_INFINITY;
+				boolean bestHorizontal = true;
 				boolean found = false;
 
 				for (int i = 0; i < 800; i++) {
-					float xx = (random.nextFloat() - 0.5f) * width;
-					float yy = (random.nextFloat() - 0.5f) * height;
+					float xx = (random.nextFloat() - 0.5f) * width - ww / 2.f;
+					float yy = (random.nextFloat() - 0.5f) * height - hh / 2.f;
+					boolean horizontal = i%4>0;
 
-					BoundingBox b = new BoundingBox(xx - 1, yy - 1, ww + 2,
-							hh + 2);
+					BoundingBox b;
+
+					if (horizontal)
+						b = new BoundingBox(xx - 1, yy - 1, ww + 2, hh + 2);
+					else
+						b = new BoundingBox(xx - 1, yy - 1, hh + 2, ww + 2);
 
 					boolean valid = true;
 					for (WordCloudDrawable dd : drawables)
@@ -85,16 +93,22 @@ public class WordCloud {
 							bestdistance = newdistance;
 							bestxx = xx;
 							bestyy = yy;
+							bestHorizontal = horizontal;
 						}
 
 					}
 				}
 
 				if (found) {
-					BoundingBox b = new BoundingBox(bestxx - 1, bestyy - 1,
-							ww + 2, hh + 2);
+					BoundingBox b;
+					if (bestHorizontal)
+						b = new BoundingBox(bestxx - 1, bestyy - 1, ww + 2,
+								hh + 2);
+					else
+						b = new BoundingBox(bestxx - 1, bestyy - 1, hh + 2,
+								ww + 2);
 					WordCloudDrawable d = new WordCloudDrawable(
-							word.getString(), fontSize, b);
+							word.getString(), fontSize, bestHorizontal, b);
 					drawables.add(d);
 
 					break;

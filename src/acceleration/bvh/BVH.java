@@ -6,10 +6,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import drawables.BoundingBox;
-
 import acceleration.Acceleration;
 import acceleration.Bounded;
+import drawables.BoundingBox;
 
 public class BVH<T extends Bounded> implements Acceleration<T> {
 	private BVH<T> left;

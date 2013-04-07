@@ -21,9 +21,6 @@ import javax.swing.event.ChangeListener;
 
 import layout.VerticalFlowLayout;
 import processing.core.PApplet;
-import util.KeywordColor;
-import data.Database;
-import data.Paper;
 
 /**
  * @author Robin

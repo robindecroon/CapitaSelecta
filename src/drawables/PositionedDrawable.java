@@ -1,8 +1,8 @@
 package drawables;
 
+import processing.core.PApplet;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
-import processing.core.PApplet;
 
 public abstract class PositionedDrawable extends MapDrawable {
 	private float zoom = 0;

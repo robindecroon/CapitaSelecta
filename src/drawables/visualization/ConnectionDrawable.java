@@ -1,10 +1,10 @@
 package drawables.visualization;
 
+import processing.core.PApplet;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
 import drawables.BoundingBox;
 import drawables.MapDrawable;
-import processing.core.PApplet;
 
 public class ConnectionDrawable extends MapDrawable {
 	private AuthorDrawable author;

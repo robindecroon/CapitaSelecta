@@ -57,7 +57,7 @@ public class BoundingBox {
 	}
 
 	public void draw(PApplet a) {
-		a.stroke(255, 255, 255);
+		a.stroke(128, 128, 128);
 		a.fill(0, 0, 0, 0);
 		a.rect(x, y, width, height);
 	}

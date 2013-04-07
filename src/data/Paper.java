@@ -6,9 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
-import de.fhpotsdam.unfolding.geo.Location;
-
 import util.KeywordColor;
+import de.fhpotsdam.unfolding.geo.Location;
 
 public class Paper {
 	private String name;
