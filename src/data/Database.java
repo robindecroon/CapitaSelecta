@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
+
+import keywordmap.UniversityCluster;
 
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.TupleQueryResult;
@@ -27,18 +28,12 @@ public class Database {
 
 	// List with all the authors
 	private final List<Author> authors = new ArrayList<Author>();
-
-	// Map which links countries to authors
-	private final Map<Country, List<Author>> countryAuthorMap = new HashMap<Country, List<Author>>();
-	private final Map<University, List<Author>> affiliationAuthorMap = new HashMap<University, List<Author>>();
-
-	// List with all the papers
 	private final List<Paper> papers = new ArrayList<Paper>();
-	private final Map<String, Paper> titlePaperMap = new HashMap<String, Paper>();
+	private final List<Country> countries = new ArrayList<Country>();
+	private final List<University> universities = new ArrayList<University>();
 
-	// List with all the countries and their locations
-	private final List<Country> locations = new ArrayList<Country>();
-	private final Map<String, University> affiliationLocations = new HashMap<String, University>();
+	// Needed during construction
+	private HashMap<String, Paper> titlePaperMap = new HashMap<String, Paper>();
 
 	// Whether the database has been initialized
 	private boolean initialized = false;
@@ -91,39 +86,10 @@ public class Database {
 		Country country = author.getCountry();
 		University university = author.getUniversity();
 
-		if (!countryAuthorMap.containsKey(country))
-			countryAuthorMap.put(country, new ArrayList<Author>());
-		countryAuthorMap.get(country).add(author);
-
-		if (!affiliationAuthorMap.containsKey(university))
-			affiliationAuthorMap.put(university, new ArrayList<Author>());
-		affiliationAuthorMap.get(university).add(author);
-	}
-
-	public List<Author> getAuthors() {
-		return new ArrayList<Author>(authors);
-	}
-
-	public int getNbOfAuthorsInCountry(String country) {
-		if (countryAuthorMap.containsKey(country))
-			return countryAuthorMap.get(country).size();
-		return 0;
-	}
-
-	public List<Country> getCountries() {
-		return locations;
-	}
-
-	public Map<String, University> getAffiliationLocation() {
-		return affiliationLocations;
-	}
-
-	public Map<Country, List<Author>> getCountryAuthorMap() {
-		return new HashMap<Country, List<Author>>(countryAuthorMap);
-	}
-
-	public Map<University, List<Author>> getAffiliationAuthorMap() {
-		return new HashMap<University, List<Author>>(affiliationAuthorMap);
+		if (!countries.contains(country))
+			countries.add(country);
+		if (!universities.contains(university))
+			universities.add(university);
 	}
 
 	public void addPaper(Paper paper) {
@@ -132,6 +98,7 @@ public class Database {
 		if (papers.contains(paper))
 			return;
 		papers.add(paper);
+
 		titlePaperMap.put(paper.getName(), paper);
 	}
 
@@ -312,31 +279,16 @@ public class Database {
 		}
 	}
 
-	public HashMap<Location, PaperWordData> getWordsPerUniversity() {
-		List<University> todo = new ArrayList<University>(
-				affiliationAuthorMap.keySet());
-		HashMap<Location, PaperWordData> result = new HashMap<Location, PaperWordData>();
+	public HashMap<UniversityCluster, PaperWordData> getWordsPerUniversity(
+			float distance) {
+		List<UniversityCluster> clusters = UniversityCluster.getClusters(
+				universities, distance);
+		HashMap<UniversityCluster, PaperWordData> result = new HashMap<UniversityCluster, PaperWordData>();
 
-		for (int i = 0; i < todo.size(); i++) {
-			University u = todo.remove(0);
-			List<University> nearby = new ArrayList<University>();
-			nearby.add(u);
-			Location l = u.getLocation();
-
-			for (int k = todo.size() - 1; k >= 0; k--) {
-				Location ll = todo.get(k).getLocation();
-
-				float x2 = (float) Math.pow(l.getLat() - ll.getLat(), 2);
-				float y2 = (float) Math.pow(l.getLon() - ll.getLon(), 2);
-				float dist = (float) Math.sqrt(x2 + y2);
-
-				if (dist < 3)
-					nearby.add(todo.remove(k));
-			}
-
+		for (UniversityCluster cluster : clusters) {
 			PaperWordData data = new PaperWordData();
-			
-			for (University university : nearby) {
+
+			for (University university : cluster.getUniversities()) {
 				Location location = university.getLocation();
 
 				for (Paper paper : this.papers) {
@@ -350,7 +302,7 @@ public class Database {
 				}
 			}
 
-			result.put(l, data);
+			result.put(cluster, data);
 		}
 		return result;
 

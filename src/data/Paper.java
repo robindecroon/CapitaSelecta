@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
-import util.KeywordColor;
 import de.fhpotsdam.unfolding.geo.Location;
 
 public class Paper {
@@ -15,7 +14,6 @@ public class Paper {
 	private int year;
 	private Conference conference;
 	private List<Author> authors = new ArrayList<Author>();
-	private KeywordColor color = KeywordColor.BLUE;
 	private Location firstLocation;
 
 	// Paper content
@@ -172,19 +170,6 @@ public class Paper {
 			result.add(mostOccuring.get(i));
 
 		return result;
-	}
-
-	/**
-	 * @return the color
-	 */
-	public KeywordColor getColor() {
-		return color;
-	}
-
-	public void setColor(KeywordColor color) {
-		if (color == null)
-			throw new NullPointerException("The given color is null!");
-		this.color = color;
 	}
 
 	public String toString() {

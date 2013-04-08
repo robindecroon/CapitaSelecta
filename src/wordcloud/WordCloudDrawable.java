@@ -1,8 +1,14 @@
 package wordcloud;
 
+import core.BoundingBox;
 import processing.core.PApplet;
-import drawables.BoundingBox;
 
+/**
+ * Represents a single word which is drawn.
+ * 
+ * @author niels
+ * 
+ */
 public class WordCloudDrawable {
 	private String word;
 	private float size;
@@ -25,27 +31,17 @@ public class WordCloudDrawable {
 		return word;
 	}
 
-	public void draw(PApplet applet, float x, float y, float scale) {
+	public void draw(PApplet applet, float x, float y, float scale,float alpha) {
 		applet.textSize(size * scale);
 		applet.pushMatrix();
-		applet.translate(bounds.x * scale + x, (bounds.y+applet.textAscent()) * scale + y);
+		applet.translate((bounds.x + bounds.width / 2) * scale + x,
+				(bounds.y + bounds.height / 2) * scale + y);
+		applet.textAlign(PApplet.CENTER, PApplet.CENTER);
 
-		applet.stroke(128, 128, 128);
-		applet.fill(0, 0, 0, 0);
-		applet.rect(0, 0, bounds.width * scale, bounds.height * scale);
-
-		applet.textAlign(PApplet.CENTER);
-
-		if (!horizontal) {
-			applet.translate(bounds.width / 2.f * scale, (bounds.height / 2.f)
-					* scale);
+		if (!horizontal)
 			applet.rotate((float) Math.PI / 2.f);
-			applet.translate(-bounds.width / 2.f * scale,
-					-(bounds.height / 2.f) * scale);
-		}
+		applet.fill(0, 0, 0, 255.f*alpha);
 		applet.text(word, 0, 0);
-		applet.fill(0, 0, 0, 255);
-		applet.text(word, bounds.width / 2 * scale, bounds.height / 2 * scale);
 		applet.popMatrix();
 	}
 }

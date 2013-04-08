@@ -1,4 +1,4 @@
-package drawables;
+package core;
 
 import processing.core.PApplet;
 

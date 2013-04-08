@@ -1,7 +1,8 @@
 package acceleration;
 
-import drawables.BoundingBox;
+import core.BoundingBox;
 
 public interface Bounded {
 	public BoundingBox getBoundingBox();
+	public BoundingBox getScreenBox();
 }

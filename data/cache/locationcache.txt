@@ -2,14 +2,14 @@
 Greece	GRC	37.9667	22.0	http://dbpedia.org/resource/Greece
 the United Kingdom	GBR	51.5	-0.116667	http://dbpedia.org/resource/UK
 India	IND	21.0	77.2083	http://dbpedia.org/resource/India
-The Philippines	PHL	14.5833	121.0	http://dbpedia.org/resource/Philippines
 Malaysia	MYS	3.13333	101.7	http://dbpedia.org/resource/Malaysia
+The Philippines	PHL	14.5833	121.0	http://dbpedia.org/resource/Philippines
 Portugal	PRT	38.7	-9.18333	http://dbpedia.org/resource/Portugal
 Canada	CAN	45.4	-75.6667	http://dbpedia.org/resource/Canada
 Austria	AUT	48.2	16.35	http://dbpedia.org/resource/Austria
 Egypt	EGY	30.0333	31.2167	http://dbpedia.org/resource/Egypt
-Slovenia	SVN	46.05	14.5	http://dbpedia.org/resource/Slovenia
 South Korea	KOR	37.5833	127.0	http://dbpedia.org/resource/South_Korea
+Slovenia	SVN	46.05	14.5	http://dbpedia.org/resource/Slovenia
 Chile	CHL	-33.4333	-70.6667	http://dbpedia.org/resource/Chile
 the People's Republic of China	CHN	35.0	103.0	http://dbpedia.org/resource/China
 France	FRA	47.0	2.0	http://dbpedia.org/resource/France
@@ -26,19 +26,19 @@ Slovakia	SVK	48.15	17.1167	http://dbpedia.org/resource/Slovakia
 the United States	USA	38.8833	-77.0167	http://dbpedia.org/resource/United_States
 Brazil	BRA	-15.7833	-47.95	http://dbpedia.org/resource/Brasil
 Israel	ISR	31.0	35.0	http://dbpedia.org/resource/Israel
-Spain	ESP	40.4333	-3.7	http://dbpedia.org/resource/Spain
-Belgium	BEL	50.85	4.35	http://dbpedia.org/resource/Belgium
 South Africa	ZAF	-30.0	25.0	http://dbpedia.org/resource/South_Africa
+Belgium	BEL	50.85	4.35	http://dbpedia.org/resource/Belgium
+Spain	ESP	40.4333	-3.7	http://dbpedia.org/resource/Spain
 Estonia	EST	59.0	24.75	http://dbpedia.org/resource/Estonia
 Russia	RUS	55.75	37.6167	http://dbpedia.org/resource/Russia
 Ireland	IRL	53.3333	-8.0	http://dbpedia.org/resource/Ireland
-New Zealand	NZL	-42.0	174.0	http://dbpedia.org/resource/New_Zeland
 Serbia	SRB	44.8	20.4667	http://dbpedia.org/resource/Serbia
+New Zealand	NZL	-42.0	174.0	http://dbpedia.org/resource/New_Zeland
 Japan	JPN	35.6833	139.767	http://dbpedia.org/resource/JAPAN
 Italy	ITA	41.9	12.4833	http://dbpedia.org/resource/Italy
 Bulgaria	BGR	42.6833	23.3167	http://dbpedia.org/resource/Bulgaria
-Czech Republic	CZE	49.75	14.4667	http://dbpedia.org/resource/Czech_Republic
 Bosnia and Herzegovina	BIH	43.8667	18.0	http://dbpedia.org/resource/Bosnia_and_Herzegovina
+Czech Republic	CZE	49.75	14.4667	http://dbpedia.org/resource/Czech_Republic
 Turkey	TUR	39.9167	28.95	http://dbpedia.org/resource/Turkey
 Italy	ITA	41.9	12.4833	http://dbpedia.org/resource/Italia
 New Zealand	NZL	-42.0	174.0	http://dbpedia.org/resource/New_Zealand

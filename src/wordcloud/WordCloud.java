@@ -7,42 +7,75 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Random;
 
+import acceleration.Bounded;
+
 import processing.core.PApplet;
+import core.BoundingBox;
 import data.PaperWordData;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
-import drawables.BoundingBox;
 
-public class WordCloud {
+/**
+ * An object representing a word cloud.
+ * 
+ * @author niels
+ * 
+ */
+public class WordCloud implements Bounded {
+	private PApplet applet;
+	private UnfoldingMap map;
 	private int minimumCount;
 	private int maximumCount;
 	private int minimumFont = 12;
 	private int maximumFont = 24;
+	private final int NUMBEROFWORDS = 10;
+	private BoundingBox onScreenBoundingBox;
 	private Location location;
 	private List<WordCloudDrawable> drawables = new ArrayList<WordCloudDrawable>();
 
-	public WordCloud(PApplet p, Location location, PaperWordData data) {
+	/**
+	 * Creates a new word cloud from the given data.
+	 * 
+	 * @param p
+	 * @param location
+	 * @param data
+	 */
+	public WordCloud(PApplet applet, UnfoldingMap map, Location location,
+			PaperWordData data) {
+		this.applet = applet;
+		this.map = map;
 		this.location = location;
 
+		construct(applet, data);
+	}
+
+	public void construct(PApplet p, PaperWordData data) {
+		// Initialize the bounding box the wordcloud will have on screen.
+		onScreenBoundingBox = new BoundingBox();
+
+		// Initialize the size to place the drawables in.
 		int width = 48;
 		int height = 48;
 
+		// Initialize the minimum and maximum word count.
 		minimumCount = Integer.MAX_VALUE;
 		maximumCount = Integer.MIN_VALUE;
 
 		Random random = new Random(System.currentTimeMillis()
 				+ location.hashCode());
 
+		/*
+		 * Analyse the word data.
+		 */
 		HashMap<String, Integer> map = data.getWordCount();
 		List<CountedString> allWords = new ArrayList<CountedString>();
 		for (Entry<String, Integer> e : map.entrySet())
 			allWords.add(new CountedString(e.getKey(), e.getValue()));
-
 		Collections.sort(allWords);
 
 		List<CountedString> words = new ArrayList<CountedString>();
-		for (int i = 0; i < Math.min(10, allWords.size()); i++)
+		for (int i = 0; i < Math.min(NUMBEROFWORDS, allWords.size()); i++)
 			words.add(allWords.get(i));
 
 		for (CountedString word : words) {
@@ -50,13 +83,16 @@ public class WordCloud {
 			maximumCount = Math.max(maximumCount, word.getCount());
 		}
 
+		/*
+		 * Place the words in no overlapping bounding boxes.
+		 */
+		int index = 0;
 		for (CountedString word : words) {
 			float fontSize = countToFontSize(word.getCount());
 			p.textSize(fontSize);
 
 			float ww = p.textWidth(word.getString());
-			float hh = 2.f*(Math.abs(p.textAscent())
-					+ Math.abs(p.textDescent()));
+			float hh = (Math.abs(p.textAscent()) + Math.abs(p.textDescent()));
 
 			boolean finished = false;
 
@@ -70,7 +106,7 @@ public class WordCloud {
 				for (int i = 0; i < 800; i++) {
 					float xx = (random.nextFloat() - 0.5f) * width - ww / 2.f;
 					float yy = (random.nextFloat() - 0.5f) * height - hh / 2.f;
-					boolean horizontal = i%4>0;
+					boolean horizontal = index == 0 || i % 4 > 0;
 
 					BoundingBox b;
 
@@ -109,8 +145,9 @@ public class WordCloud {
 								ww + 2);
 					WordCloudDrawable d = new WordCloudDrawable(
 							word.getString(), fontSize, bestHorizontal, b);
-					drawables.add(d);
+					addWordDrawable(d);
 
+					index++;
 					break;
 
 				} else {
@@ -118,19 +155,35 @@ public class WordCloud {
 					height += 8;
 				}
 			}
-
 		}
 	}
 
-	public void draw(PApplet p, UnfoldingMap map, float scale) {
+	private void addWordDrawable(WordCloudDrawable drawable) {
+		drawables.add(drawable);
+		onScreenBoundingBox = onScreenBoundingBox.union(drawable.getBounds());
+	}
+
+	/**
+	 * Draws the word cloud.
+	 * 
+	 * @param p
+	 * @param map
+	 * @param scale
+	 */
+	public void draw(float scale, float alpha) {
 		ScreenPosition screen = map.getScreenPosition(location);
 
-		p.smooth();
-		for (WordCloudDrawable d : drawables) {
-			d.draw(p, screen.x, screen.y, scale);
-		}
+		applet.smooth();
+		for (WordCloudDrawable d : drawables)
+			d.draw(applet, screen.x, screen.y, scale, alpha);
 	}
 
+	/**
+	 * Returns the word size for a word which occurs with the given count.
+	 * 
+	 * @param count
+	 * @return
+	 */
 	private float countToFontSize(int count) {
 		if (count == maximumCount) {
 			return maximumFont * 2.f;
@@ -143,6 +196,12 @@ public class WordCloud {
 		}
 	}
 
+	/**
+	 * Inner class which represents a word which occurs a given number of times.
+	 * 
+	 * @author niels
+	 * 
+	 */
 	private class CountedString implements Comparable<CountedString> {
 		private final String string;
 		private final int count;
@@ -174,5 +233,38 @@ public class WordCloud {
 		public int compareTo(CountedString o) {
 			return -count + o.count;
 		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see acceleration.Bounded#getBoundingBox()
+	 */
+	@Override
+	public BoundingBox getBoundingBox() {
+		BoundingBox screenbox = getScreenBox();
+
+		ScreenPosition leftup = new ScreenPosition(screenbox.x, screenbox.y);
+		ScreenPosition rightdown = new ScreenPosition(screenbox.x
+				+ screenbox.width, screenbox.y + screenbox.height);
+
+		Location lu = map.getLocation(leftup);
+		Location rd = map.getLocation(rightdown);
+
+		return new BoundingBox(lu.getLat(), lu.getLon(), rd.getLat()
+				- lu.getLat(), rd.getLon() - lu.getLon());
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see acceleration.Bounded#getScreenBox()
+	 */
+	@Override
+	public BoundingBox getScreenBox() {
+		ScreenPosition c = map.getScreenPosition(location);
+		BoundingBox b = onScreenBoundingBox;
+		ScreenPosition leftup = new ScreenPosition(c.x - b.x, c.y - b.y);
+		return new BoundingBox(leftup.x, leftup.y, b.width, b.height);
 	}
 }

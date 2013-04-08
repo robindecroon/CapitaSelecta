@@ -7,10 +7,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
-import drawables.BoundingBox;
-import drawables.MapDrawable;
+import core.BoundingBox;
 
-public class MultiThreadPruning<T extends MapDrawable> implements
+public class MultiThreadPruning<T extends Bounded> implements
 		Acceleration<T> {
 	private final List<T> visible = new ArrayList<T>();
 	private final Collection<T> drawables;
@@ -72,7 +71,7 @@ public class MultiThreadPruning<T extends MapDrawable> implements
 	 * 
 	 * @param <K>
 	 */
-	public class PruneThread<K extends MapDrawable> extends Thread {
+	public class PruneThread<K extends Bounded> extends Thread {
 		private List<K> visibles = new ArrayList<K>();
 		private List<K> drawables = new ArrayList<K>();
 		private BoundingBox bounds;
