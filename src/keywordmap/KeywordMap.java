@@ -16,9 +16,6 @@ public class KeywordMap {
 		if (applet == null)
 			throw new NullPointerException("The given map is null!");
 		this.applet = applet;
-
-		// Database.getInstance();
-
 		String connStr = "jdbc:sqlite:"
 				+ applet.sketchPath("data/edmlakmap.mbtiles");
 		map = new UnfoldingMap(applet, new MBTilesMapProvider(connStr));
@@ -39,7 +36,10 @@ public class KeywordMap {
 
 	public float getZoom() {
 		return map.getZoom();
+	}
 
+	public static float getScaledZoom(float zoom) {
+		return Math.min(1.f, zoom / 36.f);
 	}
 
 	public void update(float scale) {

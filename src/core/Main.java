@@ -15,6 +15,7 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.BorderFactory;
 import javax.swing.JSlider;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -51,7 +52,7 @@ public class Main {
 		
 		
 		
-		Frame frame = initFrame();
+		final Frame frame = initFrame();
 		Panel toolbar = initToolbar();
 		Panel sidebar = initSidebar();
 		final PApplet mainApplet = new MainApplet();
@@ -64,6 +65,19 @@ public class Main {
 		Dimension frameSize = frame.getSize();
 		frame.setLocation((size.width-frameSize.width)/2, (size.height-frameSize.height)/2);
 		frame.setVisible(true);
+		
+		SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+
+            	frame.addWindowListener( new WindowAdapter() {
+                    @Override
+                    public void windowClosing(WindowEvent we) {
+                       System.out.println("exit pressed");
+                        System.exit(0);
+                    }
+                } );
+            }
+        });
 	}
 
 	public void setAuthors(String authors) {

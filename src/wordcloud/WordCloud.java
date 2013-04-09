@@ -7,9 +7,10 @@ import java.util.List;
 import java.util.Map.Entry;
 import java.util.Random;
 
-import acceleration.Bounded;
-
+import keywordmap.HighlightData;
+import keywordmap.KeywordMap;
 import processing.core.PApplet;
+import acceleration.Bounded;
 import core.BoundingBox;
 import data.PaperWordData;
 import de.fhpotsdam.unfolding.UnfoldingMap;
@@ -25,14 +26,21 @@ import de.fhpotsdam.unfolding.utils.ScreenPosition;
 public class WordCloud implements Bounded {
 	private PApplet applet;
 	private UnfoldingMap map;
+
 	private int minimumCount;
 	private int maximumCount;
+
 	private int minimumFont = 12;
 	private int maximumFont = 24;
+
 	private final int NUMBEROFWORDS = 10;
-	private BoundingBox onScreenBoundingBox;
-	private Location location;
+
 	private List<WordCloudDrawable> drawables = new ArrayList<WordCloudDrawable>();
+
+	private Location location;
+	private BoundingBox wordCloudSize;
+	private float cachedZoomLevel;
+	private BoundingBox cachedScreenBox;
 
 	/**
 	 * Creates a new word cloud from the given data.
@@ -43,16 +51,30 @@ public class WordCloud implements Bounded {
 	 */
 	public WordCloud(PApplet applet, UnfoldingMap map, Location location,
 			PaperWordData data) {
+		if (applet == null)
+			throw new NullPointerException("The given applet is null!");
+		if (map == null)
+			throw new NullPointerException("The given map is null!");
+		if (location.getLat() != location.getLat()
+				|| location.getLon() != location.getLon())
+			throw new NullPointerException("The given location is not valid");
+
 		this.applet = applet;
 		this.map = map;
 		this.location = location;
 
-		construct(applet, data);
+		construct(applet, map, data);
 	}
 
-	public void construct(PApplet p, PaperWordData data) {
+	/**
+	 * 
+	 * @param p
+	 * @param data
+	 */
+	public void construct(PApplet p, UnfoldingMap unfoldingmap,
+			PaperWordData data) {
 		// Initialize the bounding box the wordcloud will have on screen.
-		onScreenBoundingBox = new BoundingBox();
+		wordCloudSize = new BoundingBox();
 
 		// Initialize the size to place the drawables in.
 		int width = 48;
@@ -106,7 +128,7 @@ public class WordCloud implements Bounded {
 				for (int i = 0; i < 800; i++) {
 					float xx = (random.nextFloat() - 0.5f) * width - ww / 2.f;
 					float yy = (random.nextFloat() - 0.5f) * height - hh / 2.f;
-					boolean horizontal = index == 0 || i % 4 > 0;
+					boolean horizontal = index == 0 || i % 8 > 0;
 
 					BoundingBox b;
 
@@ -143,10 +165,10 @@ public class WordCloud implements Bounded {
 					else
 						b = new BoundingBox(bestxx - 1, bestyy - 1, hh + 2,
 								ww + 2);
-					WordCloudDrawable d = new WordCloudDrawable(
-							word.getString(), fontSize, bestHorizontal, b);
+					WordCloudDrawable d = new WordCloudDrawable(applet,
+							unfoldingmap, location, word.getString(), fontSize,
+							bestHorizontal, b);
 					addWordDrawable(d);
-
 					index++;
 					break;
 
@@ -156,11 +178,50 @@ public class WordCloud implements Bounded {
 				}
 			}
 		}
+		if (index == 0)
+			throw new IllegalStateException("No words were added!");
 	}
 
+	/**
+	 * 
+	 * @param drawable
+	 */
 	private void addWordDrawable(WordCloudDrawable drawable) {
 		drawables.add(drawable);
-		onScreenBoundingBox = onScreenBoundingBox.union(drawable.getBounds());
+		wordCloudSize = wordCloudSize.union(drawable.getBounds());
+	}
+
+	/**
+	 * 
+	 * @param mouseX
+	 * @param mouseY
+	 * @return
+	 */
+	public WordCloudDrawable getMouseOver(float mouseX, float mouseY) {
+		for (WordCloudDrawable d : drawables)
+			if (d.getScreenBox().mouseIn(mouseX, mouseY))
+				return d;
+		return null;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see acceleration.Bounded#getScreenBox()
+	 */
+	@Override
+	public BoundingBox getScreenBox() {
+		if (cachedScreenBox == null || map.getZoom() != cachedZoomLevel) {
+			cachedZoomLevel = KeywordMap.getScaledZoom(map.getZoom());
+
+			ScreenPosition c = map.getScreenPosition(location);
+			BoundingBox b = wordCloudSize;
+			ScreenPosition leftup = new ScreenPosition(c.x + b.x
+					* cachedZoomLevel, c.y + b.y * cachedZoomLevel);
+			cachedScreenBox = new BoundingBox(leftup.x, leftup.y, b.width
+					* cachedZoomLevel, b.height * cachedZoomLevel);
+		}
+		return cachedScreenBox;
 	}
 
 	/**
@@ -170,12 +231,11 @@ public class WordCloud implements Bounded {
 	 * @param map
 	 * @param scale
 	 */
-	public void draw(float scale, float alpha) {
-		ScreenPosition screen = map.getScreenPosition(location);
-
+	public void draw(float scale, float alpha,
+			HighlightData data) {
 		applet.smooth();
 		for (WordCloudDrawable d : drawables)
-			d.draw(applet, screen.x, screen.y, scale, alpha);
+			d.draw(scale, alpha, data);
 	}
 
 	/**
@@ -233,38 +293,5 @@ public class WordCloud implements Bounded {
 		public int compareTo(CountedString o) {
 			return -count + o.count;
 		}
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see acceleration.Bounded#getBoundingBox()
-	 */
-	@Override
-	public BoundingBox getBoundingBox() {
-		BoundingBox screenbox = getScreenBox();
-
-		ScreenPosition leftup = new ScreenPosition(screenbox.x, screenbox.y);
-		ScreenPosition rightdown = new ScreenPosition(screenbox.x
-				+ screenbox.width, screenbox.y + screenbox.height);
-
-		Location lu = map.getLocation(leftup);
-		Location rd = map.getLocation(rightdown);
-
-		return new BoundingBox(lu.getLat(), lu.getLon(), rd.getLat()
-				- lu.getLat(), rd.getLon() - lu.getLon());
-	}
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see acceleration.Bounded#getScreenBox()
-	 */
-	@Override
-	public BoundingBox getScreenBox() {
-		ScreenPosition c = map.getScreenPosition(location);
-		BoundingBox b = onScreenBoundingBox;
-		ScreenPosition leftup = new ScreenPosition(c.x - b.x, c.y - b.y);
-		return new BoundingBox(leftup.x, leftup.y, b.width, b.height);
 	}
 }
