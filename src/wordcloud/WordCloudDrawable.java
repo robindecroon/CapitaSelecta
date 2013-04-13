@@ -1,6 +1,5 @@
 package wordcloud;
 
-import keywordmap.HighlightData;
 import keywordmap.KeywordMap;
 import processing.core.PApplet;
 import acceleration.Bounded;
@@ -49,14 +48,21 @@ public class WordCloudDrawable implements Bounded {
 		return word;
 	}
 
-	public void draw(float scale, float layerAlpha, HighlightData data) {
+	public ScreenPosition getScreenPosition(float scale) {
 		ScreenPosition p = map.getScreenPosition(location);
 
+		return new ScreenPosition(p.x + (bounds.x + bounds.width * 0.5f)
+				* scale, p.y + (bounds.y + bounds.height * 0.5f) * scale);
+	}
+
+	public void draw(float scale, float layerAlpha, Highlight data) {
+		ScreenPosition p = map.getScreenPosition(location);
 
 		float highlightAlpha = data.getAlpha(getPaperWord());
 		applet.fill(0, 0, 0, 255.f * layerAlpha * highlightAlpha);
 
-		applet.textSize(Math.min(48,size * scale*data.getHighlightScale(getPaperWord())));
+		applet.textSize(Math.min(48,
+				size * scale * data.getScale(getPaperWord())));
 		applet.textAlign(PApplet.CENTER, PApplet.CENTER);
 
 		if (!horizontal) {

@@ -3,12 +3,14 @@ package wordcloud;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
 
-import keywordmap.HighlightData;
 import keywordmap.KeywordMap;
+import paperset.PaperSet;
 import processing.core.PApplet;
 import acceleration.Bounded;
 import core.BoundingBox;
@@ -35,12 +37,15 @@ public class WordCloud implements Bounded {
 
 	private final int NUMBEROFWORDS = 10;
 
-	private List<WordCloudDrawable> drawables = new ArrayList<WordCloudDrawable>();
+	private Map<String, WordCloudDrawable> drawables = new HashMap<String, WordCloudDrawable>();
 
 	private Location location;
 	private BoundingBox wordCloudSize;
 	private float cachedZoomLevel;
 	private BoundingBox cachedScreenBox;
+	private PaperWordData data;
+
+	private HashMap<String, PaperSet> paperSets = new HashMap<String, PaperSet>();
 
 	/**
 	 * Creates a new word cloud from the given data.
@@ -62,8 +67,13 @@ public class WordCloud implements Bounded {
 		this.applet = applet;
 		this.map = map;
 		this.location = location;
+		this.data = data;
 
 		construct(applet, map, data);
+	}
+
+	public PaperWordData getPaperWordData() {
+		return data;
 	}
 
 	/**
@@ -138,7 +148,7 @@ public class WordCloud implements Bounded {
 						b = new BoundingBox(xx - 1, yy - 1, hh + 2, ww + 2);
 
 					boolean valid = true;
-					for (WordCloudDrawable dd : drawables)
+					for (WordCloudDrawable dd : drawables.values())
 						if (b.intersect(dd.getBounds())) {
 							valid = false;
 							break;
@@ -187,7 +197,7 @@ public class WordCloud implements Bounded {
 	 * @param drawable
 	 */
 	private void addWordDrawable(WordCloudDrawable drawable) {
-		drawables.add(drawable);
+		drawables.put(drawable.getPaperWord(), drawable);
 		wordCloudSize = wordCloudSize.union(drawable.getBounds());
 	}
 
@@ -198,7 +208,7 @@ public class WordCloud implements Bounded {
 	 * @return
 	 */
 	public WordCloudDrawable getMouseOver(float mouseX, float mouseY) {
-		for (WordCloudDrawable d : drawables)
+		for (WordCloudDrawable d : drawables.values())
 			if (d.getScreenBox().mouseIn(mouseX, mouseY))
 				return d;
 		return null;
@@ -231,11 +241,35 @@ public class WordCloud implements Bounded {
 	 * @param map
 	 * @param scale
 	 */
-	public void draw(float scale, float alpha,
-			HighlightData data) {
+	public void draw(float scale, float alpha, Highlight data) {
 		applet.smooth();
-		for (WordCloudDrawable d : drawables)
+		Iterator<PaperSet> it = paperSets.values().iterator();
+
+		while (it.hasNext()) {
+			PaperSet set = it.next();
+
+			if (set.canBeDeleted()) {
+				it.remove();
+				continue;
+			}
+			set.update();
+			set.draw(scale,alpha);
+		}
+		
+		for (WordCloudDrawable d : drawables.values())
 			d.draw(scale, alpha, data);
+	}
+
+	public void updatePaperSet(String word) {
+		for (PaperSet set : paperSets.values())
+			set.deactivate();
+		if (word == null)
+			return;
+		if (paperSets.containsKey(word))
+			paperSets.get(word).activate();
+		else if (drawables.get(word) != null) {
+			paperSets.put(word, new PaperSet(applet, map, drawables.get(word), word, data));
+		}
 	}
 
 	/**

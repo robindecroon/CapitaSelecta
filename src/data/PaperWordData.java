@@ -31,6 +31,10 @@ public class PaperWordData {
 			wordCount.put(word, wordCount.get(word) + count);
 	}
 
+	public Set<Paper> getPapers(String word) {
+		return wordPaperMap.get(word);
+	}
+
 	public HashMap<String, Integer> getWordCount() {
 		return new HashMap<String, Integer>(wordCount);
 	}

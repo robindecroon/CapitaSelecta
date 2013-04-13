@@ -21,6 +21,7 @@ public class KeywordMap {
 		map = new UnfoldingMap(applet, new MBTilesMapProvider(connStr));
 		MapUtils.createDefaultEventDispatcher(applet, map);
 
+		
 		map.setTweening(true);
 		map.setZoomRange(2.f, 8.f);
 		map.zoomAndPanTo(new Location(50.85, 4.35), 8);
@@ -47,6 +48,25 @@ public class KeywordMap {
 	}
 
 	public void draw() {
+////		Location mapUL = new Location(85, -180);
+////		Location mapBR = new Location(-85, 180);
+////
+////		Location screenUL = map.getLocation(0, 0);
+////		Location screenBR = map.getLocation(applet.width,applet.height);
+//		ScreenPosition mapUL = map.getScreenPosition(new Location(85, -180));
+//		ScreenPosition mapBR = map.getScreenPosition(new Location(-85, 180));
+//
+//		ScreenPosition screenUL = map.getScreenPosition(map.getTopLeftBorder());
+//		ScreenPosition screenBR = map.getScreenPosition(map
+//				.getBottomRightBorder());
+//
+//		//System.out.println("screen: " +screenUL.x + "," + screenUL.y);
+//		//System.out.println("map: "+mapUL.x + "," + mapUL.y);
+//
+//		
+////		if (screenUL.y < mapUL.y)
+////			map.panTo(screenUL.x, mapUL.y);
+
 		map.draw();
 		manager.draw(map.getZoom());
 	}
