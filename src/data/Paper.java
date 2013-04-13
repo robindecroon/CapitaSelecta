@@ -117,15 +117,16 @@ public class Paper {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result
-				+ ((conference == null) ? 0 : conference.hashCode());
-		result = prime * result
-				+ ((fullText == null) ? 0 : fullText.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + year;
-		return result;
+		return getName().hashCode();
+//		final int prime = 31;
+//		int result = 1;
+//		result = prime * result
+//				+ ((conference == null) ? 0 : conference.hashCode());
+//		result = prime * result
+//				+ ((fullText == null) ? 0 : fullText.hashCode());
+//		result = prime * result + ((name == null) ? 0 : name.hashCode());
+//		result = prime * result + year;
+//		return result;
 	}
 
 	@Override
@@ -137,25 +138,27 @@ public class Paper {
 		if (getClass() != obj.getClass())
 			return false;
 		Paper other = (Paper) obj;
-		if (authors == null) {
-			if (other.authors != null)
-				return false;
-		} else if (!authors.equals(other.authors))
+		if (!getName().equals(other.getName()))
 			return false;
-		if (conference != other.conference)
-			return false;
-		if (fullText == null) {
-			if (other.fullText != null)
-				return false;
-		} else if (!fullText.equals(other.fullText))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (year != other.year)
-			return false;
+//		if (authors == null) {
+//			if (other.authors != null)
+//				return false;
+//		} else if (!authors.equals(other.authors))
+//			return false;
+//		if (conference != other.conference)
+//			return false;
+//		if (fullText == null) {
+//			if (other.fullText != null)
+//				return false;
+//		} else if (!fullText.equals(other.fullText))
+//			return false;
+//		if (name == null) {
+//			if (other.name != null)
+//				return false;
+//		} else if (!name.equals(other.name))
+//			return false;
+//		if (year != other.year)
+//			return false;
 		return true;
 	}
 

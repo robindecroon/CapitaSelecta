@@ -25,6 +25,7 @@ public class WordCloudSet {
 	private final List<WordCloud> wordClouds = new ArrayList<WordCloud>();
 	private UnfoldingMap map;
 	private PApplet applet;
+	private boolean isPressed = false;
 
 	/**
 	 * 
@@ -71,9 +72,10 @@ public class WordCloudSet {
 
 		List<WordCloud> visible = prune.getElements(screenBounds);
 
-		if (applet.mousePressed)
+		if (isPressed && !applet.mousePressed)
 			highlight.setHighlightedWord(getHighlightWord(visible));
-
+		isPressed=applet.mousePressed;
+		
 		for (WordCloud cloud : visible)
 			cloud.draw(zoom, alpha, highlight);
 	}
@@ -99,7 +101,7 @@ public class WordCloudSet {
 	}
 
 	public void updatePaperSet(String word) {
-		for(WordCloud c : wordClouds)
+		for (WordCloud c : wordClouds)
 			c.updatePaperSet(word);
 	}
 }

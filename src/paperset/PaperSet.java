@@ -21,22 +21,26 @@ public class PaperSet {
 	 * 
 	 * @param papers
 	 */
-	public PaperSet(PApplet applet, UnfoldingMap map, WordCloudDrawable drawable,
-			String word, PaperWordData data) {
-		papers.addAll(data.getPapers(word));
-		
-		while(papers.size() > 16)
-			papers.remove(RNG.nextInt(papers.size()));
-		
+	public PaperSet(PApplet applet, UnfoldingMap map,
+			WordCloudDrawable drawable, String word, PaperWordData data) {
+		List<Paper> all = new ArrayList<Paper>(data.getPapers(word));
+		while (all.size() > 16)
+			all.remove(RNG.nextInt(all.size()));
+		for (Paper paper : all)
+			if (!papers.contains(paper))
+				papers.add(paper);
+
 		int currentBatch = Math.min(6, papers.size());
 		int currentIndex = 0;
 		float angle = (float) (2.0 * Math.PI / currentBatch);
 		int circle = 0;
 		while (currentIndex < papers.size()) {
+			float offset = RNG.nextFloat() * 2.f * (float) Math.PI;
+			
 			for (int i = 0; i < papers.size() - currentIndex; i++) {
 				Paper p = papers.get(i + currentIndex);
 				PaperDrawable draw = new PaperDrawable(applet, map, p,
-						drawable, angle, i, circle);
+						drawable, angle, offset, i, circle);
 				paperDrawables.add(draw);
 			}
 
@@ -46,7 +50,7 @@ public class PaperSet {
 
 			int divisor = Math.min(currentBatch, papers.size() - currentIndex);
 			angle = (float) (2.0 * Math.PI / divisor);
-		}		
+		}
 	}
 
 	public void update() {
@@ -55,10 +59,10 @@ public class PaperSet {
 		else
 			alpha = Math.max(0.f, alpha - 0.1f);
 	}
-	
+
 	public void draw(float scale, float layeralpha) {
-		for(int i=paperDrawables.size()-1;i>=0;i--)
-			paperDrawables.get(i).draw(scale,alpha*layeralpha);
+		for (int i = paperDrawables.size() - 1; i >= 0; i--)
+			paperDrawables.get(i).draw(scale, alpha * layeralpha);
 	}
 
 	public void activate() {
