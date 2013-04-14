@@ -115,53 +115,6 @@ public class Paper {
 		this.conference = conference;
 	}
 
-	@Override
-	public int hashCode() {
-		return getName().hashCode();
-//		final int prime = 31;
-//		int result = 1;
-//		result = prime * result
-//				+ ((conference == null) ? 0 : conference.hashCode());
-//		result = prime * result
-//				+ ((fullText == null) ? 0 : fullText.hashCode());
-//		result = prime * result + ((name == null) ? 0 : name.hashCode());
-//		result = prime * result + year;
-//		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Paper other = (Paper) obj;
-		if (!getName().equals(other.getName()))
-			return false;
-//		if (authors == null) {
-//			if (other.authors != null)
-//				return false;
-//		} else if (!authors.equals(other.authors))
-//			return false;
-//		if (conference != other.conference)
-//			return false;
-//		if (fullText == null) {
-//			if (other.fullText != null)
-//				return false;
-//		} else if (!fullText.equals(other.fullText))
-//			return false;
-//		if (name == null) {
-//			if (other.name != null)
-//				return false;
-//		} else if (!name.equals(other.name))
-//			return false;
-//		if (year != other.year)
-//			return false;
-		return true;
-	}
-
 	public List<PaperWord> getAllWords() {
 		return getMostOccuringWords(mostOccuring.size());
 	}
@@ -175,6 +128,66 @@ public class Paper {
 		return result;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((conference == null) ? 0 : conference.hashCode());
+		result = prime * result
+				+ ((fullText == null) ? 0 : fullText.hashCode());
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + year;
+		return result;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Paper other = (Paper) obj;
+		if (authors == null) {
+			if (other.authors != null)
+				return false;
+		} else if (!authors.equals(other.authors))
+			return false;
+		if (conference != other.conference)
+			return false;
+		if (fullText == null) {
+			if (other.fullText != null)
+				return false;
+		} else if (!fullText.equals(other.fullText))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (year != other.year)
+			return false;
+		return true;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
 	public String toString() {
 		return getName() + " with " + getAuthors().size() + " authors";
 	}
