@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 
 import keywordmap.UniversityCluster;
 import processing.core.PApplet;
+import util.Logger;
 import acceleration.MultiThreadPruning;
 import core.BoundingBox;
 import data.Database;
@@ -56,10 +57,10 @@ public class WordCloudSet {
 				wordClouds.add(new WordCloud(applet, map, e.getKey()
 						.getLocation(), e.getValue()));
 			} catch (IllegalStateException exception) {
-				System.out
-						.println("No words were added to the word cloud of university cluser:");
+				String warning = "No words were added to the word cloud of university cluser:";
 				for (University uu : e.getKey().getUniversities())
-					System.out.println("\t" + uu);
+					warning+="\n\t"+uu;
+				Logger.Warning(warning);
 			}
 		}
 	}

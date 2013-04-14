@@ -24,7 +24,6 @@ public abstract class RdfReader {
 			throws QueryFailedException {
 		if (!open)
 			throw new QueryFailedException("RdfReader is closed!");
-
 		StringBuilder q = new StringBuilder();
 		for (String string : query)
 			q.append(string + "\n");

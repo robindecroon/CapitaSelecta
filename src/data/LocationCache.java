@@ -267,41 +267,51 @@ public class LocationCache {
 	private String getRedirectedUrl(String adress) {
 		if (redirectionURL.containsKey(adress))
 			return redirectionURL.get(adress);
-		
-		try {
-			// Create the url
-			URL url = new URL(adress);
-			URLConnection c = url.openConnection();
-			c.setConnectTimeout(1000);
-			// Force redirection by accessing the input stream.
-			c.connect();
-			// c.getInputStream();
 
-			c.getInputStream().close();
+		long startTime = System.currentTimeMillis();
+		RedirectionThread thread = new RedirectionThread(adress);
+		thread.start();
 
-			// Replace the erroneous name
-			String realUrl = c.getURL().toString();
-			String[] splitRealUrl = realUrl.split("/");
-			String[] splitOldUrl = adress.split("/");
-			if (splitRealUrl[splitRealUrl.length - 1].equals("resource"))
-				return adress;
-			splitOldUrl[splitOldUrl.length - 1] = splitRealUrl[splitRealUrl.length - 1];
-			String result = "";
-			for (int i = 0; i < splitOldUrl.length; i++)
-				if (i != splitOldUrl.length - 1)
-					result += splitOldUrl[i] + "/";
-				else
-					result += splitOldUrl[i];
+		while (!thread.isFinished()
+				&& System.currentTimeMillis() - startTime < 1000)
+			Thread.yield();
 
-			if (!adress.equals(result))
-				Logger.Info("Redirected <" + adress + "> to <" + result + ">");
+		redirectionURL.put(adress, thread.getRedirectedAdress());
+		return thread.getRedirectedAdress();
 
-			redirectionURL.put(adress, result);
-			return result;
-		} catch (IOException e) {
-			redirectionURL.put(adress, adress);
-			return adress;
-		}
+		// try {
+		// // Create the url
+		// Logger.Info("redirecting adress " + adress);
+		// URL url = new URL(adress);
+		// URLConnection c = url.openConnection();
+		// c.setConnectTimeout(100finished);
+		// c.connect();
+		// c.getInputStream().close();
+		//
+		// // Replace the erroneous name
+		// String realUrl = c.getURL().toString();
+		// String[] splitRealUrl = realUrl.split("/");
+		// String[] splitOldUrl = adress.split("/");
+		// if (splitRealUrl[splitRealUrl.length - 1].equals("resource"))
+		// return adress;
+		// splitOldUrl[splitOldUrl.length - 1] =
+		// splitRealUrl[splitRealUrl.length - 1];
+		// String result = "";
+		// for (int i = 0; i < splitOldUrl.length; i++)
+		// if (i != splitOldUrl.length - 1)
+		// result += splitOldUrl[i] + "/";
+		// else
+		// result += splitOldUrl[i];
+		//
+		// // if (!adress.equals(result))
+		// Logger.Info("Redirected <" + adress + "> to <" + result + ">");
+		//
+		// redirectionURL.put(adress, result);
+		// return result;
+		// } catch (IOException e) {
+		// redirectionURL.put(adress, adress);
+		// return adress;
+		// }
 	}
 
 	public String getCodeForCountry(String country) {
@@ -318,6 +328,67 @@ public class LocationCache {
 			String result = countryCodes.get(prompt);
 			countryCodes.put(format, result);
 			return result;
+		}
+	}
+
+	private class RedirectionThread extends Thread {
+		private String originalAdress;
+		private String redirectedAdress;
+		private boolean finished = false;
+
+		public RedirectionThread(String adress) {
+			this.originalAdress = adress;
+			this.redirectedAdress = adress;
+		}
+
+		/*
+		 * (non-Javadoc)
+		 * 
+		 * @see java.lang.Thread#run()
+		 */
+		@Override
+		public void run() {
+			try {
+				// Create the url
+				Logger.Info("redirecting adress " + originalAdress);
+				URL url = new URL(originalAdress);
+				URLConnection c = url.openConnection();
+				c.setConnectTimeout(1000);
+				c.connect();
+				c.getInputStream().close();
+
+				// Replace the erroneous name
+				String realUrl = c.getURL().toString();
+				String[] splitRealUrl = realUrl.split("/");
+				String[] splitOldUrl = originalAdress.split("/");
+				if (splitRealUrl[splitRealUrl.length - 1].equals("resource"))
+					return;
+
+				splitOldUrl[splitOldUrl.length - 1] = splitRealUrl[splitRealUrl.length - 1];
+				String result = "";
+				for (int i = 0; i < splitOldUrl.length; i++)
+					if (i != splitOldUrl.length - 1)
+						result += splitOldUrl[i] + "/";
+					else
+						result += splitOldUrl[i];
+
+				// if (!adress.equals(result))
+				Logger.Info("Redirected <" + originalAdress + "> to <" + result
+						+ ">");
+
+				redirectedAdress = result;
+				finished = true;
+			} catch (Exception e) {
+				finished = true;
+			}
+		}
+
+		public String getRedirectedAdress() {
+			return redirectedAdress;
+		}
+
+		public boolean isFinished() {
+			return finished;
 		}
 	}
 }
