@@ -36,8 +36,6 @@ public class MainApplet extends PApplet {
 	@Override
 	public void draw() {
 		manager.update();
-		float scale = manager.getFrameRateDeviation();
-		map.update(scale);
 		map.draw();
 
 		fill(0, 0, 0);

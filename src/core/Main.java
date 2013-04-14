@@ -39,19 +39,16 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-		  try {
-              UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-          } catch (Exception e) {
-          }
+
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Exception e) {
+		}
 		initLabels();
 
-		
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		Dimension size = toolkit.getScreenSize();
-		
-		
-		
+
 		final Frame frame = initFrame();
 		Panel toolbar = initToolbar();
 		Panel sidebar = initSidebar();
@@ -61,23 +58,24 @@ public class Main {
 		frame.add(mainApplet, BorderLayout.CENTER);
 		frame.add(sidebar, BorderLayout.EAST);
 		frame.pack();
-		
-		Dimension frameSize = frame.getSize();
-		frame.setLocation((size.width-frameSize.width)/2, (size.height-frameSize.height)/2);
-		frame.setVisible(true);
-		
-		SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
 
-            	frame.addWindowListener( new WindowAdapter() {
-                    @Override
-                    public void windowClosing(WindowEvent we) {
-                       System.out.println("exit pressed");
-                        System.exit(0);
-                    }
-                } );
-            }
-        });
+		Dimension frameSize = frame.getSize();
+		frame.setLocation((size.width - frameSize.width) / 2,
+				(size.height - frameSize.height) / 2);
+		frame.setVisible(true);
+
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+
+				frame.addWindowListener(new WindowAdapter() {
+					@Override
+					public void windowClosing(WindowEvent we) {
+						System.out.println("exit pressed");
+						System.exit(0);
+					}
+				});
+			}
+		});
 	}
 
 	public void setAuthors(String authors) {
@@ -159,11 +157,11 @@ public class Main {
 
 	private static Panel initToolbar() {
 		Panel toolbar = new Panel();
-		
-//		JLabel label = new JLabel();
-//		ImageIcon icon = new ImageIcon("arrow.PNG");
-//		label.setIcon(icon);
-//		toolbar.add(label);
+
+		// JLabel label = new JLabel();
+		// ImageIcon icon = new ImageIcon("arrow.PNG");
+		// label.setIcon(icon);
+		// toolbar.add(label);
 		// toolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
 		toolbar.setLayout(new BorderLayout());
 
@@ -261,16 +259,16 @@ public class Main {
 		return toolbar;
 	}
 
-//	private static void clearPaperColors() {
-//		new Thread(new Runnable() {
-//
-//			@Override
-//			public void run() {
-//				for (Paper paper : Database.getInstance().getPapers()) {
-//					paper.setColor(KeywordColor.BLUE);
-//				}
-//			}
-//		}).start();
-//	}
+	// private static void clearPaperColors() {
+	// new Thread(new Runnable() {
+	//
+	// @Override
+	// public void run() {
+	// for (Paper paper : Database.getInstance().getPapers()) {
+	// paper.setColor(KeywordColor.BLUE);
+	// }
+	// }
+	// }).start();
+	// }
 
 }

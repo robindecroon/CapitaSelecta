@@ -25,7 +25,7 @@ public class WordCloudSet {
 	private final List<WordCloud> wordClouds = new ArrayList<WordCloud>();
 	private UnfoldingMap map;
 	private PApplet applet;
-	private boolean isPressed = false;
+	private List<WordCloud> visibleWordClouds = new ArrayList<WordCloud>();
 
 	/**
 	 * 
@@ -70,14 +70,14 @@ public class WordCloudSet {
 		MultiThreadPruning<WordCloud> prune = new MultiThreadPruning<WordCloud>(
 				wordClouds);
 
-		List<WordCloud> visible = prune.getElements(screenBounds);
-
-		if (isPressed && !applet.mousePressed)
-			highlight.setHighlightedWord(getHighlightWord(visible));
-		isPressed=applet.mousePressed;
+		visibleWordClouds = prune.getElements(screenBounds);
 		
-		for (WordCloud cloud : visible)
+		for (WordCloud cloud : visibleWordClouds)
 			cloud.draw(zoom, alpha, highlight);
+	}
+	
+	public List<WordCloud> getVisibibleWordClouds() {
+		return visibleWordClouds;
 	}
 
 	public String getHighlightWord(List<WordCloud> visible) {

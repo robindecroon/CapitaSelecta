@@ -27,9 +27,10 @@ public class LocationCache {
 	private final HashMap<String, Country> map = new HashMap<String, Country>();
 	private final HashSet<String> failures = new HashSet<String>();
 	private final HashMap<String, String> countryCodes = new HashMap<String, String>();
+	private final HashMap<String, String> redirection = new HashMap<String, String>();
 	private static LocationCache instance;
 
-	private HashMap<String, String> redirection = new HashMap<String, String>();
+	private HashMap<String, String> redirectionURL = new HashMap<String, String>();
 
 	private LocationCache() {
 		redirection.put("http://dbpedia.org/resource/Slovak",
@@ -264,6 +265,9 @@ public class LocationCache {
 	}
 
 	private String getRedirectedUrl(String adress) {
+		if (redirectionURL.containsKey(adress))
+			return redirectionURL.get(adress);
+		
 		try {
 			// Create the url
 			URL url = new URL(adress);
@@ -291,8 +295,11 @@ public class LocationCache {
 
 			if (!adress.equals(result))
 				Logger.Info("Redirected <" + adress + "> to <" + result + ">");
+
+			redirectionURL.put(adress, result);
 			return result;
 		} catch (IOException e) {
+			redirectionURL.put(adress, adress);
 			return adress;
 		}
 	}

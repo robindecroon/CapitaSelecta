@@ -30,26 +30,24 @@ public class PaperSet {
 			if (!papers.contains(paper))
 				papers.add(paper);
 
-		int currentBatch = Math.min(6, papers.size());
-		int currentIndex = 0;
-		float angle = (float) (2.0 * Math.PI / currentBatch);
+		int batchSize = Math.min(6, papers.size());
+		int index = 0;
 		int circle = 0;
-		while (currentIndex < papers.size()) {
+
+		while (index < papers.size()) {
+			float angle = (float) (2.f * Math.PI / (float) batchSize);
 			float offset = RNG.nextFloat() * 2.f * (float) Math.PI;
-			
-			for (int i = 0; i < papers.size() - currentIndex; i++) {
-				Paper p = papers.get(i + currentIndex);
-				PaperDrawable draw = new PaperDrawable(applet, map, p,
-						drawable, angle, offset, i, circle);
-				paperDrawables.add(draw);
+
+			for (int i = index; i < index + batchSize; i++) {
+				Paper p = papers.get(i);
+				PaperDrawable d = new PaperDrawable(applet, map, p, drawable,
+						angle, offset, i, circle);
+				paperDrawables.add(d);
 			}
 
-			currentIndex += currentBatch;
-			currentBatch = (int) Math.floor(currentBatch * 1.5);
+			index += batchSize;
 			circle++;
-
-			int divisor = Math.min(currentBatch, papers.size() - currentIndex);
-			angle = (float) (2.0 * Math.PI / divisor);
+			batchSize = Math.min(papers.size()-index,(int) Math.ceil(batchSize * 1.5));
 		}
 	}
 
@@ -63,6 +61,9 @@ public class PaperSet {
 	public void draw(float scale, float layeralpha) {
 		for (int i = paperDrawables.size() - 1; i >= 0; i--)
 			paperDrawables.get(i).draw(scale, alpha * layeralpha);
+		
+		for (int i = paperDrawables.size() - 1; i >= 0; i--)
+			paperDrawables.get(i).drawName(scale, alpha * layeralpha);
 	}
 
 	public void activate() {

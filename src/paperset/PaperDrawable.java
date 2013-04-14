@@ -1,5 +1,6 @@
 package paperset;
 
+import core.BoundingBox;
 import processing.core.PApplet;
 import processing.core.PImage;
 import wordcloud.WordCloudDrawable;
@@ -15,13 +16,15 @@ public class PaperDrawable {
 	private float offset;
 	private PApplet applet;
 	private WordCloudDrawable drawable;
+	private BoundingBox bounds;
 
 	public static PImage regularImage;
 	public static PImage highlightImage;
 
 	public PaperDrawable(PApplet p, UnfoldingMap map, Paper paper,
-			WordCloudDrawable drawable, float angle, float offset,int index, int circle) {
-		this.offset=offset;
+			WordCloudDrawable drawable, float angle, float offset, int index,
+			int circle) {
+		this.offset = offset;
 		this.paper = paper;
 		this.applet = p;
 		this.drawable = drawable;
@@ -39,9 +42,27 @@ public class PaperDrawable {
 		return paper;
 	}
 
+	public boolean mouseIn(float mouseX, float mouseY) {
+		if (bounds == null)
+			return false;
+		else
+			return bounds.mouseIn(mouseX, mouseY);
+	}
+
+	public void drawName(float scale, float alpha) {
+		if (mouseIn(applet.mouseX, applet.mouseY)) {
+			applet.stroke(0, alpha * 255.f);
+			applet.fill(0, alpha * 255.f);
+			applet.textAlign(PApplet.CENTER, PApplet.CENTER);
+			applet.textSize(scale * 16.f);
+			applet.text(paper.getName(), bounds.x + bounds.width / 2.f,
+					bounds.y - 16.f);
+		}
+	}
+
 	public void draw(float scale, float alpha) {
 		float radius = (2.f + circle) * 56.f * scale;
-		float theta = angle * index+offset;
+		float theta = angle * index + offset;
 		ScreenPosition p = drawable.getScreenPosition(scale);
 
 		float cos = (float) Math.cos(theta);
@@ -53,31 +74,20 @@ public class PaperDrawable {
 
 		float ix1 = x1 - regularImage.width * 0.5f * scale;
 		float iy1 = y1 - regularImage.height * 0.5f * scale;
-		float ix2 = ix1 + regularImage.width * scale;
-		float iy2 = iy1 + regularImage.height * scale;
 
-		boolean inside = false;
-		if (applet.mouseX >= ix1 && applet.mouseX <= ix2
-				&& applet.mouseY >= iy1 && applet.mouseY <= iy2)
-			inside = true;
+		bounds = new BoundingBox(ix1, iy1, regularImage.width * scale,
+				regularImage.height * scale);
+
+		boolean inside = bounds.mouseIn(applet.mouseX, applet.mouseY);
 
 		applet.stroke(0, alpha * 128.f);
 		applet.line(x1, y1, x2, y2);
-
 		applet.pushMatrix();
 		applet.tint(255, alpha * 255.f);
 		applet.translate(ix1, iy1);
 		applet.scale(scale);
 		applet.image(inside ? highlightImage : regularImage, 0, 0);
 		applet.popMatrix();
-		
 		applet.tint(255, 255);
-		if (inside) {
-			applet.stroke(0,255.f);
-			applet.fill(0,255.f);
-			applet.textAlign(PApplet.CENTER,PApplet.CENTER);
-			applet.textSize(scale * 16.f);
-			applet.text(paper.getName(), x1, iy1- 16);
-		}
 	}
 }

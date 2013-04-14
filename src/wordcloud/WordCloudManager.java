@@ -21,9 +21,14 @@ public class WordCloudManager {
 	private List<Float> zoomLevels = new ArrayList<Float>();
 	private HashMap<Float, WordCloudSet> map = new HashMap<Float, WordCloudSet>();
 	private Highlight highlight = new Highlight();
+	private PApplet applet;
+
+	private long lastDownTime = 0;
+	private boolean leftMousePressed = false;
 
 	public WordCloudManager(PApplet applet, UnfoldingMap map, float minzoom,
 			float maxzoom, float... zoomLevels) {
+		this.applet = applet;
 
 		for (Float zoomlevel : zoomLevels) {
 			this.map.put(zoomlevel, new WordCloudSet(applet, map, zoomlevel,
@@ -40,9 +45,23 @@ public class WordCloudManager {
 
 		float scaledZoom = KeywordMap.getScaledZoom(zoom);
 
-		if (map.containsKey(zoom))
-			map.get(zoom).draw(scaledZoom, 1.f, highlight);
-		else {
+		boolean leftMouseRelease = false;
+		if (!applet.mousePressed && leftMousePressed
+				&& System.currentTimeMillis() - lastDownTime < 200)
+			leftMouseRelease = true;
+		else if (!leftMousePressed && applet.mousePressed)
+			lastDownTime = System.currentTimeMillis();
+
+		leftMousePressed = applet.mousePressed;
+
+		if (map.containsKey(zoom)) {
+			WordCloudSet set = map.get(zoom);
+			set.draw(scaledZoom, 1.f, highlight);
+
+			if (leftMouseRelease)
+				highlight.setHighlightedWord(set.getHighlightWord(set
+						.getVisibibleWordClouds()));
+		} else {
 			float previousZoom = getPreviousZoom(zoom);
 			float nextZoom = getNextZoom(zoom);
 
@@ -56,9 +75,18 @@ public class WordCloudManager {
 			if (next != null)
 				next.draw(scaledZoom, alpha, highlight);
 		}
-		
+
 		if (highlight.isChanged())
-			for(WordCloudSet set : map.values())
+			for (WordCloudSet set : map.values())
+				set.updatePaperSet(highlight.getHighlightedWord());
+	}
+
+	public void setHighlightedWord(String word) {
+		highlight.setChanged(false);
+		highlight.setHighlightedWord(word);
+
+		if (highlight.isChanged())
+			for (WordCloudSet set : map.values())
 				set.updatePaperSet(highlight.getHighlightedWord());
 	}
 

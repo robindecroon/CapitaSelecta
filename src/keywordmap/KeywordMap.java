@@ -28,7 +28,7 @@ public class KeywordMap {
 
 		manager = new WordCloudManager(applet, map, 2.f, 256.f, 2.f, 4.f, 8.f,
 				16.f, 32.f, 64.f, 128.f, 256.f);
-
+		manager.setHighlightedWord("the");
 	}
 
 	public PApplet getApplet() {
@@ -43,30 +43,7 @@ public class KeywordMap {
 		return Math.min(1.f, zoom / 36.f);
 	}
 
-	public void update(float scale) {
-
-	}
-
 	public void draw() {
-////		Location mapUL = new Location(85, -180);
-////		Location mapBR = new Location(-85, 180);
-////
-////		Location screenUL = map.getLocation(0, 0);
-////		Location screenBR = map.getLocation(applet.width,applet.height);
-//		ScreenPosition mapUL = map.getScreenPosition(new Location(85, -180));
-//		ScreenPosition mapBR = map.getScreenPosition(new Location(-85, 180));
-//
-//		ScreenPosition screenUL = map.getScreenPosition(map.getTopLeftBorder());
-//		ScreenPosition screenBR = map.getScreenPosition(map
-//				.getBottomRightBorder());
-//
-//		//System.out.println("screen: " +screenUL.x + "," + screenUL.y);
-//		//System.out.println("map: "+mapUL.x + "," + mapUL.y);
-//
-//		
-////		if (screenUL.y < mapUL.y)
-////			map.panTo(screenUL.x, mapUL.y);
-
 		map.draw();
 		manager.draw(map.getZoom());
 	}
