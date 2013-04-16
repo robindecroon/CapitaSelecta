@@ -1,7 +1,7 @@
 package wordcloud;
 
+import keywordmap.Drawable;
 import keywordmap.KeywordMap;
-import keywordmap.Visualization;
 import processing.core.PApplet;
 import acceleration.Bounded;
 import core.BoundingBox;
@@ -15,8 +15,8 @@ import de.fhpotsdam.unfolding.utils.ScreenPosition;
  * @author niels
  * 
  */
-public class WordCloudDrawable implements Bounded {
-	private Visualization visualization;
+public class WordCloudDrawable extends Drawable implements Bounded {
+	private WordCloudManager manager;
 	private Location location;
 
 	private float cachedZoom;
@@ -27,10 +27,11 @@ public class WordCloudDrawable implements Bounded {
 	private BoundingBox bounds;
 	private boolean horizontal;
 
-	public WordCloudDrawable(Visualization visualization, Location location,
+	public WordCloudDrawable(WordCloudManager manager, Location location,
 			String word, float size, boolean horizontal, BoundingBox bounds) {
-		this.visualization = visualization;
-		this.location=location;
+		super(manager.getVisualization());
+		this.manager = manager;
+		this.location = location;
 		this.word = word;
 		this.bounds = bounds;
 		this.size = size;
@@ -46,24 +47,25 @@ public class WordCloudDrawable implements Bounded {
 	}
 
 	public ScreenPosition getScreenPosition(float scale) {
-		ScreenPosition p = visualization.getMap().getScreenPosition(location);
+		ScreenPosition p = getVisualization().getMap().getScreenPosition(
+				location);
 
 		return new ScreenPosition(p.x + (bounds.x + bounds.width * 0.5f)
 				* scale, p.y + (bounds.y + bounds.height * 0.5f) * scale);
 	}
 
-	public void draw(float layerAlpha, Highlight data) {
-		PApplet applet = visualization.getApplet();
-		UnfoldingMap map = visualization.getMap();
+	public void draw(float layerAlpha) {
+		PApplet applet = getVisualization().getApplet();
+		UnfoldingMap map = getVisualization().getMap();
 
 		ScreenPosition p = map.getScreenPosition(location);
 
-		float scale = visualization.getDrawScale();
-		float highlightAlpha = data.getAlpha(getPaperWord());
+		float scale = getVisualization().getDrawScale();
+		float highlightAlpha = manager.getHighlight().getAlpha(getPaperWord());
 		applet.fill(0, 0, 0, 255.f * layerAlpha * highlightAlpha);
 
-		applet.textSize(Math.min(48,
-				size * scale * data.getScale(getPaperWord())));
+		applet.textSize(Math.min(48, size * scale
+				* manager.getHighlight().getScale(getPaperWord())));
 		applet.textAlign(PApplet.CENTER, PApplet.CENTER);
 
 		if (!horizontal) {
@@ -86,7 +88,7 @@ public class WordCloudDrawable implements Bounded {
 	 */
 	@Override
 	public BoundingBox getScreenBox() {
-		UnfoldingMap map = visualization.getMap();
+		UnfoldingMap map = getVisualization().getMap();
 
 		if (cachedBoundingBox == null || map.getZoom() != cachedZoom) {
 			cachedZoom = KeywordMap.getScaledZoom(map.getZoom());
@@ -98,5 +100,11 @@ public class WordCloudDrawable implements Bounded {
 
 		}
 		return cachedBoundingBox;
+	}
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+
 	}
 }

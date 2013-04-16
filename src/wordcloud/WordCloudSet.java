@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
-import keywordmap.Visualization;
+import keywordmap.Drawable;
 import processing.core.PApplet;
 import util.Logger;
 import acceleration.MultiThreadPruning;
@@ -23,11 +23,10 @@ import de.fhpotsdam.unfolding.utils.ScreenPosition;
  * @author niels
  * 
  */
-public class WordCloudSet {
-	private Visualization visualization;
+public class WordCloudSet extends Drawable {
 	private List<WordCloud> visibleWordClouds = new ArrayList<WordCloud>();
 	private final List<WordCloud> wordClouds = new ArrayList<WordCloud>();
-	
+
 	/**
 	 * 
 	 * @param applet
@@ -36,9 +35,9 @@ public class WordCloudSet {
 	 * @param minzoom
 	 * @param maxzoom
 	 */
-	public WordCloudSet(Visualization visualization, float zoom,
-			float minzoom, float maxzoom) {
-		this.visualization=visualization;
+	public WordCloudSet(WordCloudManager manager, float zoom, float minzoom,
+			float maxzoom) {
+		super(manager.getVisualization());
 
 		double inv_log2 = 1.0 / Math.log10(2);
 		double scaledMin = Math.log10(minzoom) * inv_log2;
@@ -53,44 +52,58 @@ public class WordCloudSet {
 
 		for (Entry<UniversityCluster, PaperWordData> e : u.entrySet()) {
 			try {
-				wordClouds.add(new WordCloud(visualization, e.getKey()
-						.getLocation(), e.getValue()));
+				wordClouds.add(new WordCloud(manager, e.getKey().getLocation(),
+						e.getValue()));
 			} catch (IllegalStateException exception) {
 				String warning = "No words were added to the word cloud of university cluser:";
 				for (University uu : e.getKey().getUniversities())
-					warning+="\n\t"+uu;
+					warning += "\n\t" + uu;
 				Logger.Warning(warning);
 			}
 		}
 	}
 
-	public void draw(float alpha, Highlight highlight) {
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see keywordmap.Drawable#update()
+	 */
+	@Override
+	public void update() {
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see keywordmap.Drawable#draw(float)
+	 */
+	@Override
+	public void draw(float alpha) {
 		BoundingBox screenBounds = getScreenBounds();
 
 		MultiThreadPruning<WordCloud> prune = new MultiThreadPruning<WordCloud>(
 				wordClouds);
 
 		visibleWordClouds = prune.getElements(screenBounds);
-		
+
 		for (WordCloud cloud : visibleWordClouds)
-			cloud.draw( alpha, highlight);
+			cloud.draw(alpha);
 	}
-	
+
 	public List<WordCloud> getVisibibleWordClouds() {
 		return visibleWordClouds;
 	}
-	
+
 	public String getHighlightWord() {
 		return getHighlightWord(getVisibibleWordClouds());
 	}
 
-	public String getHighlightWord(List<WordCloud> visible) {
+	private String getHighlightWord(List<WordCloud> visible) {
 		WordCloudDrawable highLighted = null;
-		PApplet a = visualization.getApplet();
-		
+		PApplet a = getVisualization().getApplet();
+
 		for (WordCloud cloud : visible) {
-			WordCloudDrawable high = cloud.getMouseOver(a.mouseX,
-					a.mouseY);
+			WordCloudDrawable high = cloud.getMouseOver(a.mouseX, a.mouseY);
 			if (high != null)
 				highLighted = high;
 		}
@@ -99,8 +112,8 @@ public class WordCloudSet {
 	}
 
 	private BoundingBox getScreenBounds() {
-		UnfoldingMap map = visualization.getMap();
-		
+		UnfoldingMap map = getVisualization().getMap();
+
 		ScreenPosition l = map.getScreenPosition(map.getTopLeftBorder());
 		ScreenPosition r = map.getScreenPosition(map.getBottomRightBorder());
 

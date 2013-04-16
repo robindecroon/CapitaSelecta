@@ -4,6 +4,9 @@ import java.util.HashMap;
 
 import keywordmap.Drawable;
 import keywordmap.Visualization;
+import data.Conference;
+import filter.Filter;
+import filter.GeneralFilter;
 
 /**
  * A manager for the word clouds sets. A word cloud set is a set of word clouds
@@ -14,6 +17,7 @@ import keywordmap.Visualization;
  */
 public class WordCloudManager extends Drawable {
 	private Highlight highlight = new Highlight();
+	private Filter filter = new GeneralFilter(2009,2010,Conference.EDM);
 	private HashMap<Float, WordCloudSet> zoomMap = new HashMap<Float, WordCloudSet>();
 
 	public WordCloudManager(Visualization visualization, float minzoom,
@@ -21,8 +25,8 @@ public class WordCloudManager extends Drawable {
 		super(visualization);
 
 		for (Float zoomlevel : zoomLevels)
-			this.zoomMap.put(zoomlevel, new WordCloudSet(visualization,
-					zoomlevel, minzoom, maxzoom));
+			this.zoomMap.put(zoomlevel, new WordCloudSet(this, zoomlevel,
+					minzoom, maxzoom));
 	}
 
 	/*
@@ -37,6 +41,8 @@ public class WordCloudManager extends Drawable {
 		if (getVisualization().leftClicked()
 				&& zoomMap.containsKey(currentZoom))
 			setHighlightedWord(zoomMap.get(currentZoom).getHighlightWord());
+
+		highlight.update();
 	}
 
 	/*
@@ -49,7 +55,7 @@ public class WordCloudManager extends Drawable {
 		float zoom = getVisualization().getZoom();
 
 		if (zoomMap.containsKey(zoom))
-			zoomMap.get(zoom).draw(alpha, highlight);
+			zoomMap.get(zoom).draw(alpha);
 		else {
 			float previousZoom = getPreviousZoom(zoom);
 			float nextZoom = getNextZoom(zoom);
@@ -60,10 +66,18 @@ public class WordCloudManager extends Drawable {
 			WordCloudSet next = zoomMap.get(nextZoom);
 
 			if (prev != null)
-				prev.draw(alpha * (1.f - layerAlpha), highlight);
+				prev.draw(alpha * (1.f - layerAlpha));
 			if (next != null)
-				next.draw(alpha * layerAlpha, highlight);
+				next.draw(alpha * layerAlpha);
 		}
+	}
+
+	public Highlight getHighlight() {
+		return highlight;
+	}
+
+	public Filter getFilter() {
+		return filter;
 	}
 
 	public void setHighlightedWord(String word) {

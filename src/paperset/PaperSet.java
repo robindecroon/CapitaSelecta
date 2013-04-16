@@ -4,27 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import keywordmap.Visualization;
+import keywordmap.Drawable;
 import util.RNG;
 import wordcloud.WordCloudDrawable;
+import wordcloud.WordCloudManager;
 import data.Paper;
 import data.PaperWordData;
 
-public class PaperSet {
+public class PaperSet extends Drawable {
 	private List<Paper> papers = new ArrayList<Paper>();
 	private List<PaperDrawable> paperDrawables = new ArrayList<PaperDrawable>();
-
 	private float alpha = 0.f;
 	private boolean activate = true;
-	private Visualization visualization;
+	private WordCloudManager manager;
 
 	/**
 	 * 
 	 * @param papers
 	 */
-	public PaperSet(Visualization visualization, WordCloudDrawable drawable,
+	public PaperSet(WordCloudManager manager, WordCloudDrawable drawable,
 			String word, PaperWordData data) {
-		this.visualization = visualization;
+		super(manager.getVisualization());
+
+		this.manager = manager;
 
 		List<Paper> all = new ArrayList<Paper>(data.getPapers(word));
 		while (all.size() > 16)
@@ -37,7 +39,7 @@ public class PaperSet {
 				seed += paper.hashCode();
 			}
 		}
-		
+
 		Random random = new Random(seed);
 
 		int batchSize = Math.min(6, papers.size());
@@ -50,8 +52,8 @@ public class PaperSet {
 
 			for (int i = index; i < index + batchSize; i++) {
 				Paper p = papers.get(i);
-				PaperDrawable d = new PaperDrawable(visualization, p, drawable,
-						angle, offset, i, circle);
+				PaperDrawable d = new PaperDrawable(getVisualization(), p,
+						drawable, angle, offset, i, circle);
 				paperDrawables.add(d);
 			}
 
@@ -70,12 +72,19 @@ public class PaperSet {
 	}
 
 	public void draw(float layeralpha) {
-		float scale = visualization.getDrawScale();
-		for (int i = paperDrawables.size() - 1; i >= 0; i--)
-			paperDrawables.get(i).draw(scale, alpha * layeralpha);
+		float scale = getVisualization().getDrawScale();
 
-		for (int i = paperDrawables.size() - 1; i >= 0; i--)
-			paperDrawables.get(i).drawName(scale, alpha * layeralpha);
+		for (int i = paperDrawables.size() - 1; i >= 0; i--) {
+			Paper paper = paperDrawables.get(i).getPaper();
+			if (manager.getFilter().allowed(paper))
+				paperDrawables.get(i).draw(scale, alpha * layeralpha);
+		}
+
+		for (int i = paperDrawables.size() - 1; i >= 0; i--) {
+			Paper paper = paperDrawables.get(i).getPaper();
+			if (manager.getFilter().allowed(paper))
+				paperDrawables.get(i).drawName(scale, alpha * layeralpha);
+		}
 	}
 
 	public void activate() {
