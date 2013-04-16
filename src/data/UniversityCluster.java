@@ -1,9 +1,8 @@
-package keywordmap;
+package data;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import data.University;
 import de.fhpotsdam.unfolding.geo.Location;
 
 /**

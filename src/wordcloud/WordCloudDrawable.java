@@ -1,6 +1,7 @@
 package wordcloud;
 
 import keywordmap.KeywordMap;
+import keywordmap.Visualization;
 import processing.core.PApplet;
 import acceleration.Bounded;
 import core.BoundingBox;
@@ -15,8 +16,7 @@ import de.fhpotsdam.unfolding.utils.ScreenPosition;
  * 
  */
 public class WordCloudDrawable implements Bounded {
-	private PApplet applet;
-	private UnfoldingMap map;
+	private Visualization visualization;
 	private Location location;
 
 	private float cachedZoom;
@@ -27,13 +27,10 @@ public class WordCloudDrawable implements Bounded {
 	private BoundingBox bounds;
 	private boolean horizontal;
 
-	public WordCloudDrawable(PApplet applet, UnfoldingMap map,
-			Location location, String word, float size, boolean horizontal,
-			BoundingBox bounds) {
-		this.map = map;
-		this.location = location;
-		this.applet = applet;
-
+	public WordCloudDrawable(Visualization visualization, Location location,
+			String word, float size, boolean horizontal, BoundingBox bounds) {
+		this.visualization = visualization;
+		this.location=location;
 		this.word = word;
 		this.bounds = bounds;
 		this.size = size;
@@ -49,15 +46,19 @@ public class WordCloudDrawable implements Bounded {
 	}
 
 	public ScreenPosition getScreenPosition(float scale) {
-		ScreenPosition p = map.getScreenPosition(location);
+		ScreenPosition p = visualization.getMap().getScreenPosition(location);
 
 		return new ScreenPosition(p.x + (bounds.x + bounds.width * 0.5f)
 				* scale, p.y + (bounds.y + bounds.height * 0.5f) * scale);
 	}
 
-	public void draw(float scale, float layerAlpha, Highlight data) {
+	public void draw(float layerAlpha, Highlight data) {
+		PApplet applet = visualization.getApplet();
+		UnfoldingMap map = visualization.getMap();
+
 		ScreenPosition p = map.getScreenPosition(location);
 
+		float scale = visualization.getDrawScale();
 		float highlightAlpha = data.getAlpha(getPaperWord());
 		applet.fill(0, 0, 0, 255.f * layerAlpha * highlightAlpha);
 
@@ -85,6 +86,8 @@ public class WordCloudDrawable implements Bounded {
 	 */
 	@Override
 	public BoundingBox getScreenBox() {
+		UnfoldingMap map = visualization.getMap();
+
 		if (cachedBoundingBox == null || map.getZoom() != cachedZoom) {
 			cachedZoom = KeywordMap.getScaledZoom(map.getZoom());
 			ScreenPosition p = map.getScreenPosition(location);

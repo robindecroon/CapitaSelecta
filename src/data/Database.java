@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
-import keywordmap.UniversityCluster;
 
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.TupleQueryResult;

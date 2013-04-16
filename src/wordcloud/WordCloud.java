@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import java.util.Random;
 
 import keywordmap.KeywordMap;
+import keywordmap.Visualization;
 import paperset.PaperSet;
 import processing.core.PApplet;
 import acceleration.Bounded;
@@ -26,8 +27,7 @@ import de.fhpotsdam.unfolding.utils.ScreenPosition;
  * 
  */
 public class WordCloud implements Bounded {
-	private PApplet applet;
-	private UnfoldingMap map;
+	private Visualization visualization;
 
 	private int minimumCount;
 	private int maximumCount;
@@ -54,22 +54,19 @@ public class WordCloud implements Bounded {
 	 * @param location
 	 * @param data
 	 */
-	public WordCloud(PApplet applet, UnfoldingMap map, Location location,
+	public WordCloud(Visualization visualization, Location location,
 			PaperWordData data) {
-		if (applet == null)
-			throw new NullPointerException("The given applet is null!");
-		if (map == null)
-			throw new NullPointerException("The given map is null!");
+		if (visualization == null)
+			throw new NullPointerException("The given visualization is null!");
 		if (location.getLat() != location.getLat()
 				|| location.getLon() != location.getLon())
 			throw new NullPointerException("The given location is not valid");
 
-		this.applet = applet;
-		this.map = map;
+		this.visualization = visualization;
 		this.location = location;
 		this.data = data;
 
-		construct(applet, map, data);
+		construct(visualization, data);
 	}
 
 	public PaperWordData getPaperWordData() {
@@ -81,8 +78,10 @@ public class WordCloud implements Bounded {
 	 * @param p
 	 * @param data
 	 */
-	public void construct(PApplet p, UnfoldingMap unfoldingmap,
-			PaperWordData data) {
+	public void construct(Visualization visualization, PaperWordData data) {
+		// Get the applet
+		PApplet p = visualization.getApplet();
+
 		// Initialize the bounding box the wordcloud will have on screen.
 		wordCloudSize = new BoundingBox();
 
@@ -175,8 +174,8 @@ public class WordCloud implements Bounded {
 					else
 						b = new BoundingBox(bestxx - 1, bestyy - 1, hh + 2,
 								ww + 2);
-					WordCloudDrawable d = new WordCloudDrawable(applet,
-							unfoldingmap, location, word.getString(), fontSize,
+					WordCloudDrawable d = new WordCloudDrawable(visualization,
+							location, word.getString(), fontSize,
 							bestHorizontal, b);
 					addWordDrawable(d);
 					index++;
@@ -221,6 +220,8 @@ public class WordCloud implements Bounded {
 	 */
 	@Override
 	public BoundingBox getScreenBox() {
+		UnfoldingMap map = visualization.getMap();
+
 		if (cachedScreenBox == null || map.getZoom() != cachedZoomLevel) {
 			cachedZoomLevel = KeywordMap.getScaledZoom(map.getZoom());
 
@@ -241,8 +242,7 @@ public class WordCloud implements Bounded {
 	 * @param map
 	 * @param scale
 	 */
-	public void draw(float scale, float alpha, Highlight data) {
-		applet.smooth();
+	public void draw(float alpha, Highlight data) {
 		Iterator<PaperSet> it = paperSets.values().iterator();
 
 		while (it.hasNext()) {
@@ -253,11 +253,11 @@ public class WordCloud implements Bounded {
 				continue;
 			}
 			set.update();
-			set.draw(scale,alpha);
+			set.draw(alpha);
 		}
-		
+
 		for (WordCloudDrawable d : drawables.values())
-			d.draw(scale, alpha, data);
+			d.draw(alpha, data);
 	}
 
 	public void updatePaperSet(String word) {
@@ -268,7 +268,8 @@ public class WordCloud implements Bounded {
 		if (paperSets.containsKey(word))
 			paperSets.get(word).activate();
 		else if (drawables.get(word) != null) {
-			paperSets.put(word, new PaperSet(applet, map, drawables.get(word), word, data));
+			paperSets.put(word, new PaperSet(visualization,
+					drawables.get(word), word, data));
 		}
 	}
 

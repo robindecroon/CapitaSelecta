@@ -1,84 +1,69 @@
 package wordcloud;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 
-import keywordmap.KeywordMap;
-
-import processing.core.PApplet;
-import de.fhpotsdam.unfolding.UnfoldingMap;
+import keywordmap.Drawable;
+import keywordmap.Visualization;
 
 /**
- * A manager for the word clouds. Every zoom level will have a different set of
- * word clouds in order for more detail for higher zoom levels.
+ * A manager for the word clouds sets. A word cloud set is a set of word clouds
+ * for a specific zoom level.
  * 
  * @author niels
  * 
  */
-public class WordCloudManager {
-	private List<Float> zoomLevels = new ArrayList<Float>();
-	private HashMap<Float, WordCloudSet> map = new HashMap<Float, WordCloudSet>();
+public class WordCloudManager extends Drawable {
 	private Highlight highlight = new Highlight();
-	private PApplet applet;
+	private HashMap<Float, WordCloudSet> zoomMap = new HashMap<Float, WordCloudSet>();
 
-	private long lastDownTime = 0;
-	private boolean leftMousePressed = false;
-
-	public WordCloudManager(PApplet applet, UnfoldingMap map, float minzoom,
+	public WordCloudManager(Visualization visualization, float minzoom,
 			float maxzoom, float... zoomLevels) {
-		this.applet = applet;
+		super(visualization);
 
-		for (Float zoomlevel : zoomLevels) {
-			this.map.put(zoomlevel, new WordCloudSet(applet, map, zoomlevel,
-					minzoom, maxzoom));
-			this.zoomLevels.add(zoomlevel);
-		}
-
-		Collections.sort(this.zoomLevels);
+		for (Float zoomlevel : zoomLevels)
+			this.zoomMap.put(zoomlevel, new WordCloudSet(visualization,
+					zoomlevel, minzoom, maxzoom));
 	}
 
-	public void draw(float zoom) {
-		highlight.setChanged(false);
-		highlight.update();
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see keywordmap.Drawable#update()
+	 */
+	@Override
+	public void update() {
+		float currentZoom = getVisualization().getZoom();
 
-		float scaledZoom = KeywordMap.getScaledZoom(zoom);
+		if (getVisualization().leftClicked()
+				&& zoomMap.containsKey(currentZoom))
+			setHighlightedWord(zoomMap.get(currentZoom).getHighlightWord());
+	}
 
-		boolean leftMouseRelease = false;
-		if (!applet.mousePressed && leftMousePressed
-				&& System.currentTimeMillis() - lastDownTime < 200)
-			leftMouseRelease = true;
-		else if (!leftMousePressed && applet.mousePressed)
-			lastDownTime = System.currentTimeMillis();
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see keywordmap.Drawable#draw(float)
+	 */
+	@Override
+	public void draw(float alpha) {
+		float zoom = getVisualization().getZoom();
 
-		leftMousePressed = applet.mousePressed;
-
-		if (map.containsKey(zoom)) {
-			WordCloudSet set = map.get(zoom);
-			set.draw(scaledZoom, 1.f, highlight);
-
-			if (leftMouseRelease)
-				highlight.setHighlightedWord(set.getHighlightWord(set
-						.getVisibibleWordClouds()));
-		} else {
+		if (zoomMap.containsKey(zoom))
+			zoomMap.get(zoom).draw(alpha, highlight);
+		else {
 			float previousZoom = getPreviousZoom(zoom);
 			float nextZoom = getNextZoom(zoom);
 
-			float alpha = linearInterpolation(zoom, previousZoom, nextZoom);
+			float layerAlpha = linearInterpolation(zoom, previousZoom, nextZoom);
 
-			WordCloudSet prev = map.get(previousZoom);
-			WordCloudSet next = map.get(nextZoom);
+			WordCloudSet prev = zoomMap.get(previousZoom);
+			WordCloudSet next = zoomMap.get(nextZoom);
 
 			if (prev != null)
-				prev.draw(scaledZoom, 1.f - alpha, highlight);
+				prev.draw(alpha * (1.f - layerAlpha), highlight);
 			if (next != null)
-				next.draw(scaledZoom, alpha, highlight);
+				next.draw(alpha * layerAlpha, highlight);
 		}
-
-		if (highlight.isChanged())
-			for (WordCloudSet set : map.values())
-				set.updatePaperSet(highlight.getHighlightedWord());
 	}
 
 	public void setHighlightedWord(String word) {
@@ -86,7 +71,7 @@ public class WordCloudManager {
 		highlight.setHighlightedWord(word);
 
 		if (highlight.isChanged())
-			for (WordCloudSet set : map.values())
+			for (WordCloudSet set : zoomMap.values())
 				set.updatePaperSet(highlight.getHighlightedWord());
 	}
 

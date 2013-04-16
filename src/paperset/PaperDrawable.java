@@ -1,11 +1,11 @@
 package paperset;
 
-import core.BoundingBox;
+import keywordmap.Visualization;
 import processing.core.PApplet;
 import processing.core.PImage;
 import wordcloud.WordCloudDrawable;
+import core.BoundingBox;
 import data.Paper;
-import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
 
 public class PaperDrawable {
@@ -14,28 +14,31 @@ public class PaperDrawable {
 	private float angle;
 	private float index;
 	private float offset;
-	private PApplet applet;
+	private Visualization visualization;
+
 	private WordCloudDrawable drawable;
 	private BoundingBox bounds;
 
 	public static PImage regularImage;
 	public static PImage highlightImage;
 
-	public PaperDrawable(PApplet p, UnfoldingMap map, Paper paper,
+	public PaperDrawable(Visualization visualization, Paper paper,
 			WordCloudDrawable drawable, float angle, float offset, int index,
 			int circle) {
 		this.offset = offset;
 		this.paper = paper;
-		this.applet = p;
+		this.visualization = visualization;
 		this.drawable = drawable;
 		this.angle = angle;
 		this.index = index;
 		this.circle = circle;
 
 		if (regularImage == null)
-			regularImage = p.loadImage("image/paper.png");
+			regularImage = visualization.getApplet().loadImage(
+					"image/paper.png");
 		if (highlightImage == null)
-			highlightImage = p.loadImage("image/paperHighLight.png");
+			highlightImage = visualization.getApplet().loadImage(
+					"image/paperHighLight.png");
 	}
 
 	public Paper getPaper() {
@@ -50,6 +53,8 @@ public class PaperDrawable {
 	}
 
 	public void drawName(float scale, float alpha) {
+		PApplet applet = visualization.getApplet();
+
 		if (mouseIn(applet.mouseX, applet.mouseY)) {
 			applet.stroke(0, alpha * 255.f);
 			applet.fill(0, alpha * 255.f);
@@ -61,6 +66,8 @@ public class PaperDrawable {
 	}
 
 	public void draw(float scale, float alpha) {
+		PApplet applet = visualization.getApplet();
+		
 		float radius = (2.f + circle) * 56.f * scale;
 		float theta = angle * index + offset;
 		ScreenPosition p = drawable.getScreenPosition(scale);

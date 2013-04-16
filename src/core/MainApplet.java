@@ -36,6 +36,7 @@ public class MainApplet extends PApplet {
 	@Override
 	public void draw() {
 		manager.update();
+		map.update(manager.getFrameRate());
 		map.draw();
 
 		fill(0, 0, 0);
