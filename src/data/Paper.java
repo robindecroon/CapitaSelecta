@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
+import util.Dictionary;
+
 import de.fhpotsdam.unfolding.geo.Location;
 
 public class Paper {
@@ -61,7 +63,7 @@ public class Paper {
 
 		String[] split = fullText.split(" ");
 		for (String string : split) {
-			String word = string.trim().toLowerCase();
+			String word = Dictionary.getInstance().addWord(string);
 
 			if (word.equals(""))
 				continue;
@@ -113,6 +115,16 @@ public class Paper {
 		if (conference == null)
 			throw new NullPointerException("The given conference is null!");
 		this.conference = conference;
+	}
+
+	public List<PaperWord> getRelevantWords() {
+		List<PaperWord> result = new ArrayList<PaperWord>();
+		Database d = Database.getInstance();
+
+		for (PaperWord w : mostOccuring)
+			if (!d.isBadWord(w.word))
+				result.add(w);
+		return result;
 	}
 
 	public List<PaperWord> getAllWords() {

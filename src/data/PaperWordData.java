@@ -18,13 +18,15 @@ import filter.Filter;
 public class PaperWordData {
 	private HashMap<String, Set<Paper>> wordPaperMap = new HashMap<String, Set<Paper>>();
 	private HashMap<String, Integer> wordCount = new HashMap<String, Integer>();
+
 	private HashMap<Filter, Boolean> visibility = new HashMap<Filter, Boolean>();
+	private HashMap<Filter, Boolean> dirty = new HashMap<Filter, Boolean>();
 
 	public PaperWordData() {
 	}
 
 	public boolean hasVisibilePapers(Filter filter) {
-		if (visibility.containsKey(filter))
+		if (dirty.containsKey(filter) && !dirty.get(filter))
 			return visibility.get(filter);
 
 		int passedPapers = 0;
@@ -37,6 +39,7 @@ public class PaperWordData {
 		boolean result = passedPapers > 0;
 
 		visibility.put(filter, result);
+		dirty.put(filter, false);
 
 		return result;
 	}
@@ -50,6 +53,28 @@ public class PaperWordData {
 			wordCount.put(word, count);
 		else
 			wordCount.put(word, wordCount.get(word) + count);
+		dirty.clear();
+	}
+
+	public void format(Set<String> dictionary) {
+		Set<String> words = new HashSet<String>(wordPaperMap.keySet());
+		for (String word : words) {
+			if (word.endsWith("s")) {
+			
+			
+				String singleWord = word.substring(0, word.length() - 1);
+
+				System.out.println(word + "-"+singleWord);
+				if (wordPaperMap.containsKey(singleWord)) {
+					wordPaperMap.get(singleWord).addAll(wordPaperMap.get(word));
+					wordCount.put(singleWord, wordCount.get(singleWord)
+							+ wordCount.get(word));
+					wordPaperMap.remove(word);
+					wordCount.remove(word);
+				}
+			}
+		}
+		dirty.clear();
 	}
 
 	public Set<Paper> getPapers(String word) {

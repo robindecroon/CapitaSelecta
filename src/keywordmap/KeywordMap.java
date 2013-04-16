@@ -41,9 +41,9 @@ public class KeywordMap implements Visualization {
 		return map.getZoom();
 	}
 
-	public static float getScaledZoom(float zoom) {
-		return Math.min(1.f, zoom / 36.f);
-	}
+	// public static float getScaledZoom(float zoom) {
+	// return Math.max(0.4f, Math.min(1.f, zoom / 24.f));
+	// }
 
 	/*
 	 * (non-Javadoc)
@@ -83,7 +83,7 @@ public class KeywordMap implements Visualization {
 	 */
 	@Override
 	public void update(float frameRate) {
-		leftClicked=false;
+		leftClicked = false;
 		if (!leftDown && applet.mousePressed)
 			leftTime = System.currentTimeMillis();
 		else if (!applet.mousePressed && leftDown
@@ -110,6 +110,6 @@ public class KeywordMap implements Visualization {
 	 */
 	@Override
 	public float getDrawScale() {
-		return Math.min(1.f, map.getZoom() * 0.0277f);
+		return Math.max(0.2f, Math.min(1.f, map.getZoom() * 0.0277f));
 	}
 }

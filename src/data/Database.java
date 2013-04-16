@@ -2,19 +2,21 @@ package data;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-
 
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.TupleQueryResult;
 
 import rdf.OfflineRdfReader;
 import rdf.QueryFailedException;
+import util.Dictionary;
 import util.Logger;
 import de.fhpotsdam.unfolding.geo.Location;
 
@@ -30,6 +32,7 @@ public class Database {
 	private final List<Paper> papers = new ArrayList<Paper>();
 	private final List<Country> countries = new ArrayList<Country>();
 	private final List<University> universities = new ArrayList<University>();
+	private final HashSet<String> badWords = new HashSet<String>();
 
 	// Needed during construction
 	private HashMap<String, Paper> titlePaperMap = new HashMap<String, Paper>();
@@ -56,16 +59,18 @@ public class Database {
 				"data/rdf/edm2011.rdf", "data/rdf/edm2012.rdf",
 				"data/rdf/2011_fulltext_.rdf", "data/rdf/2012_fulltext_.rdf",
 				"data/rdf/jets12_fulltext_.rdf");
+		readBadWords();
 		readAllAuthors();
 		readAllPapers();
 		linkAuthorsToPapers();
 		LocationCache.getInstance().save();
+		
 
 		Paper paper;
 		Iterator<Paper> it = papers.iterator();
 		while (it.hasNext() && (paper = it.next()) != null) {
 			if (paper.getAuthors().size() == 0) {
-				Logger.Severe("Paper \"" + paper.getName()
+				Logger.Warning("Paper \"" + paper.getName()
 						+ " has no authors! It has been removed!");
 				it.remove();
 			}
@@ -75,6 +80,28 @@ public class Database {
 		WordDatabase.getInstance().exportWordList();
 	}
 
+	public void readBadWords() {
+		try {
+			FileReader reader = new FileReader(new File("wordstofilter.txt"));
+			BufferedReader r = new BufferedReader(reader);
+
+			String line;
+
+			while ((line = r.readLine()) != null)
+				badWords.add(line.toLowerCase().trim());
+
+			r.close();
+			reader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public boolean isBadWord(String word) {
+		return badWords.contains(word);
+	}
 	public void addAuthor(Author author) {
 		if (author == null)
 			throw new NullPointerException("The given author is null!");
@@ -293,13 +320,15 @@ public class Database {
 				for (Paper paper : this.papers) {
 					if (!paper.getFirstLocation().equals(location))
 						continue;
-					List<PaperWord> words = paper.getAllWords();
+					List<PaperWord> words = paper.getRelevantWords();
 
 					for (PaperWord word : words)
 						data.addWord(word.word, paper, word.occurences);
 
 				}
 			}
+			
+			data.format(Dictionary.getInstance().getWords());
 
 			result.put(cluster, data);
 		}

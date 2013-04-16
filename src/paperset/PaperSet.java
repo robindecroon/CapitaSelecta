@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import keywordmap.Drawable;
-import util.RNG;
 import wordcloud.WordCloudDrawable;
 import wordcloud.WordCloudManager;
 import data.Paper;
@@ -29,8 +28,8 @@ public class PaperSet extends Drawable {
 		this.manager = manager;
 
 		List<Paper> all = new ArrayList<Paper>(data.getPapers(word));
-		while (all.size() > 16)
-			all.remove(RNG.nextInt(all.size()));
+//		while (all.size() > 16)
+//			all.remove(RNG.nextInt(all.size()));
 
 		long seed = 0;
 		for (Paper paper : all) {

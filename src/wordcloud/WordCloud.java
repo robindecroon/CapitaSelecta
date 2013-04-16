@@ -10,7 +10,6 @@ import java.util.Map.Entry;
 import java.util.Random;
 
 import keywordmap.Drawable;
-import keywordmap.KeywordMap;
 import keywordmap.Visualization;
 import paperset.PaperSet;
 import processing.core.PApplet;
@@ -224,7 +223,7 @@ public class WordCloud extends Drawable implements Bounded {
 		UnfoldingMap map = getVisualization().getMap();
 
 		if (cachedScreenBox == null || map.getZoom() != cachedZoomLevel) {
-			cachedZoomLevel = KeywordMap.getScaledZoom(map.getZoom());
+			cachedZoomLevel = getVisualization().getDrawScale();
 
 			ScreenPosition c = map.getScreenPosition(location);
 			BoundingBox b = wordCloudSize;

@@ -1,7 +1,6 @@
 package wordcloud;
 
 import keywordmap.Drawable;
-import keywordmap.KeywordMap;
 import processing.core.PApplet;
 import acceleration.Bounded;
 import core.BoundingBox;
@@ -61,9 +60,9 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 		ScreenPosition p = map.getScreenPosition(location);
 
 		float scale = getVisualization().getDrawScale();
+		
 		float highlightAlpha = manager.getHighlight().getAlpha(getPaperWord());
 		applet.fill(0, 0, 0, 255.f * layerAlpha * highlightAlpha);
-
 		applet.textSize(Math.min(48, size * scale
 				* manager.getHighlight().getScale(getPaperWord())));
 		applet.textAlign(PApplet.CENTER, PApplet.CENTER);
@@ -91,7 +90,7 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 		UnfoldingMap map = getVisualization().getMap();
 
 		if (cachedBoundingBox == null || map.getZoom() != cachedZoom) {
-			cachedZoom = KeywordMap.getScaledZoom(map.getZoom());
+			cachedZoom = getVisualization().getDrawScale();
 			ScreenPosition p = map.getScreenPosition(location);
 
 			cachedBoundingBox = new BoundingBox(p.x + bounds.x * cachedZoom,
