@@ -2,6 +2,7 @@ package paperset;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import keywordmap.Visualization;
 import util.RNG;
@@ -24,22 +25,28 @@ public class PaperSet {
 	public PaperSet(Visualization visualization, WordCloudDrawable drawable,
 			String word, PaperWordData data) {
 		this.visualization = visualization;
-		
+
 		List<Paper> all = new ArrayList<Paper>(data.getPapers(word));
 		while (all.size() > 16)
 			all.remove(RNG.nextInt(all.size()));
-		for (Paper paper : all)
-			if (!papers.contains(paper))
-				papers.add(paper);
 
+		long seed = 0;
+		for (Paper paper : all) {
+			if (!papers.contains(paper)) {
+				papers.add(paper);
+				seed += paper.hashCode();
+			}
+		}
 		
+		Random random = new Random(seed);
+
 		int batchSize = Math.min(6, papers.size());
 		int index = 0;
 		int circle = 0;
 
 		while (index < papers.size()) {
 			float angle = (float) (2.f * Math.PI / (float) batchSize);
-			float offset = RNG.nextFloat() * 2.f * (float) Math.PI;
+			float offset = random.nextFloat() * 2.f * (float) Math.PI;
 
 			for (int i = index; i < index + batchSize; i++) {
 				Paper p = papers.get(i);
