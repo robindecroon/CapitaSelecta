@@ -2,6 +2,8 @@ package util;
 
 public class Logger {
 	private static final boolean DEBUG = false;
+	private static final boolean WARNING = false;
+	private static final boolean INFO = false;
 
 	public static void Debug(String message) {
 		if (DEBUG)
@@ -9,11 +11,13 @@ public class Logger {
 	}
 
 	public static void Info(String message) {
-		System.out.println("Info: " + message + "...");
+		if (INFO)
+			System.out.println("Info: " + message + "...");
 	}
 
 	public static void Warning(String message) {
-		System.err.println("Warning: " + message + "!");
+		if (WARNING)
+			System.err.println("Warning: " + message + "!");
 	}
 
 	public static void Severe(String message) {

@@ -106,7 +106,10 @@ public class PaperDrawable extends Drawable implements Bounded {
 		applet.translate(x1 - circleImage.width * 0.5f * scale, y1
 				- circleImage.height * 0.5f * scale);
 		applet.scale(scale);
-		applet.tint(c.red, c.green, c.blue, (int) (alpha * 128.f));
+		if (inside)
+			applet.tint(c.red, c.green, c.blue, (int) (alpha * 256.f));
+		else
+			applet.tint(c.red, c.green, c.blue, (int) (alpha * 128.f));
 		applet.image(circleImage, 0, 0);
 		applet.popMatrix();
 
@@ -130,6 +133,7 @@ public class PaperDrawable extends Drawable implements Bounded {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see acceleration.Bounded#getScreenBox()
 	 */
 	@Override

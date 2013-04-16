@@ -33,7 +33,7 @@ public class KeywordMap implements Visualization {
 
 		map.setTweening(true);
 		map.setZoomRange(2.f, 8.f);
-		map.zoomAndPanTo(new Location(50.85, 4.35), 8);
+		map.zoomAndPanTo(new Location(50.85, 4.35), 4);
 
 		manager = new WordCloudManager(this, 2.f, 256.f, 2.f, 4.f, 8.f, 16.f,
 				32.f, 64.f, 128.f, 256.f);
@@ -89,7 +89,7 @@ public class KeywordMap implements Visualization {
 		if (!leftDown && applet.mousePressed)
 			leftTime = System.currentTimeMillis();
 		else if (!applet.mousePressed && leftDown
-				&& System.currentTimeMillis() - leftTime < 200)
+				&& System.currentTimeMillis() - leftTime < 300)
 			leftClicked = true;
 
 		leftDown = applet.mousePressed;
