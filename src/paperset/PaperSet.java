@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.Random;
 
 import keywordmap.Drawable;
+import util.RNG;
 import wordcloud.WordCloudDrawable;
 import wordcloud.WordCloudManager;
+import acceleration.MultiThreadPruning;
 import data.Paper;
 import data.PaperWordData;
 
@@ -22,19 +24,19 @@ public class PaperSet extends Drawable {
 	 * @param papers
 	 */
 	public PaperSet(WordCloudManager manager, WordCloudDrawable drawable,
-			String word, PaperWordData data) {
+			String word, PaperWordData data, int paperCount) {
 		super(manager.getVisualization());
 
 		this.manager = manager;
 
 		List<Paper> all = new ArrayList<Paper>(data.getPapers(word));
-//		while (all.size() > 16)
-//			all.remove(RNG.nextInt(all.size()));
+		while (all.size() > paperCount)
+			all.remove(RNG.nextInt(all.size()));
 
 		long seed = 0;
 		for (Paper paper : all) {
 			if (!papers.contains(paper)) {
-				papers.add(paper);
+				papers.add(0, paper);
 				seed += paper.hashCode();
 			}
 		}
@@ -51,8 +53,8 @@ public class PaperSet extends Drawable {
 
 			for (int i = index; i < index + batchSize; i++) {
 				Paper p = papers.get(i);
-				PaperDrawable d = new PaperDrawable(getVisualization(), p,
-						drawable, angle, offset, i, circle);
+				PaperDrawable d = new PaperDrawable(manager, p, drawable,
+						angle, offset, i, circle);
 				paperDrawables.add(d);
 			}
 
@@ -71,18 +73,19 @@ public class PaperSet extends Drawable {
 	}
 
 	public void draw(float layeralpha) {
-		float scale = getVisualization().getDrawScale();
-
-		for (int i = paperDrawables.size() - 1; i >= 0; i--) {
-			Paper paper = paperDrawables.get(i).getPaper();
+		MultiThreadPruning<PaperDrawable> prune = new MultiThreadPruning<PaperDrawable>(paperDrawables);
+		List<PaperDrawable> visible = prune.getElements(getVisualization().getScreenBounds());
+		
+		for (PaperDrawable d : visible) {
+			Paper paper = d.getPaper();
 			if (manager.getFilter().allowed(paper))
-				paperDrawables.get(i).draw(scale, alpha * layeralpha);
+				d.draw(alpha * layeralpha);
 		}
 
-		for (int i = paperDrawables.size() - 1; i >= 0; i--) {
-			Paper paper = paperDrawables.get(i).getPaper();
+		for (PaperDrawable d : visible) {
+			Paper paper = d.getPaper();
 			if (manager.getFilter().allowed(paper))
-				paperDrawables.get(i).drawName(scale, alpha * layeralpha);
+				d.drawName(alpha * layeralpha);
 		}
 	}
 

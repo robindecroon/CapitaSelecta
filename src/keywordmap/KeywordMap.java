@@ -1,11 +1,13 @@
 package keywordmap;
 
+import core.BoundingBox;
 import processing.core.PApplet;
 import wordcloud.WordCloudManager;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
+import de.fhpotsdam.unfolding.utils.ScreenPosition;
 
 public class KeywordMap implements Visualization {
 	private BoundedUnfoldingMap map;
@@ -111,5 +113,17 @@ public class KeywordMap implements Visualization {
 	@Override
 	public float getDrawScale() {
 		return Math.max(0.2f, Math.min(1.f, map.getZoom() * 0.0277f));
+	}
+
+	/**
+	 * 
+	 * @return
+	 */
+	public BoundingBox getScreenBounds() {
+		ScreenPosition l = map.getScreenPosition(map.getTopLeftBorder());
+		ScreenPosition r = map.getScreenPosition(map.getBottomRightBorder());
+
+		return new BoundingBox(l.x, l.y, Math.abs(r.x - l.x), Math.abs(r.y
+				- l.y));
 	}
 }

@@ -14,8 +14,6 @@ import data.Database;
 import data.PaperWordData;
 import data.University;
 import data.UniversityCluster;
-import de.fhpotsdam.unfolding.UnfoldingMap;
-import de.fhpotsdam.unfolding.utils.ScreenPosition;
 
 /**
  * Set of word clouds for a given zoom level.
@@ -26,6 +24,9 @@ import de.fhpotsdam.unfolding.utils.ScreenPosition;
 public class WordCloudSet extends Drawable {
 	private List<WordCloud> visibleWordClouds = new ArrayList<WordCloud>();
 	private final List<WordCloud> wordClouds = new ArrayList<WordCloud>();
+
+	private int wordCount;
+	private int paperCount;
 
 	/**
 	 * 
@@ -50,10 +51,13 @@ public class WordCloudSet extends Drawable {
 		HashMap<UniversityCluster, PaperWordData> u = Database.getInstance()
 				.getWordsPerUniversity(distance);
 
+		wordCount = (int) (4 + Math.ceil(6 * lerpZoom));
+		paperCount = (int) (2 + Math.ceil(14 * lerpZoom));
+
 		for (Entry<UniversityCluster, PaperWordData> e : u.entrySet()) {
 			try {
 				wordClouds.add(new WordCloud(manager, e.getKey().getLocation(),
-						e.getValue()));
+						e.getValue(), wordCount));
 			} catch (IllegalStateException exception) {
 				String warning = "No words were added to the word cloud of university cluser:";
 				for (University uu : e.getKey().getUniversities())
@@ -79,7 +83,7 @@ public class WordCloudSet extends Drawable {
 	 */
 	@Override
 	public void draw(float alpha) {
-		BoundingBox screenBounds = getScreenBounds();
+		BoundingBox screenBounds = getVisualization().getScreenBounds();
 
 		MultiThreadPruning<WordCloud> prune = new MultiThreadPruning<WordCloud>(
 				wordClouds);
@@ -111,18 +115,8 @@ public class WordCloudSet extends Drawable {
 		return highLighted == null ? null : highLighted.getPaperWord();
 	}
 
-	private BoundingBox getScreenBounds() {
-		UnfoldingMap map = getVisualization().getMap();
-
-		ScreenPosition l = map.getScreenPosition(map.getTopLeftBorder());
-		ScreenPosition r = map.getScreenPosition(map.getBottomRightBorder());
-
-		return new BoundingBox(l.x, l.y, Math.abs(r.x - l.x), Math.abs(r.y
-				- l.y));
-	}
-
 	public void updatePaperSet(String word) {
 		for (WordCloud c : wordClouds)
-			c.updatePaperSet(word);
+			c.updatePaperSet(word, paperCount);
 	}
 }

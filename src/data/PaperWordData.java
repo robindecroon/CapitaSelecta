@@ -60,11 +60,8 @@ public class PaperWordData {
 		Set<String> words = new HashSet<String>(wordPaperMap.keySet());
 		for (String word : words) {
 			if (word.endsWith("s")) {
-			
-			
 				String singleWord = word.substring(0, word.length() - 1);
 
-				System.out.println(word + "-"+singleWord);
 				if (wordPaperMap.containsKey(singleWord)) {
 					wordPaperMap.get(singleWord).addAll(wordPaperMap.get(word));
 					wordCount.put(singleWord, wordCount.get(singleWord)

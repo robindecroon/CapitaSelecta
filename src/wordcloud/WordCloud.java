@@ -35,7 +35,7 @@ public class WordCloud extends Drawable implements Bounded {
 	private int minimumFont = 12;
 	private int maximumFont = 24;
 
-	private final int NUMBEROFWORDS = 10;
+//	private final int NUMBEROFWORDS = 8;
 
 	private Location location;
 	private BoundingBox wordCloudSize;
@@ -54,7 +54,7 @@ public class WordCloud extends Drawable implements Bounded {
 	 * @param data
 	 */
 	public WordCloud(WordCloudManager manager, Location location,
-			PaperWordData data) {
+			PaperWordData data, int nbOfWords) {
 		super(manager.getVisualization());
 
 		if (location.getLat() != location.getLat()
@@ -65,8 +65,8 @@ public class WordCloud extends Drawable implements Bounded {
 		this.location = location;
 		this.data = data;
 
-		construct(getVisualization(), data);
-		updatePaperSet(null);
+		construct(getVisualization(), data, nbOfWords);
+		updatePaperSet(null,0);
 	}
 
 	public PaperWordData getPaperWordData() {
@@ -78,7 +78,7 @@ public class WordCloud extends Drawable implements Bounded {
 	 * @param p
 	 * @param data
 	 */
-	public void construct(Visualization visualization, PaperWordData data) {
+	public void construct(Visualization visualization, PaperWordData data, int nbOfWords) {
 		// Get the applet
 		PApplet p = visualization.getApplet();
 
@@ -106,7 +106,7 @@ public class WordCloud extends Drawable implements Bounded {
 		Collections.sort(allWords);
 
 		List<CountedString> words = new ArrayList<CountedString>();
-		for (int i = 0; i < Math.min(NUMBEROFWORDS, allWords.size()); i++)
+		for (int i = 0; i < Math.min(nbOfWords, allWords.size()); i++)
 			words.add(allWords.get(i));
 
 		for (CountedString word : words) {
@@ -267,7 +267,7 @@ public class WordCloud extends Drawable implements Bounded {
 	 * 
 	 * @param word
 	 */
-	public void updatePaperSet(String word) {
+	public void updatePaperSet(String word, int paperCount) {
 		for (PaperSet set : paperSets.values())
 			set.deactivate();
 		if (word == null)
@@ -276,7 +276,7 @@ public class WordCloud extends Drawable implements Bounded {
 			paperSets.get(word).activate();
 		else if (drawables.get(word) != null)
 			paperSets.put(word, new PaperSet(manager, drawables.get(word),
-					word, data));
+					word, data, paperCount));
 	}
 
 	/**

@@ -4,8 +4,9 @@ import java.util.HashMap;
 
 import keywordmap.Drawable;
 import keywordmap.Visualization;
-import filter.AllAllowedFilter;
+import data.Conference;
 import filter.Filter;
+import filter.GeneralFilter;
 
 /**
  * A manager for the word clouds sets. A word cloud set is a set of word clouds
@@ -16,8 +17,8 @@ import filter.Filter;
  */
 public class WordCloudManager extends Drawable {
 	private Highlight highlight = new Highlight();
-	private Filter filter =AllAllowedFilter.getInstance();
-//	private Filter filter = new GeneralFilter(2009, 2010, Conference.EDM);
+	// private Filter filter = AllAllowedFilter.getInstance();
+	private Filter filter = new GeneralFilter(2008, 2012, Conference.EDM);
 	private HashMap<Float, WordCloudSet> zoomMap = new HashMap<Float, WordCloudSet>();
 
 	public WordCloudManager(Visualization visualization, float minzoom,

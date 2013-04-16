@@ -1,5 +1,6 @@
 package keywordmap;
 
+import core.BoundingBox;
 import processing.core.PApplet;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 
@@ -14,4 +15,5 @@ public interface Visualization {
 	public void draw();
 	
 	public boolean leftClicked();
+	public BoundingBox getScreenBounds();
 }

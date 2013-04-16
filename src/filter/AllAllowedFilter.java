@@ -23,4 +23,14 @@ public class AllAllowedFilter implements Filter {
 	public boolean allowed(Paper paper) {
 		return true;
 	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see filter.Filter#getColor(data.Paper)
+	 */
+	@Override
+	public Color getColor(Paper paper) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

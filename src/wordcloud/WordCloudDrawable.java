@@ -60,8 +60,8 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 		ScreenPosition p = map.getScreenPosition(location);
 
 		float scale = getVisualization().getDrawScale();
-		
 		float highlightAlpha = manager.getHighlight().getAlpha(getPaperWord());
+		
 		applet.fill(0, 0, 0, 255.f * layerAlpha * highlightAlpha);
 		applet.textSize(Math.min(48, size * scale
 				* manager.getHighlight().getScale(getPaperWord())));
@@ -101,9 +101,11 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 		return cachedBoundingBox;
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * @see keywordmap.Drawable#update()
+	 */
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-
 	}
 }

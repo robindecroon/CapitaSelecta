@@ -35,7 +35,7 @@ public class GeneralFilter implements Filter {
 		boolean goodYear = paper.getYear() >= startYear
 				&& paper.getYear() <= endYear;
 		boolean goodCenference = conferences.contains(paper.getConference());
-		return goodYear&&goodCenference;
+		return goodYear && goodCenference;
 	}
 
 	/*
@@ -78,5 +78,26 @@ public class GeneralFilter implements Filter {
 		if (startYear != other.startYear)
 			return false;
 		return true;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see filter.Filter#getColor(data.Paper)
+	 */
+	@Override
+	public Color getColor(Paper paper) {
+		if (paper.getYear() == 2008)
+			return Color.C2008;
+		else if (paper.getYear() == 2009)
+			return Color.C2009;
+		else if (paper.getYear() == 2010)
+			return Color.C2010;
+		else if (paper.getYear() == 2011)
+			return Color.C2011;
+		else if (paper.getYear() == 2012)
+			return Color.C2012;
+		else
+			throw new IllegalStateException();
 	}
 }
