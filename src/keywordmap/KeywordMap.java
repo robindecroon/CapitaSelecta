@@ -2,13 +2,12 @@ package keywordmap;
 
 import processing.core.PApplet;
 import wordcloud.WordCloudManager;
-import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
 import de.fhpotsdam.unfolding.utils.MapUtils;
 
 public class KeywordMap {
-	private UnfoldingMap map;
+	private Fixed map;
 	private PApplet applet;
 	private final WordCloudManager manager;
 
@@ -18,10 +17,9 @@ public class KeywordMap {
 		this.applet = applet;
 		String connStr = "jdbc:sqlite:"
 				+ applet.sketchPath("data/edmlakmap.mbtiles");
-		map = new UnfoldingMap(applet, new MBTilesMapProvider(connStr));
+		map = new Fixed(applet, new MBTilesMapProvider(connStr));
 		MapUtils.createDefaultEventDispatcher(applet, map);
 
-		
 		map.setTweening(true);
 		map.setZoomRange(2.f, 8.f);
 		map.zoomAndPanTo(new Location(50.85, 4.35), 8);
@@ -43,7 +41,9 @@ public class KeywordMap {
 		return Math.min(1.f, zoom / 36.f);
 	}
 
+
 	public void draw() {
+
 		map.draw();
 		manager.draw(map.getZoom());
 	}
