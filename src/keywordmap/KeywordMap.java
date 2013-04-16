@@ -43,9 +43,9 @@ public class KeywordMap implements Visualization {
 		return map.getZoom();
 	}
 
-	// public static float getScaledZoom(float zoom) {
-	// return Math.max(0.4f, Math.min(1.f, zoom / 24.f));
-	// }
+	public WordCloudManager getWordCloudManager() {
+		return manager;
+	}
 
 	/*
 	 * (non-Javadoc)

@@ -9,7 +9,7 @@ import acceleration.Bounded;
 import core.BoundingBox;
 import data.Paper;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
-import filter.Color;
+import filter.PaperColor;
 
 public class PaperDrawable extends Drawable implements Bounded {
 	private Paper paper;
@@ -100,7 +100,7 @@ public class PaperDrawable extends Drawable implements Bounded {
 		applet.stroke(0, alpha * 128.f);
 		applet.line(x1, y1, x2, y2);
 
-		Color c = manager.getFilter().getColor(getPaper());
+		PaperColor c = manager.getFilter().getColor(getPaper());
 
 		applet.pushMatrix();
 		applet.translate(x1 - circleImage.width * 0.5f * scale, y1

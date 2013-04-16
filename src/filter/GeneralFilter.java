@@ -7,20 +7,23 @@ import data.Conference;
 import data.Paper;
 
 public class GeneralFilter implements Filter {
-	private int startYear;
-	private int endYear;
+	private final List<Integer> years = new ArrayList<Integer>();
 	private final List<Conference> conferences = new ArrayList<Conference>();
 
-	public GeneralFilter(int startYear, int endYear, List<Conference> conference) {
-		this.startYear = startYear;
-		this.endYear = endYear;
+	public GeneralFilter(List<Integer> years, List<Conference> conference) {
+		this.years.addAll(years);
 		this.conferences.addAll(conference);
 	}
 
-	public GeneralFilter(int startYear, int endYear, Conference... conferences) {
-		this.startYear = startYear;
-		this.endYear = endYear;
+	public GeneralFilter() {
+		for (int i = 2008; i <= 2012; i++)
+			years.add(i);
+		for (Conference c : Conference.values())
+			this.conferences.add(c);
+	}
 
+	public GeneralFilter(List<Integer> years, Conference... conferences) {
+		this.years.addAll(years);
 		for (Conference conference : conferences)
 			this.conferences.add(conference);
 	}
@@ -32,33 +35,21 @@ public class GeneralFilter implements Filter {
 	 */
 	@Override
 	public boolean allowed(Paper paper) {
-		boolean goodYear = paper.getYear() >= startYear
-				&& paper.getYear() <= endYear;
+		boolean goodYear = years.contains(paper.getYear());
 		boolean goodCenference = conferences.contains(paper.getConference());
 		return goodYear && goodCenference;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#hashCode()
-	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result
 				+ ((conferences == null) ? 0 : conferences.hashCode());
-		result = prime * result + endYear;
-		result = prime * result + startYear;
+		result = prime * result + ((years == null) ? 0 : years.hashCode());
 		return result;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -73,9 +64,10 @@ public class GeneralFilter implements Filter {
 				return false;
 		} else if (!conferences.equals(other.conferences))
 			return false;
-		if (endYear != other.endYear)
-			return false;
-		if (startYear != other.startYear)
+		if (years == null) {
+			if (other.years != null)
+				return false;
+		} else if (!years.equals(other.years))
 			return false;
 		return true;
 	}
@@ -86,17 +78,17 @@ public class GeneralFilter implements Filter {
 	 * @see filter.Filter#getColor(data.Paper)
 	 */
 	@Override
-	public Color getColor(Paper paper) {
+	public PaperColor getColor(Paper paper) {
 		if (paper.getYear() == 2008)
-			return Color.C2008;
+			return PaperColor.C2008;
 		else if (paper.getYear() == 2009)
-			return Color.C2009;
+			return PaperColor.C2009;
 		else if (paper.getYear() == 2010)
-			return Color.C2010;
+			return PaperColor.C2010;
 		else if (paper.getYear() == 2011)
-			return Color.C2011;
+			return PaperColor.C2011;
 		else if (paper.getYear() == 2012)
-			return Color.C2012;
+			return PaperColor.C2012;
 		else
 			throw new IllegalStateException();
 	}

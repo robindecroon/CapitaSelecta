@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 import keywordmap.Drawable;
 import keywordmap.Visualization;
-import data.Conference;
 import filter.Filter;
 import filter.GeneralFilter;
 
@@ -18,7 +17,7 @@ import filter.GeneralFilter;
 public class WordCloudManager extends Drawable {
 	private Highlight highlight = new Highlight();
 	// private Filter filter = AllAllowedFilter.getInstance();
-	private Filter filter = new GeneralFilter(2008, 2012, Conference.EDM);
+	private Filter filter = new GeneralFilter();
 	private HashMap<Float, WordCloudSet> zoomMap = new HashMap<Float, WordCloudSet>();
 
 	public WordCloudManager(Visualization visualization, float minzoom,

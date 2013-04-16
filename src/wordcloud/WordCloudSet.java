@@ -7,12 +7,10 @@ import java.util.Map.Entry;
 
 import keywordmap.Drawable;
 import processing.core.PApplet;
-import util.Logger;
 import acceleration.MultiThreadPruning;
 import core.BoundingBox;
 import data.Database;
 import data.PaperWordData;
-import data.University;
 import data.UniversityCluster;
 
 /**
@@ -51,7 +49,7 @@ public class WordCloudSet extends Drawable {
 		HashMap<UniversityCluster, PaperWordData> u = Database.getInstance()
 				.getWordsPerUniversity(distance);
 
-		wordCount = (int) (4 + Math.ceil(6 * lerpZoom));
+		wordCount = (int) (3+ Math.ceil(7 * lerpZoom));
 		paperCount = (int) (2 + Math.ceil(14 * lerpZoom));
 
 		for (Entry<UniversityCluster, PaperWordData> e : u.entrySet()) {
@@ -59,10 +57,10 @@ public class WordCloudSet extends Drawable {
 				wordClouds.add(new WordCloud(manager, e.getKey().getLocation(),
 						e.getValue(), wordCount));
 			} catch (IllegalStateException exception) {
-				String warning = "No words were added to the word cloud of university cluser:";
-				for (University uu : e.getKey().getUniversities())
-					warning += "\n\t" + uu;
-				Logger.Warning(warning);
+//				String warning = "No words were added to the word cloud of university cluser:";
+//				for (University uu : e.getKey().getUniversities())
+//					warning += "\n\t" + uu;
+//				Logger.Warning(warning);
 			}
 		}
 	}

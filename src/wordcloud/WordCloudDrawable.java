@@ -57,14 +57,18 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 		PApplet applet = getVisualization().getApplet();
 		UnfoldingMap map = getVisualization().getMap();
 
-		ScreenPosition p = map.getScreenPosition(location);
-
 		float scale = getVisualization().getDrawScale();
+		float textSize = size * scale
+				* manager.getHighlight().getScale(getPaperWord());
 		float highlightAlpha = manager.getHighlight().getAlpha(getPaperWord());
 		
+		if (map.getZoom() < 4.2f&&textSize<4.f) 
+			return;
+	
+		ScreenPosition p = map.getScreenPosition(location);
+
 		applet.fill(0, 0, 0, 255.f * layerAlpha * highlightAlpha);
-		applet.textSize(Math.min(48, size * scale
-				* manager.getHighlight().getScale(getPaperWord())));
+		applet.textSize(Math.min(48, textSize));
 		applet.textAlign(PApplet.CENTER, PApplet.CENTER);
 
 		if (!horizontal) {
@@ -103,6 +107,7 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see keywordmap.Drawable#update()
 	 */
 	@Override

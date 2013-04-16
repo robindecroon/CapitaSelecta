@@ -29,7 +29,7 @@ public class AllAllowedFilter implements Filter {
 	 * @see filter.Filter#getColor(data.Paper)
 	 */
 	@Override
-	public Color getColor(Paper paper) {
+	public PaperColor getColor(Paper paper) {
 		// TODO Auto-generated method stub
 		return null;
 	}
