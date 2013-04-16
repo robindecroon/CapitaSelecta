@@ -6,19 +6,35 @@ package core;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Frame;
+import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.Panel;
+import java.awt.TextField;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
-import javax.swing.JSlider;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JSeparator;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 import layout.VerticalFlowLayout;
 import processing.core.PApplet;
@@ -37,8 +53,9 @@ public class Main {
 
 	/**
 	 * @param args
+	 * @throws IOException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -50,8 +67,25 @@ public class Main {
 		Dimension size = toolkit.getScreenSize();
 
 		final Frame frame = initFrame();
-		Panel toolbar = initToolbar();
+
+		JPanel toolbar = new JPanel();
+		toolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
+
+		JPanel timeline = initTimeLine();
+		
+		JPanel conference = initConferenceCheckBoxes();
+
+		JSeparator sep = new JSeparator(JSeparator.VERTICAL);
+		
+		JPanel searchWrapper = initSearch();
+		
+		toolbar.add(timeline);
+		toolbar.add(conference);
+		toolbar.add(sep);
+		toolbar.add(searchWrapper);
+
 		Panel sidebar = initSidebar();
+		
 		final PApplet mainApplet = new MainApplet();
 		mainApplet.init();
 		frame.add(toolbar, BorderLayout.NORTH);
@@ -76,6 +110,78 @@ public class Main {
 				});
 			}
 		});
+	}
+
+	private static JPanel initSearch() throws IOException {
+		JPanel searchPanel = new JPanel();
+		searchPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
+
+		final TextField tf1 = new TextField(Constants.TEXTBOX1, 40);
+		tf1.addFocusListener(new FocusListener() {
+
+			@Override
+			public void focusLost(FocusEvent arg0) {
+			}
+
+			@Override
+			public void focusGained(FocusEvent arg0) {
+				tf1.setText("");
+			}
+		});
+
+
+		JButton searchButton = new JButton("Search...");
+		BufferedImage searchIcon = ImageIO.read(new File("data/search.png"));
+		searchButton.setIcon(new ImageIcon(searchIcon));
+		searchButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String text1 = tf1.getText();
+				if (!text1.equals(Constants.TEXTBOX1)) {
+					System.out.println("To Search: " + text1);
+					// TODO
+				}
+			}
+		});
+		searchPanel.add(searchButton);
+
+		searchPanel.add(tf1);
+		
+		JPanel searchWrapper = new JPanel();
+		searchWrapper.setLayout(new VerticalFlowLayout());
+		JLabel searchTemp = new JLabel();
+		searchTemp.setPreferredSize(new Dimension(200,20));
+		searchWrapper.add(searchTemp);
+		searchWrapper.add(searchPanel);
+		searchWrapper.setBorder(BorderFactory.createEmptyBorder(0,0,0, 10));
+		return searchWrapper;
+	}
+
+	private static JPanel initTimeLine() throws IOException {
+		JPanel timeline = new JPanel();
+		timeline.setLayout(new VerticalFlowLayout());
+		JPanel temp = new JPanel();
+		JLabel tempLabel = new JLabel();
+		tempLabel.setPreferredSize(new Dimension(70, 20));
+		temp.add(tempLabel);
+		temp.add(initYearCheckBoxes());
+		timeline.add(temp);
+		BufferedImage myPicture = ImageIO.read(new File("data/timeline.png"));
+		JLabel picLabel = new JLabel(new ImageIcon(myPicture));
+		timeline.add(picLabel);
+		return timeline;
+	}
+
+	private static JPanel initConferenceCheckBoxes() {
+		JPanel conference = new JPanel();
+		conference.setLayout(new VerticalFlowLayout());
+		JCheckBox edm = new JCheckBox("edm");
+		JCheckBox lak = new JCheckBox("lak");
+
+		conference.add(edm);
+		conference.add(lak);
+		return conference;
 	}
 
 	public void setAuthors(String authors) {
@@ -155,108 +261,107 @@ public class Main {
 		return frame;
 	}
 
-	private static Panel initToolbar() {
-		Panel toolbar = new Panel();
+	private static JPanel initYearCheckBoxes() throws IOException {
+		JPanel toolbar = new JPanel();
+		toolbar.setLayout(new GridLayout());
+		toolbar.setPreferredSize(new Dimension(800, 50));
 
-		// JLabel label = new JLabel();
-		// ImageIcon icon = new ImageIcon("arrow.PNG");
-		// label.setIcon(icon);
-		// toolbar.add(label);
-		// toolbar.setLayout(new FlowLayout(FlowLayout.LEFT));
-		toolbar.setLayout(new BorderLayout());
-
-		JSlider slider = new JSlider();
-		slider.setSize(1000, 200);
-		slider.setBorder(BorderFactory.createTitledBorder("Timeline"));
-		slider.setMajorTickSpacing(1);
-		slider.setMaximum(2012);
-		slider.setOpaque(false);
-		slider.setMinimum(2008);
-		slider.addChangeListener(new ChangeListener() {
+		final JCheckBox box2008 = new JCheckBox();
+		box2008.setText("2008");
+		box2008.setFocusPainted(true);
+		box2008.setSelectedIcon(new ImageIcon("data/arrow.PNG"));
+		box2008.addItemListener(new ItemListener() {
 
 			@Override
-			public void stateChanged(ChangeEvent arg0) {
-				// arg0.
-
+			public void itemStateChanged(ItemEvent arg0) {
+				if (box2008.isSelected()) {
+					box2008.setForeground(Color.RED);
+					System.out.println("2008 selected!");
+				} else {
+					box2008.setForeground(Color.BLACK);
+					System.out.println("2008 deselected!");
+				}
 			}
 		});
-		slider.setPaintLabels(true);
-		slider.setPaintTicks(true);
+		final JCheckBox box2009 = new JCheckBox();
+		box2009.setText("2009");
+		box2009.addItemListener(new ItemListener() {
 
-		toolbar.add(slider);
+			@Override
+			public void itemStateChanged(ItemEvent arg0) {
+				if (box2009.isSelected()) {
+					box2009.setForeground(Color.BLUE);
+					System.out.println("2009 selected!");
+				} else {
+					box2009.setForeground(Color.BLACK);
+					System.out.println("2009 deselected!");
+				}
+			}
+		});
+		final JCheckBox box2010 = new JCheckBox();
+		box2010.setText("2010");
+		box2010.addItemListener(new ItemListener() {
 
-		// Label label = new Label(Constants.TOOLBAR_TEXT);
-		// toolbar.add(label);
+			@Override
+			public void itemStateChanged(ItemEvent arg0) {
+				if (box2010.isSelected()) {
+					box2010.setForeground(Color.GREEN);
+					System.out.println("2010 selected!");
+				} else {
+					box2010.setForeground(Color.BLACK);
+					System.out.println("2010 deselected!");
+				}
+			}
+		});
+		final JCheckBox box2011 = new JCheckBox();
+		box2011.setText("2011");
+		box2011.addItemListener(new ItemListener() {
 
-		// final TextField tf1 = new TextField(Constants.TEXTBOX1, 30);
-		// tf1.setBackground(Color.RED);
-		// tf1.addFocusListener(new FocusListener() {
-		//
-		// @Override
-		// public void focusLost(FocusEvent arg0) {
-		// }
-		//
-		// @Override
-		// public void focusGained(FocusEvent arg0) {
-		// tf1.setText("");
-		//
-		// }
-		// });
-		// toolbar.add(tf1);
-		//
-		// final TextField tf2 = new TextField(Constants.TEXTBOX2, 30);
-		// tf2.setBackground(Color.GREEN);
-		// tf2.addFocusListener(new FocusListener() {
-		//
-		// @Override
-		// public void focusLost(FocusEvent arg0) {
-		// }
-		//
-		// @Override
-		// public void focusGained(FocusEvent arg0) {
-		// tf2.setText("");
-		//
-		// }
-		// });
-		// toolbar.add(tf2);
-		toolbar.setBackground(new Color(240, 240, 240));
+			@Override
+			public void itemStateChanged(ItemEvent arg0) {
+				if (box2011.isSelected()) {
+					box2011.setForeground(Color.MAGENTA);
+					System.out.println("2011 selected!");
+				} else {
+					box2011.setForeground(Color.BLACK);
+					System.out.println("2011 deselected!");
+				}
+			}
+		});
+		final JCheckBox box2012 = new JCheckBox();
+		box2012.setText("2012");
+		box2012.addItemListener(new ItemListener() {
 
-		// Button searchButton = new Button(Constants.GO_BUTTON_TEXT);
-		// searchButton.addActionListener(new ActionListener() {
-		//
-		// @Override
-		// public void actionPerformed(ActionEvent e) {
-		// String text1 = tf1.getText();
-		// String text2 = tf2.getText();
-		// if (text1.equals(text2)) {
-		// return;
-		// }
-		// if (!text1.equals(Constants.TEXTBOX1) &&
-		// !text2.equals(Constants.TEXTBOX2)) {
-		// Thread searchThread = new Thread(new KeywordRunnable(text1, text2));
-		// searchThread.start();
-		// } else if (text1.equals(Constants.TEXTBOX1)) {
-		// Thread searchThread = new Thread(new KeywordRunnable(null, text2));
-		// searchThread.start();
-		// } else if (text1.equals(Constants.TEXTBOX2)) {
-		// Thread searchThread = new Thread(new KeywordRunnable(text1, null));
-		// searchThread.start();
-		// }
-		// }
-		// });
-		// toolbar.add(searchButton);
-		//
-		// Button clearButton = new Button(Constants.CLEAR_BUTTON_TEXT);
-		// clearButton.addActionListener(new ActionListener() {
-		//
-		// @Override
-		// public void actionPerformed(ActionEvent e) {
-		// clearPaperColors();
-		// }
-		//
-		// });
-		// toolbar.add(clearButton);
+			@Override
+			public void itemStateChanged(ItemEvent arg0) {
+				if (box2012.isSelected()) {
+					box2012.setForeground(Color.ORANGE);
+					System.out.println("2012 selected!");
+				} else {
+					box2012.setForeground(Color.BLACK);
+					System.out.println("2012 deselected!");
+				}
+			}
+		});
+
+		toolbar.add(box2008);
+		toolbar.add(box2009);
+		toolbar.add(box2010);
+		toolbar.add(box2011);
+		toolbar.add(box2012);
+
 		return toolbar;
+	}
+
+	/** Returns an ImageIcon, or null if the path was invalid. */
+	public ImageIcon createImageIcon(String path, String description) {
+		java.net.URL imgURL = getClass().getResource(path);
+		if (imgURL != null) {
+			return new ImageIcon(imgURL, description);
+		} else {
+			System.err.println("Couldn't find file: " + path);
+			return null;
+		}
 	}
 
 	// private static void clearPaperColors() {
