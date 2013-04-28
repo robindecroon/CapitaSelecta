@@ -61,24 +61,26 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 		float textSize = size * scale
 				* manager.getHighlight().getScale(getPaperWord());
 		float highlightAlpha = manager.getHighlight().getAlpha(getPaperWord());
-		
-		if (map.getZoom() < 4.2f&&textSize<4.f) 
+
+		if (map.getZoom() < 4.2f && textSize < 4.f)
 			return;
-	
+
 		ScreenPosition p = map.getScreenPosition(location);
 
 		applet.fill(0, 0, 0, 255.f * layerAlpha * highlightAlpha);
-		applet.textSize(Math.min(48, textSize));
-		applet.textAlign(PApplet.CENTER, PApplet.CENTER);
 
 		if (!horizontal) {
 			applet.pushMatrix();
 			applet.translate((bounds.x + bounds.width * 0.5f) * scale + p.x,
 					(bounds.y + bounds.height * 0.5f) * scale + p.y);
 			applet.rotate((float) (Math.PI * 0.5));
+			applet.textSize(Math.min(48, textSize));
+			applet.textAlign(PApplet.CENTER, PApplet.CENTER);
 			applet.text(word, 0, 0);
 			applet.popMatrix();
 		} else {
+			applet.textSize(Math.min(48, textSize));
+			applet.textAlign(PApplet.CENTER, PApplet.CENTER);
 			applet.text(word, (bounds.x + bounds.width * 0.5f) * scale + p.x,
 					(bounds.y + bounds.height * 0.5f) * scale + p.y);
 		}

@@ -25,6 +25,9 @@ public class WordCloudSet extends Drawable {
 
 	private int wordCount;
 	private int paperCount;
+	private float zoom;
+	private WordCloudManager manager;
+	private boolean ready = false;
 
 	/**
 	 * 
@@ -34,35 +37,44 @@ public class WordCloudSet extends Drawable {
 	 * @param minzoom
 	 * @param maxzoom
 	 */
-	public WordCloudSet(WordCloudManager manager, float zoom, float minzoom,
-			float maxzoom) {
+	public WordCloudSet(WordCloudManager manager, float zoom) {
 		super(manager.getVisualization());
 
+		this.zoom = zoom;
+		this.manager = manager;
+
+		updateWordCloudSet();
+	}
+
+	public void updateWordCloudSet() {
+		ready = false;
+
 		double inv_log2 = 1.0 / Math.log10(2);
-		double scaledMin = Math.log10(minzoom) * inv_log2;
-		double scaledMax = Math.log10(maxzoom) * inv_log2;
+		double scaledMin = Math.log10(getVisualization().getMinimumZoom()) * inv_log2;
+		double scaledMax = Math.log10(getVisualization().getMaximumZoom()) * inv_log2;
 		double scaledZoom = Math.log10(zoom) * inv_log2;
 		double lerpZoom = (scaledZoom - scaledMin) / (scaledMax - scaledMin);
 
 		float distance = 10.f * (1.f - (float) lerpZoom);
 
 		HashMap<UniversityCluster, PaperWordData> u = Database.getInstance()
-				.getWordsPerUniversity(distance);
+				.getWordsPerUniversity(distance, manager.getFilter());
 
-		wordCount = (int) (3+ Math.ceil(7 * lerpZoom));
+		wordCount = (int) (3 + Math.ceil(7 * lerpZoom));
 		paperCount = (int) (2 + Math.ceil(14 * lerpZoom));
 
+		List<WordCloud> newWordClouds = new ArrayList<WordCloud>();
 		for (Entry<UniversityCluster, PaperWordData> e : u.entrySet()) {
 			try {
-				wordClouds.add(new WordCloud(manager, e.getKey().getLocation(),
-						e.getValue(), wordCount));
+				newWordClouds.add(new WordCloud(manager, e.getKey()
+						.getLocation(), e.getValue(), wordCount));
 			} catch (IllegalStateException exception) {
-//				String warning = "No words were added to the word cloud of university cluser:";
-//				for (University uu : e.getKey().getUniversities())
-//					warning += "\n\t" + uu;
-//				Logger.Warning(warning);
 			}
 		}
+
+		wordClouds.clear();
+		wordClouds.addAll(newWordClouds);
+		ready = true;
 	}
 
 	/*
@@ -81,6 +93,9 @@ public class WordCloudSet extends Drawable {
 	 */
 	@Override
 	public void draw(float alpha) {
+		if (!ready)
+			return;
+
 		BoundingBox screenBounds = getVisualization().getScreenBounds();
 
 		MultiThreadPruning<WordCloud> prune = new MultiThreadPruning<WordCloud>(

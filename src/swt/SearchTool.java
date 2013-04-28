@@ -41,9 +41,14 @@ public class SearchTool extends Composite {
 			public void widgetDefaultSelected(SelectionEvent arg0) {
 				Logger.Info("Entered \"" + text.getText() + "\" as search text");
 
-				if (SWTGui.applet.getMap() != null)
+				if (SWTGui.applet.getMap() != null) {
+					String searchString = null;
+
+					if (!text.getText().equals(""))
+						searchString = text.getText();
 					SWTGui.applet.getMap().getWordCloudManager()
-							.setHighlightedWord(text.getText());
+							.setHighlightedWord(searchString);
+				}
 
 			}
 		});

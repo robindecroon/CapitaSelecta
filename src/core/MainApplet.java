@@ -35,14 +35,14 @@ public class MainApplet extends PApplet {
 	 */
 	@Override
 	public void draw() {
-manager.update();
-map.update(manager.getFrameRate());
-map.draw();
+		manager.update();
+		map.update(manager.getFrameRate());
+		map.draw();
 
-fill(0, 0, 0);
-textSize(8);
-textAlign(PApplet.LEFT);
-text("framerate: " + manager.getFrameRate(), 16, 16);
+//		fill(0, 0, 0);
+//		textSize(8);
+//		textAlign(PApplet.LEFT);
+//		text("framerate: " + manager.getFrameRate(), 16, 16);
 	}
 
 	public KeywordMap getMap() {

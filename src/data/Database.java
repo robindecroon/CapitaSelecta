@@ -19,6 +19,7 @@ import rdf.QueryFailedException;
 import util.Dictionary;
 import util.Logger;
 import de.fhpotsdam.unfolding.geo.Location;
+import filter.Filter;
 
 public class Database {
 	// The singleton instance
@@ -306,7 +307,7 @@ public class Database {
 	}
 
 	public HashMap<UniversityCluster, PaperWordData> getWordsPerUniversity(
-			float distance) {
+			float distance, Filter filter) {
 		List<UniversityCluster> clusters = UniversityCluster.getClusters(
 				universities, distance);
 		HashMap<UniversityCluster, PaperWordData> result = new HashMap<UniversityCluster, PaperWordData>();
@@ -319,6 +320,8 @@ public class Database {
 
 				for (Paper paper : this.papers) {
 					if (!paper.getFirstLocation().equals(location))
+						continue;
+					if (!filter.allowed(paper))
 						continue;
 					List<PaperWord> words = paper.getRelevantWords();
 
@@ -333,6 +336,5 @@ public class Database {
 			result.put(cluster, data);
 		}
 		return result;
-
 	}
 }

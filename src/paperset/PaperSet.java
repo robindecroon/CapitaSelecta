@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import keywordmap.Drawable;
+import swt.SWTGui;
 import util.RNG;
 import wordcloud.WordCloudDrawable;
 import wordcloud.WordCloudManager;
@@ -84,8 +85,10 @@ public class PaperSet extends Drawable {
 
 		for (PaperDrawable d : visible) {
 			Paper paper = d.getPaper();
-			if (manager.getFilter().allowed(paper))
-				d.drawName(alpha * layeralpha);
+			if (manager.getFilter().allowed(paper)&&d.drawName(alpha * layeralpha)) {
+				SWTGui.instance.setPaper(paper);
+				break;
+			}
 		}
 	}
 

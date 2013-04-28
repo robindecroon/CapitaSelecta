@@ -63,7 +63,7 @@ public class PaperDrawable extends Drawable implements Bounded {
 			return bounds.mouseIn(mouseX, mouseY);
 	}
 
-	public void drawName(float alpha) {
+	public boolean drawName(float alpha) {
 		PApplet applet = getVisualization().getApplet();
 
 		if (mouseIn(applet.mouseX, applet.mouseY)) {
@@ -73,7 +73,9 @@ public class PaperDrawable extends Drawable implements Bounded {
 			applet.textSize(getVisualization().getDrawScale() * 16.f);
 			applet.text(paper.getName(), bounds.x + bounds.width / 2.f,
 					bounds.y - 16.f);
+			return true;
 		}
+		return false;
 	}
 
 	public void draw(float alpha) {

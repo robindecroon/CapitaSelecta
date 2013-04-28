@@ -35,8 +35,6 @@ public class WordCloud extends Drawable implements Bounded {
 	private int minimumFont = 12;
 	private int maximumFont = 24;
 
-//	private final int NUMBEROFWORDS = 8;
-
 	private Location location;
 	private BoundingBox wordCloudSize;
 	private float cachedZoomLevel;
@@ -78,7 +76,7 @@ public class WordCloud extends Drawable implements Bounded {
 	 * @param p
 	 * @param data
 	 */
-	public void construct(Visualization visualization, PaperWordData data, int nbOfWords) {
+	public void construct(Visualization visualization, PaperWordData data, int nbOfWords) {		
 		// Get the applet
 		PApplet p = visualization.getApplet();
 
@@ -121,7 +119,6 @@ public class WordCloud extends Drawable implements Bounded {
 		for (CountedString word : words) {
 			float fontSize = countToFontSize(word.getCount());
 			p.textSize(fontSize);
-
 			float ww = p.textWidth(word.getString());
 			float hh = (Math.abs(p.textAscent()) + Math.abs(p.textDescent()));
 
@@ -134,7 +131,7 @@ public class WordCloud extends Drawable implements Bounded {
 				boolean bestHorizontal = true;
 				boolean found = false;
 
-				for (int i = 0; i < 800; i++) {
+				for (int i = 0; i < 200; i++) {
 					float xx = (random.nextFloat() - 0.5f) * width - ww / 2.f;
 					float yy = (random.nextFloat() - 0.5f) * height - hh / 2.f;
 					boolean horizontal = index == 0 || i % 8 > 0;

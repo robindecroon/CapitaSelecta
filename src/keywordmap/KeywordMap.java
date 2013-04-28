@@ -35,8 +35,16 @@ public class KeywordMap implements Visualization {
 		map.setZoomRange(2.f, 8.f);
 		map.zoomAndPanTo(new Location(50.85, 4.35), 4);
 
-		manager = new WordCloudManager(this, 2.f, 256.f, 2.f, 4.f, 8.f, 16.f,
+		manager = new WordCloudManager(this,2.f, 4.f, 8.f, 16.f,
 				32.f, 64.f, 128.f, 256.f);
+	}
+
+	public float getMinimumZoom() {
+		return 2.f;
+	}
+
+	public float getMaximumZoom() {
+		return 256.f;
 	}
 
 	public float getZoom() {

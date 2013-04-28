@@ -16,17 +16,21 @@ import filter.GeneralFilter;
  */
 public class WordCloudManager extends Drawable {
 	private Highlight highlight = new Highlight();
-	// private Filter filter = AllAllowedFilter.getInstance();
+	
+	private Filter newFilter;
 	private Filter filter = new GeneralFilter();
 	private HashMap<Float, WordCloudSet> zoomMap = new HashMap<Float, WordCloudSet>();
 
-	public WordCloudManager(Visualization visualization, float minzoom,
-			float maxzoom, float... zoomLevels) {
-		super(visualization);
+	private float filterAlpha = 1.f;
+	private boolean changingFilter = false;
 
-		for (Float zoomlevel : zoomLevels)
-			this.zoomMap.put(zoomlevel, new WordCloudSet(this, zoomlevel,
-					minzoom, maxzoom));
+	/**
+	 * 
+	 * @param visualization
+	 * @param zoomLevels
+	 */
+	public WordCloudManager(Visualization visualization, float... zoomLevels) {
+		super(visualization);
 	}
 
 	/*
@@ -36,7 +40,33 @@ public class WordCloudManager extends Drawable {
 	 */
 	@Override
 	public void update() {
+		float alphaSpeed = 0.08f;
+		if (changingFilter) {
+			if (filterAlpha > alphaSpeed)
+				filterAlpha -= alphaSpeed;
+			else {
+				changingFilter = false;
+				filterAlpha = 0.f;
+				filter=newFilter;
+				zoomMap.clear();
+			}
+		} else {
+			if (filterAlpha + alphaSpeed < 1.f)
+				filterAlpha += alphaSpeed;
+			else
+				filterAlpha = 1.f;
+		}
+
 		float currentZoom = getVisualization().getZoom();
+		float previousZoom = getPreviousZoom(currentZoom);
+		float nextZoom = getNextZoom(currentZoom);
+
+		if (!zoomMap.containsKey(previousZoom))
+			this.zoomMap
+					.put(previousZoom, new WordCloudSet(this, previousZoom));
+
+		if (!zoomMap.containsKey(nextZoom))
+			this.zoomMap.put(nextZoom, new WordCloudSet(this, previousZoom));
 
 		if (getVisualization().leftClicked()
 				&& zoomMap.containsKey(currentZoom))
@@ -55,7 +85,7 @@ public class WordCloudManager extends Drawable {
 		float zoom = getVisualization().getZoom();
 
 		if (zoomMap.containsKey(zoom))
-			zoomMap.get(zoom).draw(alpha);
+			zoomMap.get(zoom).draw(filterAlpha * alpha);
 		else {
 			float previousZoom = getPreviousZoom(zoom);
 			float nextZoom = getNextZoom(zoom);
@@ -66,9 +96,9 @@ public class WordCloudManager extends Drawable {
 			WordCloudSet next = zoomMap.get(nextZoom);
 
 			if (prev != null)
-				prev.draw(alpha * (1.f - layerAlpha));
+				prev.draw(filterAlpha * alpha * (1.f - layerAlpha));
 			if (next != null)
-				next.draw(alpha * layerAlpha);
+				next.draw(filterAlpha * alpha * layerAlpha);
 		}
 	}
 
@@ -79,7 +109,8 @@ public class WordCloudManager extends Drawable {
 	public void setFilter(Filter filter) {
 		if (filter == null)
 			throw new NullPointerException("The given filter is null!");
-		this.filter = filter;
+		this.newFilter=filter;
+		changingFilter = true;
 	}
 
 	public Filter getFilter() {
