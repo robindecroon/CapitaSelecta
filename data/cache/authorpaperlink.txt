@@ -1,0 +1,587 @@
+Kurt Vanlehn;Reinforcement Learning-based Feature Selection For Developing Pedagogically Effective Tutorial Dialogue Tactics;Instructional Factors Analysis: A Cognitive Model For Multiple Instructional Interventions
+Danielle S. Mcnamara;From Text to Feedback: Leveraging Data Mining to Build Educational Technologies
+Roland Hubscher;Integrating Knowledge Gained From Data Mining With Pedagogical Knowledge
+Agathe Merceron;Interestingness Measures for Association Rules in Educational Data;When Data Exploration and Data Mining meet while Analysing Usage Data of a Course;A Data Model to Ease Analysis and Mining of Educational Data;Investigating Usage of Resources in LMS with Specific Association Rules;Learning Paths in a Non-Personalizing e-Learning Environment;Investigating the Core Group Effect in Usage of Resources with Analytics
+Sebastian Schwarzrock;Learning Paths in a Non-Personalizing e-Learning Environment
+Sergio Gutierrez;Mining and Visualizing Visited Trails in Web-Based Educational Systems
+Xiaonan Zhang;Mining Free-form Spoken Responses to Tutor Prompts;Analytic Comparison of Three Methods to Evaluate Tutorial Behaviors
+Jack Mostow;Mining Free-form Spoken Responses to Tutor Prompts;Analytic Comparison of Three Methods to Evaluate Tutorial Behaviors;Why, What, and How to Log?  Lessons from LISTEN;AutoJoin:  Generalizing an Example into an EDM query;Predicting Task Completion from Rich but Scarce Data;Using Logistic Regression to Trace Multiple Subskills in a Dynamic Bayes Net;How to Classify Tutorial Dialogue? Comparing Feature Vectors vs. Sequences;Logistic Regression in a Dynamic Bayes Net Models Multiple Subskills Better!;Desperately Seeking Subscripts: Towards Automated Model Parameterization;Learning Classifiers from a Relational Database of Tutor Logs;Dynamic Cognitive Tracing: Towards Unified Discovery of Student and Cognitive Models;Comparison of methods to trace multiple subskills: Is LR-DBN best?
+Joseph Valeri;Mining Free-form Spoken Responses to Tutor Prompts
+Albert T. Corbett;Mining Free-form Spoken Responses to Tutor Prompts;Improving Contextual Models of Guessing and Slipping with a Truncated Training Set;Automatically Detecting a Student's Preparation for Future Learning: Help Use is Key
+John C. Stamper;A pilot study on logic proof tutoring using hints generated from historical student data;Unsupervised MDP Value Selection for Automating ITS Capabilities;A Data Driven Approach to the Discovery of Better Cognitive Models;Using a Bayesian Knowledge Base for Hint Selection on Domain Specific Problems;Avoiding Problem Selection Thrashing with Conjunctive Knowledge Tracing;The Rise of the Super Experiment;Automated Student Model Improvement
+Kenneth R. Koedinger;Can an Intelligent Tutoring System Predict Math Proficiency as Well as a Standardized Test?;Using Item-type Performance Covariance to Improve the Skill Model of an Existing Tutor;A Response Time Model for Bottom-Out Hints as Worked Examples;Can we Predict which Groups of Questions Students will Learn from?;An open repository and analysis tools for fine-grained, longitudinal learner data;Learning Factors Transfer Analysis: Using Learning Curve Analysis to Automatically Generate Domain Models;A Data Driven Approach to the Discovery of Better Cognitive Models;Unsupervised Discovery of Student Learning Tactics;Avoiding Problem Selection Thrashing with Conjunctive Knowledge Tracing;Instructional Factors Analysis: A Cognitive Model For Multiple Instructional Interventions;A Machine Learning Approach for Automatic Student Model Discovery;Towards Better Understanding of Transfer in Cognitive Models of Practice;The Simple Location Heuristic is Better at Predicting Students' Changes in Error Rate Over Time Compared to the Simple Temporal Heuristic;Improving Models of Slipping, Guessing, And Moment-By-Moment Learning with Estimates of Skill Difficulty;Learner Differences in Hint Processing;The Rise of the Super Experiment;Automated Student Model Improvement
+Vincent Aleven;Argument Graph Classification via Genetic Programming and C4.5;Improving Contextual Models of Guessing and Slipping with a Truncated Training Set;Automatic Rating of User-Generated Math Solutions;Learner Differences in Hint Processing;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra
+Rebecca Nugent;Skill Set Profile Clustering Based on Student Capability Vectors Computed From Online Tutoring Data;Conditional Subspace Clustering of Skill Mastery: Identifying Skills that Separate Students;A Comparison of Student Skill Knowledge Estimates;Skill Set Profile Clustering: The Empty K-Means Algorithm with Automatic Specification of Starting Cluster Centers
+P. Pavlik Jr;Using Item-type Performance Covariance to Improve the Skill Model of an Existing Tutor;Learning Factors Transfer Analysis: Using Learning Curve Analysis to Automatically Generate Domain Models;Data Reduction Methods Applied to Understanding Complex Learning Hypotheses;Avoiding Problem Selection Thrashing with Conjunctive Knowledge Tracing;Towards Better Understanding of Transfer in Cognitive Models of Practice;A Dynamical System Model of Microgenetic Changes in Performance, Efficacy, Strategy Use and Value during Vocabulary Learning
+Hao Cen;Using Item-type Performance Covariance to Improve the Skill Model of an Existing Tutor;Learning Factors Transfer Analysis: Using Learning Curve Analysis to Automatically Generate Domain Models
+Lili Wu;Using Item-type Performance Covariance to Improve the Skill Model of an Existing Tutor
+Benjamin Shih;A Response Time Model for Bottom-Out Hints as Worked Examples;Unsupervised Discovery of Student Learning Tactics
+Richard Scheines;A Response Time Model for Bottom-Out Hints as Worked Examples;Unsupervised Discovery of Student Learning Tactics;Searching for Variables and Models to Investigate Mediators of Learning from Multiple Representations
+Kyle Cunningham;An open repository and analysis tools for fine-grained, longitudinal learner data
+Alida Skogsholm;An open repository and analysis tools for fine-grained, longitudinal learner data
+Brett Leber;An open repository and analysis tools for fine-grained, longitudinal learner data
+Adriana M.j.b. De Carvalho;Labeling Student Behavior Faster and More Precisely with Text Replays;Detecting and Understanding the Impact of Cognitive and Interpersonal Conflict in Computer Supported Collaborative Learning Environments
+Ilya M. Goldin;Learner Differences in Hint Processing
+Bruce M. Mclaren;Evaluating a Bayesian Student Model of Decimal Misconceptions;Development of a Workbench to Address the Educational Data Mining Bottleneck
+Michael V. Yudelson;Using Numeric Optimization To Refine Semantic User Model Integration Of Educational Systems;Towards Better Understanding of Transfer in Cognitive Models of Practice;Policy Building - An Extension To User Modeling
+Emma Brunskill;Partially Observable Sequential Decision Making for Problem Selection in an Intelligent Tutoring System;Estimating Prerequisite Structure From Noisy Data;Policy Building - An Extension To User Modeling;The Impact on Individualizing Student Models on Necessary Practice Opportunities
+Martina A. Rau;Interleaved Practice with Multiple Representations: Analyses with Knowledge Tracing Based Techniques;Searching for Variables and Models to Investigate Mediators of Learning from Multiple Representations
+Jung In Lee;The Impact on Individualizing Student Models on Necessary Practice Opportunities
+Leigh Ann Sudol-delyser;Factors Impacting Novice Code Comprehension in a Tutor for Introductory Computer Science;Calculating Probabilistic Distance to Solution in a Complex Problem Solving Domain
+Kelly Rivers;Calculating Probabilistic Distance to Solution in a Complex Problem Solving Domain
+Derek Lomas;The Rise of the Super Experiment
+Jessica Kalka;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra
+Angela Z. Wagner;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra
+Gail W. Kusbit;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra
+Jose P. Gonzalez-brenes;Predicting Task Completion from Rich but Scarce Data;How to Classify Tutorial Dialogue? Comparing Feature Vectors vs. Sequences;Learning Classifiers from a Relational Database of Tutor Logs;Dynamic Cognitive Tracing: Towards Unified Discovery of Student and Cognitive Models
+Elizabeth A. Mclaughlin;Automated Student Model Improvement
+Stephen E. Fancsali;Variable Construction and Causal Modeling of Online Education Messaging Data: Initial Results;Variable Construction and Causal Discovery for Cognitive Tutor Log Data: Initial Results;Variable Construction for Predictive and Causal Modeling of Online Education Data
+Stephen E. Fancsali;Variable Construction and Causal Modeling of Online Education Messaging Data: Initial Results;Variable Construction and Causal Discovery for Cognitive Tutor Log Data: Initial Results;Variable Construction for Predictive and Causal Modeling of Online Education Data
+Yanbo Xu;Using Logistic Regression to Trace Multiple Subskills in a Dynamic Bayes Net;Logistic Regression in a Dynamic Bayes Net Models Multiple Subskills Better!;Desperately Seeking Subscripts: Towards Automated Model Parameterization;Comparison of methods to trace multiple subskills: Is LR-DBN best?
+Geoff Gordon;Instructional Factors Analysis: A Cognitive Model For Multiple Instructional Interventions
+Nan Li;A Machine Learning Approach for Automatic Student Model Discovery
+Noboru Matsuda;A Machine Learning Approach for Automatic Student Model Discovery
+William W. Cohen;A Machine Learning Approach for Automatic Student Model Discovery
+Weisi Duan;How to Classify Tutorial Dialogue? Comparing Feature Vectors vs. Sequences
+S. Isotani;Evaluating a Bayesian Student Model of Decimal Misconceptions
+M. Munna;Desperately Seeking Subscripts: Towards Automated Model Parameterization
+S. Wu;A Dynamical System Model of Microgenetic Changes in Performance, Efficacy, Strategy Use and Value during Vocabulary Learning
+Bao Hong Tan;AutoJoin:  Generalizing an Example into an EDM query;Learning Classifiers from a Relational Database of Tutor Logs
+Jon M. Fincham;Using Neural Imaging and Cognitive Modeling to Infer Mental States while Using an Intelligent Tutoring System
+John R. Anderson;Using Neural Imaging and Cognitive Modeling to Infer Mental States while Using an Intelligent Tutoring System
+Shawn Betts;Using Neural Imaging and Cognitive Modeling to Infer Mental States while Using an Intelligent Tutoring System
+Jennifer L. Ferris;Using Neural Imaging and Cognitive Modeling to Infer Mental States while Using an Intelligent Tutoring System
+Turadg Aleahmad;Automatic Rating of User-Generated Math Solutions
+Robert Kraut;Automatic Rating of User-Generated Math Solutions
+Carolyn P. Rose;Detecting and Understanding the Impact of Cognitive and Interpersonal Conflict in Computer Supported Collaborative Learning Environments
+Yue Cui;Detecting and Understanding the Impact of Cognitive and Interpersonal Conflict in Computer Supported Collaborative Learning Environments
+Niels Pinkwart;Argument Graph Classification via Genetic Programming and C4.5
+Pedro G. Espejo;Data Mining Algorithms to Classify Students
+Cesar Hervas;Data Mining Algorithms to Classify Students;Analyzing Rule Evaluation Measures with Educational Datasets: A Framework to Help the Teacher
+Michel C. Desmarais;Adaptive Test Design with a Naive Bayes Framework;On the Faithfulness of Simulated Student Performance Data;Conditions for effectively deriving a Q-Matrix from data with Non-negative Matrix Factorization;Methods to find the number of latent skills
+Behzad Beheshti;Methods to find the number of latent skills
+Rhouma Naceur;Methods to find the number of latent skills
+Mykola Pechenizkiy;Mining the Student Assessment Data: Lessons Drawn from a Small Scale Case Study;Process Mining Online Assessment Data;Predicting Students Drop Out: A Case Study;Towards EDM Framework for Personalization of Information Services in RPM Systems;Class Association Rule Mining from Students' Test Data;Stress Analytics in Education;CurriM: Curriculum Mining
+Toon Calders;Mining the Student Assessment Data: Lessons Drawn from a Small Scale Case Study
+Ekaterina Vasilyeva;Mining the Student Assessment Data: Lessons Drawn from a Small Scale Case Study;Process Mining Online Assessment Data;Towards EDM Framework for Personalization of Information Services in RPM Systems;Class Association Rule Mining from Students' Test Data
+P. De Bra;Mining the Student Assessment Data: Lessons Drawn from a Small Scale Case Study;Process Mining Online Assessment Data;Towards EDM Framework for Personalization of Information Services in RPM Systems;CurriM: Curriculum Mining
+Rafal Kocielnik;Stress Analytics in Education
+Natalia Sidorova;Stress Analytics in Education
+N. Trcka;Process Mining Online Assessment Data;CurriM: Curriculum Mining
+Evgeny Knutov;Towards EDM Framework for Personalization of Information Services in RPM Systems
+Sicco Verwer;Towards EDM Framework for Personalization of Information Services in RPM Systems
+Wil Van Der Aalst;Process Mining Online Assessment Data
+Gerben W. Dekker;Predicting Students Drop Out: A Case Study
+Jan M. Vleeshouwers;Predicting Students Drop Out: A Case Study
+Manuel Freire;Mining and Visualizing Visited Trails in Web-Based Educational Systems
+Christina Trotochaud;Mining Free-form Spoken Responses to Tutor Prompts
+Manolis Mavrikis;Data-driven modelling of students' interactions in an ILE
+Nell Duke;Mining Free-form Spoken Responses to Tutor Prompts
+Safia Abbas;Argument Mining Using Highly Structured Argument Repertoire;Developing an Argument Learning Environment Using Agent-Based ITS (ALES)
+Hajime Sawamura;Argument Mining Using Highly Structured Argument Repertoire;Developing an Argument Learning Environment Using Agent-Based ITS (ALES)
+R. Benjamin Shapiro;Computational Infrastructures for School Improvement: How to Move Forward
+Hisham Petry;Computational Infrastructures for School Improvement: How to Move Forward
+Louis M. Gomez;Computational Infrastructures for School Improvement: How to Move Forward
+Bruce Sherin;Using computational methods to discover student science conceptions in interview data
+Alejandro Villarreal;Adaptive Test Design with a Naive Bayes Framework
+Michel Gagnon;Adaptive Test Design with a Naive Bayes Framework
+Ildiko Pelczer;On the Faithfulness of Simulated Student Performance Data
+Min Chi;Reinforcement Learning-based Feature Selection For Developing Pedagogically Effective Tutorial Dialogue Tactics;Instructional Factors Analysis: A Cognitive Model For Multiple Instructional Interventions;Improving Models of Slipping, Guessing, And Moment-By-Moment Learning with Estimates of Skill Difficulty
+Dave Barker-plummer;Dimensions of Difficulty in Translating Natural Language into First Order Logic;Student Translations of Natural Language into Logic: The Grade Grinder Corpus Release 1.0;Using Edit Distance to Analyse Errors in a Natural Language to Logic Translation Corpus
+ orsley;What's an Expert? Using learning analytics to identify emergent markers of expertise through automated speech, sentiment and sketch analysis.
+ likstein;What's an Expert? Using learning analytics to identify emergent markers of expertise through automated speech, sentiment and sketch analysis.
+Claudia Antunes;Acquiring Background Knowledge for Intelligent Tutoring Systems;Mining Teaching Behaviors from Pedagogical Surveys;Social Networks Analysis for Quantifying Students' Performance in Teamwork
+Pedro Crespo;Social Networks Analysis for Quantifying Students' Performance in Teamwork
+J. Barracosa;Mining Teaching Behaviors from Pedagogical Surveys
+Rafi Nachmias;Developing a Log-based Motivation Measuring Tool;Consistency of Students' Pace in Online Learning;How do Students Organize Personal Information Spaces?;Is Students' Activity in LMS Persistent?;Hierarchical Structures of Content Items in LMS
+Sharon Hardof-jaffe;How do Students Organize Personal Information Spaces?;Hierarchical Structures of Content Items in LMS
+Ronit Azran;Hierarchical Structures of Content Items in LMS
+Elizabeth Ayers;Skill Set Profile Clustering Based on Student Capability Vectors Computed From Online Tutoring Data;Conditional Subspace Clustering of Skill Mastery: Identifying Skills that Separate Students;A Comparison of Student Skill Knowledge Estimates;Skill Set Profile Clustering: The Empty K-Means Algorithm with Automatic Specification of Starting Cluster Centers
+Anna N. Rafferty;Inferring learners' knowledge from observed actions
+Michelle M. Lamar;Inferring learners' knowledge from observed actions
+Thomas L. Griffiths;Inferring learners' knowledge from observed actions
+Stuart Russell;Partially Observable Sequential Decision Making for Problem Selection in an Intelligent Tutoring System
+Moffat Mathews;Do Students Who See More Concepts in an ITS Learn More?;Using Numeric Optimization To Refine Semantic User Model Integration Of Educational Systems
+Tanja Mitrovic;Do Students Who See More Concepts in an ITS Learn More?
+Antonija Mitrovic;Using Numeric Optimization To Refine Semantic User Model Integration Of Educational Systems
+C. Romero;Mining and Visualizing Visited Trails in Web-Based Educational Systems;Data Mining Algorithms to Classify Students;Analyzing Rule Evaluation Measures with Educational Datasets: A Framework to Help the Teacher;Collaborative Data Mining Tool for Education;Mining Rare Association Rules from e-Learning Data;Class Association Rule Mining from Students' Test Data;A Java desktop tool for mining Moodle data;Predicting School Failure Using Data Mining;Using data mining in a recommender system to search for learning objects in repositories;Classification via clustering for predicting final marks based on student participation in forums;Meta-learning approach for automatic parameter tuning: A case study with educational datasets
+S. Ventura;Mining and Visualizing Visited Trails in Web-Based Educational Systems;Data Mining Algorithms to Classify Students;Analyzing Rule Evaluation Measures with Educational Datasets: A Framework to Help the Teacher;Collaborative Data Mining Tool for Education;Predicting Student Grades in Learning Management Systems with Multiple Instance Genetic Programming;Mining Rare Association Rules from e-Learning Data;Class Association Rule Mining from Students' Test Data;A Java desktop tool for mining Moodle data;Predicting School Failure Using Data Mining;Classification via clustering for predicting final marks based on student participation in forums;Meta-learning approach for automatic parameter tuning: A case study with educational datasets
+M.i. Lopez;Classification via clustering for predicting final marks based on student participation in forums
+J.m Luna;Mining Rare Association Rules from e-Learning Data;Classification via clustering for predicting final marks based on student participation in forums;Meta-learning approach for automatic parameter tuning: A case study with educational datasets
+M.m. Molina;Meta-learning approach for automatic parameter tuning: A case study with educational datasets
+R. Pedraza-perez;A Java desktop tool for mining Moodle data
+Jose Raul Romero;Mining Rare Association Rules from e-Learning Data
+Enrique Garcia;Collaborative Data Mining Tool for Education
+Carlos De Castro;Collaborative Data Mining Tool for Education
+Amelia Zafra;Predicting Student Grades in Learning Management Systems with Multiple Instance Genetic Programming
+Nema Dean;Skill Set Profile Clustering Based on Student Capability Vectors Computed From Online Tutoring Data;Conditional Subspace Clustering of Skill Mastery: Identifying Skills that Separate Students;A Comparison of Student Skill Knowledge Estimates;Skill Set Profile Clustering: The Empty K-Means Algorithm with Automatic Specification of Starting Cluster Centers
+Kwangsu Cho;Machine Classification of Peer Comments in Physics
+Tiffany Barnes;A pilot study on logic proof tutoring using hints generated from historical student data;Unsupervised MDP Value Selection for Automating ITS Capabilities;Using a Bayesian Knowledge Base for Hint Selection on Domain Specific Problems;EDM Visualization Tool: Watching Students Learn;The EDM Vis Tool;Automatic Generation of Proof Problems in Deductive Logic;Interaction Networks: Generating High Level Hints Based on Network Community Clustering
+Lorrie Lehman;A pilot study on logic proof tutoring using hints generated from historical student data
+M. Croy;A pilot study on logic proof tutoring using hints generated from historical student data;Using a Bayesian Knowledge Base for Hint Selection on Domain Specific Problems;Automatic Generation of Proof Problems in Deductive Logic
+Michael John Eagle;The EDM Vis Tool;Interaction Networks: Generating High Level Hints Based on Network Community Clustering
+Matthew W. Johnson;EDM Visualization Tool: Watching Students Learn;The EDM Vis Tool;Interaction Networks: Generating High Level Hints Based on Network Community Clustering
+Leena Joseph;The EDM Vis Tool
+B. Mostafavi;Automatic Generation of Proof Problems in Deductive Logic
+Collin Lynch;Argument Graph Classification via Genetic Programming and C4.5
+Kevin D. Ashley;Argument Graph Classification via Genetic Programming and C4.5
+Pamela Jordan;Reinforcement Learning-based Feature Selection For Developing Pedagogically Effective Tutorial Dialogue Tactics;Instructional Factors Analysis: A Cognitive Model For Multiple Instructional Interventions
+Moses Hall;Reinforcement Learning-based Feature Selection For Developing Pedagogically Effective Tutorial Dialogue Tactics
+Peter Brusilovsky;Using Numeric Optimization To Refine Semantic User Model Integration Of Educational Systems
+Wenting Xiong;Assessing Reviewers’ Performance Based on Mining Problem Localization in Peer-Review Data
+Diane Litman;Assessing Reviewers’ Performance Based on Mining Problem Localization in Peer-Review Data
+Christian Schunn;Assessing Reviewers’ Performance Based on Mining Problem Localization in Peer-Review Data
+Kalina Yacef;Interestingness Measures for Association Rules in Educational Data;Data Mining for Individualised Hints in eLearning;Can order of access to learning resources predict success ?;Process Mining to Support Students' Collaborative Writing;Analysing frequent sequential patterns of collaborative learning activity around an interactive tabletop;Speaking (and touching) to learn: a method for mining the digital footprints of face-to-face collaboration
+Roberto Martinez Maldonado;Analysing frequent sequential patterns of collaborative learning activity around an interactive tabletop;Speaking (and touching) to learn: a method for mining the digital footprints of face-to-face collaboration
+Judy Kay;Analysing frequent sequential patterns of collaborative learning activity around an interactive tabletop;Speaking (and touching) to learn: a method for mining the digital footprints of face-to-face collaboration
+Irena Koprinska;Mining Assessment and Teaching Evaluation Data of Regular and Advanced Stream Students
+Anna Katrina Dominguez;Data Mining for Individualised Hints in eLearning
+James R. Curran;Data Mining for Individualised Hints in eLearning
+ ajibussalim;Mining Students' Interaction Data from a System that Support Learning by Reflection
+Vilaythong Southavilay;Process Mining to Support Students' Collaborative Writing
+Rafael A. Calvo;Process Mining to Support Students' Collaborative Writing;Sentiment Analysis in Student Experiences of Learning
+Sunghwan Mac Kim;Sentiment Analysis in Student Experiences of Learning
+Cecily Heiner;A Preliminary Analysis of the Logged Questions that Students Ask in Introductory Computer Science;Improving Student Question Classification
+Joseph L. Zachary;Improving Student Question Classification
+Sadhana Puntambekar;Integrating Knowledge Gained From Data Mining With Pedagogical Knowledge
+Hogyeong Jeong;Mining Student Behavior Models in Learning-by-Teaching Environments;Analysis of Productive Learning Behaviors in a Structured Inquiry Cycle Using Hidden Markov Models
+Gautam Biswas;Mining Student Behavior Models in Learning-by-Teaching Environments;Analysis of Productive Learning Behaviors in a Structured Inquiry Cycle Using Hidden Markov Models;Identifying Students' Characteristic Learning Behaviors in an Intelligent Tutoring System Fostering Self-Regulated Learning;Identifying Learning Behaviors by Contextualizing Differential Sequence Mining with Action Features and Performance Evolution
+John S. Kinnebrew;Identifying Students' Characteristic Learning Behaviors in an Intelligent Tutoring System Fostering Self-Regulated Learning;Identifying Learning Behaviors by Contextualizing Differential Sequence Mining with Action Features and Performance Evolution
+Larry Howard;Examining Learner Control in a Structured Inquiry Cycle Using Process Mining;Analysis of Productive Learning Behaviors in a Structured Inquiry Cycle Using Hidden Markov Models
+Julie Johnson;Examining Learner Control in a Structured Inquiry Cycle Using Process Mining;Analysis of Productive Learning Behaviors in a Structured Inquiry Cycle Using Hidden Markov Models
+Carin Neitzel;Examining Learner Control in a Structured Inquiry Cycle Using Process Mining
+Anthony Allevato;Mining Data from an Automated Grading and Testing System by Adding Rich Reporting Capabilities
+Matthew Thornton;Mining Data from an Automated Grading and Testing System by Adding Rich Reporting Capabilities
+Stephen H. Edwards;Mining Data from an Automated Grading and Testing System by Adding Rich Reporting Capabilities
+Manuel A. Perez-quinones;Mining Data from an Automated Grading and Testing System by Adding Rich Reporting Capabilities
+Joseph E. Beck;Can an Intelligent Tutoring System Predict Math Proficiency as Well as a Standardized Test?;Can we Predict which Groups of Questions Students will Learn from?;The Composition Effect: Conjunctive or Compensatory? An Analysis of Multi-Skill Math Questions in ITS;Using Dirichlet priors to improve model parameter plausibility;Why, What, and How to Log?  Lessons from LISTEN;Using Learning Decomposition and Bootstrapping with Randomization to Compare the Impact of Different Educational Interventions on Learning;Does Self-Discipline impact students’ knowledge and learning?;Back to the future: a non-automated method of constructing transfer models;Using multiple Dirichlet distributions to improve parameter plausibility;Tracking Students’ Inquiry Paths through Student Transition Analysis;Representing Student Performance with Partial Credit;Analysis of a causal modeling approach: a case study with an educational intervention;Items, skills, and transfer models:  which really matters for student modeling?;Exploring user data from a game-like math tutor: a case study in causal modeling;Using Student Modeling to Estimate Student Knowledge Retention
+Neil T. Heffernan;Can an Intelligent Tutoring System Predict Math Proficiency as Well as a Standardized Test?;Can we Predict which Groups of Questions Students will Learn from?;The Composition Effect: Conjunctive or Compensatory? An Analysis of Multi-Skill Math Questions in ITS;Determining the Significance of Item Order In Randomized Problem Sets;Using Learning Decomposition and Bootstrapping with Randomization to Compare the Impact of Different Educational Interventions on Learning;Does Self-Discipline impact students’ knowledge and learning?;Using multiple Dirichlet distributions to improve parameter plausibility;Can We Get Better Assessment From A Tutoring System Compared to Traditional Paper Testing? Can We Have Our Cake (Better Assessment) and Eat It too (Student Learning During the Test)?;Representing Student Performance with Partial Credit;Navigating the parameter space of Bayesian Knowledge Tracing models: Visualizations of the convergence of the Expectation Maximization algorithm;Comparison of Traditional Assessment with Dynamic Testing in a Tutoring System;Ensembling Predictions of Student Post-Test Scores for an Intelligent Tutoring System;Towards Modeling Forgetting and Relearning in ITS: Preliminary Analysis of ARRS Data;Leveraging First Response Time into the Knowledge Tracing Model;Co-Clustering by Bipartite Spectral Graph Partitioning for Out-of-Tutor Prediction
+Arnon Hershkovitz;Developing a Log-based Motivation Measuring Tool;Consistency of Students' Pace in Online Learning;How do Students Organize Personal Information Spaces?;Is Students' Activity in LMS Persistent?;Hierarchical Structures of Content Items in LMS;Goal Orientation and Changes of Carelessness over Consecutive Trials in Science Inquiry
+Zachary A. Pardos;The Composition Effect: Conjunctive or Compensatory? An Analysis of Multi-Skill Math Questions in ITS;Determining the Significance of Item Order In Randomized Problem Sets;Navigating the parameter space of Bayesian Knowledge Tracing models: Visualizations of the convergence of the Expectation Maximization algorithm;Comparison of Traditional Assessment with Dynamic Testing in a Tutoring System;Ensembling Predictions of Student Post-Test Scores for an Intelligent Tutoring System;The real world significance of performance prediction;Interleaved Practice with Multiple Representations: Analyses with Knowledge Tracing Based Techniques;Co-Clustering by Bipartite Spectral Graph Partitioning for Out-of-Tutor Prediction
+Carolina Ruiz;The Composition Effect: Conjunctive or Compensatory? An Analysis of Multi-Skill Math Questions in ITS
+Ryan S.j.d. Baker;Labeling Student Behavior Faster and More Precisely with Text Replays;Improving Contextual Models of Guessing and Slipping with a Truncated Training Set;Differences Between Intelligent Tutor Lessons, and the Choice to Go Off-Task;Detecting and Understanding the Impact of Cognitive and Interpersonal Conflict in Computer Supported Collaborative Learning Environments;An Analysis of the Differences in the Frequency of Students’ Disengagement in Urban, Rural, and Suburban High Schools;Using Text Replay Tagging to Produce Detectors of Systematic Experimentation Behavior Patterns;Identifying Students' Inquiry Planning Using Machine Learning;Goal Orientation and Changes of Carelessness over Consecutive Trials in Science Inquiry;Improving Models of Slipping, Guessing, And Moment-By-Moment Learning with Estimates of Skill Difficulty;Ensembling Predictions of Student Post-Test Scores for an Intelligent Tutoring System;Automatically Detecting a Student's Preparation for Future Learning: Help Use is Key;Development of a Workbench to Address the Educational Data Mining Bottleneck;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra;Learning Analytics and Educational Data Mining: Towards Communication and Collaboration;Does the Length of Time Off-Task Matter?
+Ryan S.J.d. Baker;Labeling Student Behavior Faster and More Precisely with Text Replays;Improving Contextual Models of Guessing and Slipping with a Truncated Training Set;Differences Between Intelligent Tutor Lessons, and the Choice to Go Off-Task;Detecting and Understanding the Impact of Cognitive and Interpersonal Conflict in Computer Supported Collaborative Learning Environments;An Analysis of the Differences in the Frequency of Students’ Disengagement in Urban, Rural, and Suburban High Schools;Using Text Replay Tagging to Produce Detectors of Systematic Experimentation Behavior Patterns;Identifying Students' Inquiry Planning Using Machine Learning;Goal Orientation and Changes of Carelessness over Consecutive Trials in Science Inquiry;Improving Models of Slipping, Guessing, And Moment-By-Moment Learning with Estimates of Skill Difficulty;Ensembling Predictions of Student Post-Test Scores for an Intelligent Tutoring System;Automatically Detecting a Student's Preparation for Future Learning: Help Use is Key;Development of a Workbench to Address the Educational Data Mining Bottleneck;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra;Learning Analytics and Educational Data Mining: Towards Communication and Collaboration;Does the Length of Time Off-Task Matter?
+Qing Yang Wang;The real world significance of performance prediction
+Shubhendu Trivedi;The real world significance of performance prediction;Co-Clustering by Bipartite Spectral Graph Partitioning for Out-of-Tutor Prediction
+Yutao Wang;Representing Student Performance with Partial Credit;Towards Modeling Forgetting and Relearning in ITS: Preliminary Analysis of ARRS Data;Using Student Modeling to Estimate Student Knowledge Retention;Leveraging First Response Time into the Knowledge Tracing Model
+Sujith M. Gowda;An Analysis of the Differences in the Frequency of Students’ Disengagement in Urban, Rural, and Suburban High Schools;Improving Models of Slipping, Guessing, And Moment-By-Moment Learning with Estimates of Skill Difficulty;Ensembling Predictions of Student Post-Test Scores for an Intelligent Tutoring System;Automatically Detecting a Student's Preparation for Future Learning: Help Use is Key;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra
+Michael Wixon;Goal Orientation and Changes of Carelessness over Consecutive Trials in Science Inquiry;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra
+Aatish Salvi;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra
+Jaclyn Ocumpaugh;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra
+Lisa Rossi;Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra
+Gabor N. Sarkozy;Co-Clustering by Bipartite Spectral Graph Partitioning for Out-of-Tutor Prediction
+C. Heffernan;Comparison of Traditional Assessment with Dynamic Testing in a Tutoring System
+Yue Gong;Using Dirichlet priors to improve model parameter plausibility;Does Self-Discipline impact students’ knowledge and learning?;Using multiple Dirichlet distributions to improve parameter plausibility;Items, skills, and transfer models:  which really matters for student modeling?
+Dovan Rai;Using Dirichlet priors to improve model parameter plausibility;Does Self-Discipline impact students’ knowledge and learning?;Analysis of a causal modeling approach: a case study with an educational intervention;Exploring user data from a game-like math tutor: a case study in causal modeling
+J. Gobert;Tracking Students’ Inquiry Paths through Student Transition Analysis;Using Text Replay Tagging to Produce Detectors of Systematic Experimentation Behavior Patterns;Identifying Students' Inquiry Planning Using Machine Learning;Goal Orientation and Changes of Carelessness over Consecutive Trials in Science Inquiry
+Adam B. Goldstein
+Matt Bachmann;Tracking Students’ Inquiry Paths through Student Transition Analysis
+Michael A. Sao Pedro;Using Text Replay Tagging to Produce Detectors of Systematic Experimentation Behavior Patterns;Identifying Students' Inquiry Planning Using Machine Learning
+Orlando Montalvo;Using Text Replay Tagging to Produce Detectors of Systematic Experimentation Behavior Patterns;Identifying Students' Inquiry Planning Using Machine Learning
+Adam Nakama;Using Text Replay Tagging to Produce Detectors of Systematic Experimentation Behavior Patterns;Identifying Students' Inquiry Planning Using Machine Learning
+Daniel Roberge;Does the Length of Time Off-Task Matter?
+Anthony Rojas;Does the Length of Time Off-Task Matter?
+Hama Abu-kishk;How do Students Organize Personal Information Spaces?
+Steve Ritter;Reducing the Knowledge Tracing Space;Avoiding Problem Selection Thrashing with Conjunctive Knowledge Tracing;The Rise of the Super Experiment
+Steve Ritter;Reducing the Knowledge Tracing Space;Avoiding Problem Selection Thrashing with Conjunctive Knowledge Tracing;The Rise of the Super Experiment
+Tristan Nixon;Reducing the Knowledge Tracing Space;Avoiding Problem Selection Thrashing with Conjunctive Knowledge Tracing;A Method for Finding Prerequisites Within a Curriculum
+Tristan Nixon;Reducing the Knowledge Tracing Space;Avoiding Problem Selection Thrashing with Conjunctive Knowledge Tracing;A Method for Finding Prerequisites Within a Curriculum
+Brendon Towle;Reducing the Knowledge Tracing Space;A Method for Finding Prerequisites Within a Curriculum
+Brendon Towle;Reducing the Knowledge Tracing Space;A Method for Finding Prerequisites Within a Curriculum
+Annalies Vuong;A Method for Finding Prerequisites Within a Curriculum
+Annalies Vuong;A Method for Finding Prerequisites Within a Curriculum
+Koji Suda;Edu-mining for Book Recommendation for Pupils
+Junichi Kakegawa;Edu-mining for Book Recommendation for Pupils
+Koichiro Morihiro;Edu-mining for Book Recommendation for Pupils
+Ryo Nagata;Edu-mining for Book Recommendation for Pupils
+Keigo Takeda;Edu-mining for Book Recommendation for Pupils
+Robert Dale;Dimensions of Difficulty in Translating Natural Language into First Order Logic;Student Translations of Natural Language into Logic: The Grade Grinder Corpus Release 1.0;Using Edit Distance to Analyse Errors in a Natural Language to Logic Translation Corpus
+Roger Azevedo;Automatic Detection of Student Mental Models During Prior Knowledge Activation in MetaTutor;Identifying Students' Characteristic Learning Behaviors in an Intelligent Tutoring System Fostering Self-Regulated Learning
+Francois Bouchet;Identifying Students' Characteristic Learning Behaviors in an Intelligent Tutoring System Fostering Self-Regulated Learning
+Richard Cox;Dimensions of Difficulty in Translating Natural Language into First Order Logic;Student Translations of Natural Language into Logic: The Grade Grinder Corpus Release 1.0;Using Edit Distance to Analyse Errors in a Natural Language to Logic Translation Corpus
+J. R. Quevedo;Obtaining Rubric Weights For Assessments By More Than One Lecturer Using A Pairwise Learning Model
+E. Montanes;Obtaining Rubric Weights For Assessments By More Than One Lecturer Using A Pairwise Learning Model
+Suleyman Cetintas;Predicting Correctness of Problem Solving from Low- level Log Data in Intelligent Tutoring Systems
+Luo Si;Predicting Correctness of Problem Solving from Low- level Log Data in Intelligent Tutoring Systems
+Yan Ping Xin;Predicting Correctness of Problem Solving from Low- level Log Data in Intelligent Tutoring Systems
+Casey Hord;Predicting Correctness of Problem Solving from Low- level Log Data in Intelligent Tutoring Systems
+Kimberly E. Arnold;Course Signals at Purdue: Using Learning Analytics to Increase Student Success
+Matthew D. Pistilli;Course Signals at Purdue: Using Learning Analytics to Increase Student Success
+Ofer Bergman;How do Students Organize Personal Information Spaces?
+Thomas K. Harris;Reducing the Knowledge Tracing Space;Calculating Probabilistic Distance to Solution in a Complex Problem Solving Domain
+Antonio R. Anaya;A Data Mining Approach to Reveal Representative Collaboration Indicators in Open Collaboration Frameworks;Towards Improvements On Domain-Independent Measurements For Collaborative Assessment
+Jesus G. Boticario;A Data Mining Approach to Reveal Representative Collaboration Indicators in Open Collaboration Frameworks;Towards Improvements On Domain-Independent Measurements For Collaborative Assessment
+Javier Bravo;Detecting Symptoms of Low Performance Using Production Rules
+Alvaro Ortigosa;Detecting Symptoms of Low Performance Using Production Rules;A Case Study: Data Mining Applied to Student Enrollment
+David Nadler Prata;Detecting and Understanding the Impact of Cognitive and Interpersonal Conflict in Computer Supported Collaborative Learning Environments
+Evandro D.b. Costa;Detecting and Understanding the Impact of Cognitive and Interpersonal Conflict in Computer Supported Collaborative Learning Environments
+Miguel Gea;Collaborative Data Mining Tool for Education
+Vasile Rus;Automatic Detection of Student Mental Models During Prior Knowledge Activation in MetaTutor;Automated Discovery of Speech Act Categories in Educational Games
+Mihai Lintean;Automatic Detection of Student Mental Models During Prior Knowledge Activation in MetaTutor
+Cristian Moldovan;Automated Discovery of Speech Act Categories in Educational Games
+Nobal Niraula;Automated Discovery of Speech Act Categories in Educational Games
+Arthur C. Graesser;Mining Bodily Patterns of Affective Experience during Learning;Higher Contributions Correlate with Higher Learning Gains;Automated Discovery of Speech Act Categories in Educational Games;Automated Detection of Mentors and Players in an Educational Game;Learning Gains for Core Concepts in a Serious Game on Scientific Reasoning
+Fazel Keshtkar;Automated Detection of Mentors and Players in an Educational Game
+Brent Morgan;Automated Detection of Mentors and Players in an Educational Game
+Carol Forsyth;Higher Contributions Correlate with Higher Learning Gains;Learning Gains for Core Concepts in a Serious Game on Scientific Reasoning
+Philip Pavlik;Learning Gains for Core Concepts in a Serious Game on Scientific Reasoning
+Zhiqiang Cai;Higher Contributions Correlate with Higher Learning Gains;Learning Gains for Core Concepts in a Serious Game on Scientific Reasoning
+Mae-lynn Germany;Learning Gains for Core Concepts in a Serious Game on Scientific Reasoning
+Sidney D'mello;Mining Bodily Patterns of Affective Experience during Learning
+Blair Lehman;Off Topic Conversation in Expert Tutoring: Waste of Time or Learning Opportunity?
+Whitney Cade;Off Topic Conversation in Expert Tutoring: Waste of Time or Learning Opportunity?;Using Topic Models to Bridge Coding Schemes of Differing Granularity
+Andrew Olney;Off Topic Conversation in Expert Tutoring: Waste of Time or Learning Opportunity?;Using Topic Models to Bridge Coding Schemes of Differing Granularity
+Jonathan Wood;Higher Contributions Correlate with Higher Learning Gains
+Dror Ben-naim;A User-Driven and Data-Driven Approach for Supporting Teachers in Reflection and Adaptation of Adaptive Tutorials
+Michael Bain;A User-Driven and Data-Driven Approach for Supporting Teachers in Reflection and Adaptation of Adaptive Tutorials
+Nadine Marcus;A User-Driven and Data-Driven Approach for Supporting Teachers in Reflection and Adaptation of Adaptive Tutorials
+Lukas Zoubek;Visualization of Differences in Data Measuring Mathematical Skills
+Michal Burda;Visualization of Differences in Data Measuring Mathematical Skills
+Marian Simko;Automatic Concept Relationships Discovery for an Adaptive E-course
+Maria Bielikova;Automatic Concept Relationships Discovery for an Adaptive E-course
+Tara M. Madhyastha;Student Consistency and Implications for Feedback in Online Assessment Systems
+Steven Tanimoto;Student Consistency and Implications for Feedback in Online Assessment Systems
+Mladen A. Vouk;A Preliminary Investigation of Hierarchical Hidden Markov Models for Tutorial Planning
+Andre Kruger;When Data Exploration and Data Mining meet while Analysing Usage Data of a Course;A Data Model to Ease Analysis and Mining of Educational Data
+Hema Soundranayagam;Can order of access to learning resources predict success ?
+Agathe Merceron;Interestingness Measures for Association Rules in Educational Data;When Data Exploration and Data Mining meet while Analysing Usage Data of a Course;A Data Model to Ease Analysis and Mining of Educational Data;Investigating Usage of Resources in LMS with Specific Association Rules;Learning Paths in a Non-Personalizing e-Learning Environment;Investigating the Core Group Effect in Usage of Resources with Analytics
+Benjamin Wolf;When Data Exploration and Data Mining meet while Analysing Usage Data of a Course;A Data Model to Ease Analysis and Mining of Educational Data
+Nayer Wanas;Inferring the Differential Student Model in a Probabilistic Domain using Abduction Inference in Bayesian Networks
+Nevin Darwish;Inferring the Differential Student Model in a Probabilistic Domain using Abduction Inference in Bayesian Networks
+Sherry Hsi;Where in the World? Demographic Patterns in Access Data1
+Heather Butler;Higher Contributions Correlate with Higher Learning Gains;Learning Gains for Core Concepts in a Serious Game on Scientific Reasoning
+Diane Halpern;Higher Contributions Correlate with Higher Learning Gains;Learning Gains for Core Concepts in a Serious Game on Scientific Reasoning
+Ankit Ranka;Pundit: Intelligent Recommender of Courses
+Faisal Anwar;Pundit: Intelligent Recommender of Courses
+Hui Soo Chae;Pundit: Intelligent Recommender of Courses
+Suchismita Srinivas;Mining information from tutor data to improve pedagogical content knowledge
+Muntaquim Bagadia;Mining information from tutor data to improve pedagogical content knowledge
+Anupriya Gupta;Mining information from tutor data to improve pedagogical content knowledge
+Nabila Khodeir;Inferring the Differential Student Model in a Probabilistic Domain using Abduction Inference in Bayesian Networks
+Nadia Hegazy;Inferring the Differential Student Model in a Probabilistic Domain using Abduction Inference in Bayesian Networks
+Tamara Sumner;Online Curriculum Planning Behavior of Teachers;Observing Online Curriculum Planning Behavior of Teachers
+Nabila Bousbia;Analyzing Learning Styles using Behavioral Indicators in Web based Learning Environments
+Jean-marc Labat;Analyzing Learning Styles using Behavioral Indicators in Web based Learning Environments
+Haiyun Bian;Clustering Student Learning Activity Data
+Kristy Elizabeth Boyer;A Preliminary Investigation of Hierarchical Hidden Markov Models for Tutorial Planning
+Robert Phillips;A Preliminary Investigation of Hierarchical Hidden Markov Models for Tutorial Planning
+Eun Young Ha;A Preliminary Investigation of Hierarchical Hidden Markov Models for Tutorial Planning
+Michael D. Wallis;A Preliminary Investigation of Hierarchical Hidden Markov Models for Tutorial Planning
+James C. Lester;A Preliminary Investigation of Hierarchical Hidden Markov Models for Tutorial Planning;Early Prediction of Student Self-Regulation Strategies by Combining Multiple Models
+Jennifer L. Sabourin;Early Prediction of Student Self-Regulation Strategies by Combining Multiple Models
+Bradford W. Mott;Early Prediction of Student Self-Regulation Strategies by Combining Multiple Models
+Jonathan P. Rowe;Improving Models of Slipping, Guessing, And Moment-By-Moment Learning with Estimates of Skill Difficulty
+Keith Millis;Higher Contributions Correlate with Higher Learning Gains;Learning Gains for Core Concepts in a Serious Game on Scientific Reasoning
+Peter Sorenson;Using LiMS (the Learner Interaction Monitoring System) to Track Online Learner Engagement and Evaluate Course Design
+Manuel Gerardo Saldivar;Online Curriculum Planning Behavior of Teachers;Observing Online Curriculum Planning Behavior of Teachers
+M. Feng;Can We Get Better Assessment From A Tutoring System Compared to Traditional Paper Testing? Can We Have Our Cake (Better Assessment) and Eat It too (Student Learning During the Test)?;Comparison of Traditional Assessment with Dynamic Testing in a Tutoring System
+Marie Bienkowski;The Learning Registry: Building a Foundation for Learning Resource Analytics
+John Brecht;The Learning Registry: Building a Foundation for Learning Resource Analytics
+Jim Klo;The Learning Registry: Building a Foundation for Learning Resource Analytics
+Jaan Ubi;A Review of Student Churn in the Light of Theories on Business Relationships
+Innar Liiv;A Review of Student Churn in the Light of Theories on Business Relationships
+Cesar Vialardi;A Case Study: Data Mining Applied to Student Enrollment
+Jorge Chue;A Case Study: Data Mining Applied to Student Enrollment
+Alfredo Barrientos;A Case Study: Data Mining Applied to Student Enrollment
+Daniel Victoria;A Case Study: Data Mining Applied to Student Enrollment
+Jhonny Estrella;A Case Study: Data Mining Applied to Student Enrollment
+Juan Pablo Peche;A Case Study: Data Mining Applied to Student Enrollment
+Issam Rebai;Analyzing Learning Styles using Behavioral Indicators in Web based Learning Environments
+Leah P. Macfadyen;Using LiMS (the Learner Interaction Monitoring System) to Track Online Learner Engagement and Evaluate Course Design;Numbers Are Not Enough. Why e-Learning Analytics Failed to Inform an Institutional Strategic Plan
+Leah P. Macfadyen;Using LiMS (the Learner Interaction Monitoring System) to Track Online Learner Engagement and Evaluate Course Design;Numbers Are Not Enough. Why e-Learning Analytics Failed to Inform an Institutional Strategic Plan
+S. Kardan;A Framework for Capturing Distinguishing User Interaction Behaviours in Novel Interfaces
+C. Conati;A Framework for Capturing Distinguishing User Interaction Behaviours in Novel Interfaces
+Shane Dawson;SNAPP: A Bird's-Eye View of Temporal Participant Interaction;Learning Designs and Learning Analytics;Numbers Are Not Enough. Why e-Learning Analytics Failed to Inform an Institutional Strategic Plan
+Keith E. Maull;Online Curriculum Planning Behavior of Teachers;Observing Online Curriculum Planning Behavior of Teachers
+Lee Becker;DISCUSS: Enabling Detailed Characterization of Tutorial Interactions Through Dialogue Annotation
+Sarel Vanvuuren;DISCUSS: Enabling Detailed Characterization of Tutorial Interactions Through Dialogue Annotation
+Martin Mozina;Conceptualizing Procedural Knowledge Targeted at Students of Different Skill Levels
+Matej Guid;Conceptualizing Procedural Knowledge Targeted at Students of Different Skill Levels
+Aleksander Sadikov;Conceptualizing Procedural Knowledge Targeted at Students of Different Skill Levels
+Vida Groznik;Conceptualizing Procedural Knowledge Targeted at Students of Different Skill Levels
+Jana Krivec;Conceptualizing Procedural Knowledge Targeted at Students of Different Skill Levels
+Ivan Bratko;Conceptualizing Procedural Knowledge Targeted at Students of Different Skill Levels
+Andre A. Rupp;Modeling Learning Trajectories with Epistemic Network Analysis: A Simulation-based Investigation of a Novel Analytic Method for Epistemic Games
+Shauna J. Sweet;Modeling Learning Trajectories with Epistemic Network Analysis: A Simulation-based Investigation of a Novel Analytic Method for Epistemic Games
+Younyoung Choi;Modeling Learning Trajectories with Epistemic Network Analysis: A Simulation-based Investigation of a Novel Analytic Method for Epistemic Games
+Ivon Arroyo;Effort-based Tutoring: An Empirical Approach to Intelligent Tutoring;Identifying High-Level Student Behavior Using Sequence-based Motif Discovery
+Hasmik Mehranian;Effort-based Tutoring: An Empirical Approach to Intelligent Tutoring
+Beverly Park Woolf;Effort-based Tutoring: An Empirical Approach to Intelligent Tutoring;Identifying High-Level Student Behavior Using Sequence-based Motif Discovery
+David H. Shanabrook;Identifying High-Level Student Behavior Using Sequence-based Motif Discovery
+David G. Cooper;Identifying High-Level Student Behavior Using Sequence-based Motif Discovery
+Beijie Xu;Peer Production of Online Learning Resources: A Social Network Analysis;Where in the World? Demographic Patterns in Access Data1;Teaching Analytics: A Clustering and Triangulation Study of Digital Library User Data
+Mimi M. Recker;Peer Production of Online Learning Resources: A Social Network Analysis;Where in the World? Demographic Patterns in Access Data1;Teaching Analytics: A Clustering and Triangulation Study of Digital Library User Data
+Christine Garrard;Where in the World? Demographic Patterns in Access Data1
+A. Zapata-gonzalez;Using data mining in a recommender system to search for learning objects in repositories
+V.h. Menendez;Using data mining in a recommender system to search for learning objects in repositories
+C. Marquez-vera;Predicting School Failure Using Data Mining
+M. Suarez;Investigating the Transitions between Learning and Non-learning Activities as Students Learn Online
+S. Sosnovsky;Evaluating a Bayesian Student Model of Decimal Misconceptions
+A. A. Von Davier;Quality Control and Data Mining Techniques Applied to Monitoring Scaled Scores
+J. Zimmermann;Predicting graduate-level performance from undergraduate achievements
+K.h. Brodersen;Predicting graduate-level performance from undergraduate achievements
+J.-p. Pellet;Predicting graduate-level performance from undergraduate achievements
+E. August;Predicting graduate-level performance from undergraduate achievements
+J.m. Buhmann;Predicting graduate-level performance from undergraduate achievements
+Osamu Yamakawa;Combining study of complex network and text mining analysis to understand growth mechanism of communities on SNS
+G. Akcaponar;Prediction of Perceived Disorientation in Online Learning Environment with Random Forest Regression
+E. Cougun;Prediction of Perceived Disorientation in Online Learning Environment with Random Forest Regression
+A. Altun;Prediction of Perceived Disorientation in Online Learning Environment with Random Forest Regression
+Koichi Yastake;Combining study of complex network and text mining analysis to understand growth mechanism of communities on SNS
+Takahiro Sumiya;Combining study of complex network and text mining analysis to understand growth mechanism of communities on SNS
+K. Wauters;Monitoring Learners' Proficiency: Weight Adaptation in the Elo Rating System;Acquiring Item Difficulty Estimates: a Collaborative Effort of Data and Judgment
+P. Desmet;Monitoring Learners' Proficiency: Weight Adaptation in the Elo Rating System;Acquiring Item Difficulty Estimates: a Collaborative Effort of Data and Judgment
+W. Van Den Noortgate;Monitoring Learners' Proficiency: Weight Adaptation in the Elo Rating System;Acquiring Item Difficulty Estimates: a Collaborative Effort of Data and Judgment
+Takahiro Tagawa;Combining study of complex network and text mining analysis to understand growth mechanism of communities on SNS
+Hitoshi Inoue;Combining study of complex network and text mining analysis to understand growth mechanism of communities on SNS
+P. Jarusek;Problem Response Theory and its Application for Tutoring
+R. Pelanek;Problem Response Theory and its Application for Tutoring
+Jaroslav Bayer;Predicting drop-out from social behaviour of students
+Hana Bydzovska;Predicting drop-out from social behaviour of students
+Jan Geryk;Predicting drop-out from social behaviour of students
+Tomas Obsivac;Predicting drop-out from social behaviour of students
+Lubomir Popelinsky;Predicting drop-out from social behaviour of students
+Nikita Romashkin;How university entrants are choosing their department? Mining of university admission process with FCA taxonomies.;What can closed sets of students and their marks say?
+Dmitry Ignatov;How university entrants are choosing their department? Mining of university admission process with FCA taxonomies.;What can closed sets of students and their marks say?
+Elena Kolotova;How university entrants are choosing their department? Mining of university admission process with FCA taxonomies.
+A. Kharrufa;Analysing frequent sequential patterns of collaborative learning activity around an interactive tabletop
+P. S. Inventado;Investigating the Transitions between Learning and Non-learning Activities as Students Learn Online
+R. Legaspi;Investigating the Transitions between Learning and Non-learning Activities as Students Learn Online
+M. Numao;Investigating the Transitions between Learning and Non-learning Activities as Students Learn Online
+A.l. Dyckhoff;eLAT: An Exploratory Learning Analytics Tool for Reflection and Iterative Improvement of Technology Enhanced Learning
+D. Zielke;eLAT: An Exploratory Learning Analytics Tool for Reflection and Iterative Improvement of Technology Enhanced Learning
+M.a. Chatti;eLAT: An Exploratory Learning Analytics Tool for Reflection and Iterative Improvement of Technology Enhanced Learning
+U. Schroeder;eLAT: An Exploratory Learning Analytics Tool for Reflection and Iterative Improvement of Technology Enhanced Learning
+Anna Lea Dyckhoff;Design and Implementation of a Learning Analytics Toolkit for Teachers
+Dennis Zielke;Design and Implementation of a Learning Analytics Toolkit for Teachers
+Mareike Bultmann;Design and Implementation of a Learning Analytics Toolkit for Teachers
+Mohamed Amine Chatti;Design and Implementation of a Learning Analytics Toolkit for Teachers
+Ulrik Schroeder;Design and Implementation of a Learning Analytics Toolkit for Teachers
+G. Goguadze;Evaluating a Bayesian Student Model of Decimal Misconceptions
+Anna Schmidt;Clustering by Usage: Higher Order Co-occurrences of Learning Objects
+Tim Krones;Clustering by Usage: Higher Order Co-occurrences of Learning Objects
+D. Kabakchieva;Analyzing University Data for Determining Student Profiles and Predicting Performance
+A. Al-qaraghuli;Analysing frequent sequential patterns of collaborative learning activity around an interactive tabletop
+E. Cambranes;Studying problem-solving strategies in the early stages of learning programming
+Diego Garcia-saiz;E-learning Web Miner: A data mining application to help instructors involved in virtual courses;Towards Parameter-Free Data Mining: Mining Educational Data with yacaree;A promising classification method for predicting distance students' performance.
+Marta Zorrilla;E-learning Web Miner: A data mining application to help instructors involved in virtual courses;Towards Parameter-Free Data Mining: Mining Educational Data with yacaree;A promising classification method for predicting distance students' performance.
+Lorenzo Moreno;Intelligent evaluation of social knowledge building using conceptual maps with MLN
+Carina S. Gonzalez;Intelligent evaluation of social knowledge building using conceptual maps with MLN
+Roman Estevez;Intelligent evaluation of social knowledge building using conceptual maps with MLN
+Beatrice Popescu;Intelligent evaluation of social knowledge building using conceptual maps with MLN
+Pedro A. Toledo;CurriM: Curriculum Mining
+F. Lemmerich;Identifying Influence Factors of Students Success by Subgroup Discovery
+M. Ifland;Identifying Influence Factors of Students Success by Subgroup Discovery
+F. Puppe;Identifying Influence Factors of Students Success by Subgroup Discovery
+S. Lalle;Learning parameters for a knowledge diagnosis tool in orthopedic surgery
+V. Luengo;Learning parameters for a knowledge diagnosis tool in orthopedic surgery
+Serafima Mamedova;What can closed sets of students and their marks say?
+Ivan Shamshurin;What can closed sets of students and their marks say?
+Reihaneh Rabbany K.;Analyzing Participation of Students in Online Courses Using Social Network Analysis Techniques
+Mansoureh Takaffoli;Analyzing Participation of Students in Online Courses Using Social Network Analysis Techniques
+Osmar Zaiane;Analyzing Participation of Students in Online Courses Using Social Network Analysis Techniques;Deciding on Feedback Polarity and Timing
+Stuart Johnson;Deciding on Feedback Polarity and Timing
+Jose L. Balcazar;Towards Parameter-Free Data Mining: Mining Educational Data with yacaree
+M.e. Prieto-mendez;Using data mining in a recommender system to search for learning objects in repositories
+Nguyen Thai-nghe;Factorization Models for Forecasting Student Performance
+Tomaas Horvath;Factorization Models for Forecasting Student Performance
+Lars Schmidt-thieme;Factorization Models for Forecasting Student Performance
+Nadira Saab;Brick: Mining Pedagogically Interesting Sequential Patterns
+K. Stefanova;Analyzing University Data for Determining Student Profiles and Predicting Performance
+V. Kisimov;Analyzing University Data for Determining Student Profiles and Predicting Performance
+J. Good;Studying problem-solving strategies in the early stages of learning programming
+Anjo Anjewierden;Brick: Mining Pedagogically Interesting Sequential Patterns
+Hannie Gijlers;Brick: Mining Pedagogically Interesting Sequential Patterns
+Robert De Hoog;Brick: Mining Pedagogically Interesting Sequential Patterns
+Ma. Mercedes T. Rodrigo;Development of a Workbench to Address the Educational Data Mining Bottleneck
+Alejandra Jayme;Development of a Workbench to Address the Educational Data Mining Bottleneck
+Thomas T. Dy;Development of a Workbench to Address the Educational Data Mining Bottleneck
+Ling Tan;Fit-to-Model Statistics for Evaluating Quality of Bayesian Student Ability Estimation
+Xiaoxun Sun;Finding Dependent Test Items: An Information Theory Based Approach
+Renza Campagni;Analyzing paths in a student database
+Donatella Merlini;Analyzing paths in a student database
+Renzo Sprugnoli;Analyzing paths in a student database
+Liane Beuster;Learning Paths in a Non-Personalizing e-Learning Environment
+Albrecht Fortenbacher;Learning Paths in a Non-Personalizing e-Learning Environment
+Leonard Kappe;Learning Paths in a Non-Personalizing e-Learning Environment
+Boris Wenzlaff;Learning Paths in a Non-Personalizing e-Learning Environment
+Margarita Elkina;Learning Paths in a Non-Personalizing e-Learning Environment
+Andreas Pursian;Learning Paths in a Non-Personalizing e-Learning Environment
+Jin Soung Yoo;Mining Concept Maps to Understand University Students' Learning
+Moon-heum Cho;Mining Concept Maps to Understand University Students' Learning
+Alexandru Surpatean;Similarity Functions for Collaborative Master Recommendations
+Evgueni Smirnov;Similarity Functions for Collaborative Master Recommendations
+Nicolai Manie;Similarity Functions for Collaborative Master Recommendations
+Yoav Bergner;Model-Based Collaborative Filtering Analysis of Student Response Data: Machine-Learning Item Response Theory
+Stefan Droschler;Model-Based Collaborative Filtering Analysis of Student Response Data: Machine-Learning Item Response Theory
+Gerd Kortemeyer;Model-Based Collaborative Filtering Analysis of Student Response Data: Machine-Learning Item Response Theory
+Saif Rayyan;Model-Based Collaborative Filtering Analysis of Student Response Data: Machine-Learning Item Response Theory
+Daniel Seaton;Model-Based Collaborative Filtering Analysis of Student Response Data: Machine-Learning Item Response Theory
+David E. Pritchard;Model-Based Collaborative Filtering Analysis of Student Response Data: Machine-Learning Item Response Theory
+Dixie Ching;The Rise of the Super Experiment
+Myra Spiliopoulou;Stream Mining in Education? Dealing with Evolution
+Rasil Warnakulasooriya;Categorizing Students' Response Patterns using the Concept of Fractal Dimension
+William Galen;Categorizing Students' Response Patterns using the Concept of Fractal Dimension
+Robert P. Dolan;Learning Gains for Core Concepts in a Serious Game on Scientific Reasoning
+Eliana Scheihing;Analyzing the behavior of a teacher network in a Web 2.0 environment
+Carolina Aros;Analyzing the behavior of a teacher network in a Web 2.0 environment
+Daniel Guerra;Analyzing the behavior of a teacher network in a Web 2.0 environment
+Judi Mccuaig;Identifying Successful Learners from Interaction Behaviour
+Julia Baldwin;Identifying Successful Learners from Interaction Behaviour
+Terry Peckham;Mining Student Behavior Patterns in Reading Comprehension Tasks
+Gord Mccalla;Mining Student Behavior Patterns in Reading Comprehension Tasks
+Christopher A. Brooks;The Who, What, When, and Why of Lecture Capture;Using an Instructional Expert to Mediate the Locus of Control in Adaptive E-Learning Systems
+Carrie Demmans Epp;The Who, What, When, and Why of Lecture Capture
+Greg Logan;The Who, What, When, and Why of Lecture Capture
+Jim Greer;The Who, What, When, and Why of Lecture Capture;Using an Instructional Expert to Mediate the Locus of Control in Adaptive E-Learning Systems
+Carl Gutwin;Using an Instructional Expert to Mediate the Locus of Control in Adaptive E-Learning Systems
+Jihie Kim;Assisting Instructional Assessment of Undergraduate Collaborative Wiki and SVN Activities
+Erin Shaw;Assisting Instructional Assessment of Undergraduate Collaborative Wiki and SVN Activities
+Hao Xu;Assisting Instructional Assessment of Undergraduate Collaborative Wiki and SVN Activities
+Adarsh G V;Assisting Instructional Assessment of Undergraduate Collaborative Wiki and SVN Activities
+Ritu Chaturvedi;Data mining techniques for design of ITS student models
+C. I. Ezeife;Data mining techniques for design of ITS student models
+Mike Sharkey;Academic Analytics Landscape at the University of Phoenix;Course Correction: Using Analytics to Predict Course Success
+Rebecca Barber;Course Correction: Using Analytics to Predict Course Success
+Sabine Graf;AAT – A Tool for Accessing and Analysing Students' Behaviour Data in Learning Systems*
+Cindy Ives;AAT – A Tool for Accessing and Analysing Students' Behaviour Data in Learning Systems*
+Nazim Rahman;AAT – A Tool for Accessing and Analysing Students' Behaviour Data in Learning Systems*;Challenges and Opportunities for Learning Analytics when formal teaching meets social spaces
+Arnold Ferri;AAT – A Tool for Accessing and Analysing Students' Behaviour Data in Learning Systems*
+Dragan Gasevic;Learn-B: A Social Analytics-enabled Tool for Self-regulated Workplace Learning
+Liaqat Ali;Learn-B: A Social Analytics-enabled Tool for Self-regulated Workplace Learning
+George Siemens;Learning Analytics and Educational Data Mining: Towards Communication and Collaboration
+Jon Dron;Challenges and Opportunities for Learning Analytics when formal teaching meets social spaces
+Christopher Teplovs;Generating Predictive Models of Learner Community Dynamics;Towards Visual Analytics for Teachers' Dynamic Diagnostic Pedagogical DecisionMaking
+Nobuko Fujita;Generating Predictive Models of Learner Community Dynamics;Towards Visual Analytics for Teachers' Dynamic Diagnostic Pedagogical DecisionMaking
+Ravi Vatrapu;Cultural Considerations in Learning Analytics;Generating Predictive Models of Learner Community Dynamics;Towards Visual Analytics for Teachers' Dynamic Diagnostic Pedagogical DecisionMaking
+Riina Vuorikari;Dataset-driven Research for Improving Recommender Systems for Learning
+Martin Wolpers;Dataset-driven Research for Improving Recommender Systems for Learning;Usage Contexts for Object Similarity: Exploratory Investigations;Clustering by Usage: Higher Order Co-occurrences of Learning Objects
+Katja Niemann;Usage Contexts for Object Similarity: Exploratory Investigations;Clustering by Usage: Higher Order Co-occurrences of Learning Objects
+Hans-Christian Schmitz;Usage Contexts for Object Similarity: Exploratory Investigations;Clustering by Usage: Higher Order Co-occurrences of Learning Objects
+Maren Scheffel;Usage Contexts for Object Similarity: Exploratory Investigations
+Uwe Kirschenmann;Clustering by Usage: Higher Order Co-occurrences of Learning Objects
+Nikos Manouselis;Dataset-driven Research for Improving Recommender Systems for Learning;Applying Analytics for a Learning Portal: the Organic.Edunet Case Study;Dataset-Driven Research to Support Learning and Knowledge Analytics
+Nikos Palavitsinis;Applying Analytics for a Learning Portal: the Organic.Edunet Case Study
+Vassilios Protonotarios;Applying Analytics for a Learning Portal: the Organic.Edunet Case Study
+Ari Bader-Natal;Evolving a learning analytics platform
+Thomas Lotze;Evolving a learning analytics platform
+Katrien Verbert;Dataset-driven Research for Improving Recommender Systems for Learning;Goal-oriented visualizations of activity tracking: a case study with engineering students;Dataset-Driven Research to Support Learning and Knowledge Analytics
+Erik Duval;Dataset-driven Research for Improving Recommender Systems for Learning;Goal-oriented visualizations of activity tracking: a case study with engineering students;Dataset-Driven Research to Support Learning and Knowledge Analytics
+Jose Luis Santos;Goal-oriented visualizations of activity tracking: a case study with engineering students
+Sten Govaerts;Goal-oriented visualizations of activity tracking: a case study with engineering students
+Hendrik Drachsler;Dataset-driven Research for Improving Recommender Systems for Learning;The Pulse of Learning Analytics Understandings and Expectations from the Stakeholders;Translating Learning into Numbers: A Generic Framework for Learning Analytics;Dataset-Driven Research to Support Learning and Knowledge Analytics
+Rebecca Ferguson;Learning Analytics To Identify Exploratory Dialogue within Synchronous Text Chat;Exploring Qualitative Analytics for E-Mentoring Relationships Building in an Online Social Learning Environment;Social Learning Analytics: Five Approaches;Social Learning Analytics
+Simon Buckingham Shum;Learning Analytics To Identify Exploratory Dialogue within Synchronous Text Chat;Discourse-Centric Learning Analytics;Learning Dispositions and Transferable Competencies: Pedagogy, Modelling and Learning Analytics;Social Learning Analytics: Five Approaches;Social Learning Analytics
+Anna De Liddo;Discourse-Centric Learning Analytics
+Michelle Bachler;Discourse-Centric Learning Analytics
+Doug Clow;iSpot Analysed: Participatory Learning and Reputation;The Learning Analytics Cycle: Closing the loop effectively
+Elpida Makriyannis;iSpot Analysed: Participatory Learning and Reputation
+Haiming Liu;Exploring Qualitative Analytics for E-Mentoring Relationships Building in an Online Social Learning Environment
+Sharon Slade;Learning analytics – Challenges, paradoxes and opportunities for mega open distance learning institutions
+Fenella Galpin;Learning analytics – Challenges, paradoxes and opportunities for mega open distance learning institutions
+Griff Richards;Revisiting Formative Evaluation: Dynamic Monitoring for the Improvement of Learning Activity Design and Delivery
+Irwin DeVries;Revisiting Formative Evaluation: Dynamic Monitoring for the Improvement of Learning Activity Design and Delivery
+Ivana Quinto;Discourse-Centric Learning Analytics
+Lorella Cannavacciuolo;Discourse-Centric Learning Analytics
+Josep Grau-Valldosera;Redefining dropping out in online higher education: a case study from the UOC
+Julia Minguillon;Redefining dropping out in online higher education: a case study from the UOC
+German Cobo;Using agglomerative hierarchical clustering to model learner participation profiles in online discussion forums;Educational Monitoring Tool Based on Faceted Browsing and Data Portraits
+David Garcia-Solorzano;Using agglomerative hierarchical clustering to model learner participation profiles in online discussion forums;Educational Monitoring Tool Based on Faceted Browsing and Data Portraits
+Jose Antonio Moran;Using agglomerative hierarchical clustering to model learner participation profiles in online discussion forums;Educational Monitoring Tool Based on Faceted Browsing and Data Portraits
+Eugenia Santamaria;Using agglomerative hierarchical clustering to model learner participation profiles in online discussion forums;Educational Monitoring Tool Based on Faceted Browsing and Data Portraits
+Carlos Monzo;Using agglomerative hierarchical clustering to model learner participation profiles in online discussion forums;Educational Monitoring Tool Based on Faceted Browsing and Data Portraits
+Javier Melenchon;Using agglomerative hierarchical clustering to model learner participation profiles in online discussion forums;Educational Monitoring Tool Based on Faceted Browsing and Data Portraits
+Abelardo Pardo;Stepping out of the box. Towards analytics outside the Learning Management System;GLASS: A Learning Analytics Visualization Tool
+Carlos Delgado Kloos;Stepping out of the box. Towards analytics outside the Learning Management System;GLASS: A Learning Analytics Visualization Tool
+Derick Leony;GLASS: A Learning Analytics Visualization Tool
+Luis de la Fuente Valentin;GLASS: A Learning Analytics Visualization Tool
+David Sanchez de Castro;GLASS: A Learning Analytics Visualization Tool
+Susan Bull;Towards Visual Analytics for Teachers' Dynamic Diagnostic Pedagogical DecisionMaking
+Devan Rosen;Social and Semantic Network Analysis of Chat Logs;A Unified Framework for Multi-Level Analysis of Distributed Learning
+Victor Miagkikh;Social and Semantic Network Analysis of Chat Logs
+Dan Suthers;Social and Semantic Network Analysis of Chat Logs;A Unified Framework for Multi-Level Analysis of Distributed Learning;Multi-mediated Community Structure in a Socio-Technical Network
+Kar-Hai Chu;Multi-mediated Community Structure in a Socio-Technical Network
+Aneesha Bakharia;SNAPP: A Bird's-Eye View of Temporal Participant Interaction
+Lori Lockyer;Learning Designs and Learning Analytics
+Darren Cambridge;First Steps Towards a Social Learning Analytics for Online Communities of Practice for Educators
+Kathleen Perez-Lopez;First Steps Towards a Social Learning Analytics for Online Communities of Practice for Educators
+Denis Smolin;APPLYING ARTIFICIAL INTELLIGENCE TO THE EDUCATIONAL DATA: AN EXAMPLE OF SYLLABUS QUALITY ANALYSIS
+Brian J. McNely;Learning Analytics for Collaborative Writing: A Prototype and Case Study
+Paul Gestwicki;Learning Analytics for Collaborative Writing: A Prototype and Case Study
+J. Holden Hill;Learning Analytics for Collaborative Writing: A Prototype and Case Study
+Philip Parli-Horne;Learning Analytics for Collaborative Writing: A Prototype and Case Study
+Erika Johnson;Learning Analytics for Collaborative Writing: A Prototype and Case Study
+Johann Ari Larusson;Monitoring Student Progress Through Their Written “Point of Originality”
+Bjorn Levi Gunnarsson;Predicting failure: A case study in co-blogging
+Richard Alterman;Predicting failure: A case study in co-blogging
+Tariq M. Khan;The relationship between educational performance and online access routines: analysis of students’ access to an online discussion forum
+Fintan Clear;The relationship between educational performance and online access routines: analysis of students’ access to an online discussion forum
+Samira Sadat Sajadi;The relationship between educational performance and online access routines: analysis of students’ access to an online discussion forum
+Alfred Essa;Student Success System: Risk Analytics and Data Visualization using Ensembles of Predictive Models
+Hanan Ayad;Student Success System: Risk Analytics and Data Visualization using Ensembles of Predictive Models
+Veronica Rivera-Pelayo;Applying Quantiﬁed Self Approaches to Support Reﬂective Learning
+Valentin Zacharias;Applying Quantiﬁed Self Approaches to Support Reﬂective Learning
+Lars Muller;Applying Quantiﬁed Self Approaches to Support Reﬂective Learning
+Simone Braun;Applying Quantiﬁed Self Approaches to Support Reﬂective Learning
+Barbara Kump;Seeing What the System Thinks You Know - Visualizing Evidence in an Open Learner Model
+Christin Seifert;Seeing What the System Thinks You Know - Visualizing Evidence in an Open Learner Model
+Stefanie N. Lindstaedt;Seeing What the System Thinks You Know - Visualizing Evidence in an Open Learner Model
+Martin Schon;It's Just About Learning the Multiplication Table
+Martin Ebner;It's Just About Learning the Multiplication Table
+Georg Kothmeier;It's Just About Learning the Multiplication Table
+Guenter Beham;Seeing What the System Thinks You Know - Visualizing Evidence in an Open Learner Model
+Eitel J.M. Lauria;Mining academic data to improve college student retention: An open source perspective
+Joshua D. Baron;Mining academic data to improve college student retention: An open source perspective
+Mallika Devireddy;Mining academic data to improve college student retention: An open source perspective
+Venniraiselvi Sundararaju;Mining academic data to improve college student retention: An open source perspective
+Sandeep M. Jayaprakash;Mining academic data to improve college student retention: An open source perspective
+Schreurs Bieke;Network Awareness Tool – Learning Analytics in the workplace: Detecting and Analyzing Informal Workplace Learning
+De Laat Maarten;Network Awareness Tool – Learning Analytics in the workplace: Detecting and Analyzing Informal Workplace Learning
+Wolfgang Greller;The Pulse of Learning Analytics Understandings and Expectations from the Stakeholders;Translating Learning into Numbers: A Generic Framework for Learning Analytics
+Melody Siadaty;Learn-B: A Social Analytics-enabled Tool for Self-regulated Workplace Learning
+Aleksandar Giljanovic;Learn-B: A Social Analytics-enabled Tool for Self-regulated Workplace Learning
+Marek Hatala;Learn-B: A Social Analytics-enabled Tool for Self-regulated Workplace Learning
+Sergey Butakov;APPLYING ARTIFICIAL INTELLIGENCE TO THE EDUCATIONAL DATA: AN EXAMPLE OF SYLLABUS QUALITY ANALYSIS
+Robert Bramucci;Sherpa: Increasing Student Success with a Recommendation Engine
+Jim Gaston;Sherpa: Increasing Student Success with a Recommendation Engine
+Tobias Ley;Seeing What the System Thinks You Know - Visualizing Evidence in an Open Learner Model
+Ronald Macintyre;Exploring Qualitative Analytics for E-Mentoring Relationships Building in an Online Social Learning Environment
+Walter Christian Paredes;Modelling Learning & Performance: A Social Networks Perspective
+Kon Shing Kenneth Chung;Modelling Learning & Performance: A Social Networks Perspective
+John McAuley;Exploring reflection in online communities
+Alexander O'Connor;Exploring reflection in online communities
+Dr. Dave Lewis;Exploring reflection in online communities
+Jelena Jovanovic;Learn-B: A Social Analytics-enabled Tool for Self-regulated Workplace Learning
+Nikola Milikic;Learn-B: A Social Analytics-enabled Tool for Self-regulated Workplace Learning
+Zoran Jeremic;Learn-B: A Social Analytics-enabled Tool for Self-regulated Workplace Learning
+Ruth Deakin Crick;Learning Dispositions and Transferable Competencies: Pedagogy, Modelling and Learning Analytics
+Brandon White;Monitoring Student Progress Through Their Written “Point of Originality”
+Ahmad Ammari;Deriving Group Profiles from Social Media to Facilitate the Design of Simulated Environments for Learning
+Lydia Lau;Deriving Group Profiles from Social Media to Facilitate the Design of Simulated Environments for Learning
+Vania Dimitrova;Deriving Group Profiles from Social Media to Facilitate the Design of Simulated Environments for Learning
+Leyla Zhuhadar;Cyberlearners and Learning Resources
+Steven Lonn;Bridging the Gap from Knowledge to Action: Putting Analytics in the Hands of Academic Advisors
+Andrew E. Krumm;Bridging the Gap from Knowledge to Action: Putting Analytics in the Hands of Academic Advisors
+R. Joseph Waddington;Bridging the Gap from Knowledge to Action: Putting Analytics in the Hands of Academic Advisors
+Stephanie D. Teasley;Bridging the Gap from Knowledge to Action: Putting Analytics in the Hands of Academic Advisors
+Tim McKay;What to do with actionable intelligence: E2Coach as an intervention engine
+Kate Miller;What to do with actionable intelligence: E2Coach as an intervention engine
+Jared Tritz;What to do with actionable intelligence: E2Coach as an intervention engine
+Paul Prinsloo;Learning analytics – Challenges, paradoxes and opportunities for mega open distance learning institutions
+Diederik M. Roijers;Probability estimation and a competence model for rule based e-tutoring systems
+Johan Jeuring;Probability estimation and a competence model for rule based e-tutoring systems
+Ad Feelders;Probability estimation and a competence model for rule based e-tutoring systems
+Rong Yang;Cyberlearners and Learning Resources
+Lanqin Zheng;Analyzing Interactions by an IIS-Map-Based Method in Face-to-Face Collaborative Learning: An Empirical Study
+Kaicheng Yang;Analyzing Interactions by an IIS-Map-Based Method in Face-to-Face Collaborative Learning: An Empirical Study
+Ronghuai Huang;Analyzing Interactions by an IIS-Map-Based Method in Face-to-Face Collaborative Learning: An Empirical Study
+Jui-Long Hung;Integrating Data Mining in Program Evaluation of K-12 Online Education
+Yu-Chang Hsu;Integrating Data Mining in Program Evaluation of K-12 Online Education
+Kerry Rice;Integrating Data Mining in Program Evaluation of K-12 Online Education
+Minjeong Kim;A Multidimensional Analysis Tool for Visualizing Online Interactions
+Eunchul Lee;A Multidimensional Analysis Tool for Visualizing Online Interactions
+M'hammed Abdous;Using Data Mining for Predicting Relationships between Online Question Theme and Final Grade
+Wu He;Using Data Mining for Predicting Relationships between Online Question Theme and Final Grade
+Cherng-Jyh Yen;Using Data Mining for Predicting Relationships between Online Question Theme and Final Grade
+Leah P. Macfadyen;Using LiMS (the Learner Interaction Monitoring System) to Track Online Learner Engagement and Evaluate Course Design;Numbers Are Not Enough. Why e-Learning Analytics Failed to Inform an Institutional Strategic Plan
+Leah P. Macfadyen;Using LiMS (the Learner Interaction Monitoring System) to Track Online Learner Engagement and Evaluate Course Design;Numbers Are Not Enough. Why e-Learning Analytics Failed to Inform an Institutional Strategic Plan

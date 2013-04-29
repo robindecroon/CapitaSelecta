@@ -1,0 +1,38 @@
+the United States;USA;38.8833;-77.0167
+Germany;DEU;52.5167;13.3833
+the United Kingdom;GBR;51.5;-0.116667
+Canada;CAN;45.4;-75.6667
+Spain;ESP;40.4333;-3.7
+the Netherlands;NLD;52.3167;5.55
+Japan;JPN;35.6833;139.767
+Portugal;PRT;38.7;-9.18333
+Israel;ISR;31.0;35.0
+New Zealand;NZL;-42.0;174.0
+Australia;AUS;-35.308;149.124
+Brazil;BRA;-15.7833;-47.95
+Czech Republic;CZE;49.75;14.4667
+Slovakia;SVK;48.15;17.1167
+Egypt;EGY;30.0333;31.2167
+India;IND;21.0;77.2083
+France;FRA;47.0;2.0
+Estonia;EST;59.0;24.75
+Slovenia;SVN;46.05;14.5
+Mexico;MEX;19.05;-99.3667
+The Philippines;PHL;14.5833;121.0
+Switzerland;CHE;46.8333;7.45
+Turkey;TUR;39.9167;28.95
+Belgium;BEL;50.85;4.35
+Russia;RUS;55.75;37.6167
+Bulgaria;BGR;42.6833;23.3167
+Malaysia;MYS;3.13333;101.7
+Italy;ITA;41.9;12.4833
+Chile;CHL;-33.4333;-70.6667
+Denmark;DNK;55.7167;10.0
+Greece;GRC;37.9667;22.0
+Bosnia and Herzegovina;BIH;43.8667;18.0
+Austria;AUT;48.2;16.35
+South Korea;KOR;37.5833;127.0
+Ireland;IRL;53.3333;-8.0
+Serbia;SRB;44.8;20.4667
+South Africa;ZAF;-30.0;25.0
+the People's Republic of China;CHN;35.0;103.0

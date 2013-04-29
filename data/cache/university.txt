@@ -1,0 +1,189 @@
+Arizona State University;the United States;33.417458;-111.935905
+Bentley College;the United States;42.38293;-71.22338
+Beuth Hochschule fur Technik Berlin;Germany;52.545265;13.350999
+Birkbeck College;the United Kingdom;51.52195;-0.130204
+Carnegie Mellon University;the United States;40.44389;-79.94278
+Carnegie Mellon University;Canada;40.44389;-79.94278
+Clausthal University of Technology;the United States;51.8062;10.34188
+Cordoba University;Spain;-31.419477;-64.187126
+Ecole Polytechnique de Montreal;Canada;45.504814;-73.61503
+Eindhoven University of Technology;the Netherlands;51.44845;5.490607
+EPS-Universidad Autonoma de Madrid;Spain;40.4255;-3.712394
+Grand Ledge Public Schools;the United States;42.74777;-84.75094
+Institute of Education;the United Kingdom;51.522987;-0.127968
+Michigan State University;the United States;42.729595;-84.481186
+Niigata University;Japan;37.86701;138.94254
+Northwestern University;the United States;42.052887;-87.678665
+Polytechnique Montreal;Canada;45.504814;-73.61503
+Stanford University;the United States;37.427567;-122.17013
+Technical University of Lisbon;Portugal;38.722294;-9.141085
+Tel Aviv University;Israel;32.11128;34.801414
+University of California;the United States;34.066402;-117.163956
+University of Canterbury;the United States;51.29835;1.071236
+University of Canterbury;New Zealand;51.29835;1.071236
+University of Cordoba;Spain;33.67853;-117.82519
+University of Glasgow;the United Kingdom;55.872326;-4.28907
+University of Missouri;the United States;38.938477;-92.327095
+University of North Carolina at Charlotte;the United States;35.30757;-80.733376
+University of Pittsburgh;the United States;40.444542;-79.95387
+University of Sydney;Australia;-33.889915;151.19057
+University of Sydney;the United States;-33.889915;151.19057
+University of Utah;the United States;40.765022;-111.84893
+University of Wisconsin;the United States;43.076706;-89.41247
+Vanderbilt University;the United States;36.148327;-86.80226
+Virginia Tech;the United States;37.228382;-80.423416
+Worcester Polytechnic Institute;the United States;42.274803;-71.80607
+Ben-Gurion University;Israel;31.262512;34.801334
+Carnegie Learning Inc;the United States;40.43915;-79.99732
+Carnegie Learning Inc.;the United States;40.43915;-79.99732
+Hyogo University of Teacher Education;Japan;34.91171;135.01598
+Konan University;Japan;34.729733;135.26799
+Macquarie University;Australia;-33.773823;151.11266
+McGill University;Canada;45.503105;-73.5762
+Monash University;Australia;-37.876823;145.04584
+Oviedo University;Spain;43.356533;-5.870739
+Purdue University;the United States;38.883366;-77.01024
+Sheffield University;the United Kingdom;53.37842;-1.465612
+Tutor Technologies;the United States;39.031693;-77.3913
+UNED;Spain;9.940858;-84.04786
+Universidad Autonoma de Madrid;Spain;40.545204;-3.693896
+Universidade Federal de Alagoas;Brazil;-9.555682;-35.777924
+University of Granada;Spain;38.90567;-94.63838
+University of Memphis;the United States;35.117023;-89.939766
+University of New South Wales;Australia;-33.91687;151.22992
+University of Ostrava;Czech Republic;49.833683;18.163609
+University of Technology;Slovakia;-33.8839;151.20102
+University of Washington;the United States;47.65601;-122.30934
+Applied Research Associates, Inc., Raleigh;the United States;35.896423;-78.650665
+Aroline AG;Germany;37.172966;13.719387
+Australian Catholic University;Australia;-27.378632;153.0891
+Beuth University of Applied Sciences;Germany;52.545265;13.350999
+Cairo Microsoft Innovation Lab;Egypt;30.04442;31.23571
+Cairo University;Egypt;30.02732;31.207945
+Center for Technology Innovation;the United States;23.140085;113.30002
+Claremont Graduate University;the United States;34.103485;-117.71234
+EdLab;the United States;47.825848;-122.278786
+Educational Initiatives Pvt. Ltd.;India;12.999174;77.611755
+Electronics Research Institute;Egypt;30.043234;31.226938
+Institute of Cognitive Science;the United States;22.501495;88.37108
+Laboratoire de Paris 6;France;48.84685;2.354387
+Metropolitan State College of Denver;the United States;39.7454;-105.005646
+North Carolina State University;the United States;35.787346;-78.66541
+Northern Illinois University;the United States;41.935417;-88.77104
+Quizzicle;the United States;41.389694;-72.899315
+School of Education;the United States;51.522987;-0.127968
+SRI International;the United States;37.457615;-122.176506
+Tallinn University of Technology;Estonia;59.395885;24.67143
+Universidad de Lima;Spain;-12.084761;-76.97082
+Universite de Paris-Sud;France;48.697716;2.177885
+University of British Columbia;the United States;49.264877;-123.252495
+University of British Columbia;Canada;49.264877;-123.252495
+University of Colorado;the United States;39.676605;-104.96143
+University of Colorado at Boulder;the United States;40.00441;-105.26674
+University of Ljubljana;Slovenia;46.049194;14.504155
+University of Maryland;the United States;38.98603;-76.942566
+University of Massachusetts;the United States;42.392292;-72.52493
+Utah State University;the United States;41.740803;-111.814156
+Autonomous University of Yucatan;Mexico;20.96964;-89.62294
+Autonomous University of Zacatecas;Mexico;22.76867;-102.57874
+De La Salle University;The Philippines;14.564921;120.99395
+DFKI;Germany;49.429592;7.75203
+Educational Testing Service;the United States;38.90209;-77.04206
+ETH Zurich;Switzerland;47.377544;8.547879
+Fukui Prefectural University;Japan;36.109814;136.27757
+Hacettepe University;Turkey;39.930023;32.867455
+Hiroshima University;Japan;34.380455;132.45723
+Katholieke Universiteit Leuven;Belgium;50.877953;4.700294
+Kyushu University;Japan;33.626522;130.42476
+Masaryk University;Czech Republic;49.198555;16.605085
+National Research University;Russia;55.649902;37.66448
+Newcastle University;the United Kingdom;54.978695;-1.616243
+Osaka University;Japan;34.8534;135.51599
+RWTH Aachen University;Germany;50.77753;6.077843
+Saarland University;Germany;49.254696;7.039909
+Sofia University St. Kl. Ohridski;Bulgaria;42.69347;23.33478
+UKM;Malaysia;2.929755;101.779144
+Universidad Autonoma de Yucatan;Mexico;20.969599;-89.62294
+Universidad de Cantabria;Spain;43.47136;-3.801441
+Universidad de La Laguna;Spain;28.482681;-16.316944
+Universitat Wurzburg;Germany;49.787933;9.93552
+Universite Joseph Fourier;France;45.185307;5.72562
+University - Higher School of Economics;Russia;40.76246;-73.97413
+University of Alberta;Canada;53.523453;-113.52599
+University of Cantabria;Spain;43.47136;-3.801441
+University of Castilla la Mancha;Spain;38.983406;-1.844165
+University of Hildesheim;Germany;52.13409;9.97642
+University of Leiden;the Netherlands;52.157494;4.483056
+University of National and World Economy;Bulgaria;42.651463;23.34799
+University of Sussex;the United Kingdom;50.867714;-0.087478
+University of Twente;the Netherlands;52.241184;6.853579
+Ateneo de Manila University;The Philippines;14.639718;121.07808
+Australian Council for Educational Research;Australia;-37.828255;145.05888
+Dipartimento di Sistemi e Informatica;Italy;43.790646;11.261678
+Hochschule fur Technik und Wirtschaft;Germany;52.4932;13.525456
+Hochschule fur Wirtschaft und Recht;Germany;52.485462;13.337832
+Indiana University-Purdue University;the United States;39.251205;-85.90404
+Kent State University;the United States;41.148216;-81.34269
+Maastricht University;the Netherlands;50.84577;5.687238
+Massachusetts Institute of Technology;the United States;42.358868;-71.09383
+New York University;the United States;40.729515;-73.997185
+Otto-von-Guericke-University;Germany;52.139145;11.640988
+Pearson;the United States;40.76205;-73.9786
+Pearson Education;the United States;28.630844;77.36797
+Universidad Austral de Chile;Chile;-39.807236;-73.2516
+University of Guelph;Canada;43.52354;-80.22725
+University of Saskatchewan;Canada;52.138344;-106.62397
+University of Southern California;the United States;34.01937;-118.28611
+University of Windsor;Canada;42.305134;-83.06748
+Apollo Group;the United States;33.4131;-111.97987
+Athabasca University;Canada;54.715546;-113.30832
+Centre for Applied Information and Communication Technology - Copenhagen Business School;Denmark;47.50052;19.049479
+Copenhagen Business School;Denmark;55.68162;12.530804
+European Schoolnet (EUN);Belgium;50.843624;4.375687
+Fraunhofer Institute for Applied Information Technology;Germany;50.74926;7.203461
+Greek Research and Technology Network (GRNET);Greece;37.988346;23.767658
+Grockit, Inc.;the United States;37.780968;-122.3956
+Open University of the Netherland;the Netherlands;50.87925;5.959975
+The Open University;the United Kingdom;52.022537;-0.705747
+Thompson Rivers University - Open Learning;Canada;50.66991;-120.36507
+Universita degli Studi Napoli Federico II;Italy;40.84531;14.25778
+Universitat Oberta de Catalunya (UOC);Spain;41.414886;2.133423
+University Carlos III of Madrid;Spain;40.31566;-3.727024
+University of Birmingham;the United Kingdom;52.450817;-1.930514
+University of Hawaii;the United States;19.70025;-155.08168
+University of Queensland;Australia;-27.497854;153.01329
+University of Wollongong;Australia;-34.406376;150.87692
+American Institutes for Research;the United States;38.902912;-77.06022
+American University in Bosnia and Herzegovina;Bosnia and Herzegovina;42.655277;18.07472
+Ball State University;the United States;40.197235;-85.408844
+Brandeis University;the United States;42.365437;-71.2586
+Brunel Business School;the United Kingdom;51.532806;-0.475855
+Desire2Learn Incorporated;Canada;43.451176;-80.49801
+FZI Research Center for Information Technologies;Germany;49.012093;8.424708
+Graz University of Technology;Austria;47.06938;15.450465
+Know-Center GmbH;Austria;47.05809;15.463016
+Marist College;the United States;41.722412;-73.934166
+Open Universiteit;the Netherlands;50.87925;5.959975
+Open University of the Netherlands;the Netherlands;50.87925;5.959975
+Simon Fraser University;Canada;49.277023;-122.91814
+SolBridge International School of Business;South Korea;36.33845;127.432335
+South Orange County Community College District;the United States;40.91843;-74.16894
+Tallinn University;Estonia;59.438744;24.771645
+The Open University in Scotland;the United Kingdom;55.95099;-3.213597
+The University of Sydney;Australia;-33.889915;151.19057
+Trinity College Dublin;Ireland;53.344395;-6.25759
+University of Belgrade;Serbia;44.818882;20.456793
+University of Bristol;the United Kingdom;51.45797;-2.601474
+University of California, Berkeley;the United States;37.87235;-122.25945
+University of Leeds;the United Kingdom;53.80391;-1.549758
+University of Louisville;the United States;38.214012;-85.75981
+University of Michigan;the United States;42.265854;-83.74822
+University of South Africa;South Africa;-25.76774;28.1992
+Utrecht University;the Netherlands;52.083332;5.147621
+Western Kentucky University;the United States;36.98494;-86.45759
+Beijing Normal University;the People's Republic of China;39.962204;116.3656
+Boise State University;the United States;43.603706;-116.20474
+Dankook University;South Korea;37.321236;127.12835
+Dominion University;the United States;36.886017;-76.30439
+The University of British Columbia;the United States;49.264877;-123.252495
+The University of British Columbia;Canada;49.264877;-123.252495

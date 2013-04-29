@@ -1,0 +1,587 @@
+http://data.linkededucation.org/resource/lak/person/kurt-vanlehn;Kurt;Vanlehn;Arizona State University;the United States
+http://data.linkededucation.org/resource/lak/person/danielle-s-mcnamara;Danielle;S. Mcnamara;Arizona State University;the United States
+http://data.linkededucation.org/resource/lak/person/roland-hubscher;Roland;Hubscher;Bentley College;the United States
+http://data.linkededucation.org/resource/lak/person/agathe-merceron;Agathe;Merceron;Beuth Hochschule fur Technik Berlin;Germany
+http://data.linkededucation.org/resource/lak/person/sebastian-schwarzrock;Sebastian;Schwarzrock;Beuth Hochschule fur Technik Berlin;Germany
+http://data.linkededucation.org/resource/lak/person/sergio-gutierrez;Sergio;Gutierrez;Birkbeck College;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/xiaonan-zhang;Xiaonan;Zhang;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/jack-mostow;Jack;Mostow;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/joseph-valeri;Joseph;Valeri;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/albert-t-corbett;Albert;T. Corbett;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/john-c-stamper;John;C. Stamper;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/kenneth-r-koedinger;Kenneth;R. Koedinger;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/vincent-aleven;Vincent;Aleven;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/rebecca-nugent;Rebecca;Nugent;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/p-pavlik-jr;P.;Pavlik Jr;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/hao-cen;Hao;Cen;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/lili-wu;Lili;Wu;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/benjamin-shih;Benjamin;Shih;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/richard-scheines;Richard;Scheines;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/kyle-cunningham;Kyle;Cunningham;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/alida-skogsholm;Alida;Skogsholm;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/brett-leber;Brett;Leber;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/adriana-mjb-de-carvalho;Adriana;M.j.b. De Carvalho;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/ilya-m-goldin;Ilya;M. Goldin;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/bruce-m-mclaren;Bruce;M. Mclaren;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/michael-v-yudelson;Michael;V. Yudelson;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/emma-brunskill;Emma;Brunskill;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/martina-a-rau;Martina;A. Rau;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/jung-in-lee;Jung;In Lee;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/leigh-ann-sudol-delyser;Leigh;Ann Sudol-delyser;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/kelly-rivers;Kelly;Rivers;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/derek-lomas;Derek;Lomas;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/jessica-kalka;Jessica;Kalka;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/angela-z-wagner;Angela;Z. Wagner;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/gail-w-kusbit;Gail;W. Kusbit;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/jose-p-gonzalez-brenes;Jose;P. Gonzalez-brenes;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/elizabeth-a-mclaughlin;Elizabeth;A. Mclaughlin;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/stephen-e-fancsali;Stephen;E. Fancsali;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/stephen-e-fancsali;Stephen;E. Fancsali;Carnegie Mellon University;Canada
+http://data.linkededucation.org/resource/lak/person/yanbo-xu;Yanbo;Xu;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/geoff-gordon;Geoff;Gordon;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/nan-li;Nan;Li;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/noboru-matsuda;Noboru;Matsuda;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/william-w-cohen;William;W. Cohen;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/weisi-duan;Weisi;Duan;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/s-isotani;S.;Isotani;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/m-munna;M.;Munna;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/s-wu;S.;Wu;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/bao-hong-tan;Bao;Hong Tan;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/jon-m-fincham;Jon;M. Fincham;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/john-r-anderson;John;R. Anderson;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/shawn-betts;Shawn;Betts;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/jennifer-l-ferris;Jennifer;L. Ferris;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/turadg-aleahmad;Turadg;Aleahmad;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/robert-kraut;Robert;Kraut;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/carolyn-p-rose;Carolyn;P. Rose;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/yue-cui;Yue;Cui;Carnegie Mellon University;the United States
+http://data.linkededucation.org/resource/lak/person/niels-pinkwart;Niels;Pinkwart;Clausthal University of Technology;the United States
+http://data.linkededucation.org/resource/lak/person/pedro-g-espejo;Pedro;G. Espejo;Cordoba University;Spain
+http://data.linkededucation.org/resource/lak/person/cesar-hervas;Cesar;Hervas;Cordoba University;Spain
+http://data.linkededucation.org/resource/lak/person/michel-c-desmarais;Michel;C. Desmarais;Ecole Polytechnique de Montreal;Canada
+http://data.linkededucation.org/resource/lak/person/behzad-beheshti;Behzad;Beheshti;Ecole Polytechnique de Montreal;Canada
+http://data.linkededucation.org/resource/lak/person/rhouma-naceur;Rhouma;Naceur;Ecole Polytechnique de Montreal;Canada
+http://data.linkededucation.org/resource/lak/person/mykola-pechenizkiy;Mykola;Pechenizkiy;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/toon-calders;Toon;Calders;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/ekaterina-vasilyeva;Ekaterina;Vasilyeva;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/p-de-bra;P.;De Bra;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/rafal-kocielnik;Rafal;Kocielnik;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/natalia-sidorova;Natalia;Sidorova;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/n-trcka;N.;Trcka;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/evgeny-knutov;Evgeny;Knutov;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/sicco-verwer;Sicco;Verwer;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/wil-van-der-aalst;Wil;Van Der Aalst;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/gerben-w-dekker;Gerben;W. Dekker;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/jan-m-vleeshouwers;Jan;M. Vleeshouwers;Eindhoven University of Technology;the Netherlands
+http://data.linkededucation.org/resource/lak/person/manuel-freire;Manuel;Freire;EPS-Universidad Autonoma de Madrid;Spain
+http://data.linkededucation.org/resource/lak/person/christina-trotochaud;Christina;Trotochaud;Grand Ledge Public Schools;the United States
+http://data.linkededucation.org/resource/lak/person/manolis-mavrikis;Manolis;Mavrikis;Institute of Education;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/nell-duke;Nell;Duke;Michigan State University;the United States
+http://data.linkededucation.org/resource/lak/person/safia-abbas;Safia;Abbas;Niigata University;Japan
+http://data.linkededucation.org/resource/lak/person/hajime-sawamura;Hajime;Sawamura;Niigata University;Japan
+http://data.linkededucation.org/resource/lak/person/r-benjamin-shapiro;R.;Benjamin Shapiro;Northwestern University;the United States
+http://data.linkededucation.org/resource/lak/person/hisham-petry;Hisham;Petry;Northwestern University;the United States
+http://data.linkededucation.org/resource/lak/person/louis-m-gomez;Louis;M. Gomez;Northwestern University;the United States
+http://data.linkededucation.org/resource/lak/person/bruce-sherin;Bruce;Sherin;Northwestern University;the United States
+http://data.linkededucation.org/resource/lak/person/alejandro-villarreal;Alejandro;Villarreal;Polytechnique Montreal;Canada
+http://data.linkededucation.org/resource/lak/person/michel-gagnon;Michel;Gagnon;Polytechnique Montreal;Canada
+http://data.linkededucation.org/resource/lak/person/ildiko-pelczer;Ildiko;Pelczer;Polytechnique Montreal;Canada
+http://data.linkededucation.org/resource/lak/person/min-chi;Min;Chi;Stanford University;the United States
+http://data.linkededucation.org/resource/lak/person/dave-barker-plummer;Dave;Barker-plummer;Stanford University;the United States
+http://data.linkededucation.org/resource/lak/person/worsley;;orsley;Stanford University;the United States
+http://data.linkededucation.org/resource/lak/person/blikstein;;likstein;Stanford University;the United States
+http://data.linkededucation.org/resource/lak/person/claudia-antunes;Claudia;Antunes;Technical University of Lisbon;Portugal
+http://data.linkededucation.org/resource/lak/person/pedro-crespo;Pedro;Crespo;Technical University of Lisbon;Portugal
+http://data.linkededucation.org/resource/lak/person/j-barracosa;J.;Barracosa;Technical University of Lisbon;Portugal
+http://data.linkededucation.org/resource/lak/person/rafi-nachmias;Rafi;Nachmias;Tel Aviv University;Israel
+http://data.linkededucation.org/resource/lak/person/sharon-hardof-jaffe;Sharon;Hardof-jaffe;Tel Aviv University;Israel
+http://data.linkededucation.org/resource/lak/person/ronit-azran;Ronit;Azran;Tel Aviv University;Israel
+http://data.linkededucation.org/resource/lak/person/elizabeth-ayers;Elizabeth;Ayers;University of California;the United States
+http://data.linkededucation.org/resource/lak/person/anna-n-rafferty;Anna;N. Rafferty;University of California;the United States
+http://data.linkededucation.org/resource/lak/person/michelle-m-lamar;Michelle;M. Lamar;University of California;the United States
+http://data.linkededucation.org/resource/lak/person/thomas-l-griffiths;Thomas;L. Griffiths;University of California;the United States
+http://data.linkededucation.org/resource/lak/person/stuart-russell;Stuart;Russell;University of California;the United States
+http://data.linkededucation.org/resource/lak/person/moffat-mathews;Moffat;Mathews;University of Canterbury;the United States
+http://data.linkededucation.org/resource/lak/person/tanja-mitrovic;Tanja;Mitrovic;University of Canterbury;New Zealand
+http://data.linkededucation.org/resource/lak/person/antonija-mitrovic;Antonija;Mitrovic;University of Canterbury;the United States
+http://data.linkededucation.org/resource/lak/person/c-romero;C.;Romero;University of Cordoba;Spain
+http://data.linkededucation.org/resource/lak/person/s-ventura;S.;Ventura;University of Cordoba;Spain
+http://data.linkededucation.org/resource/lak/person/mi-lopez;M.i.;Lopez;University of Cordoba;Spain
+http://data.linkededucation.org/resource/lak/person/jm-luna;J.m;Luna;University of Cordoba;Spain
+http://data.linkededucation.org/resource/lak/person/mm-molina;M.m.;Molina;University of Cordoba;Spain
+http://data.linkededucation.org/resource/lak/person/r-pedraza-perez;R.;Pedraza-perez;University of Cordoba;Spain
+http://data.linkededucation.org/resource/lak/person/jose-raul-romero;Jose;Raul Romero;University of Cordoba;Spain
+http://data.linkededucation.org/resource/lak/person/enrique-garcia;Enrique;Garcia;University of Cordoba;Spain
+http://data.linkededucation.org/resource/lak/person/carlos-de-castro;Carlos;De Castro;University of Cordoba;Spain
+http://data.linkededucation.org/resource/lak/person/amelia-zafra;Amelia;Zafra;University of Cordoba;Spain
+http://data.linkededucation.org/resource/lak/person/nema-dean;Nema;Dean;University of Glasgow;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/kwangsu-cho;Kwangsu;Cho;University of Missouri;the United States
+http://data.linkededucation.org/resource/lak/person/tiffany-barnes;Tiffany;Barnes;University of North Carolina at Charlotte;the United States
+http://data.linkededucation.org/resource/lak/person/lorrie-lehman;Lorrie;Lehman;University of North Carolina at Charlotte;the United States
+http://data.linkededucation.org/resource/lak/person/m-croy;M.;Croy;University of North Carolina at Charlotte;the United States
+http://data.linkededucation.org/resource/lak/person/michael-john-eagle;Michael;John Eagle;University of North Carolina at Charlotte;the United States
+http://data.linkededucation.org/resource/lak/person/matthew-w-johnson;Matthew;W. Johnson;University of North Carolina at Charlotte;the United States
+http://data.linkededucation.org/resource/lak/person/leena-joseph;Leena;Joseph;University of North Carolina at Charlotte;the United States
+http://data.linkededucation.org/resource/lak/person/b-mostafavi;B.;Mostafavi;University of North Carolina at Charlotte;the United States
+http://data.linkededucation.org/resource/lak/person/collin-lynch;Collin;Lynch;University of Pittsburgh;the United States
+http://data.linkededucation.org/resource/lak/person/kevin-d-ashley;Kevin;D. Ashley;University of Pittsburgh;the United States
+http://data.linkededucation.org/resource/lak/person/pamela-jordan;Pamela;Jordan;University of Pittsburgh;the United States
+http://data.linkededucation.org/resource/lak/person/moses-hall;Moses;Hall;University of Pittsburgh;the United States
+http://data.linkededucation.org/resource/lak/person/peter-brusilovsky;Peter;Brusilovsky;University of Pittsburgh;the United States
+http://data.linkededucation.org/resource/lak/person/wenting-xiong;Wenting;Xiong;University of Pittsburgh;the United States
+http://data.linkededucation.org/resource/lak/person/diane-litman;Diane;Litman;University of Pittsburgh;the United States
+http://data.linkededucation.org/resource/lak/person/christian-schunn;Christian;Schunn;University of Pittsburgh;the United States
+http://data.linkededucation.org/resource/lak/person/kalina-yacef;Kalina;Yacef;University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/roberto-martinez-maldonado;Roberto;Martinez Maldonado;University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/judy-kay;Judy;Kay;University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/irena-koprinska;Irena;Koprinska;University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/anna-katrina-dominguez;Anna;Katrina Dominguez;University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/james-r-curran;James;R. Curran;University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/rajibussalim;;ajibussalim;University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/vilaythong-southavilay;Vilaythong;Southavilay;University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/rafael-a-calvo;Rafael;A. Calvo;University of Sydney;the United States
+http://data.linkededucation.org/resource/lak/person/sunghwan-mac-kim;Sunghwan;Mac Kim;University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/cecily-heiner;Cecily;Heiner;University of Utah;the United States
+http://data.linkededucation.org/resource/lak/person/joseph-l-zachary;Joseph;L. Zachary;University of Utah;the United States
+http://data.linkededucation.org/resource/lak/person/sadhana-puntambekar;Sadhana;Puntambekar;University of Wisconsin;the United States
+http://data.linkededucation.org/resource/lak/person/hogyeong-jeong;Hogyeong;Jeong;Vanderbilt University;the United States
+http://data.linkededucation.org/resource/lak/person/gautam-biswas;Gautam;Biswas;Vanderbilt University;the United States
+http://data.linkededucation.org/resource/lak/person/john-s-kinnebrew;John;S. Kinnebrew;Vanderbilt University;the United States
+http://data.linkededucation.org/resource/lak/person/larry-howard;Larry;Howard;Vanderbilt University;the United States
+http://data.linkededucation.org/resource/lak/person/julie-johnson;Julie;Johnson;Vanderbilt University;the United States
+http://data.linkededucation.org/resource/lak/person/carin-neitzel;Carin;Neitzel;Vanderbilt University;the United States
+http://data.linkededucation.org/resource/lak/person/anthony-allevato;Anthony;Allevato;Virginia Tech;the United States
+http://data.linkededucation.org/resource/lak/person/matthew-thornton;Matthew;Thornton;Virginia Tech;the United States
+http://data.linkededucation.org/resource/lak/person/stephen-h-edwards;Stephen;H. Edwards;Virginia Tech;the United States
+http://data.linkededucation.org/resource/lak/person/manuel-a-perez-quinones;Manuel;A. Perez-quinones;Virginia Tech;the United States
+http://data.linkededucation.org/resource/lak/person/joseph-e-beck;Joseph;E. Beck;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/neil-t-heffernan;Neil;T. Heffernan;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/arnon-hershkovitz;Arnon;Hershkovitz;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/zachary-a-pardos;Zachary;A. Pardos;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/carolina-ruiz;Carolina;Ruiz;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/ryan-sjd-baker;Ryan;S.j.d. Baker;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/ryan-sjd-baker;Ryan;S.J.d. Baker;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/qing-yang-wang;Qing;Yang Wang;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/shubhendu-trivedi;Shubhendu;Trivedi;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/yutao-wang;Yutao;Wang;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/sujith-m-gowda;Sujith;M. Gowda;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/michael-wixon;Michael;Wixon;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/aatish-salvi;Aatish;Salvi;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/jaclyn-ocumpaugh;Jaclyn;Ocumpaugh;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/lisa-rossi;Lisa;Rossi;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/gabor-n-sarkozy;Gabor;N. Sarkozy;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/c-heffernan;C.;Heffernan;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/yue-gong;Yue;Gong;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/dovan-rai;Dovan;Rai;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/j-gobert;J.;Gobert;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/adam-b-goldstein;Adam;B. Goldstein;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/matt-bachmann;Matt;Bachmann;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/michael-a-sao-pedro;Michael;A. Sao Pedro;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/orlando-montalvo;Orlando;Montalvo;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/adam-nakama;Adam;Nakama;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/daniel-roberge;Daniel;Roberge;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/anthony-rojas;Anthony;Rojas;Worcester Polytechnic Institute;the United States
+http://data.linkededucation.org/resource/lak/person/hama-abu-kishk;Hama;Abu-kishk;Ben-Gurion University;Israel
+http://data.linkededucation.org/resource/lak/person/steve-ritter;Steve;Ritter;Carnegie Learning Inc;the United States
+http://data.linkededucation.org/resource/lak/person/steve-ritter;Steve;Ritter;Carnegie Learning Inc.;the United States
+http://data.linkededucation.org/resource/lak/person/tristan-nixon;Tristan;Nixon;Carnegie Learning Inc;the United States
+http://data.linkededucation.org/resource/lak/person/tristan-nixon;Tristan;Nixon;Carnegie Learning Inc.;the United States
+http://data.linkededucation.org/resource/lak/person/brendon-towle;Brendon;Towle;Carnegie Learning Inc;the United States
+http://data.linkededucation.org/resource/lak/person/brendon-towle;Brendon;Towle;Carnegie Learning Inc.;the United States
+http://data.linkededucation.org/resource/lak/person/annalies-vuong;Annalies;Vuong;Carnegie Learning Inc;the United States
+http://data.linkededucation.org/resource/lak/person/annalies-vuong;Annalies;Vuong;Carnegie Learning Inc.;the United States
+http://data.linkededucation.org/resource/lak/person/koji-suda;Koji;Suda;Hyogo University of Teacher Education;Japan
+http://data.linkededucation.org/resource/lak/person/junichi-kakegawa;Junichi;Kakegawa;Hyogo University of Teacher Education;Japan
+http://data.linkededucation.org/resource/lak/person/koichiro-morihiro;Koichiro;Morihiro;Hyogo University of Teacher Education;Japan
+http://data.linkededucation.org/resource/lak/person/ryo-nagata;Ryo;Nagata;Konan University;Japan
+http://data.linkededucation.org/resource/lak/person/keigo-takeda;Keigo;Takeda;Konan University;Japan
+http://data.linkededucation.org/resource/lak/person/robert-dale;Robert;Dale;Macquarie University;Australia
+http://data.linkededucation.org/resource/lak/person/roger-azevedo;Roger;Azevedo;McGill University;Canada
+http://data.linkededucation.org/resource/lak/person/francois-bouchet;Francois;Bouchet;McGill University;Canada
+http://data.linkededucation.org/resource/lak/person/richard-cox;Richard;Cox;Monash University;Australia
+http://data.linkededucation.org/resource/lak/person/j-r-quevedo;J.;R. Quevedo;Oviedo University;Spain
+http://data.linkededucation.org/resource/lak/person/e-montanes;E.;Montanes;Oviedo University;Spain
+http://data.linkededucation.org/resource/lak/person/suleyman-cetintas;Suleyman;Cetintas;Purdue University;the United States
+http://data.linkededucation.org/resource/lak/person/luo-si;Luo;Si;Purdue University;the United States
+http://data.linkededucation.org/resource/lak/person/yan-ping-xin;Yan;Ping Xin;Purdue University;the United States
+http://data.linkededucation.org/resource/lak/person/casey-hord;Casey;Hord;Purdue University;the United States
+http://data.linkededucation.org/resource/lak/person/kimberly-e-arnold;Kimberly;E. Arnold;Purdue University;the United States
+http://data.linkededucation.org/resource/lak/person/matthew-d-pistilli;Matthew;D. Pistilli;Purdue University;the United States
+http://data.linkededucation.org/resource/lak/person/ofer-bergman;Ofer;Bergman;Sheffield University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/thomas-k-harris;Thomas;K. Harris;Tutor Technologies;the United States
+http://data.linkededucation.org/resource/lak/person/antonio-r-anaya;Antonio;R. Anaya;UNED;Spain
+http://data.linkededucation.org/resource/lak/person/jesus-g-boticario;Jesus;G. Boticario;UNED;Spain
+http://data.linkededucation.org/resource/lak/person/javier-bravo;Javier;Bravo;Universidad Autonoma de Madrid;Spain
+http://data.linkededucation.org/resource/lak/person/alvaro-ortigosa;Alvaro;Ortigosa;Universidad Autonoma de Madrid;Spain
+http://data.linkededucation.org/resource/lak/person/david-nadler-prata;David;Nadler Prata;Universidade Federal de Alagoas;Brazil
+http://data.linkededucation.org/resource/lak/person/evandro-db-costa;Evandro;D.b. Costa;Universidade Federal de Alagoas;Brazil
+http://data.linkededucation.org/resource/lak/person/miguel-gea;Miguel;Gea;University of Granada;Spain
+http://data.linkededucation.org/resource/lak/person/vasile-rus;Vasile;Rus;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/mihai-lintean;Mihai;Lintean;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/cristian-moldovan;Cristian;Moldovan;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/nobal-niraula;Nobal;Niraula;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/arthur-c-graesser;Arthur;C. Graesser;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/fazel-keshtkar;Fazel;Keshtkar;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/brent-morgan;Brent;Morgan;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/carol-forsyth;Carol;Forsyth;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/philip-pavlik;Philip;Pavlik;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/zhiqiang-cai;Zhiqiang;Cai;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/mae-lynn-germany;Mae-lynn;Germany;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/sidney-d-mello;Sidney;D'mello;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/blair-lehman;Blair;Lehman;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/whitney-cade;Whitney;Cade;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/andrew-olney;Andrew;Olney;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/jonathan-wood;Jonathan;Wood;University of Memphis;the United States
+http://data.linkededucation.org/resource/lak/person/dror-ben-naim;Dror;Ben-naim;University of New South Wales;Australia
+http://data.linkededucation.org/resource/lak/person/michael-bain;Michael;Bain;University of New South Wales;Australia
+http://data.linkededucation.org/resource/lak/person/nadine-marcus;Nadine;Marcus;University of New South Wales;Australia
+http://data.linkededucation.org/resource/lak/person/lukas-zoubek;Lukas;Zoubek;University of Ostrava;Czech Republic
+http://data.linkededucation.org/resource/lak/person/michal-burda;Michal;Burda;University of Ostrava;Czech Republic
+http://data.linkededucation.org/resource/lak/person/marian-simko;Marian;Simko;University of Technology;Slovakia
+http://data.linkededucation.org/resource/lak/person/maria-bielikova;Maria;Bielikova;University of Technology;Slovakia
+http://data.linkededucation.org/resource/lak/person/tara-m-madhyastha;Tara;M. Madhyastha;University of Washington;the United States
+http://data.linkededucation.org/resource/lak/person/steven-tanimoto;Steven;Tanimoto;University of Washington;the United States
+http://data.linkededucation.org/resource/lak/person/mladen-a-vouk;Mladen;A. Vouk;Applied Research Associates, Inc., Raleigh;the United States
+http://data.linkededucation.org/resource/lak/person/andre-kruger;Andre;Kruger;Aroline AG;Germany
+http://data.linkededucation.org/resource/lak/person/hema-soundranayagam;Hema;Soundranayagam;Australian Catholic University;Australia
+http://data.linkededucation.org/resource/lak/person/agathe-merceron;Agathe;Merceron;Beuth University of Applied Sciences;Germany
+http://data.linkededucation.org/resource/lak/person/benjamin-wolf;Benjamin;Wolf;Beuth University of Applied Sciences;Germany
+http://data.linkededucation.org/resource/lak/person/nayer-wanas;Nayer;Wanas;Cairo Microsoft Innovation Lab;Egypt
+http://data.linkededucation.org/resource/lak/person/nevin-darwish;Nevin;Darwish;Cairo University;Egypt
+http://data.linkededucation.org/resource/lak/person/sherry-hsi;Sherry;Hsi;Center for Technology Innovation;the United States
+http://data.linkededucation.org/resource/lak/person/heather-butler;Heather;Butler;Claremont Graduate University;the United States
+http://data.linkededucation.org/resource/lak/person/diane-halpern;Diane;Halpern;Claremont Graduate University;the United States
+http://data.linkededucation.org/resource/lak/person/ankit-ranka;Ankit;Ranka;EdLab;the United States
+http://data.linkededucation.org/resource/lak/person/faisal-anwar;Faisal;Anwar;EdLab;the United States
+http://data.linkededucation.org/resource/lak/person/hui-soo-chae;Hui;Soo Chae;EdLab;the United States
+http://data.linkededucation.org/resource/lak/person/suchismita-srinivas;Suchismita;Srinivas;Educational Initiatives Pvt. Ltd.;India
+http://data.linkededucation.org/resource/lak/person/muntaquim-bagadia;Muntaquim;Bagadia;Educational Initiatives Pvt. Ltd.;India
+http://data.linkededucation.org/resource/lak/person/anupriya-gupta;Anupriya;Gupta;Educational Initiatives Pvt. Ltd.;India
+http://data.linkededucation.org/resource/lak/person/nabila-khodeir;Nabila;Khodeir;Electronics Research Institute;Egypt
+http://data.linkededucation.org/resource/lak/person/nadia-hegazy;Nadia;Hegazy;Electronics Research Institute;Egypt
+http://data.linkededucation.org/resource/lak/person/tamara-sumner;Tamara;Sumner;Institute of Cognitive Science;the United States
+http://data.linkededucation.org/resource/lak/person/nabila-bousbia;Nabila;Bousbia;Laboratoire de Paris 6;France
+http://data.linkededucation.org/resource/lak/person/jean-marc-labat;Jean-marc;Labat;Laboratoire de Paris 6;France
+http://data.linkededucation.org/resource/lak/person/haiyun-bian;Haiyun;Bian;Metropolitan State College of Denver;the United States
+http://data.linkededucation.org/resource/lak/person/kristy-elizabeth-boyer;Kristy;Elizabeth Boyer;North Carolina State University;the United States
+http://data.linkededucation.org/resource/lak/person/robert-phillips;Robert;Phillips;North Carolina State University;the United States
+http://data.linkededucation.org/resource/lak/person/eun-young-ha;Eun;Young Ha;North Carolina State University;the United States
+http://data.linkededucation.org/resource/lak/person/michael-d-wallis;Michael;D. Wallis;North Carolina State University;the United States
+http://data.linkededucation.org/resource/lak/person/james-c-lester;James;C. Lester;North Carolina State University;the United States
+http://data.linkededucation.org/resource/lak/person/jennifer-l-sabourin;Jennifer;L. Sabourin;North Carolina State University;the United States
+http://data.linkededucation.org/resource/lak/person/bradford-w-mott;Bradford;W. Mott;North Carolina State University;the United States
+http://data.linkededucation.org/resource/lak/person/jonathan-p-rowe;Jonathan;P. Rowe;North Carolina State University;the United States
+http://data.linkededucation.org/resource/lak/person/keith-millis;Keith;Millis;Northern Illinois University;the United States
+http://data.linkededucation.org/resource/lak/person/peter-sorenson;Peter;Sorenson;Quizzicle;the United States
+http://data.linkededucation.org/resource/lak/person/manuel-gerardo-saldivar;Manuel;Gerardo Saldivar;School of Education;the United States
+http://data.linkededucation.org/resource/lak/person/m-feng;M.;Feng;SRI International;the United States
+http://data.linkededucation.org/resource/lak/person/marie-bienkowski;Marie;Bienkowski;SRI International;the United States
+http://data.linkededucation.org/resource/lak/person/john-brecht;John;Brecht;SRI International;the United States
+http://data.linkededucation.org/resource/lak/person/jim-klo;Jim;Klo;SRI International;the United States
+http://data.linkededucation.org/resource/lak/person/jaan-ubi;Jaan;Ubi;Tallinn University of Technology;Estonia
+http://data.linkededucation.org/resource/lak/person/innar-liiv;Innar;Liiv;Tallinn University of Technology;Estonia
+http://data.linkededucation.org/resource/lak/person/cesar-vialardi;Cesar;Vialardi;Universidad de Lima;Spain
+http://data.linkededucation.org/resource/lak/person/jorge-chue;Jorge;Chue;Universidad de Lima;Spain
+http://data.linkededucation.org/resource/lak/person/alfredo-barrientos;Alfredo;Barrientos;Universidad de Lima;Spain
+http://data.linkededucation.org/resource/lak/person/daniel-victoria;Daniel;Victoria;Universidad de Lima;Spain
+http://data.linkededucation.org/resource/lak/person/jhonny-estrella;Jhonny;Estrella;Universidad de Lima;Spain
+http://data.linkededucation.org/resource/lak/person/juan-pablo-peche;Juan;Pablo Peche;Universidad de Lima;Spain
+http://data.linkededucation.org/resource/lak/person/issam-rebai;Issam;Rebai;Universite de Paris-Sud;France
+http://data.linkededucation.org/resource/lak/person/leah-p-macfadyen;Leah;P. Macfadyen;University of British Columbia;the United States
+http://data.linkededucation.org/resource/lak/person/leah-p-macfadyen;Leah;P. Macfadyen;University of British Columbia;Canada
+http://data.linkededucation.org/resource/lak/person/s-kardan;S.;Kardan;University of British Columbia;Canada
+http://data.linkededucation.org/resource/lak/person/c-conati;C.;Conati;University of British Columbia;Canada
+http://data.linkededucation.org/resource/lak/person/shane-dawson;Shane;Dawson;University of British Columbia;Canada
+http://data.linkededucation.org/resource/lak/person/keith-e-maull;Keith;E. Maull;University of Colorado;the United States
+http://data.linkededucation.org/resource/lak/person/lee-becker;Lee;Becker;University of Colorado at Boulder;the United States
+http://data.linkededucation.org/resource/lak/person/sarel-vanvuuren;Sarel;Vanvuuren;University of Colorado at Boulder;the United States
+http://data.linkededucation.org/resource/lak/person/martin-mozina;Martin;Mozina;University of Ljubljana;Slovenia
+http://data.linkededucation.org/resource/lak/person/matej-guid;Matej;Guid;University of Ljubljana;Slovenia
+http://data.linkededucation.org/resource/lak/person/aleksander-sadikov;Aleksander;Sadikov;University of Ljubljana;Slovenia
+http://data.linkededucation.org/resource/lak/person/vida-groznik;Vida;Groznik;University of Ljubljana;Slovenia
+http://data.linkededucation.org/resource/lak/person/jana-krivec;Jana;Krivec;University of Ljubljana;Slovenia
+http://data.linkededucation.org/resource/lak/person/ivan-bratko;Ivan;Bratko;University of Ljubljana;Slovenia
+http://data.linkededucation.org/resource/lak/person/andre-a-rupp;Andre;A. Rupp;University of Maryland;the United States
+http://data.linkededucation.org/resource/lak/person/shauna-j-sweet;Shauna;J. Sweet;University of Maryland;the United States
+http://data.linkededucation.org/resource/lak/person/younyoung-choi;Younyoung;Choi;University of Maryland;the United States
+http://data.linkededucation.org/resource/lak/person/ivon-arroyo;Ivon;Arroyo;University of Massachusetts;the United States
+http://data.linkededucation.org/resource/lak/person/hasmik-mehranian;Hasmik;Mehranian;University of Massachusetts;the United States
+http://data.linkededucation.org/resource/lak/person/beverly-park-woolf;Beverly;Park Woolf;University of Massachusetts;the United States
+http://data.linkededucation.org/resource/lak/person/david-h-shanabrook;David;H. Shanabrook;University of Massachusetts;the United States
+http://data.linkededucation.org/resource/lak/person/david-g-cooper;David;G. Cooper;University of Massachusetts;the United States
+http://data.linkededucation.org/resource/lak/person/beijie-xu;Beijie;Xu;Utah State University;the United States
+http://data.linkededucation.org/resource/lak/person/mimi-m-recker;Mimi;M. Recker;Utah State University;the United States
+http://data.linkededucation.org/resource/lak/person/christine-garrard;Christine;Garrard;Utah State University;the United States
+http://data.linkededucation.org/resource/lak/person/a-zapata-gonzalez;A.;Zapata-gonzalez;Autonomous University of Yucatan;Mexico
+http://data.linkededucation.org/resource/lak/person/vh-menendez;V.h.;Menendez;Autonomous University of Yucatan;Mexico
+http://data.linkededucation.org/resource/lak/person/c-marquez-vera;C.;Marquez-vera;Autonomous University of Zacatecas;Mexico
+http://data.linkededucation.org/resource/lak/person/m-suarez;M.;Suarez;De La Salle University;The Philippines
+http://data.linkededucation.org/resource/lak/person/s-sosnovsky;S.;Sosnovsky;DFKI;Germany
+http://data.linkededucation.org/resource/lak/person/a-a-von-davier;A.;A. Von Davier;Educational Testing Service;the United States
+http://data.linkededucation.org/resource/lak/person/j-zimmermann;J.;Zimmermann;ETH Zurich;Switzerland
+http://data.linkededucation.org/resource/lak/person/kh-brodersen;K.h.;Brodersen;ETH Zurich;Switzerland
+http://data.linkededucation.org/resource/lak/person/j-p-pellet;J.-p.;Pellet;ETH Zurich;Switzerland
+http://data.linkededucation.org/resource/lak/person/e-august;E.;August;ETH Zurich;Switzerland
+http://data.linkededucation.org/resource/lak/person/jm-buhmann;J.m.;Buhmann;ETH Zurich;Switzerland
+http://data.linkededucation.org/resource/lak/person/osamu-yamakawa;Osamu;Yamakawa;Fukui Prefectural University;Japan
+http://data.linkededucation.org/resource/lak/person/g-akcaponar;G.;Akcaponar;Hacettepe University;Turkey
+http://data.linkededucation.org/resource/lak/person/e-cougun;E.;Cougun;Hacettepe University;Turkey
+http://data.linkededucation.org/resource/lak/person/a-altun;A.;Altun;Hacettepe University;Turkey
+http://data.linkededucation.org/resource/lak/person/koichi-yastake;Koichi;Yastake;Hiroshima University;Japan
+http://data.linkededucation.org/resource/lak/person/takahiro-sumiya;Takahiro;Sumiya;Hiroshima University;Japan
+http://data.linkededucation.org/resource/lak/person/k-wauters;K.;Wauters;Katholieke Universiteit Leuven;Belgium
+http://data.linkededucation.org/resource/lak/person/p-desmet;P.;Desmet;Katholieke Universiteit Leuven;Belgium
+http://data.linkededucation.org/resource/lak/person/w-van-den-noortgate;W.;Van Den Noortgate;Katholieke Universiteit Leuven;Belgium
+http://data.linkededucation.org/resource/lak/person/takahiro-tagawa;Takahiro;Tagawa;Kyushu University;Japan
+http://data.linkededucation.org/resource/lak/person/hitoshi--inoue;Hitoshi;Inoue;Kyushu University;Japan
+http://data.linkededucation.org/resource/lak/person/p-jarusek;P.;Jarusek;Masaryk University;Czech Republic
+http://data.linkededucation.org/resource/lak/person/r-pelanek;R.;Pelanek;Masaryk University;Czech Republic
+http://data.linkededucation.org/resource/lak/person/jaroslav-bayer;Jaroslav;Bayer;Masaryk University;Czech Republic
+http://data.linkededucation.org/resource/lak/person/hana-bydzovska;Hana;Bydzovska;Masaryk University;Czech Republic
+http://data.linkededucation.org/resource/lak/person/jan-geryk;Jan;Geryk;Masaryk University;Czech Republic
+http://data.linkededucation.org/resource/lak/person/tomas-obsivac;Tomas;Obsivac;Masaryk University;Czech Republic
+http://data.linkededucation.org/resource/lak/person/lubomir-popelinsky;Lubomir;Popelinsky;Masaryk University;Czech Republic
+http://data.linkededucation.org/resource/lak/person/nikita-romashkin;Nikita;Romashkin;National Research University;Russia
+http://data.linkededucation.org/resource/lak/person/dmitry-ignatov;Dmitry;Ignatov;National Research University;Russia
+http://data.linkededucation.org/resource/lak/person/elena-kolotova;Elena;Kolotova;National Research University;Russia
+http://data.linkededucation.org/resource/lak/person/a-kharrufa;A.;Kharrufa;Newcastle University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/p-s-inventado;P.;S. Inventado;Osaka University;Japan
+http://data.linkededucation.org/resource/lak/person/r-legaspi;R.;Legaspi;Osaka University;Japan
+http://data.linkededucation.org/resource/lak/person/m-numao;M.;Numao;Osaka University;Japan
+http://data.linkededucation.org/resource/lak/person/al-dyckhoff;A.l.;Dyckhoff;RWTH Aachen University;Germany
+http://data.linkededucation.org/resource/lak/person/d-zielke;D.;Zielke;RWTH Aachen University;Germany
+http://data.linkededucation.org/resource/lak/person/ma-chatti;M.a.;Chatti;RWTH Aachen University;Germany
+http://data.linkededucation.org/resource/lak/person/u-schroeder;U.;Schroeder;RWTH Aachen University;Germany
+http://data.linkededucation.org/resource/lak/person/anna-lea-dyckhoff;Anna;Lea Dyckhoff;RWTH Aachen University;Germany
+http://data.linkededucation.org/resource/lak/person/dennis-zielke;Dennis;Zielke;RWTH Aachen University;Germany
+http://data.linkededucation.org/resource/lak/person/mareike-bultmann;Mareike;Bultmann;RWTH Aachen University;Germany
+http://data.linkededucation.org/resource/lak/person/mohamed-amine-chatti;Mohamed;Amine Chatti;RWTH Aachen University;Germany
+http://data.linkededucation.org/resource/lak/person/ulrik-schroeder;Ulrik;Schroeder;RWTH Aachen University;Germany
+http://data.linkededucation.org/resource/lak/person/g-goguadze;G.;Goguadze;Saarland University;Germany
+http://data.linkededucation.org/resource/lak/person/anna-schmidt;Anna;Schmidt;Saarland University;Germany
+http://data.linkededucation.org/resource/lak/person/tim-krones;Tim;Krones;Saarland University;Germany
+http://data.linkededucation.org/resource/lak/person/d-kabakchieva;D.;Kabakchieva;Sofia University St. Kl. Ohridski;Bulgaria
+http://data.linkededucation.org/resource/lak/person/a-al-qaraghuli;A.;Al-qaraghuli;UKM;Malaysia
+http://data.linkededucation.org/resource/lak/person/e-cambranes;E.;Cambranes;Universidad Autonoma de Yucatan;Mexico
+http://data.linkededucation.org/resource/lak/person/diego-garcia-saiz;Diego;Garcia-saiz;Universidad de Cantabria;Spain
+http://data.linkededucation.org/resource/lak/person/marta-zorrilla;Marta;Zorrilla;Universidad de Cantabria;Spain
+http://data.linkededucation.org/resource/lak/person/lorenzo-moreno;Lorenzo;Moreno;Universidad de La Laguna;Spain
+http://data.linkededucation.org/resource/lak/person/carina-s-gonzalez;Carina;S. Gonzalez;Universidad de La Laguna;Spain
+http://data.linkededucation.org/resource/lak/person/roman-estevez;Roman;Estevez;Universidad de La Laguna;Spain
+http://data.linkededucation.org/resource/lak/person/beatrice-popescu;Beatrice;Popescu;Universidad de La Laguna;Spain
+http://data.linkededucation.org/resource/lak/person/pedro-a-toledo;Pedro;A. Toledo;Universidad de La Laguna;Spain
+http://data.linkededucation.org/resource/lak/person/f-lemmerich;F.;Lemmerich;Universitat Wurzburg;Germany
+http://data.linkededucation.org/resource/lak/person/m-ifland;M.;Ifland;Universitat Wurzburg;Germany
+http://data.linkededucation.org/resource/lak/person/f-puppe;F.;Puppe;Universitat Wurzburg;Germany
+http://data.linkededucation.org/resource/lak/person/s-lalle;S.;Lalle;Universite Joseph Fourier;France
+http://data.linkededucation.org/resource/lak/person/v-luengo;V.;Luengo;Universite Joseph Fourier;France
+http://data.linkededucation.org/resource/lak/person/serafima-mamedova;Serafima;Mamedova;University - Higher School of Economics;Russia
+http://data.linkededucation.org/resource/lak/person/ivan-shamshurin;Ivan;Shamshurin;University - Higher School of Economics;Russia
+http://data.linkededucation.org/resource/lak/person/reihaneh-rabbany-k;Reihaneh;Rabbany K.;University of Alberta;Canada
+http://data.linkededucation.org/resource/lak/person/mansoureh-takaffoli;Mansoureh;Takaffoli;University of Alberta;Canada
+http://data.linkededucation.org/resource/lak/person/osmar-zaiane;Osmar;Zaiane;University of Alberta;Canada
+http://data.linkededucation.org/resource/lak/person/stuart-johnson;Stuart;Johnson;University of Alberta;Canada
+http://data.linkededucation.org/resource/lak/person/jose-l-balcazar;Jose;L. Balcazar;University of Cantabria;Spain
+http://data.linkededucation.org/resource/lak/person/me-prieto-mendez;M.e.;Prieto-mendez;University of Castilla la Mancha;Spain
+http://data.linkededucation.org/resource/lak/person/nguyen-thai-nghe;Nguyen;Thai-nghe;University of Hildesheim;Germany
+http://data.linkededucation.org/resource/lak/person/tomaas-horvath;Tomaas;Horvath;University of Hildesheim;Germany
+http://data.linkededucation.org/resource/lak/person/lars-schmidt-thieme;Lars;Schmidt-thieme;University of Hildesheim;Germany
+http://data.linkededucation.org/resource/lak/person/nadira-saab;Nadira;Saab;University of Leiden;the Netherlands
+http://data.linkededucation.org/resource/lak/person/k-stefanova;K.;Stefanova;University of National and World Economy;Bulgaria
+http://data.linkededucation.org/resource/lak/person/v-kisimov;V.;Kisimov;University of National and World Economy;Bulgaria
+http://data.linkededucation.org/resource/lak/person/j-good;J.;Good;University of Sussex;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/anjo-anjewierden;Anjo;Anjewierden;University of Twente;the Netherlands
+http://data.linkededucation.org/resource/lak/person/hannie-gijlers;Hannie;Gijlers;University of Twente;the Netherlands
+http://data.linkededucation.org/resource/lak/person/robert-de-hoog;Robert;De Hoog;University of Twente;the Netherlands
+http://data.linkededucation.org/resource/lak/person/ma-mercedes-t-rodrigo;Ma.;Mercedes T. Rodrigo;Ateneo de Manila University;The Philippines
+http://data.linkededucation.org/resource/lak/person/alejandra-jayme;Alejandra;Jayme;Ateneo de Manila University;The Philippines
+http://data.linkededucation.org/resource/lak/person/thomas-t-dy;Thomas;T. Dy;Ateneo de Manila University;The Philippines
+http://data.linkededucation.org/resource/lak/person/ling-tan;Ling;Tan;Australian Council for Educational Research;Australia
+http://data.linkededucation.org/resource/lak/person/xiaoxun-sun;Xiaoxun;Sun;Australian Council for Educational Research;Australia
+http://data.linkededucation.org/resource/lak/person/renza-campagni;Renza;Campagni;Dipartimento di Sistemi e Informatica;Italy
+http://data.linkededucation.org/resource/lak/person/donatella-merlini;Donatella;Merlini;Dipartimento di Sistemi e Informatica;Italy
+http://data.linkededucation.org/resource/lak/person/renzo-sprugnoli;Renzo;Sprugnoli;Dipartimento di Sistemi e Informatica;Italy
+http://data.linkededucation.org/resource/lak/person/liane-beuster;Liane;Beuster;Hochschule fur Technik und Wirtschaft;Germany
+http://data.linkededucation.org/resource/lak/person/albrecht-fortenbacher;Albrecht;Fortenbacher;Hochschule fur Technik und Wirtschaft;Germany
+http://data.linkededucation.org/resource/lak/person/leonard-kappe;Leonard;Kappe;Hochschule fur Technik und Wirtschaft;Germany
+http://data.linkededucation.org/resource/lak/person/boris-wenzlaff;Boris;Wenzlaff;Hochschule fur Technik und Wirtschaft;Germany
+http://data.linkededucation.org/resource/lak/person/margarita-elkina;Margarita;Elkina;Hochschule fur Wirtschaft und Recht;Germany
+http://data.linkededucation.org/resource/lak/person/andreas-pursian;Andreas;Pursian;Hochschule fur Wirtschaft und Recht;Germany
+http://data.linkededucation.org/resource/lak/person/jin-soung-yoo;Jin;Soung Yoo;Indiana University-Purdue University;the United States
+http://data.linkededucation.org/resource/lak/person/moon-heum-cho;Moon-heum;Cho;Kent State University;the United States
+http://data.linkededucation.org/resource/lak/person/alexandru-surpatean;Alexandru;Surpatean;Maastricht University;the Netherlands
+http://data.linkededucation.org/resource/lak/person/evgueni-smirnov;Evgueni;Smirnov;Maastricht University;the Netherlands
+http://data.linkededucation.org/resource/lak/person/nicolai-manie;Nicolai;Manie;Maastricht University;the Netherlands
+http://data.linkededucation.org/resource/lak/person/yoav-bergner;Yoav;Bergner;Massachusetts Institute of Technology;the United States
+http://data.linkededucation.org/resource/lak/person/stefan-droschler;Stefan;Droschler;Massachusetts Institute of Technology;the United States
+http://data.linkededucation.org/resource/lak/person/gerd-kortemeyer;Gerd;Kortemeyer;Massachusetts Institute of Technology;the United States
+http://data.linkededucation.org/resource/lak/person/saif-rayyan;Saif;Rayyan;Massachusetts Institute of Technology;the United States
+http://data.linkededucation.org/resource/lak/person/daniel-seaton;Daniel;Seaton;Massachusetts Institute of Technology;the United States
+http://data.linkededucation.org/resource/lak/person/david-e-pritchard;David;E. Pritchard;Massachusetts Institute of Technology;the United States
+http://data.linkededucation.org/resource/lak/person/dixie-ching;Dixie;Ching;New York University;the United States
+http://data.linkededucation.org/resource/lak/person/myra-spiliopoulou;Myra;Spiliopoulou;Otto-von-Guericke-University;Germany
+http://data.linkededucation.org/resource/lak/person/rasil-warnakulasooriya;Rasil;Warnakulasooriya;Pearson;the United States
+http://data.linkededucation.org/resource/lak/person/william-galen;William;Galen;Pearson;the United States
+http://data.linkededucation.org/resource/lak/person/robert-p-dolan;Robert;P. Dolan;Pearson Education;the United States
+http://data.linkededucation.org/resource/lak/person/eliana-scheihing;Eliana;Scheihing;Universidad Austral de Chile;Chile
+http://data.linkededucation.org/resource/lak/person/carolina-aros;Carolina;Aros;Universidad Austral de Chile;Chile
+http://data.linkededucation.org/resource/lak/person/daniel-guerra;Daniel;Guerra;Universidad Austral de Chile;Chile
+http://data.linkededucation.org/resource/lak/person/judi-mccuaig;Judi;Mccuaig;University of Guelph;Canada
+http://data.linkededucation.org/resource/lak/person/julia-baldwin;Julia;Baldwin;University of Guelph;Canada
+http://data.linkededucation.org/resource/lak/person/terry-peckham;Terry;Peckham;University of Saskatchewan;Canada
+http://data.linkededucation.org/resource/lak/person/gord-mccalla;Gord;Mccalla;University of Saskatchewan;Canada
+http://data.linkededucation.org/resource/lak/person/christopher-a-brooks;Christopher;A. Brooks;University of Saskatchewan;Canada
+http://data.linkededucation.org/resource/lak/person/carrie-demmans-epp;Carrie;Demmans Epp;University of Saskatchewan;Canada
+http://data.linkededucation.org/resource/lak/person/greg-logan;Greg;Logan;University of Saskatchewan;Canada
+http://data.linkededucation.org/resource/lak/person/jim-greer;Jim;Greer;University of Saskatchewan;Canada
+http://data.linkededucation.org/resource/lak/person/carl-gutwin;Carl;Gutwin;University of Saskatchewan;Canada
+http://data.linkededucation.org/resource/lak/person/jihie-kim;Jihie;Kim;University of Southern California;the United States
+http://data.linkededucation.org/resource/lak/person/erin-shaw;Erin;Shaw;University of Southern California;the United States
+http://data.linkededucation.org/resource/lak/person/hao-xu;Hao;Xu;University of Southern California;the United States
+http://data.linkededucation.org/resource/lak/person/adarsh-g-v;Adarsh;G V;University of Southern California;the United States
+http://data.linkededucation.org/resource/lak/person/ritu-chaturvedi;Ritu;Chaturvedi;University of Windsor;Canada
+http://data.linkededucation.org/resource/lak/person/c-i-ezeife;C.;I. Ezeife;University of Windsor;Canada
+http://data.linkededucation.org/resource/lak/person/mike-sharkey;Mike;Sharkey;Apollo Group;the United States
+http://data.linkededucation.org/resource/lak/person/rebecca-barber;Rebecca;Barber;Apollo Group;the United States
+http://data.linkededucation.org/resource/lak/person/sabine-graf;Sabine;Graf;Athabasca University;Canada
+http://data.linkededucation.org/resource/lak/person/cindy-ives;Cindy;Ives;Athabasca University;Canada
+http://data.linkededucation.org/resource/lak/person/nazim-rahman;Nazim;Rahman;Athabasca University;Canada
+http://data.linkededucation.org/resource/lak/person/arnold-ferri;Arnold;Ferri;Athabasca University;Canada
+http://data.linkededucation.org/resource/lak/person/dragan-gasevic;Dragan;Gasevic;Athabasca University;Canada
+http://data.linkededucation.org/resource/lak/person/liaqat-ali;Liaqat;Ali;Athabasca University;Canada
+http://data.linkededucation.org/resource/lak/person/george-siemens;George;Siemens;Athabasca University;Canada
+http://data.linkededucation.org/resource/lak/person/jon-dron;Jon;Dron;Athabasca University;Canada
+http://data.linkededucation.org/resource/lak/person/christopher-teplovs;Christopher;Teplovs;Centre for Applied Information and Communication Technology - Copenhagen Business School;Denmark
+http://data.linkededucation.org/resource/lak/person/nobuko-fujita;Nobuko;Fujita;Centre for Applied Information and Communication Technology - Copenhagen Business School;Denmark
+http://data.linkededucation.org/resource/lak/person/ravi-vatrapu;Ravi;Vatrapu;Copenhagen Business School;Denmark
+http://data.linkededucation.org/resource/lak/person/riina-vuorikari;Riina;Vuorikari;European Schoolnet (EUN);Belgium
+http://data.linkededucation.org/resource/lak/person/martin-wolpers;Martin;Wolpers;Fraunhofer Institute for Applied Information Technology;Germany
+http://data.linkededucation.org/resource/lak/person/katja-niemann;Katja;Niemann;Fraunhofer Institute for Applied Information Technology;Germany
+http://data.linkededucation.org/resource/lak/person/hans-christian-schmitz;Hans-Christian;Schmitz;Fraunhofer Institute for Applied Information Technology;Germany
+http://data.linkededucation.org/resource/lak/person/maren-scheffel;Maren;Scheffel;Fraunhofer Institute for Applied Information Technology;Germany
+http://data.linkededucation.org/resource/lak/person/uwe-kirschenmann;Uwe;Kirschenmann;Fraunhofer Institute for Applied Information Technology;Germany
+http://data.linkededucation.org/resource/lak/person/nikos-manouselis;Nikos;Manouselis;Greek Research and Technology Network (GRNET);Greece
+http://data.linkededucation.org/resource/lak/person/nikos-palavitsinis;Nikos;Palavitsinis;Greek Research and Technology Network (GRNET);Greece
+http://data.linkededucation.org/resource/lak/person/vassilios-protonotarios;Vassilios;Protonotarios;Greek Research and Technology Network (GRNET);Greece
+http://data.linkededucation.org/resource/lak/person/ari-bader-natal;Ari;Bader-Natal;Grockit, Inc.;the United States
+http://data.linkededucation.org/resource/lak/person/thomas-lotze;Thomas;Lotze;Grockit, Inc.;the United States
+http://data.linkededucation.org/resource/lak/person/katrien-verbert;Katrien;Verbert;Katholieke Universiteit Leuven;Belgium
+http://data.linkededucation.org/resource/lak/person/erik-duval;Erik;Duval;Katholieke Universiteit Leuven;Belgium
+http://data.linkededucation.org/resource/lak/person/jose-luis-santos;Jose;Luis Santos;Katholieke Universiteit Leuven;Belgium
+http://data.linkededucation.org/resource/lak/person/sten-govaerts;Sten;Govaerts;Katholieke Universiteit Leuven;Belgium
+http://data.linkededucation.org/resource/lak/person/hendrik-drachsler;Hendrik;Drachsler;Open University of the Netherland;the Netherlands
+http://data.linkededucation.org/resource/lak/person/rebecca-ferguson;Rebecca;Ferguson;The Open University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/simon-buckingham-shum;Simon;Buckingham Shum;The Open University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/anna-de-liddo;Anna;De Liddo;The Open University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/michelle-bachler;Michelle;Bachler;The Open University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/doug-clow;Doug;Clow;The Open University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/elpida-makriyannis;Elpida;Makriyannis;The Open University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/haiming-liu;Haiming;Liu;The Open University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/sharon-slade;Sharon;Slade;The Open University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/fenella-galpin;Fenella;Galpin;The Open University;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/griff-richards;Griff;Richards;Thompson Rivers University - Open Learning;Canada
+http://data.linkededucation.org/resource/lak/person/irwin-devries;Irwin;DeVries;Thompson Rivers University - Open Learning;Canada
+http://data.linkededucation.org/resource/lak/person/ivana-quinto;Ivana;Quinto;Universita degli Studi Napoli Federico II;Italy
+http://data.linkededucation.org/resource/lak/person/lorella-cannavacciuolo;Lorella;Cannavacciuolo;Universita degli Studi Napoli Federico II;Italy
+http://data.linkededucation.org/resource/lak/person/josep-grau-valldosera;Josep;Grau-Valldosera;Universitat Oberta de Catalunya (UOC);Spain
+http://data.linkededucation.org/resource/lak/person/julia-minguillon;Julia;Minguillon;Universitat Oberta de Catalunya (UOC);Spain
+http://data.linkededucation.org/resource/lak/person/german-cobo;German;Cobo;Universitat Oberta de Catalunya (UOC);Spain
+http://data.linkededucation.org/resource/lak/person/david-garcia-solorzano;David;Garcia-Solorzano;Universitat Oberta de Catalunya (UOC);Spain
+http://data.linkededucation.org/resource/lak/person/jose-antonio-moran;Jose;Antonio Moran;Universitat Oberta de Catalunya (UOC);Spain
+http://data.linkededucation.org/resource/lak/person/eugenia-santamaria;Eugenia;Santamaria;Universitat Oberta de Catalunya (UOC);Spain
+http://data.linkededucation.org/resource/lak/person/carlos-monzo;Carlos;Monzo;Universitat Oberta de Catalunya (UOC);Spain
+http://data.linkededucation.org/resource/lak/person/javier-melenchon;Javier;Melenchon;Universitat Oberta de Catalunya (UOC);Spain
+http://data.linkededucation.org/resource/lak/person/abelardo-pardo;Abelardo;Pardo;University Carlos III of Madrid;Spain
+http://data.linkededucation.org/resource/lak/person/carlos-delgado-kloos;Carlos;Delgado Kloos;University Carlos III of Madrid;Spain
+http://data.linkededucation.org/resource/lak/person/derick-leony;Derick;Leony;University Carlos III of Madrid;Spain
+http://data.linkededucation.org/resource/lak/person/luis-de-la-fuente-valentin;Luis;de la Fuente Valentin;University Carlos III of Madrid;Spain
+http://data.linkededucation.org/resource/lak/person/david-sanchez-de-castro;David;Sanchez de Castro;University Carlos III of Madrid;Spain
+http://data.linkededucation.org/resource/lak/person/susan-bull;Susan;Bull;University of Birmingham;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/devan-rosen;Devan;Rosen;University of Hawaii;the United States
+http://data.linkededucation.org/resource/lak/person/victor-miagkikh;Victor;Miagkikh;University of Hawaii;the United States
+http://data.linkededucation.org/resource/lak/person/dan-suthers;Dan;Suthers;University of Hawaii;the United States
+http://data.linkededucation.org/resource/lak/person/kar-hai-chu;Kar-Hai;Chu;University of Hawaii;the United States
+http://data.linkededucation.org/resource/lak/person/aneesha-bakharia;Aneesha;Bakharia;University of Queensland;Australia
+http://data.linkededucation.org/resource/lak/person/lori-lockyer;Lori;Lockyer;University of Wollongong;Australia
+http://data.linkededucation.org/resource/lak/person/darren-cambridge;Darren;Cambridge;American Institutes for Research;the United States
+http://data.linkededucation.org/resource/lak/person/kathleen-perez-lopez;Kathleen;Perez-Lopez;American Institutes for Research;the United States
+http://data.linkededucation.org/resource/lak/person/denis-smolin;Denis;Smolin;American University in Bosnia and Herzegovina;Bosnia and Herzegovina
+http://data.linkededucation.org/resource/lak/person/brian-j-mcnely;Brian;J. McNely;Ball State University;the United States
+http://data.linkededucation.org/resource/lak/person/paul-gestwicki;Paul;Gestwicki;Ball State University;the United States
+http://data.linkededucation.org/resource/lak/person/j-holden-hill;J.;Holden Hill;Ball State University;the United States
+http://data.linkededucation.org/resource/lak/person/philip-parli-horne;Philip;Parli-Horne;Ball State University;the United States
+http://data.linkededucation.org/resource/lak/person/erika-johnson;Erika;Johnson;Ball State University;the United States
+http://data.linkededucation.org/resource/lak/person/johann-ari-larusson;Johann;Ari Larusson;Brandeis University;the United States
+http://data.linkededucation.org/resource/lak/person/bjorn-levi-gunnarsson;Bjorn;Levi Gunnarsson;Brandeis University;the United States
+http://data.linkededucation.org/resource/lak/person/richard-alterman;Richard;Alterman;Brandeis University;the United States
+http://data.linkededucation.org/resource/lak/person/tariq-m-khan;Tariq;M. Khan;Brunel Business School;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/fintan-clear;Fintan;Clear;Brunel Business School;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/samira-sadat-sajadi;Samira;Sadat Sajadi;Brunel Business School;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/alfred-essa;Alfred;Essa;Desire2Learn Incorporated;Canada
+http://data.linkededucation.org/resource/lak/person/hanan-ayad;Hanan;Ayad;Desire2Learn Incorporated;Canada
+http://data.linkededucation.org/resource/lak/person/veronica-rivera-pelayo;Veronica;Rivera-Pelayo;FZI Research Center for Information Technologies;Germany
+http://data.linkededucation.org/resource/lak/person/valentin-zacharias;Valentin;Zacharias;FZI Research Center for Information Technologies;Germany
+http://data.linkededucation.org/resource/lak/person/lars-muller;Lars;Muller;FZI Research Center for Information Technologies;Germany
+http://data.linkededucation.org/resource/lak/person/simone-braun;Simone;Braun;FZI Research Center for Information Technologies;Germany
+http://data.linkededucation.org/resource/lak/person/barbara-kump;Barbara;Kump;Graz University of Technology;Austria
+http://data.linkededucation.org/resource/lak/person/christin-seifert;Christin;Seifert;Graz University of Technology;Austria
+http://data.linkededucation.org/resource/lak/person/stefanie-n-lindstaedt;Stefanie;N. Lindstaedt;Graz University of Technology;Austria
+http://data.linkededucation.org/resource/lak/person/martin-schon;Martin;Schon;Graz University of Technology;Austria
+http://data.linkededucation.org/resource/lak/person/martin-ebner;Martin;Ebner;Graz University of Technology;Austria
+http://data.linkededucation.org/resource/lak/person/georg-kothmeier;Georg;Kothmeier;Graz University of Technology;Austria
+http://data.linkededucation.org/resource/lak/person/guenter-beham;Guenter;Beham;Know-Center GmbH;Austria
+http://data.linkededucation.org/resource/lak/person/eitel-jm-lauria;Eitel;J.M. Lauria;Marist College;the United States
+http://data.linkededucation.org/resource/lak/person/joshua-d-baron;Joshua;D. Baron;Marist College;the United States
+http://data.linkededucation.org/resource/lak/person/mallika-devireddy;Mallika;Devireddy;Marist College;the United States
+http://data.linkededucation.org/resource/lak/person/venniraiselvi-sundararaju;Venniraiselvi;Sundararaju;Marist College;the United States
+http://data.linkededucation.org/resource/lak/person/sandeep-m-jayaprakash;Sandeep;M. Jayaprakash;Marist College;the United States
+http://data.linkededucation.org/resource/lak/person/schreurs-bieke;Schreurs;Bieke;Open Universiteit;the Netherlands
+http://data.linkededucation.org/resource/lak/person/de-laat-maarten;De;Laat Maarten;Open Universiteit;the Netherlands
+http://data.linkededucation.org/resource/lak/person/wolfgang-greller;Wolfgang;Greller;Open University of the Netherlands;the Netherlands
+http://data.linkededucation.org/resource/lak/person/melody-siadaty;Melody;Siadaty;Simon Fraser University;Canada
+http://data.linkededucation.org/resource/lak/person/aleksandar-giljanovic;Aleksandar;Giljanovic;Simon Fraser University;Canada
+http://data.linkededucation.org/resource/lak/person/marek-hatala;Marek;Hatala;Simon Fraser University;Canada
+http://data.linkededucation.org/resource/lak/person/sergey-butakov;Sergey;Butakov;SolBridge International School of Business;South Korea
+http://data.linkededucation.org/resource/lak/person/robert-bramucci;Robert;Bramucci;South Orange County Community College District;the United States
+http://data.linkededucation.org/resource/lak/person/jim-gaston;Jim;Gaston;South Orange County Community College District;the United States
+http://data.linkededucation.org/resource/lak/person/tobias-ley;Tobias;Ley;Tallinn University;Estonia
+http://data.linkededucation.org/resource/lak/person/ronald-macintyre;Ronald;Macintyre;The Open University in Scotland;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/walter-christian-paredes;Walter;Christian Paredes;The University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/kon-shing-kenneth-chung;Kon;Shing Kenneth Chung;The University of Sydney;Australia
+http://data.linkededucation.org/resource/lak/person/john-mcauley;John;McAuley;Trinity College Dublin;Ireland
+http://data.linkededucation.org/resource/lak/person/alexander-o-connor;Alexander;O'Connor;Trinity College Dublin;Ireland
+http://data.linkededucation.org/resource/lak/person/dr-dave-lewis;Dr.;Dave Lewis;Trinity College Dublin;Ireland
+http://data.linkededucation.org/resource/lak/person/jelena-jovanovic;Jelena;Jovanovic;University of Belgrade;Serbia
+http://data.linkededucation.org/resource/lak/person/nikola-milikic;Nikola;Milikic;University of Belgrade;Serbia
+http://data.linkededucation.org/resource/lak/person/zoran-jeremic;Zoran;Jeremic;University of Belgrade;Serbia
+http://data.linkededucation.org/resource/lak/person/ruth-deakin-crick;Ruth;Deakin Crick;University of Bristol;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/brandon-white;Brandon;White;University of California, Berkeley;the United States
+http://data.linkededucation.org/resource/lak/person/ahmad-ammari;Ahmad;Ammari;University of Leeds;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/lydia-lau;Lydia;Lau;University of Leeds;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/vania-dimitrova;Vania;Dimitrova;University of Leeds;the United Kingdom
+http://data.linkededucation.org/resource/lak/person/leyla-zhuhadar;Leyla;Zhuhadar;University of Louisville;the United States
+http://data.linkededucation.org/resource/lak/person/steven-lonn;Steven;Lonn;University of Michigan;the United States
+http://data.linkededucation.org/resource/lak/person/andrew-e-krumm;Andrew;E. Krumm;University of Michigan;the United States
+http://data.linkededucation.org/resource/lak/person/r-joseph-waddington;R.;Joseph Waddington;University of Michigan;the United States
+http://data.linkededucation.org/resource/lak/person/stephanie-d-teasley;Stephanie;D. Teasley;University of Michigan;the United States
+http://data.linkededucation.org/resource/lak/person/tim-mckay;Tim;McKay;University of Michigan;the United States
+http://data.linkededucation.org/resource/lak/person/kate-miller;Kate;Miller;University of Michigan;the United States
+http://data.linkededucation.org/resource/lak/person/jared-tritz;Jared;Tritz;University of Michigan;the United States
+http://data.linkededucation.org/resource/lak/person/paul-prinsloo;Paul;Prinsloo;University of South Africa;South Africa
+http://data.linkededucation.org/resource/lak/person/diederik-m-roijers;Diederik;M. Roijers;Utrecht University;the Netherlands
+http://data.linkededucation.org/resource/lak/person/johan-jeuring;Johan;Jeuring;Utrecht University;the Netherlands
+http://data.linkededucation.org/resource/lak/person/ad-feelders;Ad;Feelders;Utrecht University;the Netherlands
+http://data.linkededucation.org/resource/lak/person/rong-yang;Rong;Yang;Western Kentucky University;the United States
+http://data.linkededucation.org/resource/lak/person/lanqin-zheng;Lanqin;Zheng;Beijing Normal University;the People's Republic of China
+http://data.linkededucation.org/resource/lak/person/kaicheng-yang;Kaicheng;Yang;Beijing Normal University;the People's Republic of China
+http://data.linkededucation.org/resource/lak/person/ronghuai-huang;Ronghuai;Huang;Beijing Normal University;the People's Republic of China
+http://data.linkededucation.org/resource/lak/person/jui-long-hung;Jui-Long;Hung;Boise State University;the United States
+http://data.linkededucation.org/resource/lak/person/yu-chang-hsu;Yu-Chang;Hsu;Boise State University;the United States
+http://data.linkededucation.org/resource/lak/person/kerry-rice;Kerry;Rice;Boise State University;the United States
+http://data.linkededucation.org/resource/lak/person/minjeong-kim;Minjeong;Kim;Dankook University;South Korea
+http://data.linkededucation.org/resource/lak/person/eunchul-lee;Eunchul;Lee;Dankook University;South Korea
+http://data.linkededucation.org/resource/lak/person/m-hammed-abdous;M'hammed;Abdous;Dominion University;the United States
+http://data.linkededucation.org/resource/lak/person/wu-he;Wu;He;Dominion University;the United States
+http://data.linkededucation.org/resource/lak/person/cherng-jyh-yen;Cherng-Jyh;Yen;Dominion University;the United States
+http://data.linkededucation.org/resource/lak/person/leah-p-macfadyen;Leah;P. Macfadyen;The University of British Columbia;the United States
+http://data.linkededucation.org/resource/lak/person/leah-p-macfadyen;Leah;P. Macfadyen;The University of British Columbia;Canada

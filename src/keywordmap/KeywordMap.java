@@ -4,6 +4,7 @@ import processing.core.PApplet;
 import wordcloud.WordCloudManager;
 import core.BoundingBox;
 import data.Database;
+import data.online.OnlineDatabase;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;

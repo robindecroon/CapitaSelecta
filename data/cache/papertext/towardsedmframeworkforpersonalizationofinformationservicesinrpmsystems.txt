@@ -1,0 +1,5 @@
+1. 
+ Figure 1.  The role of EDM in RPM (top) and motivating examples (bottom). 
+ The preliminary results of our exploration study suggest that there is potential for EDM to facilitate data-driven patient modeling and motivate the shift from the one-size-fits-all approach currently employed in the development of RPM systems to personalization in providing educational materials, motivational support and informational content to their users. Our further work includes the many-sided analysis of the RPM usage database with the focus on the educational content and usage data. The particular focuses include subgroup discovery and identification of signatures describing well-doing home- monitored patients and those who require more assistance of the medical staff. 
+ Acknowledgments. 
+ This research is partly supported by KWR MIP, FP7 EU HeartCycle and NWO GAF projects.

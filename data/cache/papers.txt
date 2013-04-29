@@ -1,0 +1,305 @@
+Mining Free-form Spoken Responses to Tutor Prompts;miningfree-formspokenresponsestotutorprompts.txt;2008;EDM
+Acquiring Background Knowledge for Intelligent Tutoring Systems;acquiringbackgroundknowledgeforintelligenttutoringsystems.txt;2008;EDM
+Interestingness Measures for Association Rules in Educational Data;interestingnessmeasuresforassociationrulesineducationaldata.txt;2008;EDM
+A pilot study on logic proof tutoring using hints generated from historical student data;apilotstudyonlogicprooftutoringusinghintsgeneratedfromhistoricalstudentdata.txt;2008;EDM
+Can an Intelligent Tutoring System Predict Math Proficiency as Well as a Standardized Test?;cananintelligenttutoringsystempredictmathproficiencyaswellasastandardizedtest?.txt;2008;EDM
+Argument Graph Classification via Genetic Programming and C4.5;argumentgraphclassificationviageneticprogrammingandc4.5.txt;2008;EDM
+Argument Mining Using Highly Structured Argument Repertoire;argumentminingusinghighlystructuredargumentrepertoire.txt;2008;EDM
+Skill Set Profile Clustering Based on Student Capability Vectors Computed From Online Tutoring Data;skillsetprofileclusteringbasedonstudentcapabilityvectorscomputedfromonlinetutoringdata.txt;2008;EDM
+A Preliminary Analysis of the Logged Questions that Students Ask in Introductory Computer Science;apreliminaryanalysisoftheloggedquestionsthatstudentsaskinintroductorycomputerscience.txt;2008;EDM
+Machine Classification of Peer Comments in Physics;machineclassificationofpeercommentsinphysics.txt;2008;EDM
+Using Item-type Performance Covariance to Improve the Skill Model of an Existing Tutor;usingitem-typeperformancecovariancetoimprovetheskillmodelofanexistingtutor.txt;2008;EDM
+Computational Infrastructures for School Improvement: How to Move Forward;computationalinfrastructuresforschoolimprovement:howtomoveforward.txt;2008;EDM
+A Response Time Model for Bottom-Out Hints as Worked Examples;aresponsetimemodelforbottom-outhintsasworkedexamples.txt;2008;EDM
+Integrating Knowledge Gained From Data Mining With Pedagogical Knowledge;integratingknowledgegainedfromdataminingwithpedagogicalknowledge.txt;2008;EDM
+Developing a Log-based Motivation Measuring Tool;developingalog-basedmotivationmeasuringtool.txt;2008;EDM
+Mining and Visualizing Visited Trails in Web-Based Educational Systems;miningandvisualizingvisitedtrailsinweb-basededucationalsystems.txt;2008;EDM
+Can we Predict which Groups of Questions Students will Learn from?;canwepredictwhichgroupsofquestionsstudentswilllearnfrom?.txt;2008;EDM
+Mining Student Behavior Models in Learning-by-Teaching Environments;miningstudentbehaviormodelsinlearning-by-teachingenvironments.txt;2008;EDM
+Do Students Who See More Concepts in an ITS Learn More?;dostudentswhoseemoreconceptsinanitslearnmore?.txt;2008;EDM
+An open repository and analysis tools for fine-grained, longitudinal learner data;anopenrepositoryandanalysistoolsforfine-grained,longitudinallearnerdata.txt;2008;EDM
+Mining the Student Assessment Data: Lessons Drawn from a Small Scale Case Study;miningthestudentassessmentdata:lessonsdrawnfromasmallscalecasestudy.txt;2008;EDM
+Mining Data from an Automated Grading and Testing System by Adding Rich Reporting Capabilities;miningdatafromanautomatedgradingandtestingsystembyaddingrichreportingcapabilities.txt;2008;EDM
+Data Mining Algorithms to Classify Students;dataminingalgorithmstoclassifystudents.txt;2008;EDM
+Data-driven modelling of students' interactions in an ILE;data-drivenmodellingofstudents'interactionsinanile.txt;2008;EDM
+Reinforcement Learning-based Feature Selection For Developing Pedagogically Effective Tutorial Dialogue Tactics;reinforcementlearning-basedfeatureselectionfordevelopingpedagogicallyeffectivetutorialdialoguetactics.txt;2008;EDM
+The Composition Effect: Conjunctive or Compensatory? An Analysis of Multi-Skill Math Questions in ITS;thecompositioneffect:conjunctiveorcompensatory?ananalysisofmulti-skillmathquestionsinits.txt;2008;EDM
+Analytic Comparison of Three Methods to Evaluate Tutorial Behaviors;analyticcomparisonofthreemethodstoevaluatetutorialbehaviors.txt;2008;EDM
+Analyzing Rule Evaluation Measures with Educational Datasets: A Framework to Help the Teacher;analyzingruleevaluationmeasureswitheducationaldatasets:aframeworktohelptheteacher.txt;2008;EDM
+Labeling Student Behavior Faster and More Precisely with Text Replays;labelingstudentbehaviorfasterandmorepreciselywithtextreplays.txt;2008;EDM
+Adaptive Test Design with a Naive Bayes Framework;adaptivetestdesignwithanaivebayesframework.txt;2008;EDM
+Improving Contextual Models of Guessing and Slipping with a Truncated Training Set;improvingcontextualmodelsofguessingandslippingwithatruncatedtrainingset.txt;2008;EDM
+Learning Factors Transfer Analysis: Using Learning Curve Analysis to Automatically Generate Domain Models;learningfactorstransferanalysis:usinglearningcurveanalysistoautomaticallygeneratedomainmodels.txt;2009;EDM
+Improving Student Question Classification;improvingstudentquestionclassification.txt;2009;EDM
+Using Dirichlet priors to improve model parameter plausibility;usingdirichletpriorstoimprovemodelparameterplausibility.txt;2009;EDM
+Differences Between Intelligent Tutor Lessons, and the Choice to Go Off-Task;differencesbetweenintelligenttutorlessons,andthechoicetogooff-task.txt;2009;EDM
+Unsupervised MDP Value Selection for Automating ITS Capabilities;unsupervisedmdpvalueselectionforautomatingitscapabilities.txt;2009;EDM
+Consistency of Students' Pace in Online Learning;consistencyofstudents'paceinonlinelearning.txt;2009;EDM
+Conditional Subspace Clustering of Skill Mastery: Identifying Skills that Separate Students;conditionalsubspaceclusteringofskillmastery:identifyingskillsthatseparatestudents.txt;2009;EDM
+Visualization of Differences in Data Measuring Mathematical Skills;visualizationofdifferencesindatameasuringmathematicalskills.txt;2009;EDM
+A Data Mining Approach to Reveal Representative Collaboration Indicators in Open Collaboration Frameworks;adataminingapproachtorevealrepresentativecollaborationindicatorsinopencollaborationframeworks.txt;2009;EDM
+Predicting Correctness of Problem Solving from Low- level Log Data in Intelligent Tutoring Systems;predictingcorrectnessofproblemsolvingfromlow-levellogdatainintelligenttutoringsystems.txt;2009;EDM
+A Comparison of Student Skill Knowledge Estimates;acomparisonofstudentskillknowledgeestimates.txt;2009;EDM
+Why, What, and How to Log?  Lessons from LISTEN;why,what,andhowtolog?lessonsfromlisten.txt;2009;EDM
+Detecting and Understanding the Impact of Cognitive and Interpersonal Conflict in Computer Supported Collaborative Learning Environments;detectingandunderstandingtheimpactofcognitiveandinterpersonalconflictincomputersupportedcollaborativelearningenvironments.txt;2009;EDM
+Reducing the Knowledge Tracing Space;reducingtheknowledgetracingspace.txt;2009;EDM
+Collaborative Data Mining Tool for Education;collaborativedataminingtoolforeducation.txt;2009;EDM
+Determining the Significance of Item Order In Randomized Problem Sets;determiningthesignificanceofitemorderinrandomizedproblemsets.txt;2009;EDM
+Student Consistency and Implications for Feedback in Online Assessment Systems;studentconsistencyandimplicationsforfeedbackinonlineassessmentsystems.txt;2009;EDM
+Process Mining Online Assessment Data;processminingonlineassessmentdata.txt;2009;EDM
+Predicting Students Drop Out: A Case Study;predictingstudentsdropout:acasestudy.txt;2009;EDM
+Dimensions of Difficulty in Translating Natural Language into First Order Logic;dimensionsofdifficultyintranslatingnaturallanguageintofirstorderlogic.txt;2009;EDM
+A User-Driven and Data-Driven Approach for Supporting Teachers in Reflection and Adaptation of Adaptive Tutorials;auser-drivenanddata-drivenapproachforsupportingteachersinreflectionandadaptationofadaptivetutorials.txt;2009;EDM
+How do Students Organize Personal Information Spaces?;howdostudentsorganizepersonalinformationspaces?.txt;2009;EDM
+Automatic Detection of Student Mental Models During Prior Knowledge Activation in MetaTutor;automaticdetectionofstudentmentalmodelsduringpriorknowledgeactivationinmetatutor.txt;2009;EDM
+Predicting Student Grades in Learning Management Systems with Multiple Instance Genetic Programming;predictingstudentgradesinlearningmanagementsystemswithmultipleinstancegeneticprogramming.txt;2009;EDM
+Detecting Symptoms of Low Performance Using Production Rules;detectingsymptomsoflowperformanceusingproductionrules.txt;2009;EDM
+Using Learning Decomposition and Bootstrapping with Randomization to Compare the Impact of Different Educational Interventions on Learning;usinglearningdecompositionandbootstrappingwithrandomizationtocomparetheimpactofdifferenteducationalinterventionsonlearning.txt;2009;EDM
+Edu-mining for Book Recommendation for Pupils;edu-miningforbookrecommendationforpupils.txt;2009;EDM
+Obtaining Rubric Weights For Assessments By More Than One Lecturer Using A Pairwise Learning Model;obtainingrubricweightsforassessmentsbymorethanonelecturerusingapairwiselearningmodel.txt;2009;EDM
+Does Self-Discipline impact students’ knowledge and learning?;doesself-disciplineimpactstudents’knowledgeandlearning?.txt;2009;EDM
+Back to the future: a non-automated method of constructing transfer models;backtothefuture:anon-automatedmethodofconstructingtransfermodels.txt;2009;EDM
+Developing an Argument Learning Environment Using Agent-Based ITS (ALES);developinganargumentlearningenvironmentusingagent-basedits(ales).txt;2009;EDM
+Automatic Concept Relationships Discovery for an Adaptive E-course;automaticconceptrelationshipsdiscoveryforanadaptivee-course.txt;2009;EDM
+When Data Exploration and Data Mining meet while Analysing Usage Data of a Course;whendataexplorationanddataminingmeetwhileanalysingusagedataofacourse.txt;2010;EDM
+Analyzing Learning Styles using Behavioral Indicators in Web based Learning Environments;analyzinglearningstylesusingbehavioralindicatorsinwebbasedlearningenvironments.txt;2010;EDM
+Inferring the Differential Student Model in a Probabilistic Domain using Abduction Inference in Bayesian Networks;inferringthedifferentialstudentmodelinaprobabilisticdomainusingabductioninferenceinbayesiannetworks.txt;2010;EDM
+Examining Learner Control in a Structured Inquiry Cycle Using Process Mining;examininglearnercontrolinastructuredinquirycycleusingprocessmining.txt;2010;EDM
+Using Numeric Optimization To Refine Semantic User Model Integration Of Educational Systems;usingnumericoptimizationtorefinesemanticusermodelintegrationofeducationalsystems.txt;2010;EDM
+Pundit: Intelligent Recommender of Courses;pundit:intelligentrecommenderofcourses.txt;2010;EDM
+A Preliminary Investigation of Hierarchical Hidden Markov Models for Tutorial Planning;apreliminaryinvestigationofhierarchicalhiddenmarkovmodelsfortutorialplanning.txt;2010;EDM
+Towards EDM Framework for Personalization of Information Services in RPM Systems;towardsedmframeworkforpersonalizationofinformationservicesinrpmsystems.txt;2010;EDM
+Mining Rare Association Rules from e-Learning Data;miningrareassociationrulesfrome-learningdata.txt;2010;EDM
+Mining Bodily Patterns of Affective Experience during Learning;miningbodilypatternsofaffectiveexperienceduringlearning.txt;2010;EDM
+Is Students' Activity in LMS Persistent?;isstudents'activityinlmspersistent?.txt;2010;EDM
+Data Mining for Individualised Hints in eLearning;dataminingforindividualisedhintsinelearning.txt;2010;EDM
+Mining Students' Interaction Data from a System that Support Learning by Reflection;miningstudents'interactiondatafromasystemthatsupportlearningbyreflection.txt;2010;EDM
+An Analysis of the Differences in the Frequency of Students’ Disengagement in Urban, Rural, and Suburban High Schools;ananalysisofthedifferencesinthefrequencyofstudents’disengagementinurban,rural,andsuburbanhighschools.txt;2010;EDM
+Can order of access to learning resources predict success ?;canorderofaccesstolearningresourcespredictsuccess?.txt;2010;EDM
+Peer Production of Online Learning Resources: A Social Network Analysis;peerproductionofonlinelearningresources:asocialnetworkanalysis.txt;2010;EDM
+Online Curriculum Planning Behavior of Teachers;onlinecurriculumplanningbehaviorofteachers.txt;2010;EDM
+A Data Driven Approach to the Discovery of Better Cognitive Models;adatadrivenapproachtothediscoveryofbettercognitivemodels.txt;2010;EDM
+Where in the World? Demographic Patterns in Access Data1;whereintheworld?demographicpatternsinaccessdata1.txt;2010;EDM
+Using Neural Imaging and Cognitive Modeling to Infer Mental States while Using an Intelligent Tutoring System;usingneuralimagingandcognitivemodelingtoinfermentalstateswhileusinganintelligenttutoringsystem.txt;2010;EDM
+Using multiple Dirichlet distributions to improve parameter plausibility;usingmultipledirichletdistributionstoimproveparameterplausibility.txt;2010;EDM
+A Review of Student Churn in the Light of Theories on Business Relationships;areviewofstudentchurninthelightoftheoriesonbusinessrelationships.txt;2010;EDM
+Tracking Students’ Inquiry Paths through Student Transition Analysis;trackingstudents’inquirypathsthroughstudenttransitionanalysis.txt;2010;EDM
+Using Text Replay Tagging to Produce Detectors of Systematic Experimentation Behavior Patterns;usingtextreplaytaggingtoproducedetectorsofsystematicexperimentationbehaviorpatterns.txt;2010;EDM
+AutoJoin:  Generalizing an Example into an EDM query;autojoin:generalizinganexampleintoanedmquery.txt;2010;EDM
+Assessing Reviewers’ Performance Based on Mining Problem Localization in Peer-Review Data;assessingreviewers’performancebasedonminingproblemlocalizationinpeer-reviewdata.txt;2010;EDM
+Can We Get Better Assessment From A Tutoring System Compared to Traditional Paper Testing? Can We Have Our Cake (Better Assessment) and Eat It too (Student Learning During the Test)?;canwegetbetterassessmentfromatutoringsystemcomparedtotraditionalpapertesting?canwehaveourcake(betterassessment)andeatittoo(studentlearningduringthetest)?.txt;2010;EDM
+Representing Student Performance with Partial Credit;representingstudentperformancewithpartialcredit.txt;2010;EDM
+Effort-based Tutoring: An Empirical Approach to Intelligent Tutoring;effort-basedtutoring:anempiricalapproachtointelligenttutoring.txt;2010;EDM
+Analysis of Productive Learning Behaviors in a Structured Inquiry Cycle Using Hidden Markov Models;analysisofproductivelearningbehaviorsinastructuredinquirycycleusinghiddenmarkovmodels.txt;2010;EDM
+Process Mining to Support Students' Collaborative Writing;processminingtosupportstudents'collaborativewriting.txt;2010;EDM
+Navigating the parameter space of Bayesian Knowledge Tracing models: Visualizations of the convergence of the Expectation Maximization algorithm;navigatingtheparameterspaceofbayesianknowledgetracingmodels:visualizationsoftheconvergenceoftheexpectationmaximizationalgorithm.txt;2010;EDM
+Off Topic Conversation in Expert Tutoring: Waste of Time or Learning Opportunity?;offtopicconversationinexperttutoring:wasteoftimeorlearningopportunity?.txt;2010;EDM
+Skill Set Profile Clustering: The Empty K-Means Algorithm with Automatic Specification of Starting Cluster Centers;skillsetprofileclustering:theemptyk-meansalgorithmwithautomaticspecificationofstartingclustercenters.txt;2010;EDM
+Data Reduction Methods Applied to Understanding Complex Learning Hypotheses;datareductionmethodsappliedtounderstandingcomplexlearninghypotheses.txt;2010;EDM
+Identifying High-Level Student Behavior Using Sequence-based Motif Discovery;identifyinghigh-levelstudentbehaviorusingsequence-basedmotifdiscovery.txt;2010;EDM
+Mining information from tutor data to improve pedagogical content knowledge;mininginformationfromtutordatatoimprovepedagogicalcontentknowledge.txt;2010;EDM
+A Data Model to Ease Analysis and Mining of Educational Data;adatamodeltoeaseanalysisandminingofeducationaldata.txt;2010;EDM
+Using Topic Models to Bridge Coding Schemes of Differing Granularity;usingtopicmodelstobridgecodingschemesofdifferinggranularity.txt;2010;EDM
+Automatic Rating of User-Generated Math Solutions;automaticratingofuser-generatedmathsolutions.txt;2010;EDM
+Clustering Student Learning Activity Data;clusteringstudentlearningactivitydata.txt;2010;EDM
+Modeling Learning Trajectories with Epistemic Network Analysis: A Simulation-based Investigation of a Novel Analytic Method for Epistemic Games;modelinglearningtrajectorieswithepistemicnetworkanalysis:asimulation-basedinvestigationofanovelanalyticmethodforepistemicgames.txt;2010;EDM
+Analysis of a causal modeling approach: a case study with an educational intervention;analysisofacausalmodelingapproach:acasestudywithaneducationalintervention.txt;2010;EDM
+Using a Bayesian Knowledge Base for Hint Selection on Domain Specific Problems;usingabayesianknowledgebaseforhintselectionondomainspecificproblems.txt;2010;EDM
+On the Faithfulness of Simulated Student Performance Data;onthefaithfulnessofsimulatedstudentperformancedata.txt;2010;EDM
+Unsupervised Discovery of Student Learning Tactics;unsuperviseddiscoveryofstudentlearningtactics.txt;2010;EDM
+Hierarchical Structures of Content Items in LMS;hierarchicalstructuresofcontentitemsinlms.txt;2010;EDM
+A Case Study: Data Mining Applied to Student Enrollment;acasestudy:dataminingappliedtostudentenrollment.txt;2010;EDM
+Predicting Task Completion from Rich but Scarce Data;predictingtaskcompletionfromrichbutscarcedata.txt;2010;EDM
+Identifying Students' Inquiry Planning Using Machine Learning;identifyingstudents'inquiryplanningusingmachinelearning.txt;2010;EDM
+Class Association Rule Mining from Students' Test Data;classassociationruleminingfromstudents'testdata.txt;2010;EDM
+Observing Online Curriculum Planning Behavior of Teachers;observingonlinecurriculumplanningbehaviorofteachers.txt;2010;EDM
+DISCUSS: Enabling Detailed Characterization of Tutorial Interactions Through Dialogue Annotation;discuss:enablingdetailedcharacterizationoftutorialinteractionsthroughdialogueannotation.txt;2010;EDM
+Conceptualizing Procedural Knowledge Targeted at Students of Different Skill Levels;conceptualizingproceduralknowledgetargetedatstudentsofdifferentskilllevels.txt;2010;EDM
+Higher Contributions Correlate with Higher Learning Gains;highercontributionscorrelatewithhigherlearninggains.txt;2010;EDM
+Sentiment Analysis in Student Experiences of Learning;sentimentanalysisinstudentexperiencesoflearning.txt;2010;EDM
+EDM Visualization Tool: Watching Students Learn;edmvisualizationtool:watchingstudentslearn.txt;2010;EDM
+Using LiMS (the Learner Interaction Monitoring System) to Track Online Learner Engagement and Evaluate Course Design;usinglims(thelearnerinteractionmonitoringsystem)totrackonlinelearnerengagementandevaluatecoursedesign.txt;2010;EDM
+Using Logistic Regression to Trace Multiple Subskills in a Dynamic Bayes Net;usinglogisticregressiontotracemultiplesubskillsinadynamicbayesnet.txt;2011;EDM
+Investigating Usage of Resources in LMS with Specific Association Rules;investigatingusageofresourcesinlmswithspecificassociationrules.txt;2011;EDM
+Prediction of Perceived Disorientation in Online Learning Environment with Random Forest Regression;predictionofperceiveddisorientationinonlinelearningenvironmentwithrandomforestregression.txt;2011;EDM
+Avoiding Problem Selection Thrashing with Conjunctive Knowledge Tracing;avoidingproblemselectionthrashingwithconjunctiveknowledgetracing.txt;2011;EDM
+eLAT: An Exploratory Learning Analytics Tool for Reflection and Iterative Improvement of Technology Enhanced Learning;elat:anexploratorylearninganalyticstoolforreflectionanditerativeimprovementoftechnologyenhancedlearning.txt;2011;EDM
+Studying problem-solving strategies in the early stages of learning programming;studyingproblem-solvingstrategiesintheearlystagesoflearningprogramming.txt;2011;EDM
+Partially Observable Sequential Decision Making for Problem Selection in an Intelligent Tutoring System;partiallyobservablesequentialdecisionmakingforproblemselectioninanintelligenttutoringsystem.txt;2011;EDM
+A Java desktop tool for mining Moodle data;ajavadesktoptoolforminingmoodledata.txt;2011;EDM
+Instructional Factors Analysis: A Cognitive Model For Multiple Instructional Interventions;instructionalfactorsanalysis:acognitivemodelformultipleinstructionalinterventions.txt;2011;EDM
+Comparison of Traditional Assessment with Dynamic Testing in a Tutoring System;comparisonoftraditionalassessmentwithdynamictestinginatutoringsystem.txt;2011;EDM
+Mining Assessment and Teaching Evaluation Data of Regular and Advanced Stream Students;miningassessmentandteachingevaluationdataofregularandadvancedstreamstudents.txt;2011;EDM
+Analysing frequent sequential patterns of collaborative learning activity around an interactive tabletop;analysingfrequentsequentialpatternsofcollaborativelearningactivityaroundaninteractivetabletop.txt;2011;EDM
+A Machine Learning Approach for Automatic Student Model Discovery;amachinelearningapproachforautomaticstudentmodeldiscovery.txt;2011;EDM
+A Method for Finding Prerequisites Within a Curriculum;amethodforfindingprerequisiteswithinacurriculum.txt;2011;EDM
+How to Classify Tutorial Dialogue? Comparing Feature Vectors vs. Sequences;howtoclassifytutorialdialogue?comparingfeaturevectorsvs.sequences.txt;2011;EDM
+Factorization Models for Forecasting Student Performance;factorizationmodelsforforecastingstudentperformance.txt;2011;EDM
+Towards Improvements On Domain-Independent Measurements For Collaborative Assessment;towardsimprovementsondomain-independentmeasurementsforcollaborativeassessment.txt;2011;EDM
+Towards Better Understanding of Transfer in Cognitive Models of Practice;towardsbetterunderstandingoftransferincognitivemodelsofpractice.txt;2011;EDM
+Problem Response Theory and its Application for Tutoring;problemresponsetheoryanditsapplicationfortutoring.txt;2011;EDM
+Monitoring Learners' Proficiency: Weight Adaptation in the Elo Rating System;monitoringlearners'proficiency:weightadaptationintheeloratingsystem.txt;2011;EDM
+The Simple Location Heuristic is Better at Predicting Students' Changes in Error Rate Over Time Compared to the Simple Temporal Heuristic;thesimplelocationheuristicisbetteratpredictingstudents'changesinerrorrateovertimecomparedtothesimpletemporalheuristic.txt;2011;EDM
+Variable Construction and Causal Modeling of Online Education Messaging Data: Initial Results;variableconstructionandcausalmodelingofonlineeducationmessagingdata:initialresults.txt;2011;EDM
+The EDM Vis Tool;theedmvistool.txt;2011;EDM
+Logistic Regression in a Dynamic Bayes Net Models Multiple Subskills Better!;logisticregressioninadynamicbayesnetmodelsmultiplesubskillsbetter!.txt;2011;EDM
+What's an Expert? Using learning analytics to identify emergent markers of expertise through automated speech, sentiment and sketch analysis.;what'sanexpert?usinglearninganalyticstoidentifyemergentmarkersofexpertisethroughautomatedspeech,sentimentandsketchanalysis..txt;2011;EDM
+Predicting School Failure Using Data Mining;predictingschoolfailureusingdatamining.txt;2011;EDM
+A Framework for Capturing Distinguishing User Interaction Behaviours in Novel Interfaces;aframeworkforcapturingdistinguishinguserinteractionbehavioursinnovelinterfaces.txt;2011;EDM
+Items, skills, and transfer models:  which really matters for student modeling?;items,skills,andtransfermodels:whichreallymattersforstudentmodeling?.txt;2011;EDM
+Evaluating a Bayesian Student Model of Decimal Misconceptions;evaluatingabayesianstudentmodelofdecimalmisconceptions.txt;2011;EDM
+Desperately Seeking Subscripts: Towards Automated Model Parameterization;desperatelyseekingsubscripts:towardsautomatedmodelparameterization.txt;2011;EDM
+Factors Impacting Novice Code Comprehension in a Tutor for Introductory Computer Science;factorsimpactingnovicecodecomprehensioninatutorforintroductorycomputerscience.txt;2011;EDM
+A Dynamical System Model of Microgenetic Changes in Performance, Efficacy, Strategy Use and Value during Vocabulary Learning;adynamicalsystemmodelofmicrogeneticchangesinperformance,efficacy,strategyuseandvalueduringvocabularylearning.txt;2011;EDM
+Exploring user data from a game-like math tutor: a case study in causal modeling;exploringuserdatafromagame-likemathtutor:acasestudyincausalmodeling.txt;2011;EDM
+Combining study of complex network and text mining analysis to understand growth mechanism of communities on SNS;combiningstudyofcomplexnetworkandtextmininganalysistounderstandgrowthmechanismofcommunitiesonsns.txt;2011;EDM
+How university entrants are choosing their department? Mining of university admission process with FCA taxonomies.;howuniversityentrantsarechoosingtheirdepartment?miningofuniversityadmissionprocesswithfcataxonomies..txt;2011;EDM
+Learning parameters for a knowledge diagnosis tool in orthopedic surgery;learningparametersforaknowledgediagnosistoolinorthopedicsurgery.txt;2011;EDM
+Student Translations of Natural Language into Logic: The Grade Grinder Corpus Release 1.0;studenttranslationsofnaturallanguageintologic:thegradegrindercorpusrelease1.0.txt;2011;EDM
+Goal Orientation and Changes of Carelessness over Consecutive Trials in Science Inquiry;goalorientationandchangesofcarelessnessoverconsecutivetrialsinscienceinquiry.txt;2011;EDM
+Analyzing Participation of Students in Online Courses Using Social Network Analysis Techniques;analyzingparticipationofstudentsinonlinecoursesusingsocialnetworkanalysistechniques.txt;2011;EDM
+Using data mining in a recommender system to search for learning objects in repositories;usingdatamininginarecommendersystemtosearchforlearningobjectsinrepositories.txt;2011;EDM
+E-learning Web Miner: A data mining application to help instructors involved in virtual courses;e-learningwebminer:adataminingapplicationtohelpinstructorsinvolvedinvirtualcourses.txt;2011;EDM
+Acquiring Item Difficulty Estimates: a Collaborative Effort of Data and Judgment;acquiringitemdifficultyestimates:acollaborativeeffortofdataandjudgment.txt;2011;EDM
+Mining Teaching Behaviors from Pedagogical Surveys;miningteachingbehaviorsfrompedagogicalsurveys.txt;2011;EDM
+Improving Models of Slipping, Guessing, And Moment-By-Moment Learning with Estimates of Skill Difficulty;improvingmodelsofslipping,guessing,andmoment-by-momentlearningwithestimatesofskilldifficulty.txt;2011;EDM
+Ensembling Predictions of Student Post-Test Scores for an Intelligent Tutoring System;ensemblingpredictionsofstudentpost-testscoresforanintelligenttutoringsystem.txt;2011;EDM
+Learning Classifiers from a Relational Database of Tutor Logs;learningclassifiersfromarelationaldatabaseoftutorlogs.txt;2011;EDM
+Quality Control and Data Mining Techniques Applied to Monitoring Scaled Scores;qualitycontrolanddataminingtechniquesappliedtomonitoringscaledscores.txt;2011;EDM
+Automatically Detecting a Student's Preparation for Future Learning: Help Use is Key;automaticallydetectingastudent'spreparationforfuturelearning:helpuseiskey.txt;2011;EDM
+Towards Parameter-Free Data Mining: Mining Educational Data with yacaree;towardsparameter-freedatamining:miningeducationaldatawithyacaree.txt;2011;EDM
+Investigating the Transitions between Learning and Non-learning Activities as Students Learn Online;investigatingthetransitionsbetweenlearningandnon-learningactivitiesasstudentslearnonline.txt;2011;EDM
+Estimating Prerequisite Structure From Noisy Data;estimatingprerequisitestructurefromnoisydata.txt;2011;EDM
+What can closed sets of students and their marks say?;whatcanclosedsetsofstudentsandtheirmarkssay?.txt;2011;EDM
+Towards Modeling Forgetting and Relearning in ITS: Preliminary Analysis of ARRS Data;towardsmodelingforgettingandrelearninginits:preliminaryanalysisofarrsdata.txt;2011;EDM
+Analyzing University Data for Determining Student Profiles and Predicting Performance;analyzinguniversitydatafordeterminingstudentprofilesandpredictingperformance.txt;2011;EDM
+Intelligent evaluation of social knowledge building using conceptual maps with MLN;intelligentevaluationofsocialknowledgebuildingusingconceptualmapswithmln.txt;2011;EDM
+Brick: Mining Pedagogically Interesting Sequential Patterns;brick:miningpedagogicallyinterestingsequentialpatterns.txt;2011;EDM
+Automatic Generation of Proof Problems in Deductive Logic;automaticgenerationofproofproblemsindeductivelogic.txt;2011;EDM
+Conditions for effectively deriving a Q-Matrix from data with Non-negative Matrix Factorization;conditionsforeffectivelyderivingaq-matrixfromdatawithnon-negativematrixfactorization.txt;2011;EDM
+Identifying Influence Factors of Students Success by Subgroup Discovery;identifyinginfluencefactorsofstudentssuccessbysubgroupdiscovery.txt;2011;EDM
+Predicting graduate-level performance from undergraduate achievements;predictinggraduate-levelperformancefromundergraduateachievements.txt;2011;EDM
+Classification via clustering for predicting final marks based on student participation in forums;classificationviaclusteringforpredictingfinalmarksbasedonstudentparticipationinforums.txt;2012;EDM
+The real world significance of performance prediction;therealworldsignificanceofperformanceprediction.txt;2012;EDM
+Using Edit Distance to Analyse Errors in a Natural Language to Logic Translation Corpus;usingeditdistancetoanalyseerrorsinanaturallanguagetologictranslationcorpus.txt;2012;EDM
+Meta-learning approach for automatic parameter tuning: A case study with educational datasets;meta-learningapproachforautomaticparametertuning:acasestudywitheducationaldatasets.txt;2012;EDM
+Predicting drop-out from social behaviour of students;predictingdrop-outfromsocialbehaviourofstudents.txt;2012;EDM
+Learner Differences in Hint Processing;learnerdifferencesinhintprocessing.txt;2012;EDM
+Development of a Workbench to Address the Educational Data Mining Bottleneck;developmentofaworkbenchtoaddresstheeducationaldataminingbottleneck.txt;2012;EDM
+Stream Mining in Education? Dealing with Evolution;streamminingineducation?dealingwithevolution.txt;2012;EDM
+Fit-to-Model Statistics for Evaluating Quality of Bayesian Student Ability Estimation;fit-to-modelstatisticsforevaluatingqualityofbayesianstudentabilityestimation.txt;2012;EDM
+Data mining techniques for design of ITS student models;dataminingtechniquesfordesignofitsstudentmodels.txt;2012;EDM
+Identifying Successful Learners from Interaction Behaviour;identifyingsuccessfullearnersfrominteractionbehaviour.txt;2012;EDM
+Using Student Modeling to Estimate Student Knowledge Retention;usingstudentmodelingtoestimatestudentknowledgeretention.txt;2012;EDM
+Policy Building - An Extension To User Modeling;policybuilding-anextensiontousermodeling.txt;2012;EDM
+Stress Analytics in Education;stressanalyticsineducation.txt;2012;EDM
+Analyzing the behavior of a teacher network in a Web 2.0 environment;analyzingthebehaviorofateachernetworkinaweb2.0environment.txt;2012;EDM
+Social Networks Analysis for Quantifying Students' Performance in Teamwork;socialnetworksanalysisforquantifyingstudents'performanceinteamwork.txt;2012;EDM
+Automated Discovery of Speech Act Categories in Educational Games;automateddiscoveryofspeechactcategoriesineducationalgames.txt;2012;EDM
+Finding Dependent Test Items: An Information Theory Based Approach;findingdependenttestitems:aninformationtheorybasedapproach.txt;2012;EDM
+Interleaved Practice with Multiple Representations: Analyses with Knowledge Tracing Based Techniques;interleavedpracticewithmultiplerepresentations:analyseswithknowledgetracingbasedtechniques.txt;2012;EDM
+Identifying Students' Characteristic Learning Behaviors in an Intelligent Tutoring System Fostering Self-Regulated Learning;identifyingstudents'characteristiclearningbehaviorsinanintelligenttutoringsystemfosteringself-regulatedlearning.txt;2012;EDM
+The Impact on Individualizing Student Models on Necessary Practice Opportunities;theimpactonindividualizingstudentmodelsonnecessarypracticeopportunities.txt;2012;EDM
+Identifying Learning Behaviors by Contextualizing Differential Sequence Mining with Action Features and Performance Evolution;identifyinglearningbehaviorsbycontextualizingdifferentialsequenceminingwithactionfeaturesandperformanceevolution.txt;2012;EDM
+Automated Detection of Mentors and Players in an Educational Game;automateddetectionofmentorsandplayersinaneducationalgame.txt;2012;EDM
+Interaction Networks: Generating High Level Hints Based on Network Community Clustering;interactionnetworks:generatinghighlevelhintsbasedonnetworkcommunityclustering.txt;2012;EDM
+Methods to find the number of latent skills;methodstofindthenumberoflatentskills.txt;2012;EDM
+Early Prediction of Student Self-Regulation Strategies by Combining Multiple Models;earlypredictionofstudentself-regulationstrategiesbycombiningmultiplemodels.txt;2012;EDM
+Analyzing paths in a student database;analyzingpathsinastudentdatabase.txt;2012;EDM
+Assisting Instructional Assessment of Undergraduate Collaborative Wiki and SVN Activities;assistinginstructionalassessmentofundergraduatecollaborativewikiandsvnactivities.txt;2012;EDM
+Mining Student Behavior Patterns in Reading Comprehension Tasks;miningstudentbehaviorpatternsinreadingcomprehensiontasks.txt;2012;EDM
+Model-Based Collaborative Filtering Analysis of Student Response Data: Machine-Learning Item Response Theory;model-basedcollaborativefilteringanalysisofstudentresponsedata:machine-learningitemresponsetheory.txt;2012;EDM
+Calculating Probabilistic Distance to Solution in a Complex Problem Solving Domain;calculatingprobabilisticdistancetosolutioninacomplexproblemsolvingdomain.txt;2012;EDM
+Learning Gains for Core Concepts in a Serious Game on Scientific Reasoning;learninggainsforcoreconceptsinaseriousgameonscientificreasoning.txt;2012;EDM
+Searching for Variables and Models to Investigate Mediators of Learning from Multiple Representations;searchingforvariablesandmodelstoinvestigatemediatorsoflearningfrommultiplerepresentations.txt;2012;EDM
+The Rise of the Super Experiment;theriseofthesuperexperiment.txt;2012;EDM
+Speaking (and touching) to learn: a method for mining the digital footprints of face-to-face collaboration;speaking(andtouching)tolearn:amethodforminingthedigitalfootprintsofface-to-facecollaboration.txt;2012;EDM
+Learning Paths in a Non-Personalizing e-Learning Environment;learningpathsinanon-personalizinge-learningenvironment.txt;2012;EDM
+From Text to Feedback: Leveraging Data Mining to Build Educational Technologies;fromtexttofeedback:leveragingdataminingtobuildeducationaltechnologies.txt;2012;EDM
+Towards Sensor-Free Affect Detection in Cognitive Tutor Algebra;towardssensor-freeaffectdetectionincognitivetutoralgebra.txt;2012;EDM
+Leveraging First Response Time into the Knowledge Tracing Model;leveragingfirstresponsetimeintotheknowledgetracingmodel.txt;2012;EDM
+Inferring learners' knowledge from observed actions;inferringlearners'knowledgefromobservedactions.txt;2012;EDM
+Dynamic Cognitive Tracing: Towards Unified Discovery of Student and Cognitive Models;dynamiccognitivetracing:towardsunifieddiscoveryofstudentandcognitivemodels.txt;2012;EDM
+Automated Student Model Improvement;automatedstudentmodelimprovement.txt;2012;EDM
+Categorizing Students' Response Patterns using the Concept of Fractal Dimension;categorizingstudents'responsepatternsusingtheconceptoffractaldimension.txt;2012;EDM
+Similarity Functions for Collaborative Master Recommendations;similarityfunctionsforcollaborativemasterrecommendations.txt;2012;EDM
+Mining Concept Maps to Understand University Students' Learning;miningconceptmapstounderstanduniversitystudents'learning.txt;2012;EDM
+Co-Clustering by Bipartite Spectral Graph Partitioning for Out-of-Tutor Prediction;co-clusteringbybipartitespectralgraphpartitioningforout-of-tutorprediction.txt;2012;EDM
+A promising classification method for predicting distance students' performance.;apromisingclassificationmethodforpredictingdistancestudents'performance..txt;2012;EDM
+Variable Construction and Causal Discovery for Cognitive Tutor Log Data: Initial Results;variableconstructionandcausaldiscoveryforcognitivetutorlogdata:initialresults.txt;2012;EDM
+Deciding on Feedback Polarity and Timing;decidingonfeedbackpolarityandtiming.txt;2012;EDM
+CurriM: Curriculum Mining;currim:curriculummining.txt;2012;EDM
+Comparison of methods to trace multiple subskills: Is LR-DBN best?;comparisonofmethodstotracemultiplesubskills:islr-dbnbest?.txt;2012;EDM
+Learning Analytics To Identify Exploratory Dialogue within Synchronous Text Chat;learninganalyticstoidentifyexploratorydialoguewithinsynchronoustextchat.txt;2011;LAK
+Social and Semantic Network Analysis of Chat Logs;socialandsemanticnetworkanalysisofchatlogs.txt;2011;LAK
+Variable Construction for Predictive and Causal Modeling of Online Education Data;variableconstructionforpredictiveandcausalmodelingofonlineeducationdata.txt;2011;LAK
+Dataset-driven Research for Improving Recommender Systems for Learning;dataset-drivenresearchforimprovingrecommendersystemsforlearning.txt;2011;LAK
+Usage Contexts for Object Similarity: Exploratory Investigations;usagecontextsforobjectsimilarity:exploratoryinvestigations.txt;2011;LAK
+Applying Analytics for a Learning Portal: the Organic.Edunet Case Study;applyinganalyticsforalearningportal:theorganic.edunetcasestudy.txt;2011;LAK
+Stepping out of the box. Towards analytics outside the Learning Management System;steppingoutofthebox.towardsanalyticsoutsidethelearningmanagementsystem.txt;2011;LAK
+Discourse-Centric Learning Analytics;discourse-centriclearninganalytics.txt;2011;LAK
+SNAPP: A Bird's-Eye View of Temporal Participant Interaction;snapp:abird's-eyeviewoftemporalparticipantinteraction.txt;2011;LAK
+The Who, What, When, and Why of Lecture Capture;thewho,what,when,andwhyoflecturecapture.txt;2011;LAK
+A Unified Framework for Multi-Level Analysis of Distributed Learning;aunifiedframeworkformulti-levelanalysisofdistributedlearning.txt;2011;LAK
+Revisiting Formative Evaluation: Dynamic Monitoring for the Improvement of Learning Activity Design and Delivery;revisitingformativeevaluation:dynamicmonitoringfortheimprovementoflearningactivitydesignanddelivery.txt;2011;LAK
+iSpot Analysed: Participatory Learning and Reputation;ispotanalysed:participatorylearningandreputation.txt;2011;LAK
+Cultural Considerations in Learning Analytics;culturalconsiderationsinlearninganalytics.txt;2011;LAK
+Generating Predictive Models of Learner Community Dynamics;generatingpredictivemodelsoflearnercommunitydynamics.txt;2011;LAK
+Evolving a learning analytics platform;evolvingalearninganalyticsplatform.txt;2011;LAK
+Towards Visual Analytics for Teachers' Dynamic Diagnostic Pedagogical DecisionMaking;towardsvisualanalyticsforteachers'dynamicdiagnosticpedagogicaldecisionmaking.txt;2011;LAK
+Redefining dropping out in online higher education: a case study from the UOC;redefiningdroppingoutinonlinehighereducation:acasestudyfromtheuoc.txt;2011;LAK
+Learning Designs and Learning Analytics;learningdesignsandlearninganalytics.txt;2011;LAK
+AAT – A Tool for Accessing and Analysing Students' Behaviour Data in Learning Systems*;aat–atoolforaccessingandanalysingstudents'behaviourdatainlearningsystems*.txt;2011;LAK
+Academic Analytics Landscape at the University of Phoenix;academicanalyticslandscapeattheuniversityofphoenix.txt;2011;LAK
+Modelling Learning & Performance: A Social Networks Perspective;modellinglearning&performance:asocialnetworksperspective.txt;2012;LAK
+Deriving Group Profiles from Social Media to Facilitate the Design of Simulated Environments for Learning;derivinggroupprofilesfromsocialmediatofacilitatethedesignofsimulatedenvironmentsforlearning.txt;2012;LAK
+Learn-B: A Social Analytics-enabled Tool for Self-regulated Workplace Learning;learn-b:asocialanalytics-enabledtoolforself-regulatedworkplacelearning.txt;2012;LAK
+Probability estimation and a competence model for rule based e-tutoring systems;probabilityestimationandacompetencemodelforrulebasede-tutoringsystems.txt;2012;LAK
+Cyberlearners and Learning Resources;cyberlearnersandlearningresources.txt;2012;LAK
+Using agglomerative hierarchical clustering to model learner participation profiles in online discussion forums;usingagglomerativehierarchicalclusteringtomodellearnerparticipationprofilesinonlinediscussionforums.txt;2012;LAK
+Network Awareness Tool – Learning Analytics in the workplace: Detecting and Analyzing Informal Workplace Learning;networkawarenesstool–learninganalyticsintheworkplace:detectingandanalyzinginformalworkplacelearning.txt;2012;LAK
+Monitoring Student Progress Through Their Written “Point of Originality”;monitoringstudentprogressthroughtheirwritten“pointoforiginality”.txt;2012;LAK
+Learning Analytics and Educational Data Mining: Towards Communication and Collaboration;learninganalyticsandeducationaldatamining:towardscommunicationandcollaboration.txt;2012;LAK
+The Pulse of Learning Analytics Understandings and Expectations from the Stakeholders;thepulseoflearninganalyticsunderstandingsandexpectationsfromthestakeholders.txt;2012;LAK
+Bridging the Gap from Knowledge to Action: Putting Analytics in the Hands of Academic Advisors;bridgingthegapfromknowledgetoaction:puttinganalyticsinthehandsofacademicadvisors.txt;2012;LAK
+Learning Analytics for Collaborative Writing: A Prototype and Case Study;learninganalyticsforcollaborativewriting:aprototypeandcasestudy.txt;2012;LAK
+Course Signals at Purdue: Using Learning Analytics to Increase Student Success;coursesignalsatpurdue:usinglearninganalyticstoincreasestudentsuccess.txt;2012;LAK
+First Steps Towards a Social Learning Analytics for Online Communities of Practice for Educators;firststepstowardsasociallearninganalyticsforonlinecommunitiesofpracticeforeducators.txt;2012;LAK
+APPLYING ARTIFICIAL INTELLIGENCE TO THE EDUCATIONAL DATA: AN EXAMPLE OF SYLLABUS QUALITY ANALYSIS;applyingartificialintelligencetotheeducationaldata:anexampleofsyllabusqualityanalysis.txt;2012;LAK
+Seeing What the System Thinks You Know - Visualizing Evidence in an Open Learner Model;seeingwhatthesystemthinksyouknow-visualizingevidenceinanopenlearnermodel.txt;2012;LAK
+Educational Monitoring Tool Based on Faceted Browsing and Data Portraits;educationalmonitoringtoolbasedonfacetedbrowsinganddataportraits.txt;2012;LAK
+Course Correction: Using Analytics to Predict Course Success;coursecorrection:usinganalyticstopredictcoursesuccess.txt;2012;LAK
+The Learning Analytics Cycle: Closing the loop effectively;thelearninganalyticscycle:closingtheloopeffectively.txt;2012;LAK
+Sherpa: Increasing Student Success with a Recommendation Engine;sherpa:increasingstudentsuccesswitharecommendationengine.txt;2012;LAK
+GLASS: A Learning Analytics Visualization Tool;glass:alearninganalyticsvisualizationtool.txt;2012;LAK
+What to do with actionable intelligence: E2Coach as an intervention engine;whattodowithactionableintelligence:e2coachasaninterventionengine.txt;2012;LAK
+Exploring reflection in online communities;exploringreflectioninonlinecommunities.txt;2012;LAK
+Using an Instructional Expert to Mediate the Locus of Control in Adaptive E-Learning Systems;usinganinstructionalexperttomediatethelocusofcontrolinadaptivee-learningsystems.txt;2012;LAK
+Investigating the Core Group Effect in Usage of Resources with Analytics;investigatingthecoregroupeffectinusageofresourceswithanalytics.txt;2012;LAK
+It's Just About Learning the Multiplication Table;it'sjustaboutlearningthemultiplicationtable.txt;2012;LAK
+Exploring Qualitative Analytics for E-Mentoring Relationships Building in an Online Social Learning Environment;exploringqualitativeanalyticsfore-mentoringrelationshipsbuildinginanonlinesociallearningenvironment.txt;2012;LAK
+Goal-oriented visualizations of activity tracking: a case study with engineering students;goal-orientedvisualizationsofactivitytracking:acasestudywithengineeringstudents.txt;2012;LAK
+Applying Quantiﬁed Self Approaches to Support Reﬂective Learning;applyingquantiﬁedselfapproachestosupportreﬂectivelearning.txt;2012;LAK
+Multi-mediated Community Structure in a Socio-Technical Network;multi-mediatedcommunitystructureinasocio-technicalnetwork.txt;2012;LAK
+Mining academic data to improve college student retention: An open source perspective;miningacademicdatatoimprovecollegestudentretention:anopensourceperspective.txt;2012;LAK
+The relationship between educational performance and online access routines: analysis of students’ access to an online discussion forum;therelationshipbetweeneducationalperformanceandonlineaccessroutines:analysisofstudents’accesstoanonlinediscussionforum.txt;2012;LAK
+Clustering by Usage: Higher Order Co-occurrences of Learning Objects;clusteringbyusage:higherorderco-occurrencesoflearningobjects.txt;2012;LAK
+Learning Dispositions and Transferable Competencies: Pedagogy, Modelling and Learning Analytics;learningdispositionsandtransferablecompetencies:pedagogy,modellingandlearninganalytics.txt;2012;LAK
+Social Learning Analytics: Five Approaches;sociallearninganalytics:fiveapproaches.txt;2012;LAK
+Learning analytics – Challenges, paradoxes and opportunities for mega open distance learning institutions;learninganalytics–challenges,paradoxesandopportunitiesformegaopendistancelearninginstitutions.txt;2012;LAK
+Predicting failure: A case study in co-blogging;predictingfailure:acasestudyinco-blogging.txt;2012;LAK
+Using computational methods to discover student science conceptions in interview data;usingcomputationalmethodstodiscoverstudentscienceconceptionsininterviewdata.txt;2012;LAK
+Student Success System: Risk Analytics and Data Visualization using Ensembles of Predictive Models;studentsuccesssystem:riskanalyticsanddatavisualizationusingensemblesofpredictivemodels.txt;2012;LAK
+The Learning Registry: Building a Foundation for Learning Resource Analytics;thelearningregistry:buildingafoundationforlearningresourceanalytics.txt;2012;LAK
+Challenges and Opportunities for Learning Analytics when formal teaching meets social spaces;challengesandopportunitiesforlearninganalyticswhenformalteachingmeetssocialspaces.txt;2012;LAK
+Does the Length of Time Off-Task Matter?;doesthelengthoftimeoff-taskmatter?.txt;2012;LAK
+Translating Learning into Numbers: A Generic Framework for Learning Analytics;translatinglearningintonumbers:agenericframeworkforlearninganalytics.txt;2012;JETS
+Analyzing Interactions by an IIS-Map-Based Method in Face-to-Face Collaborative Learning: An Empirical Study;analyzinginteractionsbyaniis-map-basedmethodinface-to-facecollaborativelearning:anempiricalstudy.txt;2012;JETS
+Numbers Are Not Enough. Why e-Learning Analytics Failed to Inform an Institutional Strategic Plan;numbersarenotenough.whye-learninganalyticsfailedtoinformaninstitutionalstrategicplan.txt;2012;JETS
+Integrating Data Mining in Program Evaluation of K-12 Online Education;integratingdatamininginprogramevaluationofk-12onlineeducation.txt;2012;JETS
+Using Data Mining for Predicting Relationships between Online Question Theme and Final Grade;usingdataminingforpredictingrelationshipsbetweenonlinequestionthemeandfinalgrade.txt;2012;JETS
+Dataset-Driven Research to Support Learning and Knowledge Analytics;dataset-drivenresearchtosupportlearningandknowledgeanalytics.txt;2012;JETS
+Design and Implementation of a Learning Analytics Toolkit for Teachers;designandimplementationofalearninganalyticstoolkitforteachers.txt;2012;JETS
+Social Learning Analytics;sociallearninganalytics.txt;2012;JETS
+A Multidimensional Analysis Tool for Visualizing Online Interactions;amultidimensionalanalysistoolforvisualizingonlineinteractions.txt;2012;JETS
+Teaching Analytics: A Clustering and Triangulation Study of Digital Library User Data;teachinganalytics:aclusteringandtriangulationstudyofdigitallibraryuserdata.txt;2012;JETS

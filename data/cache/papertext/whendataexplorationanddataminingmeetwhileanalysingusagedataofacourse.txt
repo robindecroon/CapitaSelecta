@@ -1,0 +1,4 @@
+1.  Evolution of confidence, lift and cosine.
+ Summing up, when ( )XP  is almost equal to ( )YXP , , data exploration is enough to infer the association rule YX → , there is no need to use a data mining algorithm for association rules extraction in such a case. 
+ 3    Conclusion and Future Work.
+ We have used this result while analyzing the data of the course “Programming 1” in our university, see [1]. The associations found show that a group of students emerges that keep doing self-evaluation exercises during the semester. A future work is to continue conducting case studies with courses taught in different topics and designed in different ways to further enhance our catalogue of questions  that can be interesting for teachers, and investigating further connections between data exploration and data mining.

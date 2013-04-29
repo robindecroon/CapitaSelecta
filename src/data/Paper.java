@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import util.Dictionary;
-
 import de.fhpotsdam.unfolding.geo.Location;
 
 public class Paper {
