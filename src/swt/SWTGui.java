@@ -38,8 +38,8 @@ public class SWTGui {
 	public Text year;
 	public Text fullText;
 
-	private Timeline timeline;
-	private ConferenceTool conference;
+	public Timeline timeline;
+	public ConferenceTool conference;
 
 	private SWTGui() {
 	}
@@ -59,7 +59,7 @@ public class SWTGui {
 		Rectangle sSize = shell.getBounds();
 
 		// Set the location
-		shell.setMinimumSize(MainApplet.APPLET_WIDTH + 8,
+		shell.setMinimumSize(MainApplet.APPLET_WIDTH + 256,
 				MainApplet.APPLET_HEIGHT + 128);
 		shell.setLocation(mSize.x + (mSize.width - sSize.width) / 2, mSize.y
 				+ (mSize.height - sSize.height) / 2);
@@ -158,7 +158,7 @@ public class SWTGui {
 	}
 
 	public void initPaperData(Composite parent) {
-		Composite component = new Composite(parent, SWT.BORDER);
+		Composite component = new Composite(parent, SWT.NONE);
 		component.setLayout(new GridLayout(1, false));
 
 		GridData data = new GridData();
@@ -172,7 +172,7 @@ public class SWTGui {
 		label.setText("Title");
 		label.setLayoutData(getCenterLabelData());
 
-		title = new Text(component, SWT.SINGLE);
+		title = new Text(component, SWT.SINGLE | SWT.BORDER);
 		title.setText("");
 		title.setEditable(false);
 		title.setLayoutData(getFillTextData());
@@ -181,7 +181,7 @@ public class SWTGui {
 		label.setText("Authors");
 		label.setLayoutData(getCenterLabelData());
 
-		authors = new Text(component, SWT.SINGLE);
+		authors = new Text(component, SWT.SINGLE | SWT.BORDER);
 		authors.setText("");
 		authors.setEditable(false);
 		authors.setLayoutData(getFillTextData());
@@ -190,7 +190,7 @@ public class SWTGui {
 		label.setText("Year");
 		label.setLayoutData(getCenterLabelData());
 
-		year = new Text(component, SWT.SINGLE);
+		year = new Text(component, SWT.SINGLE | SWT.BORDER);
 		year.setText("");
 		year.setEditable(false);
 		year.setLayoutData(getFillTextData());
@@ -199,7 +199,7 @@ public class SWTGui {
 		label.setText("Full text");
 		label.setLayoutData(getCenterLabelData());
 
-		fullText = new Text(component, SWT.MULTI|SWT.V_SCROLL);
+		fullText = new Text(component, SWT.MULTI | SWT.V_SCROLL | SWT.BORDER);
 		fullText.setText("");
 		fullText.setEditable(false);
 		data = new GridData();
@@ -245,7 +245,6 @@ public class SWTGui {
 			return;
 		if (applet.getMap().getWordCloudManager() == null)
 			return;
-		System.out.println("Filter changed!");
 		Filter filter = new GeneralFilter(timeline.getYears(),
 				conference.getConferenceList());
 		applet.getMap().getWordCloudManager().setFilter(filter);
@@ -288,33 +287,37 @@ public class SWTGui {
 	}
 
 	public void setPaper(Paper paper) {
-		if (currentPaper!=null&&paper.equals(currentPaper))
+		if (currentPaper != null && paper.equals(currentPaper))
 			return;
-		currentPaper=paper;
-		changeTextField(title,paper.getName());
-		
+		currentPaper = paper;
+		changeTextField(title, paper.getName());
+
 		String authorString = "";
-		for(Author author : paper.getAuthors())
-			authorString+=author.getFullName()+"; ";
+		for (Author author : paper.getAuthors())
+			authorString += author.getFullName() + "; ";
 		changeTextField(authors, authorString);
-		changeTextField(year, ""+paper.getYear());
-		
+		changeTextField(year, "" + paper.getYear());
+
 		String[] split = paper.getFullText().split("\n");
 		List<String> parts = new ArrayList<String>();
-		
-		for(String str : split) {
-			while(str.length()>128) {
-				parts.add(str.substring(0, 127));
-				str = str.substring(128,str.length());
+
+		for (String str : split) {
+			String[] newSplit = str.split(" ");
+
+			for (int i = 0; i < newSplit.length; i += 16) {
+				String newStr = "";
+				for (int k = i; k < Math.min(newSplit.length, i + 16); k++)
+					newStr += newSplit[k] + " ";
+				parts.add(newStr);
 			}
-			parts.add(str);
 		}
-		
+
 		String full = "";
-		for(String str : parts)
-			full += str+"\n";
+		for (String str : parts)
+			full += str + "\n";
+
+		changeTextField(fullText, full);
 		
-		changeTextField(fullText,full);
-		
+		System.out.println(paper.getAuthors().get(0).getUniversity());
 	}
 }

@@ -1,8 +1,9 @@
 package keywordmap;
 
-import core.BoundingBox;
 import processing.core.PApplet;
 import wordcloud.WordCloudManager;
+import core.BoundingBox;
+import data.Database;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
@@ -18,6 +19,10 @@ public class KeywordMap implements Visualization {
 	private boolean leftClicked = false;
 	private long leftTime = 0;
 
+	private Location lastLocation;
+	private float previousZoom;
+	private boolean moved;
+
 	/**
 	 * 
 	 * @param applet
@@ -25,6 +30,8 @@ public class KeywordMap implements Visualization {
 	public KeywordMap(PApplet applet) {
 		if (applet == null)
 			throw new NullPointerException("The given map is null!");
+		Database.getInstance();
+
 		this.applet = applet;
 		String connStr = "jdbc:sqlite:"
 				+ applet.sketchPath("data/edmlakmap.mbtiles");
@@ -32,11 +39,11 @@ public class KeywordMap implements Visualization {
 		MapUtils.createDefaultEventDispatcher(applet, map);
 
 		map.setTweening(true);
-		map.setZoomRange(2.f, 8.f);
+		map.setZoomRange(2.f,
+				(float) (Math.log(getMaximumZoom()) / Math.log(2)));
 		map.zoomAndPanTo(new Location(50.85, 4.35), 4);
 
-		manager = new WordCloudManager(this,2.f, 4.f, 8.f, 16.f,
-				32.f, 64.f, 128.f, 256.f);
+		manager = new WordCloudManager(this);
 	}
 
 	public float getMinimumZoom() {
@@ -101,6 +108,15 @@ public class KeywordMap implements Visualization {
 			leftClicked = true;
 
 		leftDown = applet.mousePressed;
+
+		moved = false;
+		if (previousZoom != getZoom())
+			moved = true;
+		if (lastLocation == null
+				|| !lastLocation.equals(map.getTopLeftBorder()))
+			moved = true;
+		previousZoom = getZoom();
+		lastLocation = map.getTopLeftBorder();
 	}
 
 	/*
@@ -133,5 +149,15 @@ public class KeywordMap implements Visualization {
 
 		return new BoundingBox(l.x, l.y, Math.abs(r.x - l.x), Math.abs(r.y
 				- l.y));
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see keywordmap.Visualization#moved()
+	 */
+	@Override
+	public boolean moved() {
+		return moved;
 	}
 }

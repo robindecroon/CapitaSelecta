@@ -175,8 +175,13 @@ public class Paper {
 		if (authors == null) {
 			if (other.authors != null)
 				return false;
-		} else if (!authors.equals(other.authors))
-			return false;
+		} else {
+			if (authors.size() != other.authors.size())
+				return false;
+			for (int i = 0; i < authors.size(); i++)
+				if (!authors.get(i).equals(other.authors.get(i)))
+					return false;
+		}
 		if (conference != other.conference)
 			return false;
 		if (fullText == null) {

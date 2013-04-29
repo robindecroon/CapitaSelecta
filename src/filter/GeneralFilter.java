@@ -17,7 +17,7 @@ public class GeneralFilter implements Filter {
 
 	public GeneralFilter() {
 		for (int i = 2008; i <= 2012; i++)
-			years.add(i);
+			this.years.add(i);
 		for (Conference c : Conference.values())
 			this.conferences.add(c);
 	}

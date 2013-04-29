@@ -12,6 +12,7 @@ public interface Visualization {
 	public float getMaximumZoom();
 	public float getZoom();
 	public float getDrawScale();
+	public boolean moved();
 	
 	public void update(float frameRate);
 	public void draw();

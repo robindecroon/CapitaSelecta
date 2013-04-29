@@ -30,7 +30,17 @@ public class AllAllowedFilter implements Filter {
 	 */
 	@Override
 	public PaperColor getColor(Paper paper) {
-		// TODO Auto-generated method stub
-		return null;
+		if (paper.getYear() == 2008)
+			return PaperColor.C2008;
+		else if (paper.getYear() == 2009)
+			return PaperColor.C2009;
+		else if (paper.getYear() == 2010)
+			return PaperColor.C2010;
+		else if (paper.getYear() == 2011)
+			return PaperColor.C2011;
+		else if (paper.getYear() == 2012)
+			return PaperColor.C2012;
+		else
+			throw new IllegalStateException();
 	}
 }

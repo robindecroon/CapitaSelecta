@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openrdf.query.BindingSet;
 import org.openrdf.query.TupleQueryResult;
@@ -33,7 +34,11 @@ public class Database {
 	private final List<Paper> papers = new ArrayList<Paper>();
 	private final List<Country> countries = new ArrayList<Country>();
 	private final List<University> universities = new ArrayList<University>();
+
+	// List with bad words
 	private final HashSet<String> badWords = new HashSet<String>();
+	private final HashMap<String, Location> affiliations = new HashMap<String, Location>();
+	private final HashMap<String, String> affiliationAliases = new HashMap<String, String>();
 
 	// Needed during construction
 	private HashMap<String, Paper> titlePaperMap = new HashMap<String, Paper>();
@@ -60,12 +65,13 @@ public class Database {
 				"data/rdf/edm2011.rdf", "data/rdf/edm2012.rdf",
 				"data/rdf/2011_fulltext_.rdf", "data/rdf/2012_fulltext_.rdf",
 				"data/rdf/jets12_fulltext_.rdf");
+		readAffiliationAliases();
+		readAffiliations();
 		readBadWords();
 		readAllAuthors();
 		readAllPapers();
 		linkAuthorsToPapers();
 		LocationCache.getInstance().save();
-		
 
 		Paper paper;
 		Iterator<Paper> it = papers.iterator();
@@ -79,6 +85,32 @@ public class Database {
 		initialized = true;
 
 		WordDatabase.getInstance().exportWordList();
+	}
+
+	public void readAffiliationAliases() {
+		try {
+			FileReader reader = new FileReader(new File(
+					"data/location/locationaliases.txt"));
+			BufferedReader r = new BufferedReader(reader);
+			String line;
+
+			while ((line = r.readLine()) != null) {
+				String[] s = line.split(";");
+				Logger.Severe(line);
+				if (s.length < 2)
+					continue;
+				Logger.Severe("added " + s[0].trim() + " as alias for "
+						+ s[1].trim());
+				affiliationAliases.put(s[0].trim(), s[1].trim());
+			}
+
+			r.close();
+			reader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void readBadWords() {
@@ -103,6 +135,7 @@ public class Database {
 	public boolean isBadWord(String word) {
 		return badWords.contains(word);
 	}
+
 	public void addAuthor(Author author) {
 		if (author == null)
 			throw new NullPointerException("The given author is null!");
@@ -124,8 +157,9 @@ public class Database {
 			throw new NullPointerException("The given paper is null!");
 		if (papers.contains(paper))
 			return;
+		if (titlePaperMap.containsKey(paper.getName()))
+			return;
 		papers.add(paper);
-
 		titlePaperMap.put(paper.getName(), paper);
 	}
 
@@ -137,32 +171,51 @@ public class Database {
 		return initialized;
 	}
 
-	private HashMap<String, Location> readAffiliations()
-			throws NumberFormatException, IOException {
-		HashMap<String, Location> result = new HashMap<String, Location>();
-		File file = new File("data/location/location.txt");
-		FileReader reader = new FileReader(file);
-		BufferedReader r = new BufferedReader(reader);
+	private void readAffiliations() {
+		try {
+			File file = new File("data/location/location.txt");
+			FileReader reader = new FileReader(file);
+			BufferedReader r = new BufferedReader(reader);
 
-		String line;
-		int index = 0;
+			String line;
+			int index = 0;
 
-		while ((line = r.readLine()) != null) {
-			if (index > 0) {
-				String[] split = line.split(";");
-				float xx = Float.parseFloat(split[0]);
-				float yy = Float.parseFloat(split[1]);
-				String affiliation = split[2];
-				Location l = new Location(xx, yy);
+			while ((line = r.readLine()) != null) {
+				if (index > 0) {
+					if (line.startsWith("#"))
+						continue;
+					String[] split = line.split(";");
 
-				result.put(affiliation, l);
+					try {
+						float xx = Float.parseFloat(split[0]);
+						float yy = Float.parseFloat(split[1]);
+						String affiliation = split[2];
+						Location l = new Location(xx, yy);
+						affiliations.put(affiliation, l);
+					} catch (NumberFormatException ee) {
+					}
+				}
+				index++;
 			}
-			index++;
+
+			r.close();
+			reader.close();
+		} catch (IOException e) {
 		}
+	}
 
-		r.close();
-
+	private String getAffiliationAlias(String affiliation) {
+		String result = affiliation;
+		if (affiliationAliases.containsKey(affiliation)) {
+			result = affiliationAliases.get(affiliation);
+			Logger.Severe("redirected \"" + affiliation + "\" to \"" + result
+					+ "\"");
+		}
 		return result;
+	}
+
+	private Location getUniversityLocationFromAffiliation(String affiliation) {
+		return affiliations.get(getAffiliationAlias(affiliation));
 	}
 
 	private void readAllAuthors() {
@@ -181,8 +234,6 @@ public class Database {
 		TupleQueryResult result = reader.executeQuery(query);
 
 		try {
-			HashMap<String, Location> affiliationLocations = readAffiliations();
-
 			while (result.hasNext()) {
 
 				BindingSet set = result.next();
@@ -199,8 +250,7 @@ public class Database {
 						.stringValue();
 
 				try {
-					Location universityLocation = affiliationLocations
-							.get(affiliation);
+					Location universityLocation = getUniversityLocationFromAffiliation(affiliation);
 
 					if (universityLocation == null) {
 						Logger.Warning("Could not find the university for "
@@ -214,7 +264,7 @@ public class Database {
 					Country country = LocationCache.getInstance()
 							.getCountryFromURL(location);
 
-					University university = new University(affiliation,
+					University university = new University(getAffiliationAlias(affiliation),
 							country, universityLocation);
 
 					Author author = new Author(resource, firstName, lastName,
@@ -308,7 +358,7 @@ public class Database {
 
 	public HashMap<UniversityCluster, PaperWordData> getWordsPerUniversity(
 			float distance, Filter filter) {
-		List<UniversityCluster> clusters = UniversityCluster.getClusters(
+		Set<UniversityCluster> clusters = UniversityCluster.getClusters(
 				universities, distance);
 		HashMap<UniversityCluster, PaperWordData> result = new HashMap<UniversityCluster, PaperWordData>();
 
@@ -327,12 +377,10 @@ public class Database {
 
 					for (PaperWord word : words)
 						data.addWord(word.word, paper, word.occurences);
-
 				}
 			}
-			
-			data.format(Dictionary.getInstance().getWords());
 
+			data.format(Dictionary.getInstance().getWords());
 			result.put(cluster, data);
 		}
 		return result;

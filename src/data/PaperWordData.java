@@ -53,6 +53,7 @@ public class PaperWordData {
 			wordCount.put(word, count);
 		else
 			wordCount.put(word, wordCount.get(word) + count);
+		visibility.clear();
 		dirty.clear();
 	}
 

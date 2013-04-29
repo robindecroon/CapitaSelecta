@@ -16,6 +16,7 @@ import data.PaperWordData;
 public class PaperSet extends Drawable {
 	private List<Paper> papers = new ArrayList<Paper>();
 	private List<PaperDrawable> paperDrawables = new ArrayList<PaperDrawable>();
+	private List<PaperDrawable> visible;
 	private float alpha = 0.f;
 	private boolean activate = true;
 	private WordCloudManager manager;
@@ -74,9 +75,12 @@ public class PaperSet extends Drawable {
 	}
 
 	public void draw(float layeralpha) {
-		MultiThreadPruning<PaperDrawable> prune = new MultiThreadPruning<PaperDrawable>(paperDrawables);
-		List<PaperDrawable> visible = prune.getElements(getVisualization().getScreenBounds());
-		
+		if (visible == null || getVisualization().moved()) {
+			MultiThreadPruning<PaperDrawable> prune = new MultiThreadPruning<PaperDrawable>(
+					paperDrawables);
+			visible = prune.getElements(getVisualization().getScreenBounds());
+		}
+
 		for (PaperDrawable d : visible) {
 			Paper paper = d.getPaper();
 			if (manager.getFilter().allowed(paper))
@@ -85,7 +89,8 @@ public class PaperSet extends Drawable {
 
 		for (PaperDrawable d : visible) {
 			Paper paper = d.getPaper();
-			if (manager.getFilter().allowed(paper)&&d.drawName(alpha * layeralpha)) {
+			if (manager.getFilter().allowed(paper)
+					&& d.drawName(alpha * layeralpha)) {
 				SWTGui.instance.setPaper(paper);
 				break;
 			}
@@ -94,6 +99,7 @@ public class PaperSet extends Drawable {
 
 	public void activate() {
 		activate = true;
+		visible=null;
 
 	}
 

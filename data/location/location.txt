@@ -4,6 +4,7 @@ latitude,longitude,name,desc,color
 55.6816216;12.5308037;Copenhagen Business School;-;
 50.8436241;4.3756871;European Schoolnet (EUN);-;
 50.8779526;4.7002940;K.U.Leuven;-;
+50.8779526;4.7002940;Katholieke Universiteit Leuven;-;
 37.7809677;-122.3955994;Grockit, Inc.;-;
 41.4148865;2.1334231;Universitat Oberta de Catalunya (UOC);-;
 52.1383438;-106.6239700;University of Saskatchewan;-;
@@ -145,7 +146,6 @@ latitude,longitude,name,desc,color
 38.9834061;-1.8441650;University of Castilla la Mancha;-;
 42.3051338;-83.0674820;University of Windsor;-;
 42.6514626;23.3479900;University of National and World Economy;-;
-50.8779526;4.7002940;Katholieke Universiteit Leuven;-;
 40.0044098;-105.2667389;University of Colorado at Boulder;-;
 53.3784218;-1.4656121;Sheffield University;-;
 43.4713593;-3.8014410;University of Cantabria;-;

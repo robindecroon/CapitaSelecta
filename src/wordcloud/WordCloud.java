@@ -35,8 +35,9 @@ public class WordCloud extends Drawable implements Bounded {
 	private int minimumFont = 12;
 	private int maximumFont = 24;
 
-	private Location location;
-	private BoundingBox wordCloudSize;
+	private Location destinationLocation;
+	private Location drawLocation;
+	private BoundingBox size;
 	private float cachedZoomLevel;
 	private BoundingBox cachedScreenBox;
 	private PaperWordData data;
@@ -60,11 +61,23 @@ public class WordCloud extends Drawable implements Bounded {
 			throw new NullPointerException("The given location is not valid");
 
 		this.manager = manager;
-		this.location = location;
+		this.destinationLocation = location;
+		this.drawLocation = location;
 		this.data = data;
 
 		construct(getVisualization(), data, nbOfWords);
-		updatePaperSet(null,0);
+		updatePaperSet(null, 0);
+	}
+
+	public Location getDrawLocation() {
+		return drawLocation;
+	}
+
+	public void setDrawLocation(Location location) {
+		if (location == null)
+			throw new NullPointerException();
+		this.drawLocation = location;
+		this.cachedScreenBox=null;
 	}
 
 	public PaperWordData getPaperWordData() {
@@ -76,12 +89,13 @@ public class WordCloud extends Drawable implements Bounded {
 	 * @param p
 	 * @param data
 	 */
-	public void construct(Visualization visualization, PaperWordData data, int nbOfWords) {		
+	public void construct(Visualization visualization, PaperWordData data,
+			int nbOfWords) {
 		// Get the applet
 		PApplet p = visualization.getApplet();
 
 		// Initialize the bounding box the wordcloud will have on screen.
-		wordCloudSize = new BoundingBox();
+		size = new BoundingBox();
 
 		// Initialize the size to place the drawables in.
 		int width = 48;
@@ -92,7 +106,7 @@ public class WordCloud extends Drawable implements Bounded {
 		maximumCount = Integer.MIN_VALUE;
 
 		Random random = new Random(System.currentTimeMillis()
-				+ location.hashCode());
+				+ destinationLocation.hashCode());
 
 		/*
 		 * Analyse the word data.
@@ -172,7 +186,7 @@ public class WordCloud extends Drawable implements Bounded {
 						b = new BoundingBox(bestxx - 1, bestyy - 1, hh + 2,
 								ww + 2);
 					WordCloudDrawable d = new WordCloudDrawable(manager,
-							location, word.getString(), fontSize,
+							this, word.getString(), fontSize,
 							bestHorizontal, b);
 					addWordDrawable(d);
 					index++;
@@ -194,7 +208,7 @@ public class WordCloud extends Drawable implements Bounded {
 	 */
 	private void addWordDrawable(WordCloudDrawable drawable) {
 		drawables.put(drawable.getPaperWord(), drawable);
-		wordCloudSize = wordCloudSize.union(drawable.getBounds());
+		size = size.union(drawable.getBounds());
 	}
 
 	/**
@@ -222,8 +236,8 @@ public class WordCloud extends Drawable implements Bounded {
 		if (cachedScreenBox == null || map.getZoom() != cachedZoomLevel) {
 			cachedZoomLevel = getVisualization().getDrawScale();
 
-			ScreenPosition c = map.getScreenPosition(location);
-			BoundingBox b = wordCloudSize;
+			ScreenPosition c = map.getScreenPosition(getDrawLocation());
+			BoundingBox b = size;
 			ScreenPosition leftup = new ScreenPosition(c.x + b.x
 					* cachedZoomLevel, c.y + b.y * cachedZoomLevel);
 			cachedScreenBox = new BoundingBox(leftup.x, leftup.y, b.width

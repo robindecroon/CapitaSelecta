@@ -5,7 +5,6 @@ import processing.core.PApplet;
 import acceleration.Bounded;
 import core.BoundingBox;
 import de.fhpotsdam.unfolding.UnfoldingMap;
-import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.utils.ScreenPosition;
 
 /**
@@ -16,7 +15,7 @@ import de.fhpotsdam.unfolding.utils.ScreenPosition;
  */
 public class WordCloudDrawable extends Drawable implements Bounded {
 	private WordCloudManager manager;
-	private Location location;
+	private WordCloud cloud;
 
 	private float cachedZoom;
 	private BoundingBox cachedBoundingBox;
@@ -26,11 +25,11 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 	private BoundingBox bounds;
 	private boolean horizontal;
 
-	public WordCloudDrawable(WordCloudManager manager, Location location,
+	public WordCloudDrawable(WordCloudManager manager, WordCloud cloud,
 			String word, float size, boolean horizontal, BoundingBox bounds) {
 		super(manager.getVisualization());
 		this.manager = manager;
-		this.location = location;
+		this.cloud = cloud;
 		this.word = word;
 		this.bounds = bounds;
 		this.size = size;
@@ -47,7 +46,7 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 
 	public ScreenPosition getScreenPosition(float scale) {
 		ScreenPosition p = getVisualization().getMap().getScreenPosition(
-				location);
+				cloud.getDrawLocation());
 
 		return new ScreenPosition(p.x + (bounds.x + bounds.width * 0.5f)
 				* scale, p.y + (bounds.y + bounds.height * 0.5f) * scale);
@@ -65,7 +64,7 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 		if (map.getZoom() < 4.2f && textSize < 4.f)
 			return;
 
-		ScreenPosition p = map.getScreenPosition(location);
+		ScreenPosition p = map.getScreenPosition(cloud.getDrawLocation());
 
 		applet.fill(0, 0, 0, 255.f * layerAlpha * highlightAlpha);
 
@@ -97,7 +96,7 @@ public class WordCloudDrawable extends Drawable implements Bounded {
 
 		if (cachedBoundingBox == null || map.getZoom() != cachedZoom) {
 			cachedZoom = getVisualization().getDrawScale();
-			ScreenPosition p = map.getScreenPosition(location);
+			ScreenPosition p = map.getScreenPosition(cloud.getDrawLocation());
 
 			cachedBoundingBox = new BoundingBox(p.x + bounds.x * cachedZoom,
 					p.y + bounds.y * cachedZoom, bounds.width * cachedZoom,
