@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Monitor;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
-import util.LogAdapter;
+import util.FileLogger;
 import util.Logger;
 import core.Constants;
 import core.MainApplet;
@@ -86,7 +86,7 @@ public class SWTGui {
 			}
 		});
 
-		Logger.addListener(new LogAdapter() {
+		FileLogger logger = new FileLogger() {
 			/*
 			 * (non-Javadoc)
 			 * 
@@ -94,6 +94,7 @@ public class SWTGui {
 			 */
 			@Override
 			public void Severe(final String message) {
+				super.Severe(message);
 				display.asyncExec(new Runnable() {
 					public void run() {
 						MessageBox box = new MessageBox(shell, SWT.ERROR
@@ -105,7 +106,8 @@ public class SWTGui {
 					}
 				});
 			}
-		});
+		};
+		Logger.addListener(logger);
 
 		// Open the shell and execute it's events.
 		shell.open();
@@ -113,6 +115,8 @@ public class SWTGui {
 			if (!display.readAndDispatch())
 				display.sleep();
 		display.dispose();
+		
+		logger.close();
 	}
 
 	public void initControls(Composite parent) {
