@@ -67,16 +67,25 @@ public class OfflineDatabase extends Database {
 				addCountry(countryFromString(line));
 			r.close();
 			reader.close();
+		} catch (Exception e) {
+			Logger.Severe(
+					"an error occured while reading the countries from \"data/cache/countries.txt\"",
+					e);
+		}
+		try {
+			File file = new File("data/cache/university.txt");
+			FileReader reader = new FileReader(file);
+			BufferedReader r = new BufferedReader(reader);
+			String line;
 
-			file = new File("data/cache/university.txt");
-			reader = new FileReader(file);
-			r = new BufferedReader(reader);
 			while ((line = r.readLine()) != null)
 				addUniversity(universityFromString(line));
 			r.close();
 			reader.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.Severe(
+					"an error occured while reading the countries from \"data/cache/university.txt\"",
+					e);
 		}
 	}
 
@@ -97,8 +106,9 @@ public class OfflineDatabase extends Database {
 			r.close();
 			reader.close();
 		} catch (Exception e) {
-			e.printStackTrace();
-			Logger.Severe(e.getMessage());
+			Logger.Severe(
+					"an error occured while reading the countries from \"data/cache/authors.txt\"",
+					e);
 		}
 	}
 
@@ -119,8 +129,9 @@ public class OfflineDatabase extends Database {
 			r.close();
 			reader.close();
 		} catch (Exception e) {
-			e.printStackTrace();
-			Logger.Severe(e.getMessage());
+			Logger.Severe(
+					"an error occured while reading the countries from \"data/cache/papers.txt\"",
+					e);
 		}
 	}
 
@@ -149,8 +160,9 @@ public class OfflineDatabase extends Database {
 				r.close();
 				reader.close();
 			} catch (Exception e) {
-				e.printStackTrace();
-				Logger.Severe(e.getMessage());
+				Logger.Severe(
+						"an error occured while linking the authors with the papers with the file \"data/cache/authorpaperlink.txt\"",
+						e);
 			}
 		}
 
@@ -205,9 +217,9 @@ public class OfflineDatabase extends Database {
 
 	public static String paperToString(Paper paper) {
 		StringBuilder b = new StringBuilder();
-		b.append(paper.getName());
+		b.append(paper.getName().replaceAll(";", " "));
 		b.append(";");
-		b.append(paper.getName().toLowerCase().replaceAll(" ", "") + ".txt");
+		b.append(paper.getName().replaceAll(";", " ").toLowerCase().replaceAll(" ", "") + ".txt");
 		b.append(";");
 		b.append(paper.getYear());
 		b.append(";");
@@ -217,7 +229,13 @@ public class OfflineDatabase extends Database {
 
 	public Paper paperFromString(String string) {
 		String[] split = string.split(";");
-		int year = Integer.parseInt(split[2]);
+
+		int year = 2008;
+		try {
+			year = Integer.parseInt(split[2]);
+		} catch (NumberFormatException e) {
+			Logger.Severe("could not extract year from \"" + split[2] + "\"", e);
+		}
 		Conference c = Conference.getConferenceFromAcro(split[3]);
 
 		String fullText = "";
@@ -232,7 +250,9 @@ public class OfflineDatabase extends Database {
 			r.close();
 			reader.close();
 		} catch (Exception e) {
-			Logger.Severe(e.getMessage());
+			Logger.Severe(
+					"an error occured while reading file \"data/cache/papertext/"
+							+ split[1] + "\"", e);
 		}
 
 		return new Paper(split[0], fullText, year, c);
@@ -267,7 +287,7 @@ public class OfflineDatabase extends Database {
 
 		for (Paper paper : author.getPapers()) {
 			builder.append(";");
-			builder.append(paper.getName());
+			builder.append(paper.getName().replaceAll(";", " "));
 		}
 
 		return builder.toString();

@@ -9,14 +9,16 @@ public class OnlineRdfReader extends RdfReader {
 	public OnlineRdfReader(String url) {
 		repository = new HTTPRepository(url);
 		try {
-			Logger.Info("initializing online repository at "+url);
+			Logger.Info("initializing online repository at " + url);
 			repository.initialize();
-			Logger.Info("connecting to online repository at "+url);
+			Logger.Info("connecting to online repository at " + url);
 			connection = repository.getConnection();
-			Logger.Info("connected to repository at "+url);
+			Logger.Info("connected to repository at " + url);
 			open = true;
 		} catch (Exception e) {
-			System.err.println(e.getMessage());
+			Logger.Severe(
+					"error while connecting to the online rdf repository at \""
+							+ url + "\"", e);
 			close();
 		}
 	}

@@ -2,7 +2,6 @@ package data;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,7 +14,6 @@ import java.util.Set;
 import util.Dictionary;
 import util.Logger;
 import data.offline.OfflineDatabase;
-import data.online.OnlineDatabase;
 import de.fhpotsdam.unfolding.geo.Location;
 import filter.Filter;
 
@@ -30,14 +28,20 @@ public abstract class Database {
 
 	private final HashMap<String, Location> affiliations = new HashMap<String, Location>();
 	private final HashMap<String, String> affiliationAliases = new HashMap<String, String>();
+
 	// Needed data during construction
 	private final HashMap<String, Paper> titlePaperMap = new HashMap<String, Paper>();
 
+	public Database() {
+	}
+
+	/**
+	 * Returns the instance of the database.
+	 * 
+	 * @return the singleton instance of the database.
+	 */
 	public static Database getInstance() {
 		return OfflineDatabase.getInstance();
-	}
-	
-	public Database() {
 	}
 
 	/**
@@ -58,7 +62,7 @@ public abstract class Database {
 		while (it.hasNext() && (paper = it.next()) != null) {
 			if (paper.getAuthors().size() == 0) {
 				Logger.Warning("Paper \"" + paper.getName()
-						+ " has no authors! It has been removed!");
+						+ "\" has no authors! It has been removed!");
 				it.remove();
 			}
 		}
@@ -67,19 +71,23 @@ public abstract class Database {
 		close();
 	}
 
-	protected void close() {
-		// Template method
-	}
-
 	protected void allocateResources() {
 		// Template method
 	}
 
+	protected void close() {
+		// Template method
+	}
+
 	protected void addCountry(Country country) {
+		if (country == null)
+			throw new NullPointerException("The given country is null!");
 		this.countries.add(country);
 	}
 
 	protected void addUniversity(University university) {
+		if (university == null)
+			throw new NullPointerException("The given univercity is null!");
 		this.universities.add(university);
 	}
 
@@ -123,20 +131,19 @@ public abstract class Database {
 
 			while ((line = r.readLine()) != null) {
 				String[] s = line.split(";");
-				Logger.Severe(line);
 				if (s.length < 2)
 					continue;
-				Logger.Severe("added " + s[0].trim() + " as alias for "
+				Logger.Info("added " + s[0].trim() + " as alias for "
 						+ s[1].trim());
 				affiliationAliases.put(s[0].trim(), s[1].trim());
 			}
 
 			r.close();
 			reader.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (Exception e) {
+			Logger.Severe(
+					"an error occured while reading from \"data/location/locationaliases.txt\"",
+					e);
 		}
 	}
 
@@ -162,6 +169,8 @@ public abstract class Database {
 						Location l = new Location(xx, yy);
 						affiliations.put(affiliation, l);
 					} catch (NumberFormatException ee) {
+						Logger.Warning("we could not decode the location for affiliation \""
+								+ split[2] + "\"");
 					}
 				}
 				index++;
@@ -170,6 +179,9 @@ public abstract class Database {
 			r.close();
 			reader.close();
 		} catch (IOException e) {
+			Logger.Severe(
+					"an error occured while retrieving the locations from \"data/location/location.txt\"",
+					e);
 		}
 	}
 
@@ -177,7 +189,7 @@ public abstract class Database {
 		String result = affiliation;
 		if (affiliationAliases.containsKey(affiliation)) {
 			result = affiliationAliases.get(affiliation);
-			Logger.Severe("redirected \"" + affiliation + "\" to \"" + result
+			Logger.Info("redirected \"" + affiliation + "\" to \"" + result
 					+ "\"");
 		}
 		return result;
@@ -219,7 +231,8 @@ public abstract class Database {
 
 	protected void readBadWords() {
 		try {
-			FileReader reader = new FileReader(new File("wordstofilter.txt"));
+			FileReader reader = new FileReader(new File(
+					"data/wordstofilter.txt"));
 			BufferedReader r = new BufferedReader(reader);
 
 			String line;
@@ -230,7 +243,9 @@ public abstract class Database {
 			r.close();
 			reader.close();
 		} catch (Exception e) {
-			Logger.Severe(e.getMessage());
+			Logger.Severe(
+					"an error occured while reading the file\"data/wordstofilter.txt\"",
+					e);
 		}
 	}
 

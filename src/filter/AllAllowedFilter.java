@@ -41,6 +41,6 @@ public class AllAllowedFilter implements Filter {
 		else if (paper.getYear() == 2012)
 			return PaperColor.C2012;
 		else
-			throw new IllegalStateException();
+			throw new IllegalStateException("The year of the paper was not recognized!");
 	}
 }

@@ -64,6 +64,7 @@ Automatic Concept Relationships Discovery for an Adaptive E-course;automaticconc
 When Data Exploration and Data Mining meet while Analysing Usage Data of a Course;whendataexplorationanddataminingmeetwhileanalysingusagedataofacourse.txt;2010;EDM
 Analyzing Learning Styles using Behavioral Indicators in Web based Learning Environments;analyzinglearningstylesusingbehavioralindicatorsinwebbasedlearningenvironments.txt;2010;EDM
 Inferring the Differential Student Model in a Probabilistic Domain using Abduction Inference in Bayesian Networks;inferringthedifferentialstudentmodelinaprobabilisticdomainusingabductioninferenceinbayesiannetworks.txt;2010;EDM
+Pinpointing Learning Moments  A finer grain P(J) model;pinpointinglearningmomentsafinergrainp(j)model.txt;2010;EDM
 Examining Learner Control in a Structured Inquiry Cycle Using Process Mining;examininglearnercontrolinastructuredinquirycycleusingprocessmining.txt;2010;EDM
 Using Numeric Optimization To Refine Semantic User Model Integration Of Educational Systems;usingnumericoptimizationtorefinesemanticusermodelintegrationofeducationalsystems.txt;2010;EDM
 Pundit: Intelligent Recommender of Courses;pundit:intelligentrecommenderofcourses.txt;2010;EDM

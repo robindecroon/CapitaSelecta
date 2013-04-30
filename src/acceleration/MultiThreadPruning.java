@@ -7,10 +7,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+import util.Logger;
+
 import core.BoundingBox;
 
-public class MultiThreadPruning<T extends Bounded> implements
-		Acceleration<T> {
+public class MultiThreadPruning<T extends Bounded> implements Acceleration<T> {
 	private final List<T> visible = new ArrayList<T>();
 	private final Collection<T> drawables;
 	private BoundingBox bounds = new BoundingBox();
@@ -49,13 +50,14 @@ public class MultiThreadPruning<T extends Bounded> implements
 		for (T t : drawables)
 			threads.get((index++) % threads.size()).add(t);
 
-		for(Thread t : threads)
+		for (Thread t : threads)
 			s.submit(t);
 		s.shutdown();
+
 		try {
 			s.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
 		} catch (InterruptedException e) {
-			e.printStackTrace();
+			Logger.Severe("pruning thread was interrupted unexecpectedly", e);
 		}
 
 		for (PruneThread<T> t : threads) {

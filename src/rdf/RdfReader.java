@@ -9,6 +9,8 @@ import org.openrdf.repository.Repository;
 import org.openrdf.repository.RepositoryConnection;
 import org.openrdf.repository.RepositoryException;
 
+import util.Logger;
+
 public abstract class RdfReader {
 	protected Repository repository;
 	protected boolean open = false;
@@ -48,7 +50,7 @@ public abstract class RdfReader {
 				repository.shutDown();
 			open = false;
 		} catch (RepositoryException e) {
-			e.printStackTrace();
+			Logger.Severe("error while closing the rdf repository", e);
 		}
 	}
 }

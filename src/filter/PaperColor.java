@@ -1,6 +1,5 @@
 package filter;
 
-import processing.core.PApplet;
 
 public class PaperColor {
 	public final int red;
@@ -20,9 +19,5 @@ public class PaperColor {
 		this.red = red;
 		this.green = green;
 		this.blue = blue;
-	}
-
-	public void setAppletToColor(PApplet applet, int alpha) {
-		applet.color(red, green, blue, alpha);
 	}
 }

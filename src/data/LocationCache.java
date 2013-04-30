@@ -63,8 +63,11 @@ public class LocationCache {
 			r.close();
 			reader.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.Severe(
+					"an error occured while reading the country codes from \"data/cache/countrycodes.txt\"",
+					e);
 		}
+
 		try {
 			File file = new File("data/cache/locationcache.txt");
 
@@ -94,9 +97,10 @@ public class LocationCache {
 
 			r.close();
 			reader.close();
-		} catch (IOException e) {
-			Logger.Warning("Error while reading the location cache!"
-					+ e.getMessage());
+		} catch (Exception e) {
+			Logger.Severe(
+					"an error occured while reading the country codes from \"data/cache/locationcache.txt\"",
+					e);
 		}
 	}
 
@@ -116,8 +120,7 @@ public class LocationCache {
 			w.close();
 			writer.close();
 		} catch (IOException e) {
-			Logger.Warning("Error while saving the location cache!"
-					+ e.getMessage());
+			Logger.Severe("error while saving the country codes to \"data/cache/countrycodes.txt\"",e);
 		}
 
 		try {
@@ -143,8 +146,7 @@ public class LocationCache {
 			w.close();
 			writer.close();
 		} catch (IOException e) {
-			Logger.Warning("Error while saving the location cache!"
-					+ e.getMessage());
+			Logger.Severe("error while saving the location cache to \"data/cache/locationcache.txt\"",e);
 		}
 	}
 
@@ -182,13 +184,13 @@ public class LocationCache {
 		url = redirection.containsKey(url) ? redirection.get(url) : url;
 
 		if (LocationCache.getInstance().hasFailure(url)) {
-			Logger.Debug("Location cache hit!");
+			Logger.Debug("location cache hit");
 			throw new QueryFailedException(
 					"Could not get the location from the url: <" + url + ">");
 		}
 
 		if (LocationCache.getInstance().hasLocation(url)) {
-			Logger.Debug("Location cache hit!");
+			Logger.Debug("location cache hit");
 			return new Country(getFromCache(url));
 
 		} else
@@ -278,40 +280,6 @@ public class LocationCache {
 
 		redirectionURL.put(adress, thread.getRedirectedAdress());
 		return thread.getRedirectedAdress();
-
-		// try {
-		// // Create the url
-		// Logger.Info("redirecting adress " + adress);
-		// URL url = new URL(adress);
-		// URLConnection c = url.openConnection();
-		// c.setConnectTimeout(100finished);
-		// c.connect();
-		// c.getInputStream().close();
-		//
-		// // Replace the erroneous name
-		// String realUrl = c.getURL().toString();
-		// String[] splitRealUrl = realUrl.split("/");
-		// String[] splitOldUrl = adress.split("/");
-		// if (splitRealUrl[splitRealUrl.length - 1].equals("resource"))
-		// return adress;
-		// splitOldUrl[splitOldUrl.length - 1] =
-		// splitRealUrl[splitRealUrl.length - 1];
-		// String result = "";
-		// for (int i = 0; i < splitOldUrl.length; i++)
-		// if (i != splitOldUrl.length - 1)
-		// result += splitOldUrl[i] + "/";
-		// else
-		// result += splitOldUrl[i];
-		//
-		// // if (!adress.equals(result))
-		// Logger.Info("Redirected <" + adress + "> to <" + result + ">");
-		//
-		// redirectionURL.put(adress, result);
-		// return result;
-		// } catch (IOException e) {
-		// redirectionURL.put(adress, adress);
-		// return adress;
-		// }
 	}
 
 	public String getCodeForCountry(String country) {
@@ -372,8 +340,7 @@ public class LocationCache {
 					else
 						result += splitOldUrl[i];
 
-				// if (!adress.equals(result))
-				Logger.Info("Redirected <" + originalAdress + "> to <" + result
+				Logger.Info("redirected <" + originalAdress + "> to <" + result
 						+ ">");
 
 				redirectedAdress = result;

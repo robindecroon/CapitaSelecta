@@ -1,10 +1,10 @@
 package keywordmap;
 
 import processing.core.PApplet;
+import swt.SWTGui;
 import wordcloud.WordCloudManager;
 import core.BoundingBox;
 import data.Database;
-import data.online.OnlineDatabase;
 import de.fhpotsdam.unfolding.UnfoldingMap;
 import de.fhpotsdam.unfolding.geo.Location;
 import de.fhpotsdam.unfolding.providers.MBTilesMapProvider;
@@ -101,6 +101,9 @@ public class KeywordMap implements Visualization {
 	 */
 	@Override
 	public void update(float frameRate) {
+		if (SWTGui.instance!=null)
+			SWTGui.instance.canChange=true;
+		
 		leftClicked = false;
 		if (!leftDown && applet.mousePressed)
 			leftTime = System.currentTimeMillis();

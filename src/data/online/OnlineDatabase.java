@@ -33,7 +33,7 @@ public class OnlineDatabase extends Database {
 	 * 
 	 */
 	private OnlineDatabase() {
-		
+
 	}
 
 	public static OnlineDatabase getInstance() {
@@ -58,7 +58,8 @@ public class OnlineDatabase extends Database {
 			writer = new FileWriter(file);
 			w = new BufferedWriter(writer);
 			for (Paper p : getPapers()) {
-				String filename = p.getName().toLowerCase().replaceAll(" ", "")+".txt";
+				String filename = p.getName().toLowerCase().replaceAll(";", " ").replaceAll(" ", "")
+						+ ".txt";
 				File fullText = new File("data/cache/papertext/" + filename);
 				FileWriter fullTextWriter = new FileWriter(fullText);
 				BufferedWriter fullTextW = new BufferedWriter(fullTextWriter);
@@ -86,7 +87,7 @@ public class OnlineDatabase extends Database {
 				w.write(OfflineDatabase.universityToString(p) + "\n");
 			w.close();
 			writer.close();
-			
+
 			file = new File("data/cache/authorpaperlink.txt");
 			writer = new FileWriter(file);
 			w = new BufferedWriter(writer);
@@ -97,9 +98,9 @@ public class OnlineDatabase extends Database {
 			w.close();
 			writer.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.Severe("an error occured while creating the offline cache",
+					e);
 		}
-
 	}
 
 	/*
@@ -182,8 +183,7 @@ public class OnlineDatabase extends Database {
 				}
 			}
 		} catch (Exception e) {
-			Logger.Severe("An exception has prevented from reading all the authors!");
-			e.printStackTrace();
+			Logger.Severe("an error occured while retrieving the authors", e);
 		}
 	}
 
@@ -228,8 +228,7 @@ public class OnlineDatabase extends Database {
 				addPaper(paper);
 			}
 		} catch (Exception e) {
-			Logger.Severe("An error has prevented all papers from being read");
-			e.printStackTrace();
+			Logger.Severe("an error occured while reading the papers", e);
 		}
 	}
 
@@ -256,14 +255,16 @@ public class OnlineDatabase extends Database {
 			while (result.hasNext()) {
 				BindingSet set = result.next();
 				String title = set.getBinding("title").getValue().stringValue();
-				
-				if (getPaperFromTitle(title)!=null)
+
+				if (getPaperFromTitle(title) != null)
 					rr.add(getPaperFromTitle(title));
 				else
-					Logger.Warning("could not find paper with title "+title);
+					Logger.Warning("could not find paper with title " + title);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			Logger.Severe(
+					"an error occured while retrieving the papers for author \""
+							+ author.getFullName() + "\"", e);
 		}
 
 		return rr;

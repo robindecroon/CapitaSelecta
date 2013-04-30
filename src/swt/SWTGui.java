@@ -9,17 +9,23 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.awt.SWT_AWT;
 import org.eclipse.swt.events.ShellAdapter;
 import org.eclipse.swt.events.ShellEvent;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageData;
+import org.eclipse.swt.graphics.ImageLoader;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Monitor;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
+import util.LogAdapter;
 import util.Logger;
+import core.Constants;
 import core.MainApplet;
 import data.Author;
 import data.Paper;
@@ -35,11 +41,13 @@ public class SWTGui {
 	public Paper currentPaper;
 	public Text title;
 	public Text authors;
+	public Text conferenceText;
 	public Text year;
 	public Text fullText;
 
 	public Timeline timeline;
 	public ConferenceTool conference;
+	public boolean canChange = true;
 
 	private SWTGui() {
 	}
@@ -47,6 +55,11 @@ public class SWTGui {
 	public void start() {
 		GridLayout layout = new GridLayout(1, false);
 		shell.setLayout(layout);
+		shell.setText(Constants.APP_NAME);
+
+		ImageData[] data = new ImageLoader().load("data/image/author.png");
+		Image image = new Image(display, data[0]);
+		shell.setImage(image);
 
 		initControls(shell);
 		initAppletWithPaperData(shell);
@@ -70,6 +83,27 @@ public class SWTGui {
 			public void shellClosed(ShellEvent e) {
 				Logger.Info("close button is clicked");
 				System.exit(0);
+			}
+		});
+
+		Logger.addListener(new LogAdapter() {
+			/*
+			 * (non-Javadoc)
+			 * 
+			 * @see util.LogAdapter#Severe(java.lang.String)
+			 */
+			@Override
+			public void Severe(final String message) {
+				display.asyncExec(new Runnable() {
+					public void run() {
+						MessageBox box = new MessageBox(shell, SWT.ERROR
+								| SWT.OK);
+						box.setText("Error");
+						box.setMessage("An error occured with the following debug message...\n\n"
+								+ message);
+						box.open();
+					}
+				});
 			}
 		});
 
@@ -187,6 +221,15 @@ public class SWTGui {
 		authors.setLayoutData(getFillTextData());
 
 		label = new Label(component, SWT.NONE);
+		label.setText("Conference");
+		label.setLayoutData(getCenterLabelData());
+		
+		conferenceText = new Text(component, SWT.SINGLE | SWT.BORDER);
+		conferenceText.setText("");
+		conferenceText.setEditable(false);
+		conferenceText.setLayoutData(getFillTextData());
+
+		label = new Label(component, SWT.NONE);
 		label.setText("Year");
 		label.setLayoutData(getCenterLabelData());
 
@@ -199,7 +242,8 @@ public class SWTGui {
 		label.setText("Full text");
 		label.setLayoutData(getCenterLabelData());
 
-		fullText = new Text(component, SWT.MULTI | SWT.V_SCROLL | SWT.BORDER);
+		fullText = new Text(component, SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL
+				| SWT.BORDER);
 		fullText.setText("");
 		fullText.setEditable(false);
 		data = new GridData();
@@ -287,10 +331,12 @@ public class SWTGui {
 	}
 
 	public void setPaper(Paper paper) {
-		if (currentPaper != null && paper.equals(currentPaper))
+		if (!canChange || currentPaper != null && paper.equals(currentPaper))
 			return;
+		canChange = false;
 		currentPaper = paper;
 		changeTextField(title, paper.getName());
+		changeTextField(conferenceText, paper.getConference().toString().toUpperCase());
 
 		String authorString = "";
 		for (Author author : paper.getAuthors())
@@ -317,7 +363,7 @@ public class SWTGui {
 			full += str + "\n";
 
 		changeTextField(fullText, full);
-		
+
 		System.out.println(paper.getAuthors().get(0).getUniversity());
 	}
 }
